@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/shop"
+        android:enabled="true"
+        android:icon="@drawable/ic_hzshop_png"
+        android:title="Shop"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/care"
+        android:enabled="true"
+        android:icon="@drawable/ic_hzcare_png"
+        android:title="Care"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:title="Home"
+        app:showAsAction="ifRoom" />
+    <item
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:id="@+id/services"
+        android:icon="@drawable/ic_hzservice_png"
+        android:title="Services"/>
+
+    <item
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:id="@+id/community"
+        android:icon="@drawable/ic_hzcommunity_png"
+        android:title="@string/community"
+        />
+
+
+
+</menu>

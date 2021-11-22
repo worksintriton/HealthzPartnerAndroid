@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Dynamically adding service Details-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/material_cardview_education_details"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_close"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/layout_bg_service_greenyish"
+                android:contentDescription="@string/image" />
+
+            <TextView
+                android:id="@+id/txt_specname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:padding="5dp"
+                android:text="@string/medicine"
+                android:textColor="@color/new_light_black"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginStart="5dp"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+
+
+
+</LinearLayout>

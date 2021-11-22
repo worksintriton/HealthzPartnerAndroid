@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
+    app:titleTextAppearance="@style/TitleBarTextAppearance">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            tools:ignore="DisableBaselineAlignment,UselessParent">
+
+            <ImageView
+                android:id="@+id/img_menu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_hzmenu_header"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/app_logo_with_border"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:id="@+id/ll3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentEnd="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|end">
+
+                    <ImageView
+                        android:id="@+id/img_notification"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_hzmenu_notification"
+                        tools:ignore="ContentDescription" />
+
+                    <!--   <TextView
+                        android:id="@+id/txt_notification_count_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="-16dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/badge_background"
+                        android:ellipsize="marquee"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:gravity="center"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:minWidth="20dp"
+                        android:minHeight="20dp"
+                        android:padding="3dp"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />-->
+
+
+                    <ImageView
+                        android:id="@+id/img_cart"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/ic_hzmenu_shop"
+                        tools:ignore="ContentDescription" />
+
+                    <!-- <TextView
+                        android:id="@+id/txt_cart_count_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="-16dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/badge_background"
+                        android:ellipsize="marquee"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:gravity="center"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:minWidth="20dp"
+                        android:minHeight="20dp"
+                        android:padding="3dp"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />-->
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_mappin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:background="@drawable/ic_hz_lctnbgnd">
+
+            <ImageView
+                android:id="@+id/map_pin"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/map_pin"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txt_location"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_toEndOf="@+id/map_pin"
+                android:text="@string/chennai"
+                android:textColor="@color/lato_black"
+                android:textSize="12sp"
+                android:fontFamily="@font/lato_regular" />
+
+            <ImageView
+                android:id="@+id/img_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_hz_backbtn"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/mapicn"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:drawablePadding="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/futuramediumbt"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@string/current_location"
+            android:textColor="@color/new_four_txt_color"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="end"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_sos"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_sos"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/img_notification1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_notification_new"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/img_cart1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_bag"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/new_user"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/nav_header_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="start|center"
+        android:maxLines="1"
+        android:text="@string/logout"
+        android:textColor="@color/missed_red_color"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:layout_below="@+id/nav_header_logout">
+
+        <TextView
+            android:id="@+id/nav_header_ref_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/ref_code"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

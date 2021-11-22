@@ -1,0 +1,629 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheetLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollablContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/headerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <include
+                        layout="@layout/content_doctor_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:visibility="visible"
+                        app:contentInsetLeft="0dp"
+                        app:contentInsetStart="0dp"
+                        app:popupTheme="@style/AppTheme.PopupOverlay"
+                        app:titleTextAppearance="@style/TitleBarTextAppearance">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_back"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/icn_ellipse_bgnd">
+
+                            <ImageView
+                                android:id="@+id/img_back"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/new_arrow"
+                                tools:ignore="ContentDescription" />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end">
+
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/ic_sos"
+                                android:visibility="invisible"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/ic_notification_new"
+                                android:visibility="invisible"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/ic_bag"
+                                android:visibility="invisible"
+                                tools:ignore="ContentDescription" />
+
+                            <RelativeLayout
+                                android:id="@+id/rl_share"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/icn_ellipse_bgnd">
+
+                                <ImageView
+                                    android:id="@+id/img_share"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/icn_share"
+                                    tools:ignore="ContentDescription" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_heart"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/icn_ellipse_bgnd">
+
+                                <ImageView
+                                    android:id="@+id/img_fav"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/icn_heart_love"
+                                    tools:ignore="ContentDescription" />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/rl_cart"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/icn_ellipse_bgnd">
+
+                                <ImageView
+                                    android:id="@+id/img_cart"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_hzmenu_shop"
+                                    tools:ignore="ContentDescription" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_products_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="1"
+                        android:text="@string/product_name"
+                        android:textColor="@color/neutral_black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txt_review_count"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:alpha="0.5"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="1"
+                        android:text="@string/review"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_prod_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat"
+                        android:maxLines="1"
+                        android:text="@string/product_desc"
+                        android:textColor="@color/new_hz_grey"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/hand_img1"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:background="@drawable/ic_logo_color"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/hand_img2"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/ic_logo_color"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/hand_img3"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/ic_logo_color"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/hand_img4"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/ic_logo_color"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/hand_img5"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/ic_logo_graycolor"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_root"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_product_discount_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat"
+                        android:maxLines="1"
+                        android:text="@string/inr_300_00"
+                        android:textAllCaps="true"
+                        android:textColor="@color/green"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_products_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:maxLines="1"
+                        android:text="@string/inr_300_00"
+                        android:textColor="@color/new_txt_header"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_discount"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:padding="3dp"
+                        android:text="@string/_20_off"
+                        android:textColor="@color/red_back"
+                        android:textSize="12sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ll_increment_add_to_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:id="@+id/img_remove_product"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/rectangle_corner_white">
+
+                                <TextView
+                                    android:id="@+id/txt_remove_product"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="-"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/colorAccent">
+
+                                <TextView
+                                    android:id="@+id/txt_cart_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="66"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/img_add_product"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/rectangle_corner_white">
+
+                                <TextView
+                                    android:id="@+id/txt_add_product"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:text="+"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view11"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/Lightgray" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_products_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/futuramediumbt"
+                android:text="@string/product_description"
+                android:textColor="@color/new_light_black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/txt_about_vet_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/product_description"
+                android:textColor="@color/neutral_black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/txt_product_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:alpha="0.7"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat"
+                android:maxLines="3"
+                android:text="@string/desc_content"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Details"
+                android:textColor="@color/neutral_black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:alpha="0.7"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Condition"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:alpha="0.7"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Condition"
+                    android:textColor="@color/neutral_black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:alpha="0.7"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Price Type"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:alpha="0.7"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Price Type"
+                    android:textColor="@color/neutral_black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_add_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/new_rounded_corner_btn"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+
+
+                <TextView
+                    android:id="@+id/txt_cart_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:maxLines="1"
+                    android:text="@string/add_to_cart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:gravity="center"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+                <RelativeLayout
+                    android:id="@+id/rl_relat_prod"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/new_solid_bgm">
+
+                    <TextView
+                        android:id="@+id/txt_prod_related"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:text="You Might Also Like"
+                        android:textColor="@color/green"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_relatedproducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/txt_prod_related"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/footerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <include
+            android:id="@+id/include_petlover_footer"
+            layout="@layout/toolbar_layout_petlover_footer_new_shaped"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/includelayout"
+        layout="@layout/loading_layout"
+        android:visibility="gone" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:indicatorColor="@color/new_green_btn"
+        app:indicatorName="LineSpinFadeLoaderIndicator" />
+
+
+</RelativeLayout>

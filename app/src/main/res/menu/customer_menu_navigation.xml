@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/shop"
+        android:icon="@drawable/shop_selector"
+        android:title="@string/shop" />
+    <item
+        android:id="@+id/care"
+        android:icon="@drawable/petcare_selector"
+        android:title="@string/pet_care" />
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/selector"/>
+
+    <item
+        android:id="@+id/sos"
+        android:title="@string/sos"
+        android:icon="@drawable/sos_bottom"/>
+
+    <item
+        android:id="@+id/services"
+        android:title="pet service"
+        android:icon="@drawable/service_selector"/>
+
+</menu>

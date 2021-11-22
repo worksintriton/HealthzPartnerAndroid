@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/cv_serviceimage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_hzservicon1"
+        tools:ignore="ContentDescription" />
+
+    <RelativeLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@color/dark_greenish"
+        tools:ignore="UseCompoundDrawables,UselessParent">
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_petlover_servicesname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center|bottom"
+        android:maxLines="2"
+        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+
+</FrameLayout>
