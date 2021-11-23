@@ -60,6 +60,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     AVLoadingIndicatorView avi_indicator;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_usertypes)
+    TextView txt_usertypes;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.btn_changeusertype)
+    Button btn_changeusertype;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_firstname)
     EditText edt_firstname;
 
@@ -91,6 +99,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.txt_login)
     TextView txt_login;
 
+    private String UserType;
+    private int UserTypeValue;
+
     Dialog alertDialog;
 
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
@@ -114,7 +125,29 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         edt_phone.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
         btn_verify_email.setOnClickListener(this);
+        btn_changeusertype.setOnClickListener(this);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            UserType = extras.getString("UserType");
+            UserTypeValue = extras.getInt("UserTypeValue");
+            verified = extras.getString("verified");
+            firstname = extras.getString("firstname");
+            lastname = extras.getString("lastname");
+            useremail = extras.getString("useremail");
+            userphone = extras.getString("userphone");
+            referralcode = extras.getString("referralcode");
+        }else{
+            UserType = "Doctor";
+            UserTypeValue = 4;
+        }
+
+        if(UserType != null){
+            txt_usertypes.setText(UserType);
+
+        }
+
+/*
         Bundle extras = getIntent().getExtras();
 
         if (extras != null) {
@@ -124,7 +157,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             useremail = extras.getString("useremail");
             userphone = extras.getString("userphone");
             referralcode = extras.getString("referralcode");
-        }
+        }*/
 
 
         Log.w(TAG,"firstname : "+firstname+" lastname : "+lastname+" useremail : "+useremail+" user_email_verification : "+user_email_verification);
@@ -210,6 +243,19 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
            case R.id.txt_login:
                 gotoLoginActivity();
+                break;
+
+            case R.id.btn_changeusertype:
+                Intent intent = new Intent(SignUpActivity.this,ChooseUserTypeActivity.class);
+                intent.putExtra("UserType",UserType);
+                intent.putExtra("UserTypeValue",UserTypeValue);
+                intent.putExtra("verified",verified);
+                intent.putExtra("firstname",edt_firstname.getText().toString());
+                intent.putExtra("lastname",edt_lastname.getText().toString());
+                intent.putExtra("useremail",edt_email.getText().toString());
+                intent.putExtra("userphone",edt_phone.getText().toString());
+                intent.putExtra("referralcode",edt_ref_code.getText().toString());
+                startActivity(intent);
                 break;
 
            }

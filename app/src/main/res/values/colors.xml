@@ -117,5 +117,7 @@
     <color name="new_hz_coolgrey">#3E3E3E</color>
     <color name="new_hz_coolgreyish">#949494</color>
 
+    <color name="border_line_opaqe">#999999</color>
+
 
 </resources>

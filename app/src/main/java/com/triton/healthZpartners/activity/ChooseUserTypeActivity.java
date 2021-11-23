@@ -117,7 +117,15 @@ public class ChooseUserTypeActivity extends AppCompatActivity implements UserTyp
                         Log.w(TAG,"UserTypeListResponse" + new Gson().toJson(response.body()));
 
                         if(response.body().getData().getUsertypedata() != null){
-                            usertypedataBeanList = response.body().getData().getUsertypedata();
+
+                           List<UserTypeListResponse.DataBean.UsertypedataBean> usertypedata = response.body().getData().getUsertypedata();
+
+                           if(usertypedata!=null&&usertypedata.size()>0){
+
+                           
+                               usertypedataBeanList = response.body().getData().getUsertypedata();
+                           }
+
                         }
 
 

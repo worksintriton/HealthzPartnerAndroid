@@ -10,28 +10,28 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
+        android:background="@color/colorAccent"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables"
-        android:background="@color/new_header_bg"
-        android:gravity="center_vertical">
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:id="@+id/img_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
-            android:background="@drawable/left_arrow"
+            android:background="@drawable/back_arrow"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/futuramediumbt"
             android:text="@string/choose_user_type"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/big_txt_size"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"/>
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/new_rounded_corner_btn"
-            android:fontFamily="@font/futuramediumbt"
+            android:fontFamily="@font/montserrat_bold"
             android:text="Change"
             android:textAllCaps="false"
             android:textColor="@color/white"

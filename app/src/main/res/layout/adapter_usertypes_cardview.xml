@@ -7,6 +7,7 @@
     android:layout_marginStart="10dp"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="10dp"
+    android:id="@+id/ll_root"
     android:orientation="vertical">
 
     <LinearLayout
@@ -53,11 +54,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/futuramediumbt"
+        android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
         android:text="@string/petlovers"
         android:textAlignment="center"
-        android:textColor="@color/new_txt_color"
+        android:textColor="@color/neutral_black"
         android:textSize="14sp"
         android:maxLines="2"
         android:ellipsize="end"/>

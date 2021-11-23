@@ -78,14 +78,14 @@ public class WelcomeScreenActivity extends AppCompatActivity implements View.OnC
     private void gotoLoginActivity() {
 
         Intent intent = new Intent(WelcomeScreenActivity.this, LoginActivity.class);
-        intent.putExtra("fromactivity", TAG);
+       /* intent.putExtra("fromactivity", TAG);*/
         startActivity(intent);
     }
 
     private void gotoSignupActivity() {
 
         Intent intent = new Intent(WelcomeScreenActivity.this, SignUpActivity.class);
-        intent.putExtra("fromactivity", TAG);
+       /* intent.putExtra("fromactivity", TAG);*/
         startActivity(intent);
     }
 

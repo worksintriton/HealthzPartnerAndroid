@@ -72,6 +72,7 @@ public class UserTypesListAdapter extends  RecyclerView.Adapter<RecyclerView.Vie
             holder.txt_usertypes.setText(currentItem.getUser_type_title());
 
         }
+
         if (currentItem.getUser_type_img() != null && !currentItem.getUser_type_img().isEmpty()) {
             Glide.with(context)
                         .load(currentItem.getUser_type_img())

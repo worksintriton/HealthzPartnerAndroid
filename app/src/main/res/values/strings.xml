@@ -80,7 +80,6 @@
 
 
     <string name="doctor_business_info_title">Doctor Business Info</string>
-    <string name="edit_doctor_business_info_title">Edit Doctor Business info</string>
     <string name="serviceproviderbusiness">Service Provider Business</string>
     <string name="editserviceproviderbusiness">Edit Service Provider Business</string>
     <string name="image">Image</string>
@@ -105,7 +104,6 @@
     <string name="write_here">Write Here....</string>
     <string name="clinic_pict">Clinic pictures</string>
     <string name="service_gallery_images">Service gallery images</string>
-    <string name="certificate">Certificate</string>
     <string name="certificates_if_any">Certificates</string>
     <string name="govt_proof">Govt ID Proof</string>
     <string name="photoid_proof">Photo ID Proof</string>
@@ -672,5 +670,10 @@
 
     <string name="see_more_pets_handled" tools:ignore="TypographyEllipsis">See More...</string>
     <string name="see_more_pets_specialization" tools:ignore="TypographyEllipsis">See More...</string>
+    <string name="edit_doctor_business_info_title">Edit Business info</string>
+    <string name="certificate">Certificates</string>
+
+    <string name="charge">Charge</string>
+    <string name="sizelimit">Max. File Size 2MB</string>
 </resources>
 
