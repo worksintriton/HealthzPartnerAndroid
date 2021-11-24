@@ -285,10 +285,10 @@
     <string name="productsoffer">productsoffer</string>
 
 
-    <string name="doctor_comments">Doctor comments</string>
+    <string name="doctor_comments">Doctor Comments</string>
     <string name="enter_comments">Enter comments..</string>
-    <string name="prescription_medicines">Prescription medicines</string>
-    <string name="no_of_days">No of days</string>
+    <string name="prescription_medicines">Prescription Medicines</string>
+    <string name="no_of_days">No Of Days</string>
     <string name="medicine">Medicine</string>
     <string name="consumption_per_day">Consumption</string>
 

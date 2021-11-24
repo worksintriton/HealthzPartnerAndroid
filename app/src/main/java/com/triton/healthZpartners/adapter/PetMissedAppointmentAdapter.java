@@ -100,7 +100,7 @@ public class PetMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerV
 
         }
         if(missedAppointmentResponseList.get(position).getCost() != null){
-            holder.txt_service_cost.setText("INR "+missedAppointmentResponseList.get(position).getCost());
+            holder.txt_service_cost.setText("\u20B9 "+missedAppointmentResponseList.get(position).getCost());
         }
 
 

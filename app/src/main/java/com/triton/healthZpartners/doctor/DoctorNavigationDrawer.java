@@ -213,38 +213,30 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
             switch (menuItem.getItemId()) {
                 //Replacing the main content with ContentFragment Which is our Inbox View;
                 case R.id.nav_item_one:
-                    gotoMyFavourites();
+                    gotoMyAppointments();
                     return true;
 
                 // For rest of the options we just show a toast on click
                 case R.id.nav_item_two:
-                    gotoMyOrders();
+                    gotoMyWalkinAppointments();
                     return true;
 
                 case R.id.nav_item_three:
-                    gotoMyAppointments();
+                    gotoMyCalendar();
                     return true;
 
                 case R.id.nav_item_four:
-                    gotoMyCoupons();
+                    gotoProfile();
                     return true;
 
+
                 case R.id.nav_item_five:
-                    gotoMedicalHistory();
-                    return true;
-//
-//                case R.id.nav_item_six:
-//                    gotoPaymentdetails();
-//                    return true;
-                case R.id.nav_item_seven:
                     gotoNotifications();
                     return true;
 
 
 
-                case R.id.nav_item_ten:
-                    gotoMyWalkinAppointments();
-                    return true;
+
 
                 default:
                     return true;
@@ -255,7 +247,18 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
     }
 
     private void gotoMyWalkinAppointments() {
-       // startActivity(new Intent(getApplicationContext(),PetWalkinappointmentsActivity.class));
+        startActivity(new Intent(getApplicationContext(),DoctorWalkinAppointmentsActivity.class));
+    }
+
+    private void gotoMyCalendar() {
+        Intent i = new Intent(DoctorNavigationDrawer.this, DoctorMyCalendarActivity.class);
+        startActivity(i);
+
+    }
+
+    private void gotoProfile() {
+        Intent intent = new Intent(getApplicationContext(),DoctorProfileScreenActivity.class);
+        startActivity(intent);
     }
 
     private void gotoMyCoupons() {
@@ -536,7 +539,7 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
 
     }
     private void gotoMyAppointments() {
-      //  startActivity(new Intent(getApplicationContext(),PetMyappointmentsActivity.class));
+       startActivity(new Intent(getApplicationContext(),DoctorMyappointmentsActivity.class));
 
     }
     private void gotoMyOrders() {

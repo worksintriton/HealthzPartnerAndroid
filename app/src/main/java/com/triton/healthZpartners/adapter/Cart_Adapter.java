@@ -72,7 +72,7 @@ public class Cart_Adapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>
      /*   if (data.get(position).getProduct_id().getDiscount_amount() != 0) {
             holder.txt_original_amount.setVisibility(View.VISIBLE);
             holder.txt_original_amount.setPaintFlags(holder.txt_original_amount.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-            holder.txt_original_amount.setText("INR " + data.get(position).getProduct_id().getDiscount_amount());
+            holder.txt_original_amount.setText("\u20B9 " + data.get(position).getProduct_id().getDiscount_amount());
 
         }else{
             holder.txt_original_amount.setVisibility(View.GONE);

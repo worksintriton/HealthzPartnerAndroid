@@ -378,7 +378,7 @@ public class SPCartActivity extends AppCompatActivity implements AddandRemovePro
                     edt_coupon.setText("");
                     btn_apply_coupon.setText("Apply");
                     ll_coupon_discount_amount.setVisibility(View.GONE);
-                    txt_total_amount.setText("INR "+Grand_total);
+                    txt_total_amount.setText("\u20B9 "+Grand_total);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -499,27 +499,27 @@ public class SPCartActivity extends AppCompatActivity implements AddandRemovePro
                             }
                             if(response.body().getProdouct_total() != 0){
                                 Total_price = response.body().getProdouct_total();
-                                txt_sub_total.setText(" INR "+response.body().getProdouct_total());
+                                txt_sub_total.setText("\u20B9 "+response.body().getProdouct_total());
                             }else{
                                 Total_price = 0;
-                                txt_sub_total.setText("INR "+0);
+                                txt_sub_total.setText("\u20B9 "+0);
 
                             }
                             if(response.body().getDiscount_price() != 0){
-                                txt_discount_amount.setText(" INR "+response.body().getDiscount_price());
+                                txt_discount_amount.setText("\u20B9 "+response.body().getDiscount_price());
                             }else{
-                                txt_discount_amount.setText(" INR "+0);
+                                txt_discount_amount.setText("\u20B9 "+0);
                             }
                             if(response.body().getShipping_charge() != 0){
-                                txt_shipping_amount.setText(" INR "+response.body().getShipping_charge());
+                                txt_shipping_amount.setText("\u20B9 "+response.body().getShipping_charge());
                             }else{
-                                txt_shipping_amount.setText(" INR "+0);
+                                txt_shipping_amount.setText("\u20B9 "+0);
 
                             }
                             if(response.body().getGrand_total() != 0){
-                                txt_total_amount.setText(" INR "+response.body().getGrand_total());
+                                txt_total_amount.setText("\u20B9 "+response.body().getGrand_total());
                             }else{
-                                txt_total_amount.setText(" INR "+0);
+                                txt_total_amount.setText("\u20B9 "+0);
 
                             }
 
@@ -603,7 +603,7 @@ public class SPCartActivity extends AppCompatActivity implements AddandRemovePro
                 edt_coupon.setText("");
                 btn_apply_coupon.setText("Apply");
                 ll_coupon_discount_amount.setVisibility(View.GONE);
-                txt_total_amount.setText("INR "+Grand_total);
+                txt_total_amount.setText("\u20B9 "+Grand_total);
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
                 Original_price = 0;
@@ -623,7 +623,7 @@ public class SPCartActivity extends AppCompatActivity implements AddandRemovePro
                 edt_coupon.setText("");
                 btn_apply_coupon.setText("Apply");
                 ll_coupon_discount_amount.setVisibility(View.GONE);
-                txt_total_amount.setText("INR "+Grand_total);
+                txt_total_amount.setText("\u20B9 "+Grand_total);
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
                 Original_price = 0;
@@ -636,7 +636,7 @@ public class SPCartActivity extends AppCompatActivity implements AddandRemovePro
                     edt_coupon.setText("");
                     btn_apply_coupon.setText("Apply");
                     ll_coupon_discount_amount.setVisibility(View.GONE);
-                    txt_total_amount.setText("INR "+Grand_total);
+                    txt_total_amount.setText("\u20B9 "+Grand_total);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -1090,25 +1090,25 @@ public class SPCartActivity extends AppCompatActivity implements AddandRemovePro
 
                         if(response.body().getData().getDiscount_price() != 0){
                             Coupon_discount_price = response.body().getData().getDiscount_price();
-                            txt_coupon_discount_amount.setText("INR "+response.body().getData().getDiscount_price());
+                            txt_coupon_discount_amount.setText("\u20B9 "+response.body().getData().getDiscount_price());
                         }else{
-                            txt_coupon_discount_amount.setText("INR "+0);
+                            txt_coupon_discount_amount.setText("\u20B9 "+0);
                         }
                         if(response.body().getData().getOriginal_price() != 0){
                             Original_price = response.body().getData().getOriginal_price();
-                            // txt_serv_cost.setText("INR "+response.body().getData().getOriginal_price());
+                            // txt_serv_cost.setText("\u20B9 "+response.body().getData().getOriginal_price());
 
                         }else{
-                            // txt_serv_cost.setText("INR "+0);
+                            // txt_serv_cost.setText("\u20B9 "+0);
 
                         }
 
                         if(response.body().getData().getTotal_price() != 0){
                             grand_total = response.body().getData().getTotal_price();
-                            txt_total_amount.setText("INR "+response.body().getData().getTotal_price());
+                            txt_total_amount.setText("\u20B9 "+response.body().getData().getTotal_price());
 
                         }else{
-                            txt_total_amount.setText("INR "+0);
+                            txt_total_amount.setText("\u20B9 "+0);
                         }
 
 

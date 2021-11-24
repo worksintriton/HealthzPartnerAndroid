@@ -71,9 +71,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:focusable="false"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/doctor_name"
-                    android:inputType="text"
+                    android:inputType="none"
                     android:maxLength="25"
                     android:maxLines="1"
                     android:padding="15dp"
@@ -137,9 +138,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:focusable="false"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/email_address"
-                    android:inputType="textEmailAddress"
+                    android:inputType="none"
                     android:maxLines="1"
                     android:padding="15dp"
                     android:textColor="@color/neutral_black"
@@ -152,20 +154,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <TextView
-                    android:id="@+id/txt_lbl_email"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/button_blue_rounded_corner"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="start"
-                    android:text="@string/email_address"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/email_address"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_emaildot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_email"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -181,9 +204,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:focusable="false"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/phone"
-                    android:inputType="phone"
+                    android:inputType="none"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:padding="15dp"
@@ -197,20 +221,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <TextView
-                    android:id="@+id/txt_lbl_phone"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/button_blue_rounded_corner"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="start"
-                    android:text="@string/phone"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/phone"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_phonedot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_phone"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
 
                 <Button
                     android:id="@+id/button"
@@ -224,54 +269,152 @@
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-            <EditText
-                android:id="@+id/edtx_clinic_number"
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/rectangle_corner"
-                android:fontFamily="@font/montserrat"
-                android:hint="@string/clinic_number"
-                android:maxLength="50"
-                android:maxLines="1"
-                android:padding="15dp"
-                android:textColorHint="@color/dark_gray"
-                android:textSize="14sp"
-                android:visibility="gone"
-                tools:ignore="Autofill,LabelFor" />
-
-            <EditText
-                android:id="@+id/edtx_doctor_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/rectangle_corner"
-                android:fontFamily="@font/montserrat"
-                android:hint="@string/doctor_id"
-                android:inputType="text"
-                android:maxLength="50"
-                android:maxLines="1"
-                android:padding="15dp"
-                android:textColorHint="@color/dark_gray"
-                android:textSize="14sp"
-                android:visibility="gone"
-                tools:ignore="Autofill,LabelFor" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdvw_about_doctor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
-                android:visibility="gone"
-                app:cardBackgroundColor="@color/light_green"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/edtx_clinic_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/clinic_number"
+                    android:inputType="phone"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_clinic_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/clinic_number"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_clinicnodot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_clinic_number"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/edtx_doctor_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/doctor_id"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_doctorid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/doctor_id"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_doctoriddot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_doctorid"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
 
                 <EditText
                     android:id="@+id/edtx_about_doctor"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rectangle_corner"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
                     android:fontFamily="@font/montserrat"
                     android:gravity="start"
                     android:hint="@string/about_doctor"
@@ -282,12 +425,53 @@
                     android:minLines="2"
                     android:padding="15dp"
                     android:scrollbars="vertical"
-                    android:textAlignment="viewStart"
-                    android:textColorHint="@color/dark_gray"
-                    android:textSize="14sp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-            </androidx.cardview.widget.CardView>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_about_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/about_doctor"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_about_doctordot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_about_doctor"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <TextView
                 android:id="@+id/txt_no_records"
@@ -330,20 +514,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <TextView
-                    android:id="@+id/txt_lbl_firstname"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/button_blue_rounded_corner"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="start"
-                    android:text="@string/clinic_name"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_firstname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/clinic_name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_about_firstnamedot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_firstname"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
 
                 <!--<Button
                     android:id="@+id/button"
@@ -788,7 +993,7 @@
             <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:id="@+id/cdvw_clinic_address"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:visibility="visible">
 
@@ -798,10 +1003,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:ellipsize="end"
+                    android:focusable="false"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/clinic_address"
-                    android:inputType="text"
+                    android:inputType="none"
+                    android:maxLength="250"
                     android:maxLines="1"
+                    android:minLines="1"
                     android:padding="15dp"
                     android:textColor="@color/neutral_black"
                     android:textColorHint="@color/neutral_black"
@@ -813,20 +1022,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <TextView
-                    android:id="@+id/txt_clinic_addr_lbl"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/button_blue_rounded_corner"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="start"
-                    android:text="@string/clinic_address"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_clinic_addr_lbl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/clinic_address"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_clinicaddrdot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_clinic_addr_lbl"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -859,7 +1089,7 @@
             <!--Clinic pictures-->
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:id="@+id/cdvw_certificate"
+                android:id="@+id/cdvw_clinic_pics"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -888,20 +1118,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <TextView
-                    android:id="@+id/txt_lbl_clinic"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/button_blue_rounded_corner"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="start"
-                    android:text="@string/clinic_pict"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_clinic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/clinic_pict"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_clinicdot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_clinic"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -980,20 +1231,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <TextView
-                    android:id="@+id/txt_lbl_certificate"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/button_blue_rounded_corner"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="start"
-                    android:text="@string/certificate"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_certificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/certificate"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_certdot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_certificate"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -1072,20 +1344,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <TextView
-                    android:id="@+id/txt_lbl_govtid"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/button_blue_rounded_corner"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="start"
-                    android:text="@string/govt_proof"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_govtid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/govt_proof"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_govtiddot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_govtid"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -1164,20 +1457,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <TextView
-                    android:id="@+id/txt_lbl_photoid"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/button_blue_rounded_corner"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="start"
-                    android:text="@string/photoid_proof"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    tools:ignore="SmallSp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_photoid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/photoid_proof"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_photoiddot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_photoid"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"

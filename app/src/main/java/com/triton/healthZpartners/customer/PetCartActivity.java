@@ -366,7 +366,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                     edt_coupon.setText("");
                     btn_apply_coupon.setText("Apply");
                     ll_coupon_discount_amount.setVisibility(View.GONE);
-                    txt_total_amount.setText("INR "+Grand_total);
+                    txt_total_amount.setText("\u20B9 "+Grand_total);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -485,9 +485,9 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                             }
                            /* if(response.body().getDiscount_price() != 0){
                                 Original_Discount_Price = response.body().getDiscount_price();
-                                txt_discount_amount.setText(" INR "+response.body().getDiscount_price());
+                                txt_discount_amount.setText("\u20B9 "+response.body().getDiscount_price());
                             }else{
-                                txt_discount_amount.setText(" INR "+0);
+                                txt_discount_amount.setText("\u20B9 "+0);
                             }*/
                            /* if(response.body().getShipping_charge() != 0){
                                 txt_shipping_amount.setText("\u20B9 "+response.body().getShipping_charge());
@@ -651,7 +651,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                 edt_coupon.setText("");
                 btn_apply_coupon.setText("Apply");
                 ll_coupon_discount_amount.setVisibility(View.GONE);
-                txt_total_amount.setText("INR "+Grand_total);
+                txt_total_amount.setText("\u20B9 "+Grand_total);
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
                 Original_price = 0;
@@ -673,7 +673,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                 edt_coupon.setText("");
                 btn_apply_coupon.setText("Apply");
                 ll_coupon_discount_amount.setVisibility(View.GONE);
-                txt_total_amount.setText("INR "+Grand_total);
+                txt_total_amount.setText("\u20B9 "+Grand_total);
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
                 Original_price = 0;
@@ -686,7 +686,7 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                     edt_coupon.setText("");
                     btn_apply_coupon.setText("Apply");
                     ll_coupon_discount_amount.setVisibility(View.GONE);
-                    txt_total_amount.setText("INR "+Grand_total);
+                    txt_total_amount.setText("\u20B9 "+Grand_total);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -1136,26 +1136,26 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
 
                         if(response.body().getData().getDiscount_price() != 0){
                             Coupon_discount_price = response.body().getData().getDiscount_price();
-                            txt_coupon_discount_amount.setText("INR "+response.body().getData().getDiscount_price());
+                            txt_coupon_discount_amount.setText("\u20B9 "+response.body().getData().getDiscount_price());
                         }else{
-                            txt_coupon_discount_amount.setText("INR "+0);
+                            txt_coupon_discount_amount.setText("\u20B9 "+0);
                         }
                         if(response.body().getData().getOriginal_price() != 0){
                             Original_price = response.body().getData().getOriginal_price();
-                           // txt_serv_cost.setText("INR "+response.body().getData().getOriginal_price());
+                           // txt_serv_cost.setText("\u20B9 "+response.body().getData().getOriginal_price());
 
                         }else{
-                           // txt_serv_cost.setText("INR "+0);
+                           // txt_serv_cost.setText("\u20B9 "+0);
 
                         }
 
                         if(response.body().getData().getTotal_price() != 0){
                             grand_total = response.body().getData().getTotal_price();
-                            txt_total_amount.setText("INR "+response.body().getData().getTotal_price());
+                            txt_total_amount.setText("\u20B9 "+response.body().getData().getTotal_price());
 
                         }else{
                             grand_total = 0;
-                            txt_total_amount.setText("INR "+0);
+                            txt_total_amount.setText("\u20B9 "+0);
                         }
 
 

@@ -214,11 +214,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/EntryAppTheme"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name="com.triton.healthZpartners.activity.ChooseUserTypeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name="com.triton.healthZpartners.activity.VerifyEmailOtpActivity"
             android:screenOrientation="portrait"

@@ -147,6 +147,15 @@ public class PrescriptionCreateRequest {
 		 */
 
 		private ConsumptionBean consumption;
+		private IntakeBean intakeBean;
+
+		public IntakeBean getIntakeBean() {
+			return intakeBean;
+		}
+
+		public void setIntakeBean(IntakeBean intakeBean) {
+			this.intakeBean = intakeBean;
+		}
 
 		public String getQuantity() {
 			return Quantity;
@@ -199,6 +208,26 @@ public class PrescriptionCreateRequest {
 
 			public void setMorning(boolean morning) {
 				this.morning = morning;
+			}
+		}
+		public static class IntakeBean implements Serializable {
+			private boolean afterfood;
+			private boolean beforefood;
+
+			public boolean isAfterfood() {
+				return afterfood;
+			}
+
+			public void setAfterfood(boolean afterfood) {
+				this.afterfood = afterfood;
+			}
+
+			public boolean isBeforefood() {
+				return beforefood;
+			}
+
+			public void setBeforefood(boolean beforefood) {
+				this.beforefood = beforefood;
 			}
 		}
 	}

@@ -75,7 +75,7 @@ public class SPMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerVi
             holder.txt_type.setText(missedAppointmentResponseList.get(position).getService_name());
         }
         if(missedAppointmentResponseList.get(position).getService_amount() != null){
-            holder.txt_service_cost.setText("INR "+missedAppointmentResponseList.get(position).getService_amount());
+            holder.txt_service_cost.setText("\u20B9 "+missedAppointmentResponseList.get(position).getService_amount());
         }
 /*        try{
             if (missedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img() != null && !missedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img().isEmpty()) {

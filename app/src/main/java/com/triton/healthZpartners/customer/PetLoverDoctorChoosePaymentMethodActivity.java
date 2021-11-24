@@ -385,7 +385,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
             txt_pet_name.setText(petname);
         }
         if(Amount != 0){
-            txt_cost.setText("INR "+Amount);
+            txt_cost.setText("\u20B9 "+Amount);
             txt_total_amount.setText("Total : INR "+Amount);
             Total_price = Amount;
         }
@@ -518,16 +518,16 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
 
                         if(response.body().getData().getDiscount_price() != 0){
                             Discount_price = response.body().getData().getDiscount_price();
-                            txt_discount_amount.setText("INR "+response.body().getData().getDiscount_price());
+                            txt_discount_amount.setText("\u20B9 "+response.body().getData().getDiscount_price());
                         }else{
-                            txt_discount_amount.setText("INR "+0);
+                            txt_discount_amount.setText("\u20B9 "+0);
                         }
                         if(response.body().getData().getOriginal_price() != 0){
                             Original_price = response.body().getData().getOriginal_price();
-                            txt_serv_cost.setText("INR "+response.body().getData().getOriginal_price());
+                            txt_serv_cost.setText("\u20B9 "+response.body().getData().getOriginal_price());
 
                         }else{
-                            txt_serv_cost.setText("INR "+0);
+                            txt_serv_cost.setText("\u20B9 "+0);
 
                         }
 

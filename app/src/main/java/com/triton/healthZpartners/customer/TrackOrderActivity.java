@@ -316,7 +316,7 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
                                 txt_product_title.setText(response.body().getData().getProduct_name());
                             }
                             if(response.body().getData().getProduct_price()!=0){
-                                txt_products_price.setText("INR "+response.body().getData().getProduct_price());
+                                txt_products_price.setText("\u20B9 "+response.body().getData().getProduct_price());
                             }
                             if(response.body().getData().getProduct_booked()!=null){
                                 txt_order_date.setText(response.body().getData().getProduct_booked());
@@ -325,7 +325,7 @@ public class TrackOrderActivity extends AppCompatActivity implements View.OnClic
                                 txt_booking_id.setText(orderid);
                             }
                             if(response.body().getData().getProduct_price() !=0){
-                                txt_total_order_cost.setText("INR "+response.body().getData().getProduct_price());
+                                txt_total_order_cost.setText("\u20B9 "+response.body().getData().getProduct_price());
                             }
                             if(response.body().getData().getProduct_count() !=0){
                                 txt_quantity.setText(""+response.body().getData().getProduct_count());

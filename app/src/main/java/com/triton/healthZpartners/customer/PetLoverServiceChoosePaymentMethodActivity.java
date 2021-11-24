@@ -315,7 +315,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("INR "+serviceamount);
+                txt_total_amount.setText("\u20B9 "+serviceamount);
                 Total_price = serviceamount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -330,7 +330,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("INR "+serviceamount);
+                txt_total_amount.setText("\u20B9 "+serviceamount);
                 Total_price = serviceamount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -418,8 +418,8 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
             txt_pet_name.setText(petname);
         }
         if(serviceamount != 0){
-            txt_cost.setText("INR "+serviceamount);
-            txt_total_amount.setText("INR "+serviceamount);
+            txt_cost.setText("\u20B9 "+serviceamount);
+            txt_total_amount.setText("\u20B9 "+serviceamount);
             Total_price = serviceamount;
         }
         if(SP_ava_Date != null){
@@ -437,7 +437,7 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
                     viewapply.setVisibility(View.GONE);
                     ll_cost.setVisibility(View.GONE);
                     ll_discount.setVisibility(View.GONE);
-                    txt_total_amount.setText("INR "+serviceamount);
+                    txt_total_amount.setText("\u20B9 "+serviceamount);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -549,26 +549,26 @@ public class PetLoverServiceChoosePaymentMethodActivity extends AppCompatActivit
 
                         if(response.body().getData().getDiscount_price() != 0){
                             Discount_price = response.body().getData().getDiscount_price();
-                            txt_discount_amount.setText("INR "+response.body().getData().getDiscount_price());
+                            txt_discount_amount.setText("\u20B9 "+response.body().getData().getDiscount_price());
                         }else{
-                            txt_discount_amount.setText("INR "+0);
+                            txt_discount_amount.setText("\u20B9 "+0);
                         }
                         if(response.body().getData().getOriginal_price() != 0){
                             Original_price = response.body().getData().getOriginal_price();
-                            txt_serv_cost.setText("INR "+response.body().getData().getOriginal_price());
+                            txt_serv_cost.setText("\u20B9 "+response.body().getData().getOriginal_price());
 
                         }else{
-                            txt_serv_cost.setText("INR "+0);
+                            txt_serv_cost.setText("\u20B9 "+0);
 
                         }
 
                         if(response.body().getData().getTotal_price() != 0){
                             Total_price = response.body().getData().getTotal_price();
-                            txt_total_amount.setText("INR "+response.body().getData().getTotal_price());
+                            txt_total_amount.setText("\u20B9 "+response.body().getData().getTotal_price());
 
                         }else{
                             Total_price = 0;
-                            txt_total_amount.setText("INR "+0);
+                            txt_total_amount.setText("\u20B9 "+0);
                         }
 
 

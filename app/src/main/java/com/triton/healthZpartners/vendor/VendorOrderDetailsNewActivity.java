@@ -493,21 +493,21 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
                                 txt_product_title.setText(response.body().getData().getOrder_details().getOrder_text());
                             }
                             if(response.body().getData().getOrder_details().getOrder_price()!=0){
-                                txt_products_price.setText("INR "+response.body().getData().getOrder_details().getOrder_price());
+                                txt_products_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
                             }
 
                             if (response.body().getData().getOrder_details().getOrder_price() != 0 && response.body().getData().getOrder_details().getOrder_product() != 0) {
                                 if (response.body().getData().getOrder_details().getOrder_product() == 1) {
-                                    txt_products_price.setText("INR " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
+                                    txt_products_price.setText("\u20B9 " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
                                 } else {
-                                    txt_products_price.setText("INR " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
+                                    txt_products_price.setText("\u20B9 " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
 
                                 }
                             }
                             else { if (response.body().getData().getOrder_details().getOrder_product() == 1) {
-                                txt_products_price.setText("INR " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
+                                txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
                             } else {
-                                txt_products_price.setText("INR " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )"); } }
+                                txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )"); } }
 
 
 
@@ -522,7 +522,7 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
 
                             }
                             if(response.body().getData().getOrder_details().getOrder_price() !=0){
-                                txt_total_order_cost.setText("INR "+response.body().getData().getOrder_details().getOrder_price());
+                                txt_total_order_cost.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
                             }
                             if(response.body().getData().getOrder_details().getOrder_product() !=0){
                                 txt_quantity.setText(""+response.body().getData().getOrder_details().getOrder_product());

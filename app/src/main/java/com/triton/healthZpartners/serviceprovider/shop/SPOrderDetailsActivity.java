@@ -454,10 +454,10 @@ public class SPOrderDetailsActivity extends AppCompatActivity implements View.On
                                     ll_original_price.setVisibility(View.VISIBLE);
                                     ll_discount_price.setVisibility(View.VISIBLE);
                                     if(response.body().getData().getOrder_details().getOriginal_price() != 0){
-                                        txt_original_price.setText("INR "+response.body().getData().getOrder_details().getOriginal_price());
+                                        txt_original_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOriginal_price());
                                     }
                                     if(response.body().getData().getOrder_details().getCoupon_discount_price() != 0){
-                                        txt_discount_price.setText("INR "+response.body().getData().getOrder_details().getCoupon_discount_price());
+                                        txt_discount_price.setText("\u20B9 "+response.body().getData().getOrder_details().getCoupon_discount_price());
                                     }
 
                                 }
@@ -472,26 +472,26 @@ public class SPOrderDetailsActivity extends AppCompatActivity implements View.On
                             }
                             if(response.body().getData().getOrder_details().getOrder_price()!=0){
                                 Order_price = response.body().getData().getOrder_details().getOrder_price();
-                                txt_products_price.setText("INR "+response.body().getData().getOrder_details().getOrder_price());
+                                txt_products_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
                             }
 
                             if (response.body().getData().getOrder_details().getOrder_price() != 0 && response.body().getData().getOrder_details().getOrder_product() != 0) {
                                 if (response.body().getData().getOrder_details().getOrder_product() == 1) {
                                     Order_price = response.body().getData().getOrder_details().getOrder_price();
-                                    txt_products_price.setText("INR " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
+                                    txt_products_price.setText("\u20B9 " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
                                 } else {
                                     Order_price = response.body().getData().getOrder_details().getOrder_price();
-                                    txt_products_price.setText("INR " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
+                                    txt_products_price.setText("\u20B9 " + response.body().getData().getOrder_details().getOrder_price() + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
 
                                 }
                             }
                             else {
                                 if (response.body().getData().getOrder_details().getOrder_product() == 1) {
                                     Order_price = 0;
-                                txt_products_price.setText("INR " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
+                                txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
                             } else {
                                     Order_price = 0;
-                                txt_products_price.setText("INR " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )"); } }
+                                txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )"); } }
 
 
 
@@ -506,7 +506,7 @@ public class SPOrderDetailsActivity extends AppCompatActivity implements View.On
 
                             }
                             if(response.body().getData().getOrder_details().getOrder_price() !=0){
-                                txt_total_order_cost.setText("INR "+response.body().getData().getOrder_details().getOrder_price());
+                                txt_total_order_cost.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
                             }
                             if(response.body().getData().getOrder_details().getOrder_product() !=0){
                                 txt_quantity.setText(""+response.body().getData().getOrder_details().getOrder_product());

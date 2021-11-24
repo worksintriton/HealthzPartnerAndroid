@@ -69,9 +69,9 @@ public class DoctorProductsFavAdapter extends  RecyclerView.Adapter<RecyclerView
         currentItem = productsList.get(position);
         holder.txt_products_title.setText(productsList.get(position).getProduct_title());
         if(productsList.get(position).getProduct_price() != 0){
-            holder.txt_products_price.setText("INR "+productsList.get(position).getProduct_price());
+            holder.txt_products_price.setText("\u20B9 "+productsList.get(position).getProduct_price());
         }else{
-            holder.txt_products_price.setText("INR "+0);
+            holder.txt_products_price.setText("\u20B9 "+0);
         }
 
         if(productsList.get(position).isProduct_fav()){
@@ -89,7 +89,7 @@ public class DoctorProductsFavAdapter extends  RecyclerView.Adapter<RecyclerView
         Log.w(TAG,"Product_price : "+currentItem.getProduct_price());
         if(currentItem.getProduct_price() != 0){
             holder.txt_products_price.setVisibility(View.VISIBLE);
-            holder.txt_products_price.setText("INR "+currentItem.getProduct_price());
+            holder.txt_products_price.setText("\u20B9 "+currentItem.getProduct_price());
         }else{
             holder.txt_products_price.setVisibility(View.GONE);
             holder.txt_products_price.setText("INR 0");
@@ -111,7 +111,7 @@ public class DoctorProductsFavAdapter extends  RecyclerView.Adapter<RecyclerView
         if( productsList.get(position).getProduct_discount_price() != 0) {
             Log.w(TAG, "Product_discount_price if" + productsList.get(position).getProduct_discount_price());
             holder.txt_product_discount_price.setVisibility(View.VISIBLE);
-            holder.txt_product_discount_price.setText("INR "+productsList.get(position).getProduct_discount_price()+"");
+            holder.txt_product_discount_price.setText("\u20B9 "+productsList.get(position).getProduct_discount_price()+"");
             holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
         else{

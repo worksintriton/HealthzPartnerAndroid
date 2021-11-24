@@ -73,7 +73,7 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
             holder.txt_prod_name.setText(manageProductsListResponseList.get(position).getProduct_name());
         }
         if(manageProductsListResponseList.get(position).getProduct_price() != 0) {
-            holder.txt_prod_price.setText("INR " + manageProductsListResponseList.get(position).getProduct_price());
+            holder.txt_prod_price.setText("\u20B9 " + manageProductsListResponseList.get(position).getProduct_price());
         }
         if(manageProductsListResponseList.get(position).getProducts_image() != null && manageProductsListResponseList.get(position).getProducts_image().size()>0) {
             if (manageProductsListResponseList.get(position).getProducts_image().get(0) != null && !manageProductsListResponseList.get(position).getProducts_image().get(0).isEmpty()) {

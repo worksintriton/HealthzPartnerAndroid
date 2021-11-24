@@ -69,7 +69,7 @@ public class SPCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycle
             holder.txt_type.setText(completedAppointmentResponseList.get(position).getService_name());
         }
         if(completedAppointmentResponseList.get(position).getService_amount() != null){
-            holder.txt_service_cost.setText("INR "+completedAppointmentResponseList.get(position).getService_amount());
+            holder.txt_service_cost.setText("\u20B9 "+completedAppointmentResponseList.get(position).getService_amount());
         }
 
       /*  Log.w(TAG,"PetImage : "+completedAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img());

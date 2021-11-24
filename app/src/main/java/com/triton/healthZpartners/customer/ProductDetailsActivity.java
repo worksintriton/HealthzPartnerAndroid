@@ -573,11 +573,11 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                             if(product_discount_price != 0 ){
                                 txt_product_discount_price.setVisibility(View.VISIBLE);
                                 txt_product_discount_price.setPaintFlags(txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                                txt_product_discount_price.setText("INR "+product_discount_price);
+                                txt_product_discount_price.setText("\u20B9 "+product_discount_price);
 
                             }else{
                                 txt_product_discount_price.setVisibility(View.GONE);
-                                txt_product_discount_price.setText("INR "+0);
+                                txt_product_discount_price.setText("\u20B9 "+0);
                             }
                             int product_discount = response.body().getProduct_details().getProduct_discount();
                             String  product_discription = response.body().getProduct_details().getProduct_discription();
@@ -764,10 +764,10 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         }
 
         if(product_price != 0 ){
-            txt_products_price.setText("INR "+product_price);
+            txt_products_price.setText("\u20B9 "+product_price);
 
         }else{
-            txt_products_price.setText("INR "+0);
+            txt_products_price.setText("\u20B9 "+0);
         }
         if(product_discount != 0 ){
             txt_discount.setText(product_discount+" % off");

@@ -98,7 +98,7 @@ public class PetWalkinMissedAppointmentAdapter extends  RecyclerView.Adapter<Rec
 
         }
         if(missedAppointmentResponseList.get(position).getCost() != null){
-            holder.txt_service_cost.setText("INR "+missedAppointmentResponseList.get(position).getCost());
+            holder.txt_service_cost.setText("\u20B9 "+missedAppointmentResponseList.get(position).getCost());
         }
 
 

@@ -78,7 +78,7 @@ public class DoctorWalkinMissedAppointmentAdapter extends  RecyclerView.Adapter<
             holder.txt_type.setText(missedAppointmentResponseList.get(position).getAppointment_types());
         }
         if(missedAppointmentResponseList.get(position).getAmount() != null){
-            holder.txt_service_cost.setText("INR "+missedAppointmentResponseList.get(position).getAmount());
+            holder.txt_service_cost.setText("\u20B9 "+missedAppointmentResponseList.get(position).getAmount());
         }
 
 

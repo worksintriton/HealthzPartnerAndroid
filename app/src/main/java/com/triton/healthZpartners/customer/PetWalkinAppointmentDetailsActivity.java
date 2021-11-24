@@ -599,10 +599,10 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                                 ll_original_price.setVisibility(View.VISIBLE);
                                 ll_discount_price.setVisibility(View.VISIBLE);
                                 if(response.body().getData().getOriginal_price() != 0){
-                                    txt_original_price.setText("INR "+response.body().getData().getOriginal_price());
+                                    txt_original_price.setText("\u20B9 "+response.body().getData().getOriginal_price());
                                 }
                                 if(response.body().getData().getDiscount_price() != 0){
-                                    txt_discount_price.setText("INR "+response.body().getData().getDiscount_price());
+                                    txt_discount_price.setText("\u20B9 "+response.body().getData().getDiscount_price());
                                 }
 
                             }else{
@@ -973,8 +973,8 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
         }
 
         if(order_cost != null && !order_cost.isEmpty()){
-            txt_order_cost.setText("INR "+order_cost);
-            txt_serv_cost.setText("INR "+order_cost);
+            txt_order_cost.setText("\u20B9 "+order_cost);
+            txt_serv_cost.setText("\u20B9 "+order_cost);
             ServiceCost = order_cost;
         }
 
@@ -1233,10 +1233,10 @@ public class PetWalkinAppointmentDetailsActivity extends AppCompatActivity imple
                                 ll_original_price.setVisibility(View.VISIBLE);
                                 ll_discount_price.setVisibility(View.VISIBLE);
                                 if (response.body().getData().getOriginal_price() != 0) {
-                                    txt_original_price.setText("INR " + response.body().getData().getOriginal_price());
+                                    txt_original_price.setText("\u20B9 " + response.body().getData().getOriginal_price());
                                 }
                                 if (response.body().getData().getDiscount_price() != 0) {
-                                    txt_discount_price.setText("INR " + response.body().getData().getDiscount_price());
+                                    txt_discount_price.setText("\u20B9 " + response.body().getData().getDiscount_price());
                                 }
 
                             } else {

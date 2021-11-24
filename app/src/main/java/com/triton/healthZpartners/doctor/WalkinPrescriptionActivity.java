@@ -106,9 +106,7 @@ public class WalkinPrescriptionActivity extends AppCompatActivity implements Dia
     @BindView(R.id.et_quanity)
     EditText et_quanity;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.et_consumption)
-    EditText et_consumption;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.etdoctorcomments)
@@ -405,7 +403,6 @@ public class WalkinPrescriptionActivity extends AppCompatActivity implements Dia
             }
         });
         et_quanity.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-        et_consumption.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
 
 
@@ -708,7 +705,6 @@ public class WalkinPrescriptionActivity extends AppCompatActivity implements Dia
     public void clearField(){
         et_tabletname.setText("");
         et_quanity.setText("");
-        et_consumption.setText("");
         et_tabletname.requestFocus();
         chx_m.setChecked(false);
         chx_a.setChecked(false);

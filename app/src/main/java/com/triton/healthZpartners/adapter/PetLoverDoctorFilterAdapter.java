@@ -90,10 +90,10 @@ public class PetLoverDoctorFilterAdapter extends  RecyclerView.Adapter<RecyclerV
         }
 
         if(doctorFilterDetailsResponseList.get(position).getAmount() != 0) {
-            holder.txt_price.setText("INR " +doctorFilterDetailsResponseList.get(position).getAmount() + "");
+            holder.txt_price.setText("\u20B9 " +doctorFilterDetailsResponseList.get(position).getAmount() + "");
         }else {
 
-            holder.txt_price.setText("INR " +"0");
+            holder.txt_price.setText("\u20B9 " +"0");
         }
 
         Log.w(TAG,"Clinic name : "+doctorFilterDetailsResponseList.get(position).getClinic_name());

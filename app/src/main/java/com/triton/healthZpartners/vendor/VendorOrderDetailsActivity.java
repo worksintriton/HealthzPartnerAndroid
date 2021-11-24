@@ -281,14 +281,14 @@ public class VendorOrderDetailsActivity extends AppCompatActivity implements Vie
                                 txt_product_title.setText(response.body().getData().getProduct_name());
                             }
                             if(response.body().getData().getProduct_price()!=0){
-                                txt_products_price.setText("INR "+response.body().getData().getProduct_price());
+                                txt_products_price.setText("\u20B9 "+response.body().getData().getProduct_price());
                             }
                             if(response.body().getData().getDate_of_booking_display()!=null){
                                 txt_order_date.setText(response.body().getData().getDate_of_booking_display());
                             } if(response.body().getData().getOrder_id()!=null){
                                 txt_booking_id.setText(response.body().getData().getOrder_id());
                             } if(response.body().getData().getGrand_total() !=0){
-                                txt_total_order_cost.setText("INR "+response.body().getData().getGrand_total());
+                                txt_total_order_cost.setText("\u20B9 "+response.body().getData().getGrand_total());
                             }if(response.body().getData().getProduct_quantity() !=0){
                                 txt_quantity.setText(""+response.body().getData().getProduct_quantity());
                             }

@@ -128,17 +128,17 @@ public class ProductDetailsVendorAdapter extends  RecyclerView.Adapter<RecyclerV
         }
         if (product_details.get(position).getProduct_price() != 0 && product_details.get(position).getProduct_count() != 0) {
             if (product_details.get(position).getProduct_count() == 1) {
-                holder.txt_products_price.setText("INR " + product_details.get(position).getProduct_price() + " (" + product_details.get(position).getProduct_count() + " item )");
+                holder.txt_products_price.setText("\u20B9 " + product_details.get(position).getProduct_price() + " (" + product_details.get(position).getProduct_count() + " item )");
             } else {
-                holder.txt_products_price.setText("INR " + product_details.get(position).getProduct_price() + " (" + product_details.get(position).getProduct_count() + " items )");
+                holder.txt_products_price.setText("\u20B9 " + product_details.get(position).getProduct_price() + " (" + product_details.get(position).getProduct_count() + " items )");
 
             }
         }
         else { if (product_details.get(position).getProduct_count() == 1) {
-                holder.txt_products_price.setText("INR " + 0 + " (" + product_details.get(position).getProduct_count() + " item )");
+                holder.txt_products_price.setText("\u20B9 " + 0 + " (" + product_details.get(position).getProduct_count() + " item )");
             }
         else {
-                holder.txt_products_price.setText("INR " + 0 + " (" + product_details.get(position).getProduct_count() + " items )");
+                holder.txt_products_price.setText("\u20B9 " + 0 + " (" + product_details.get(position).getProduct_count() + " items )");
 
             }
 

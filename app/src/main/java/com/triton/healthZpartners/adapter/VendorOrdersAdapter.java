@@ -82,17 +82,17 @@ public class VendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerView.View
         }
         if(orderResponseListAll.get(position).getV_order_price() != 0 && orderResponseListAll.get(position).getV_order_product_count() != 0) {
             if(orderResponseListAll.get(position).getV_order_product_count() == 1){
-                holder.txt_service_cost.setText("INR " + orderResponseListAll.get(position).getV_order_price() + " (" + orderResponseListAll.get(position).getV_order_product_count() + " product )");
+                holder.txt_service_cost.setText("\u20B9 " + orderResponseListAll.get(position).getV_order_price() + " (" + orderResponseListAll.get(position).getV_order_product_count() + " product )");
             }else{
-                holder.txt_service_cost.setText("INR " + orderResponseListAll.get(position).getV_order_price() + " (" + orderResponseListAll.get(position).getV_order_product_count() + " products )");
+                holder.txt_service_cost.setText("\u20B9 " + orderResponseListAll.get(position).getV_order_price() + " (" + orderResponseListAll.get(position).getV_order_product_count() + " products )");
 
             }
         }
         else{
             if(orderResponseListAll.get(position).getV_order_product_count() == 1){
-                holder.txt_service_cost.setText("INR " + 0 + " (" + orderResponseListAll.get(position).getV_order_product_count() + " item )");
+                holder.txt_service_cost.setText("\u20B9 " + 0 + " (" + orderResponseListAll.get(position).getV_order_product_count() + " item )");
             }else{
-                holder.txt_service_cost.setText("INR " + 0 + " (" + orderResponseListAll.get(position).getV_order_product_count() + " items )");
+                holder.txt_service_cost.setText("\u20B9 " + 0 + " (" + orderResponseListAll.get(position).getV_order_product_count() + " items )");
 
             }
 

@@ -104,7 +104,7 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
         Log.w(TAG,"Product_price : "+currentItem.getProduct_price());
         if(currentItem.getProduct_price() != 0){
             holder.txt_products_price.setVisibility(View.VISIBLE);
-            holder.txt_products_price.setText("INR "+currentItem.getProduct_price());
+            holder.txt_products_price.setText("\u20B9 "+currentItem.getProduct_price());
         }else{
             holder.txt_products_price.setVisibility(View.GONE);
             holder.txt_products_price.setText("INR 0");
@@ -126,7 +126,7 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
         if( dataBeanList.get(position).getProduct_discount_price() != 0) {
             Log.w(TAG, "Product_discount_price if" + dataBeanList.get(position).getProduct_discount_price());
             holder.txt_product_discount_price.setVisibility(View.VISIBLE);
-            holder.txt_product_discount_price.setText("INR "+dataBeanList.get(position).getProduct_discount_price()+"");
+            holder.txt_product_discount_price.setText("\u20B9 "+dataBeanList.get(position).getProduct_discount_price()+"");
             holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
         else{

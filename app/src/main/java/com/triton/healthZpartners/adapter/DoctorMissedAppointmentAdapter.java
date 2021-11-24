@@ -72,13 +72,13 @@ public class DoctorMissedAppointmentAdapter extends  RecyclerView.Adapter<Recycl
         }
 
         if(missedAppointmentResponseList.get(position).getMissed_at() != null ){
-        holder.txt_bookedon.setText("Missed on:"+" "+missedAppointmentResponseList.get(position).getMissed_at());}
+        holder.txt_bookedon.setText("Missed On:"+" "+missedAppointmentResponseList.get(position).getMissed_at());}
 
         if(missedAppointmentResponseList.get(position).getAppointment_types() != null){
             holder.txt_type.setText(missedAppointmentResponseList.get(position).getAppointment_types());
         }
         if(missedAppointmentResponseList.get(position).getAmount() != null){
-            holder.txt_service_cost.setText("INR "+missedAppointmentResponseList.get(position).getAmount());
+            holder.txt_service_cost.setText("\u20B9 "+missedAppointmentResponseList.get(position).getAmount());
         }
 
 

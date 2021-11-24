@@ -103,12 +103,9 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
     TextView txt_appointment_date;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_cancel)
-    Button btn_cancel;
+    @BindView(R.id.btn_complete)
+    Button btn_complete;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_add_review)
-    Button btn_add_review;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_prescriptiondetails)
@@ -251,86 +248,10 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
     private String userrate;
     Dialog alertDialog;
     private String appointmentid;
-    //   private List<PetNewAppointmentDetailsResponse.DataBean.PetIdBean.PetImgBean> pet_image;
     private String petAgeandMonth;
 
     private String concatenatedStarNames = "";
 
-    /*  *//* Petlover Bottom Navigation *//*
-
-     *//* Petlover Bottom Navigation *//*
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_care)
-    RelativeLayout rl_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_care)
-    TextView title_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_care)
-    ImageView img_care;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_serv)
-    TextView title_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_serv)
-    ImageView img_serv;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;*/
-
-/*    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_original_price)
-    LinearLayout ll_original_price;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.ll_discount_price)
-    LinearLayout ll_discount_price;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_original_price)
-    TextView txt_original_price;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_discount_price)
-    TextView txt_discount_price;*/
 
 
     @SuppressLint("NonConstantResourceId")
@@ -366,7 +287,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_petappointment_details);
+        setContentView(R.layout.activity_doctor_appointment_details);
         ButterKnife.bind(this);
 
         scrollablContent.setVisibility(View.GONE);
@@ -446,19 +367,10 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
 
 
-        btn_cancel.setVisibility(View.GONE);
+        btn_complete.setVisibility(View.GONE);
         img_videocall.setVisibility(View.GONE);
-        btn_add_review.setVisibility(View.GONE);
         btn_prescriptiondetails.setVisibility(View.GONE);
-        btn_reschedule_appointment.setVisibility(View.GONE);
 
-
-//        bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
-//        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-
-        /**/
 
 
         fab = include_petlover_footer.findViewById(R.id.fab);
@@ -466,7 +378,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
         bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
         bottom_navigation_view.setItemIconTintList(null);
         bottom_navigation_view.setOnNavigationItemSelectedListener(this);
-        bottom_navigation_view.getMenu().findItem(R.id.care).setChecked(true);
+        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -482,68 +394,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
             compareDatesandTime(currentDateandTime,bookedat);
         }
 
-        if(from != null){
-            if(from.equalsIgnoreCase("PetNewAppointmentAdapter")){
-                if(appointmentfor != null){
-                    if(appointmentfor.equalsIgnoreCase("Doctor")){
-                        img_videocall.setVisibility(View.VISIBLE);
-                        btn_cancel.setVisibility(View.VISIBLE);
 
-
-                        if(isVaildDate){
-                            btn_cancel.setVisibility(View.VISIBLE);
-                        }else{
-                            btn_cancel.setVisibility(View.GONE);
-                        }
-                        if(startappointmentstatus != null && !startappointmentstatus.equalsIgnoreCase("Not Started")) {
-                            img_videocall.setBackgroundResource(R.drawable.video_camera_gray);
-                            btn_cancel.setVisibility(View.GONE);
-                        }else{
-                            img_videocall.setBackgroundResource(R.drawable.video_camera_green);
-                        }
-
-
-
-
-                    }else if(appointmentfor.equalsIgnoreCase("SP")){
-                        btn_cancel.setVisibility(View.VISIBLE);
-                        if(userrate != null && userrate.equalsIgnoreCase("0")){
-                            btn_add_review.setVisibility(View.VISIBLE);
-                        }else{
-                            btn_add_review.setVisibility(View.GONE);
-
-                        }
-                    }
-                }
-
-            }
-            else if(from.equalsIgnoreCase("PetMissedAppointmentAdapter")){
-                btn_cancel.setVisibility(View.GONE);
-                img_videocall.setVisibility(View.GONE);
-                btn_add_review.setVisibility(View.GONE);
-                btn_prescriptiondetails.setVisibility(View.GONE);
-                img_videocall.setVisibility(View.GONE);
-
-            }
-            else if(from.equalsIgnoreCase("PetCompletedAppointmentAdapter")) {
-                img_videocall.setVisibility(View.GONE);
-
-                if (userrate != null && userrate.equalsIgnoreCase("0")) {
-                    btn_add_review.setVisibility(View.VISIBLE);
-                }
-                else {
-                    btn_add_review.setVisibility(View.GONE);
-
-                }
-
-                if (appointmentfor.equalsIgnoreCase("Doctor")) {
-                    btn_prescriptiondetails.setVisibility(View.VISIBLE);
-                }else{
-                    btn_prescriptiondetails.setVisibility(View.GONE);
-                }
-            }
-
-        }
 
         btn_prescriptiondetails.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), DoctorPrescriptionDetailsActivity.class);
@@ -551,20 +402,9 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
             startActivity(intent);
         });
 
-        btn_add_review.setOnClickListener(v -> showAddReview(appointment_id,appointmentfor));
 
-        if(appointmentfor != null){
-            if(appointmentfor.equalsIgnoreCase("Doctor")){
-                if (new ConnectionDetector(DoctorAppointmentDetailsActivity.this).isNetworkAvailable(DoctorAppointmentDetailsActivity.this)) {
-                    petNewAppointmentResponseCall();
-                }
-            }
-            else if(appointmentfor.equalsIgnoreCase("SP")){
-                if (new ConnectionDetector(DoctorAppointmentDetailsActivity.this).isNetworkAvailable(DoctorAppointmentDetailsActivity.this)) {
-                    spAppointmentDetailsResponse();
-                }
-            }
-
+        if (new ConnectionDetector(DoctorAppointmentDetailsActivity.this).isNetworkAvailable(DoctorAppointmentDetailsActivity.this)) {
+            petNewAppointmentResponseCall();
         }
     }
 
@@ -594,20 +434,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
 
                         if(response.body().getData() != null){
-                           /* if(response.body().getData().getCoupon_status() != null && response.body().getData().getCoupon_status().equalsIgnoreCase("Applied")){
-                                ll_original_price.setVisibility(View.VISIBLE);
-                                ll_discount_price.setVisibility(View.VISIBLE);
-                                if(response.body().getData().getOriginal_price() != 0){
-                                    txt_original_price.setText("INR "+response.body().getData().getOriginal_price());
-                                }
-                                if(response.body().getData().getDiscount_price() != 0){
-                                    txt_discount_price.setText("INR "+response.body().getData().getDiscount_price());
-                                }
 
-                            }else{
-                                ll_original_price.setVisibility(View.GONE);
-                                ll_discount_price.setVisibility(View.GONE);
-                            }*/
                         }
 
 
@@ -657,11 +484,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
                             }
 
-                          /*  if(pet_age != null && !pet_age.isEmpty()){
-                                txt_age.setText(pet_age);
-                            }else {
-                                txt_age.setText("");
-                            }*/
+
 
                             Paymentmethod = response.body().getData().getPayment_method();
                             doctorid = response.body().getData().getDoc_business_info().get(0).getUser_id();
@@ -678,67 +501,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
 
 
-                            if(from != null){
-                                if(from.equalsIgnoreCase("PetNewAppointmentAdapter")){
-                                    if(appointmentfor != null){
-                                        if(appointmentfor.equalsIgnoreCase("Doctor")){
-                                            btn_cancel.setVisibility(View.VISIBLE);
-                                            if(isVaildDate){
-                                                btn_cancel.setVisibility(View.VISIBLE);
-                                            }else{
-                                                btn_cancel.setVisibility(View.GONE);
-                                            }
-                                            if(startappointmentstatus != null && !startappointmentstatus.equalsIgnoreCase("Not Started")) {
-                                                btn_cancel.setVisibility(View.GONE);
-                                            }
-                                            if(response.body().getData().getCommunication_type() != null && response.body().getData().getCommunication_type().equalsIgnoreCase("Online")){
-                                                img_videocall.setVisibility(View.VISIBLE);
-                                            }else{
-                                                img_videocall.setVisibility(View.GONE);
-                                            }
 
-
-
-
-                                        }else if(appointmentfor.equalsIgnoreCase("SP")){
-                                            btn_cancel.setVisibility(View.VISIBLE);
-                                            if(userrate != null && userrate.equalsIgnoreCase("0")){
-                                                btn_add_review.setVisibility(View.VISIBLE);
-                                            }else{
-                                                btn_add_review.setVisibility(View.GONE);
-
-                                            }
-                                        }
-                                    }
-
-                                }
-                                else if(from.equalsIgnoreCase("PetMissedAppointmentAdapter")){
-                                    btn_cancel.setVisibility(View.GONE);
-                                    img_videocall.setVisibility(View.GONE);
-                                    btn_add_review.setVisibility(View.GONE);
-                                    btn_prescriptiondetails.setVisibility(View.GONE);
-                                    img_videocall.setVisibility(View.GONE);
-
-                                }
-                                else if(from.equalsIgnoreCase("PetCompletedAppointmentAdapter")) {
-                                    img_videocall.setVisibility(View.GONE);
-
-                                    if (userrate != null && userrate.equalsIgnoreCase("0")) {
-                                        btn_add_review.setVisibility(View.VISIBLE);
-                                    }
-                                    else {
-                                        btn_add_review.setVisibility(View.GONE);
-
-                                    }
-
-                                    if (appointmentfor.equalsIgnoreCase("Doctor")) {
-                                        btn_prescriptiondetails.setVisibility(View.VISIBLE);
-                                    }else{
-                                        btn_prescriptiondetails.setVisibility(View.GONE);
-                                    }
-                                }
-
-                            }
 
 
 
@@ -747,15 +510,16 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
                             if(response.body().getData().getBooking_date_time() != null){
                                 txt_appointment_date.setText(response.body().getData().getBooking_date_time());
                             }
-                            if (response.body().getData().getFamily_id().getCovide_vac()!=null&&!response.body().getData().getFamily_id().getCovide_vac().equals("Yes")) {
+                            if (response.body().getData().getFamily_id().getCovide_vac()!=null && !response.body().getData().getFamily_id().getCovide_vac().equals("Yes")) {
                                 vaccinated = "Yes";
                                 ll_vacinateddate.setVisibility(View.VISIBLE);
                                 txt_vaccinated.setText(response.body().getData().getFamily_id().getCovide_vac());
 
                             }
                             else {
-                                ll_vacinateddate.setVisibility(View.GONE);
+                                ll_vacinateddate.setVisibility(View.VISIBLE);
                                 vaccinated = "No";
+                                txt_vaccinated.setText(response.body().getData().getFamily_id().getCovide_vac());
                             }
 
                             String order_date = response.body().getData().getDate_and_time();
@@ -777,11 +541,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
                             if(response.body().getData().getVisit_type() != null &&response.body().getData().getVisit_type().equalsIgnoreCase("Home")){
                                 ll_home_address.setVisibility(View.VISIBLE);
-                              /*  if(response.body().getAddress() != null){
-                                    if(response.body().getAddress().getLocation_address() != null){
-                                        txt_home_address.setText(response.body().getAddress().getLocation_address());
-                                    }
-                                }*/
+
                             }
                             else{
                                 ll_home_address.setVisibility(View.GONE);
@@ -846,24 +606,69 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
                             txt_comments.setText("");
                         }
 
-                        if(from != null && from.equalsIgnoreCase("PetCompletedAppointmentAdapter")){
-                            if(response.body().getData().getDiagnosis() != null && !response.body().getData().getDiagnosis().isEmpty()){
-                                ll_diagnosis.setVisibility(View.VISIBLE);
-                                txt_diagnosis.setVisibility(View.VISIBLE);
-                                txt_diagnosis.setText(response.body().getData().getDiagnosis());
+
+                        if(response.body().getData().getDiagnosis() != null && !response.body().getData().getDiagnosis().isEmpty()){
+                            ll_diagnosis.setVisibility(View.VISIBLE);
+                            txt_diagnosis.setVisibility(View.VISIBLE);
+                            txt_diagnosis.setText(response.body().getData().getDiagnosis());
+
+                        }
+
+                        if(response.body().getData().getDoctor_comment() != null && !response.body().getData().getDoctor_comment().isEmpty()){
+                            ll_doctor_comment.setVisibility(View.VISIBLE);
+                            txt_doctor_comment.setVisibility(View.VISIBLE);
+                            txt_doctor_comment.setText(response.body().getData().getDoctor_comment());
+
+                        }
+
+
+                        if(from != null){
+                            if(from.equalsIgnoreCase("DoctorNewAppointmentAdapter")){
+                                img_videocall.setVisibility(View.GONE);
+                                btn_complete.setVisibility(View.VISIBLE);
+                                btn_prescriptiondetails.setVisibility(View.GONE);
+                                if(response.body().getData().getCommunication_type() != null && !response.body().getData().getCommunication_type().isEmpty()){
+                                    if(response.body().getData().getCommunication_type().equalsIgnoreCase("Online")){
+                                        img_videocall.setVisibility(View.VISIBLE);
+                                    }else{
+                                        img_videocall.setVisibility(View.GONE);
+                                    }
+                                }
+                                btn_complete.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Intent i = new Intent(getApplicationContext(), PrescriptionActivity.class);
+                                        i.putExtra("petname",response.body().getData().getFamily_id().getName());
+                                        i.putExtra("pettype",response.body().getData().getFamily_id().getRelation_type());
+                                        i.putExtra("id",response.body().getData().get_id());
+                                        i.putExtra("userid",response.body().getData().getUser_id().get_id());
+                                        i.putExtra("allergies",response.body().getData().getAllergies());
+                                        i.putExtra("probleminfo",response.body().getData().getProblem_info());
+                                        i.putExtra("doctorid",response.body().getData().getDoctor_id().get_id());
+                                        i.putExtra("paymentmethod",response.body().getData().getPayment_method());
+                                        startActivity(i);
+                                    }
+                                });
+
+
 
                             }
-                            /*if(response.body().getData().getSub_diagnosis() != null && !response.body().getData().getSub_diagnosis().isEmpty()){
-                                ll_sub_diagnosis.setVisibility(View.VISIBLE);
-                                txt_sub_diagnosis.setVisibility(View.VISIBLE);
-                                txt_sub_diagnosis.setText(response.body().getData().getSub_diagnosis());
-                            }*/
-                            if(response.body().getData().getDoctor_comment() != null && !response.body().getData().getDoctor_comment().isEmpty()){
-                                ll_doctor_comment.setVisibility(View.VISIBLE);
-                                txt_doctor_comment.setVisibility(View.VISIBLE);
-                                txt_doctor_comment.setText(response.body().getData().getDoctor_comment());
+                            else if(from.equalsIgnoreCase("DoctorMissedAppointmentAdapter")){
+                                img_videocall.setVisibility(View.GONE);
+                                btn_complete.setVisibility(View.GONE);
+                                btn_prescriptiondetails.setVisibility(View.GONE);
 
                             }
+                            else if(from.equalsIgnoreCase("DoctorCompletedAppointmentAdapter")) {
+                                img_videocall.setVisibility(View.GONE);
+                                btn_complete.setVisibility(View.GONE);
+                                btn_prescriptiondetails.setVisibility(View.VISIBLE);
+
+
+                            }
+
+                        }
+
 
 
 
@@ -878,7 +683,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
 
                 }
-            }
+
 
             @Override
             public void onFailure(@NonNull Call<PetNewAppointmentDetailsResponse> call, @NonNull Throwable t) {
@@ -1000,20 +805,14 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
 
         img_videocall.setOnClickListener(v -> {
-            Log.w(TAG,"Start_appointment_status : "+start_appointment_status);
-            if(start_appointment_status != null && start_appointment_status.equalsIgnoreCase("Not Started")){
-                Toasty.warning(DoctorAppointmentDetailsActivity.this,"Doctor is yet to start the Appointment. Please wait for the doctor to initiate the Appointment", Toast.LENGTH_SHORT, true).show();
-            }else {
-                Intent i = new Intent(DoctorAppointmentDetailsActivity.this, VideoCallDoctorActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.putExtra("id", appointment_id);
-                Log.w(TAG, "ID-->" + appointment_id);
-                startActivity(i);
-            }
+            Intent i = new Intent(DoctorAppointmentDetailsActivity.this, VideoCallDoctorActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.putExtra("id", appointment_id);
+            Log.w(TAG, "ID-->" + appointment_id);
+            startActivity(i);
 
 
         });
 
-        btn_cancel.setOnClickListener(v -> showStatusAlert(appointment_id,appointmentfor));
 
     }
 
@@ -1154,33 +953,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
         super.onBackPressed();
         finish();
     }
-//
-//    @SuppressLint("NonConstantResourceId")
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//        switch (item.getItemId()) {
-//            case R.id.home:
-//                callDirections("1");
-//                break;
-//            case R.id.shop:
-//                callDirections("2");
-//                break;
-//            case R.id.services:
-//                callDirections("3");
-//                break;
-//            case R.id.care:
-//                callDirections("4");
-//                break;
-//            case R.id.community:
-//                callDirections("5");
-//                break;
-//
-//            default:
-//                return  false;
-//        }
-//        return true;
-//    }
+
 
 
     public void callDirections(String tag){
@@ -1229,7 +1002,6 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
         RestApiInterface ApiService = APIClient.getClient().create(RestApiInterface.class);
         Call<SPAppointmentDetailsResponse> call = ApiService.spAppointmentDetailsResponse(RestUtils.getContentType(), appointmentDetailsRequest());
         Log.w(TAG, "url  :%s" + call.request().url().toString());
-
         call.enqueue(new Callback<SPAppointmentDetailsResponse>() {
             @SuppressLint({"LongLogTag", "LogNotTimber"})
             @Override
@@ -1247,10 +1019,10 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
                                  ll_original_price.setVisibility(View.VISIBLE);
                                  ll_discount_price.setVisibility(View.VISIBLE);
                                  if(response.body().getData().getOriginal_price() != 0){
-                                     txt_original_price.setText("INR "+response.body().getData().getOriginal_price());
+                                     txt_original_price.setText("\u20B9 "+response.body().getData().getOriginal_price());
                                  }
                                  if(response.body().getData().getDiscount_price() != 0){
-                                     txt_discount_price.setText("INR "+response.body().getData().getDiscount_price());
+                                     txt_discount_price.setText("\u20B9 "+response.body().getData().getDiscount_price());
                                  }
 
                              }else{
@@ -1258,6 +1030,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
                                  ll_discount_price.setVisibility(View.GONE);
                              }
                          }*/
+
                         if (response.body().getData() != null) {
 
                             spid = response.body().getData().getSp_id().get_id();

@@ -122,7 +122,7 @@ public class PetWalkinNewAppointmentAdapter extends  RecyclerView.Adapter<Recycl
         }
 
             if(newAppointmentResponseList.get(position).getCost() != null){
-            holder.txt_service_cost.setText("INR "+newAppointmentResponseList.get(position).getCost());
+            holder.txt_service_cost.setText("\u20B9 "+newAppointmentResponseList.get(position).getCost());
             }
 
         if(newAppointmentResponseList.get(position).getBooked_at() != null){

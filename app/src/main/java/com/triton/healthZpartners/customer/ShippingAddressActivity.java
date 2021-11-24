@@ -249,7 +249,7 @@ public class ShippingAddressActivity extends AppCompatActivity implements View.O
 
             if (grand_total!=0){
 
-                txt_grand_total.setText("INR "+ grand_total);
+                txt_grand_total.setText("\u20B9 "+ grand_total);
             }
 
             prodcut_count = extras.getInt("prodcut_count");

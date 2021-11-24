@@ -109,7 +109,7 @@ public class DoctorWalkinNewAppointmentAdapter extends  RecyclerView.Adapter<Rec
             holder.txt_type.setText(newAppointmentResponseList.get(position).getAppointment_types());
         }
         if(newAppointmentResponseList.get(position).getAmount() != null){
-            holder.txt_service_cost.setText("INR "+newAppointmentResponseList.get(position).getAmount());
+            holder.txt_service_cost.setText("\u20B9 "+newAppointmentResponseList.get(position).getAmount());
         }
 
         if(newAppointmentResponseList.get(position).getBooking_date_time() != null){

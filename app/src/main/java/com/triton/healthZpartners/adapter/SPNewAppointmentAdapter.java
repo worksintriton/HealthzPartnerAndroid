@@ -85,7 +85,7 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
             holder.txt_type.setText(newAppointmentResponseList.get(position).getService_name());
         }
         if(newAppointmentResponseList.get(position).getService_amount() != null){
-            holder.txt_service_cost.setText("INR "+newAppointmentResponseList.get(position).getService_amount());
+            holder.txt_service_cost.setText("\u20B9 "+newAppointmentResponseList.get(position).getService_amount());
         }
 
         if(newAppointmentResponseList.get(position).getBooking_date_time() != null){

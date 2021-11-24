@@ -70,12 +70,12 @@ public class DoctorCompletedAppointmentAdapter extends  RecyclerView.Adapter<Rec
         }
 
         if(completedAppointmentResponseList.get(position).getCompleted_at() != null){
-        holder.txt_bookedon.setText("Completed on:"+" "+completedAppointmentResponseList.get(position).getCompleted_at());}
+        holder.txt_bookedon.setText("Completed On:"+" "+completedAppointmentResponseList.get(position).getCompleted_at());}
         if(completedAppointmentResponseList.get(position).getAppointment_types() != null){
             holder.txt_type.setText(completedAppointmentResponseList.get(position).getAppointment_types());
         }
         if(completedAppointmentResponseList.get(position).getAmount() != null){
-            holder.txt_service_cost.setText("INR "+completedAppointmentResponseList.get(position).getAmount());
+            holder.txt_service_cost.setText("\u20B9 "+completedAppointmentResponseList.get(position).getAmount());
         }
 
         if (petImgBeanList != null && petImgBeanList.size() > 0) {

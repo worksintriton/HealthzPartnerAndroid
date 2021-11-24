@@ -43,7 +43,8 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/video_camera_green"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

@@ -57,6 +57,12 @@ public class AddPrescriptionsListAdapter extends RecyclerView.Adapter<AddPrescri
         if(currentItem.getConsumption().isNight()){
             holder.chx_n.setChecked(true);
         }
+        if(currentItem.getIntakeBean().isAfterfood()){
+            holder.chx_afterfood.setChecked(true);
+        }
+        if(currentItem.getIntakeBean().isBeforefood()){
+            holder.chx_beforefood.setChecked(true);
+        }
 
         holder.removeImg.setOnClickListener(view -> {
             prescriptionDataList.remove(position);
@@ -72,7 +78,7 @@ public class AddPrescriptionsListAdapter extends RecyclerView.Adapter<AddPrescri
 
     public static class AddImageListHolder extends RecyclerView.ViewHolder {
         TextView tv_tabletname,tv_quanity;
-        CheckBox chx_m,chx_a,chx_n;
+        CheckBox chx_m,chx_a,chx_n,chx_afterfood,chx_beforefood;
         ImageView removeImg;
         public AddImageListHolder(View itemView) {
             super(itemView);
@@ -81,10 +87,14 @@ public class AddPrescriptionsListAdapter extends RecyclerView.Adapter<AddPrescri
             chx_m = itemView.findViewById(R.id.chx_m);
             chx_a = itemView.findViewById(R.id.chx_a);
             chx_n = itemView.findViewById(R.id.chx_n);
+            chx_afterfood = itemView.findViewById(R.id.chx_afterfood);
+            chx_beforefood = itemView.findViewById(R.id.chx_beforefood);
             removeImg = itemView.findViewById(R.id.removeImg);
             chx_m.setClickable(false);
             chx_a.setClickable(false);
             chx_n.setClickable(false);
+            chx_afterfood.setClickable(false);
+            chx_beforefood.setClickable(false);
         }
     }
 

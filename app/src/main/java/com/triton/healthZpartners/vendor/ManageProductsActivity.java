@@ -885,9 +885,9 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
                             if(discountstatus){
                                 txt_discount_price.setText(response.body().getData().getDiscount()+" %");
                             }else{
-                                txt_discount_price.setText("INR "+response.body().getData().getDiscount_amount());
+                                txt_discount_price.setText("\u20B9 "+response.body().getData().getDiscount_amount());
                             }
-                            txt_cost.setText("INR " +response.body().getData().getCost());
+                            txt_cost.setText("\u20B9 " +response.body().getData().getCost());
 
                         }
 

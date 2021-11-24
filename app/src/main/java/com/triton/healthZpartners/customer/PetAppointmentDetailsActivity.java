@@ -597,10 +597,10 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                 ll_original_price.setVisibility(View.VISIBLE);
                                 ll_discount_price.setVisibility(View.VISIBLE);
                                 if(response.body().getData().getOriginal_price() != 0){
-                                    txt_original_price.setText("INR "+response.body().getData().getOriginal_price());
+                                    txt_original_price.setText("\u20B9 "+response.body().getData().getOriginal_price());
                                 }
                                 if(response.body().getData().getDiscount_price() != 0){
-                                    txt_discount_price.setText("INR "+response.body().getData().getDiscount_price());
+                                    txt_discount_price.setText("\u20B9 "+response.body().getData().getDiscount_price());
                                 }
 
                             }else{
@@ -1246,10 +1246,10 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                                  ll_original_price.setVisibility(View.VISIBLE);
                                  ll_discount_price.setVisibility(View.VISIBLE);
                                  if(response.body().getData().getOriginal_price() != 0){
-                                     txt_original_price.setText("INR "+response.body().getData().getOriginal_price());
+                                     txt_original_price.setText("\u20B9 "+response.body().getData().getOriginal_price());
                                  }
                                  if(response.body().getData().getDiscount_price() != 0){
-                                     txt_discount_price.setText("INR "+response.body().getData().getDiscount_price());
+                                     txt_discount_price.setText("\u20B9 "+response.body().getData().getDiscount_price());
                                  }
 
                              }else{

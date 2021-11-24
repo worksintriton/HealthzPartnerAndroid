@@ -20,11 +20,12 @@
                         android:id="@+id/ch_days"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
+
                 <TextView
                     android:id="@+id/txt_days"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/futuramediumbt"
+                    android:fontFamily="@font/montserrat"
                     android:gravity="center_horizontal"
                     android:text="Monday"
                     android:textColor="@color/black"

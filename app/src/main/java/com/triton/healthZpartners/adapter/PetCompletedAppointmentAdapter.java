@@ -96,7 +96,7 @@ public class PetCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycl
 
         }
         if(completedAppointmentResponseList.get(position).getCost() != null){
-            holder.txt_service_cost.setText("INR "+completedAppointmentResponseList.get(position).getCost());
+            holder.txt_service_cost.setText("\u20B9 "+completedAppointmentResponseList.get(position).getCost());
         }
 
 

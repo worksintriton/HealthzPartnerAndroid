@@ -867,9 +867,9 @@ public class VendorUpdateOrderStatusActivity extends AppCompatActivity implement
         }
 
         if (product_pr != 0) {
-            txt_products_price.setText(" INR " + product_pr);
+            txt_products_price.setText("\u20B9 " + product_pr);
         }else{
-            txt_products_price.setText(" INR " + 0);
+            txt_products_price.setText("\u20B9 " + 0);
         }
 
         if (date_of_booking != null && !date_of_booking.isEmpty()) {
@@ -887,9 +887,9 @@ public class VendorUpdateOrderStatusActivity extends AppCompatActivity implement
         }
 
         if (order_total != 0) {
-            txt_total_order_cost.setText(" INR "+order_total);
+            txt_total_order_cost.setText("\u20B9 "+order_total);
         }else{
-            txt_total_order_cost.setText(" INR "+0);
+            txt_total_order_cost.setText("\u20B9 "+0);
         }
 
         if (quantity != 0) {

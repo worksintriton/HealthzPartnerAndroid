@@ -17,7 +17,7 @@
             android:id="@+id/toolbar_header"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/new_header_bg"
+            android:background="@color/green"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
             app:popupTheme="@style/AppTheme.PopupOverlay"
@@ -30,7 +30,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="15dp"
-                android:src="@drawable/left_arrow"
+                android:src="@drawable/back_arrow"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/futuramediumbt"
                 android:text="@string/notification"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/big_txt_size"
                 android:textStyle="bold"/>
 

@@ -243,7 +243,7 @@ public class PetReturnOrderActivity extends AppCompatActivity implements View.On
                 txt_product_title.setText(productname);
             }
             if(productprice != 0 && productquantity != 0) {
-                txt_products_price.setText("INR " + productprice + " (" + productquantity + " items )");
+                txt_products_price.setText("\u20B9 " + productprice + " (" + productquantity + " items )");
             }
             if(completeddate != null){
                 txt_delivered_date.setText("Delivered:"+" "+completeddate);

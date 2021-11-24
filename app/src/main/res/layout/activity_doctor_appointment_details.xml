@@ -143,7 +143,7 @@
                                 android:layout_height="24dp"
                                 android:layout_gravity="end"
                                 android:layout_marginTop="5dp"
-                                android:src="@drawable/video_camera_gray"
+                                android:src="@drawable/video_camera_green"
                                 tools:ignore="ContentDescription" />
 
                         </LinearLayout>
@@ -151,8 +151,8 @@
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cv_user"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
+                            android:layout_width="100dp"
+                            android:layout_height="140dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             app:cardPreventCornerOverlap="false"
@@ -168,7 +168,8 @@
                                     android:layout_height="match_parent"
                                     android:contentDescription="@string/image"
                                     android:scaleType="fitXY"
-                                    app:srcCompat="@drawable/image_thumbnail" />
+                                    app:srcCompat="@drawable/image_thumbnail"
+                                    android:layout_marginTop="10dp"/>
 
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>
@@ -270,56 +271,31 @@
                             android:text="@string/appointmentdateandtime"
                             android:textColor="@color/black"
                             android:textSize="12sp" />
-
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/cv_user"
+                            android:layout_below="@id/txt_appointment_date"
+                            android:layout_alignStart="@id/txt_usrname"
                             android:layout_centerHorizontal="false"
                             android:layout_marginTop="10dp"
                             android:orientation="horizontal">
 
-                            <Button
-                                android:id="@+id/btn_cancel"
-                                android:layout_width="110dp"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/orange_background_button"
-                                android:fontFamily="@font/montserrat"
-                                android:text="@string/cancel"
-                                android:textAllCaps="false"
-                                android:textColor="@color/white"
-                                android:textSize="12sp"
-                                tools:ignore="ButtonStyle" />
+
 
                             <Button
-                                android:id="@+id/btn_accept"
+                                android:id="@+id/btn_complete"
                                 android:layout_width="110dp"
                                 android:layout_height="35dp"
                                 android:layout_marginEnd="10dp"
-                                android:background="@drawable/green_bgm_border"
-                                android:fontFamily="@font/futuramediumbt"
-                                android:text="@string/accept"
-                                android:textAllCaps="false"
-                                android:textColor="@color/white"
-                                android:visibility="gone"
-                                tools:ignore="ButtonStyle" />
-
-
-                            <Button
-                                android:id="@+id/btn_add_review"
-                                android:layout_width="110dp"
-                                android:layout_height="35dp"
-                                android:layout_marginEnd="5dp"
                                 android:background="@drawable/new_rounded_corner_btn"
-                                android:fontFamily="@font/montserrat"
-                                android:text="@string/add_review"
+                                android:fontFamily="@font/futuramediumbt"
+                                android:text="@string/complete"
                                 android:textAllCaps="false"
                                 android:textColor="@color/white"
-                                android:textSize="12sp"
                                 tools:ignore="ButtonStyle" />
+
+
+
 
                             <Button
                                 android:id="@+id/btn_prescriptiondetails"
@@ -338,6 +314,8 @@
 
 
                         </LinearLayout>
+
+
 
 
                     </RelativeLayout>
@@ -446,7 +424,7 @@
                             android:layout_width="@dimen/width_appoitmentdetails"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat"
-                            android:text="@string/date_of_birth"
+                            android:text="@string/age"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
@@ -865,7 +843,7 @@
                             android:layout_width="@dimen/width_appoitmentdetails"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat"
-                            android:text="Cost"
+                            android:text="@string/consultation_fees"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
@@ -1095,7 +1073,7 @@
             android:id="@+id/include_petlover_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            layout="@layout/toolbar_layout_petlover_footer_new_shaped" />
+            layout="@layout/toolbar_layout_doctor_footer_new_shaped" />
 
     </LinearLayout>
 
