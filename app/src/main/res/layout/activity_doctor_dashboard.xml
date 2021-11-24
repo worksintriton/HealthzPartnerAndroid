@@ -61,11 +61,11 @@
             app:backgroundTint="@color/white"
             app:elevation="0dp"
             app:itemIconSize="18dp"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/bottom_navigation_doctor"
             app:itemIconTint="@color/selector"
             app:itemRippleColor="@android:color/white"
-            app:itemTextColor="@color/selector"/>
+            app:itemTextColor="@color/selector"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation_doctor" />
 
 
     </FrameLayout>

@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,6 +23,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
+import com.github.siyamed.shapeimageview.CircularImageView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
@@ -37,6 +41,7 @@ import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
 import com.triton.healthZpartners.customer.AddYourPetOldUserActivity;
 
+import com.triton.healthZpartners.customer.CustomerDashboardActivity;
 import com.triton.healthZpartners.requestpojo.DefaultLocationRequest;
 import com.triton.healthZpartners.requestpojo.DoctorDetailsByUserIdRequest;
 
@@ -63,7 +68,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DoctorProfileScreenActivity extends AppCompatActivity implements View.OnClickListener {
+public class DoctorProfileScreenActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
     private  String TAG = "DoctorProfileScreenActivity";
 
     @SuppressLint("NonConstantResourceId")
@@ -99,9 +104,9 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
     TextView txt_manage_address;
 
 
-    @SuppressLint("NonConstantResourceId")
+/*    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_change_password)
-    TextView txt_change_password;
+    TextView txt_change_password;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
@@ -138,19 +143,30 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
     @BindView(R.id.txt_clinic_address)
     TextView txt_clinic_address;
 
-   @SuppressLint("NonConstantResourceId")
+/*   @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_notification)
-    ImageView img_notification;
+    ImageView img_notification;*/
 
 
 
+/*
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_doctor_footer)
     View include_doctor_footer;
 
 
+*/
+    /* Petlover Bottom Navigation */
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
+
+    public static String active_tag = "1";
 
 
     private SessionManager session;
@@ -177,7 +193,11 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
     private String latlng;
     private String PostalCode;
 
-    /* Bottom Navigation */
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_clinicname)
+    TextView txt_clinicname;
+
+   /* *//* Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -195,9 +215,7 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
     @BindView(R.id.title_shop)
     TextView title_shop;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_clinicname)
-    TextView txt_clinicname;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_shop)
@@ -218,7 +236,7 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
     RelativeLayout rl_homes;
-
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -261,6 +279,7 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
 
 
         }
+/*
 
         img_notification.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -270,6 +289,38 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
         });
 
 
+*/
+        bottomNavigation.setSelectedItemId(R.id.shop);
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
+
+/*        if(active_tag != null){
+            if(active_tag.equalsIgnoreCase("1")){
+                bottomNavigation.setSelectedItemId(R.id.home);
+            }else if(active_tag.equalsIgnoreCase("2")){
+                bottomNavigation.setSelectedItemId(R.id.shop);
+            }else if(active_tag.equalsIgnoreCase("3")){
+                bottomNavigation.setSelectedItemId(R.id.services);
+            }else if(active_tag.equalsIgnoreCase("4")){
+                bottomNavigation.setSelectedItemId(R.id.care);
+            } else if(active_tag.equalsIgnoreCase("5")){
+                bottomNavigation.setSelectedItemId(R.id.community);
+            }
+        }
+        else{
+
+        }*/
+
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
 
 
         txt_usrname.setText(name);
@@ -300,14 +351,14 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
 
         img_back.setOnClickListener(this);
         txt_manage_address.setOnClickListener(this);
-        txt_change_password.setOnClickListener(this);
+      //  txt_change_password.setOnClickListener(this);
         txt_logout.setOnClickListener(this);
         txt_edit_profile.setOnClickListener(this);
         txt_edit_image.setOnClickListener(this);
         txt_edit_doc_business_info.setOnClickListener(this);
-
+/*
         //bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-        /*home*/
+        *//*home*//*
 
         title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_shop.setImageResource(R.drawable.grey_shop);
@@ -317,7 +368,7 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
         rl_home.setOnClickListener(this);
         rl_shop.setOnClickListener(this);
         rl_comn.setOnClickListener(this);
-        rl_homes.setOnClickListener(this);
+        rl_homes.setOnClickListener(this);*/
 
 
 
@@ -670,8 +721,34 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
         }
 
 
-
-
     }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
+
 
 }

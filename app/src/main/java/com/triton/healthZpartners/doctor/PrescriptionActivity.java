@@ -109,8 +109,6 @@ public class PrescriptionActivity extends AppCompatActivity implements Diagnosis
     @BindView(R.id.et_quanity)
     EditText et_quanity;
 
-
-
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.etdoctorcomments)
     EditText etdoctorcomments;
@@ -277,6 +275,10 @@ public class PrescriptionActivity extends AppCompatActivity implements Diagnosis
     @BindView(R.id.txt_sub_diagnosis)
     TextView txt_sub_diagnosis;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_headername)
+    LinearLayout ll_headername;
+
     private final List<DocBusInfoUploadRequest.GovtIdPicBean> govtIdPicBeans = new ArrayList<>();
 
     int i =0;
@@ -308,6 +310,7 @@ public class PrescriptionActivity extends AppCompatActivity implements Diagnosis
         Doctor_ID = user.get(SessionManager.KEY_ID);
 
         avi_indicator.setVisibility(View.GONE);
+        ll_headername.setVisibility(View.GONE);
 
 
         ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
@@ -369,48 +372,7 @@ public class PrescriptionActivity extends AppCompatActivity implements Diagnosis
 
         img_back.setOnClickListener(v -> onBackPressed());
 
-//        sprdiagnosistype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @SuppressLint("LogNotTimber")
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
-//                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-//                DiagnosisType = sprdiagnosistype.getSelectedItem().toString();
-//                DiagnosisTypeId = hashMap_diagnosis_id.get(DiagnosisType);
-//                subDiagnosisListResponseCall(DiagnosisTypeId);
-//                Log.w(TAG, "DiagnosisTypeId : " + DiagnosisTypeId + " DiagnosisType :" + DiagnosisType);
-//
-//                if(DiagnosisType != null && !DiagnosisType.equalsIgnoreCase("Diagnosis Type")){
-//                    rl_sub_diagnosis.setVisibility(View.VISIBLE);
-//                }else{
-//                    rl_sub_diagnosis.setVisibility(View.GONE);
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> arg0) {
-//                // TODO Auto-generated method stub
-//
-//            }
-//        });
-//        sprsub_diagnosis.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int arg2, long arg3) {
-//                ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.green));
-//                SubDiagnosisType = sprsub_diagnosis.getSelectedItem().toString();
-//                Log.w(TAG, "SubDiagnosisType :" + SubDiagnosisType);
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> arg0) {
-//                // TODO Auto-generated method stub
-//
-//            }
-//        });
+
 
         ll_diagnosis.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -485,12 +447,12 @@ public class PrescriptionActivity extends AppCompatActivity implements Diagnosis
                 intakeBean =  new PrescriptionCreateRequest.PrescriptionDataBean.IntakeBean();
 
                 if(chx_afterfood.isChecked()){
-                    intakeBean.setAfterfood(chx_m.isChecked());
+                    intakeBean.setAfterfood(chx_afterfood.isChecked());
                 }else{
                     intakeBean.setAfterfood(false);
                 }
                 if(chx_beforefood.isChecked()){
-                    intakeBean.setBeforefood(chx_a.isChecked());
+                    intakeBean.setBeforefood(chx_beforefood.isChecked());
                 }else{
                     intakeBean.setBeforefood(false);
                 }
@@ -1588,9 +1550,10 @@ public class PrescriptionActivity extends AppCompatActivity implements Diagnosis
     }
 
 
+    @SuppressLint("LogNotTimber")
     private void setView() {
+        ll_headername.setVisibility(View.VISIBLE);
         Log.w(TAG,"prescriptionDataList setView : "+new Gson().toJson(prescriptionDataList));
-
         rv_prescriptiondetails.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rv_prescriptiondetails.setItemAnimator(new DefaultItemAnimator());
         AddPrescriptionsListAdapter addPrescriptionsListAdapter = new AddPrescriptionsListAdapter(getApplicationContext(), prescriptionDataList);

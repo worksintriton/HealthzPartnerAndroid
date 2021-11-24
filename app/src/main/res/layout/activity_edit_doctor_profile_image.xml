@@ -9,30 +9,28 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
+        android:background="@color/new_gree_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables"
-        android:background="@color/new_header_bg"
-        android:gravity="center_vertical">
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:id="@+id/img_back"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="15dp"
-            android:background="@drawable/left_arrow"
+            android:background="@drawable/back_arrow"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/futuramediumbt"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/montserrat"
             android:text="@string/edit_profile_image"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/big_txt_size"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"/>
-
-
+            android:textStyle="bold" />
 
 
     </LinearLayout>

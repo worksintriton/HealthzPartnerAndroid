@@ -188,7 +188,8 @@
 
     <string name="petlovers">Petlovers</string>
     <string name="prescriptiondetails">Prescription Details</string>
-    <string name="prescriptionmsg">Note : Pls use the + button to submit the entered details."\n" M - Morning, A - Afternoon ,N - Night.</string>
+    <string name="prescriptionmsg">Note : Pls use the + button to submit the entered details.</string>
+    <string name="prescriptionmsg1">M - Morning, A - Afternoon ,N - Night. </string>
 
     <string name="cancelappointment">Are you sure you want to cancel this appoinment?</string>
     <string name="completeappointment">Are you sure you want to complete this appoinment?</string>
@@ -372,7 +373,7 @@
     <string name="edit"><u>Edit</u></string>
 
     <string name="businessname">Business Name</string>
-    <string name="businessemail">Business email</string>
+    <string name="businessemail">Business Email ID</string>
     <string name="businessregistrationdetails">Business registration details</string>
     <string name="upload_gallery_images">Upload gallery images</string>
     <string name="upload_service_images">Upload service images</string>
@@ -675,5 +676,9 @@
 
     <string name="charge">Charge</string>
     <string name="sizelimit">Max. File Size 2MB</string>
+    <string name="intake">Intake</string>
+    <string name="medicine_name">Medicine Name</string>
+    <string name="after_food">After Food</string>
+    <string name="before_food">Before Food</string>
 </resources>
 

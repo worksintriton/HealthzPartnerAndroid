@@ -214,7 +214,7 @@ public class DoctorDashboardActivity  extends DoctorNavigationDrawer implements 
             }else if(tag.equalsIgnoreCase("2")){
                 active = doctorShopFragment;
                 bottomNavigation.setSelectedItemId(R.id.shop);
-                loadFragment(new DoctorShopFragment());
+                startActivity(new Intent(getApplicationContext(), DoctorProfileScreenActivity.class));
             } else if(tag.equalsIgnoreCase("3")){
                 active = communitydoctorFragment;
                 bottomNavigation.setSelectedItemId(R.id.community);
@@ -868,7 +868,7 @@ public class DoctorDashboardActivity  extends DoctorNavigationDrawer implements 
             case R.id.shop:
                 active_tag = "2";
                 item.setCheckable(true);
-                replaceFragment(new DoctorShopFragment());
+                startActivity(new Intent(getApplicationContext(), DoctorProfileScreenActivity.class));
                 break;
 
             case R.id.community:

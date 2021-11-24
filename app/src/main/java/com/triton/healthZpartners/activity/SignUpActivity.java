@@ -331,7 +331,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         signupRequest.setLast_name(edt_lastname.getText().toString().trim());
         signupRequest.setUser_email(edt_email.getText().toString());
         signupRequest.setUser_phone(edt_phone.getText().toString());
-        signupRequest.setUser_type(1);
+        signupRequest.setUser_type(UserTypeValue);
         signupRequest.setDate_of_reg(currentDateandTime);
         signupRequest.setMobile_type("Android");
         signupRequest.setUser_email_verification(user_email_verification);

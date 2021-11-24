@@ -5,8 +5,8 @@
     <item
         android:id="@+id/shop"
         android:enabled="true"
-        android:icon="@drawable/ic_hzshop_png"
-        android:title="Shop"
+        android:icon="@drawable/ic_baseline_person_outline_24"
+        android:title="@string/Profile"
         app:showAsAction="ifRoom" />
 
     <item

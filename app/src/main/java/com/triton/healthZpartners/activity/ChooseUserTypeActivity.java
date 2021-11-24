@@ -26,6 +26,7 @@ import com.triton.healthZpartners.utils.ConnectionDetector;
 import com.triton.healthZpartners.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -59,7 +60,7 @@ public class ChooseUserTypeActivity extends AppCompatActivity implements UserTyp
     @BindView(R.id.btn_change)
     Button btn_change;
 
-    List<UserTypeListResponse.DataBean.UsertypedataBean> usertypedataBeanList;
+    List<UserTypeListResponse.DataBean.UsertypedataBean> usertypedataBeanList = new ArrayList<>();
     private String UserType;
     private int UserTypeValue;
     private String firstname,lastname,useremail,referralcode,userphone;
@@ -122,8 +123,21 @@ public class ChooseUserTypeActivity extends AppCompatActivity implements UserTyp
 
                            if(usertypedata!=null&&usertypedata.size()>0){
 
-                           
-                               usertypedataBeanList = response.body().getData().getUsertypedata();
+                               for (int i =0;i<usertypedata.size();i++){
+
+                                   Log.w(TAG,"userTypeValue" + usertypedata.get(i).getUser_type_value());
+
+                                   if(usertypedata.get(i).getUser_type_value()!=1){
+
+                                       UserTypeListResponse.DataBean.UsertypedataBean usertypedataBean = response.body().getData().getUsertypedata().get(i);
+
+                                       usertypedataBeanList.add(usertypedataBean);
+
+                                   }
+
+
+                               }
+
                            }
 
                         }

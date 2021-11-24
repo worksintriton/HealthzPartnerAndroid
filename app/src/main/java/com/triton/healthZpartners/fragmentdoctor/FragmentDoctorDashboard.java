@@ -32,8 +32,11 @@ import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
 import com.triton.healthZpartners.doctor.DoctorBusinessInfoActivity;
 import com.triton.healthZpartners.doctor.DoctorDashboardActivity;
+import com.triton.healthZpartners.doctor.DoctorEditProfileActivity;
 import com.triton.healthZpartners.doctor.DoctorMyCalendarNewUserActivity;
 import com.triton.healthZpartners.doctor.DoctorMyappointmentsActivity;
+import com.triton.healthZpartners.doctor.DoctorProfileScreenActivity;
+import com.triton.healthZpartners.doctor.DoctorProfileScreenActivity_ViewBinding;
 import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorCompletedAppointment;
 import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorMissedAppointment;
 import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorNewAppointment;
@@ -77,6 +80,14 @@ public class FragmentDoctorDashboard extends Fragment  {
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_myappointments)
     TextView txt_myappointments;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.btn_viewprofile)
+    Button btn_viewprofile;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_edit_profile)
+    TextView txt_edit_profile;
 
     private SharedPreferences preferences;
     private Context mContext;
@@ -137,8 +148,19 @@ public class FragmentDoctorDashboard extends Fragment  {
         });
 
 
+        txt_edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, DoctorEditProfileActivity.class));
+            }
+        });
 
-
+        btn_viewprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, DoctorProfileScreenActivity.class));
+            }
+        });
 
         return view;
 

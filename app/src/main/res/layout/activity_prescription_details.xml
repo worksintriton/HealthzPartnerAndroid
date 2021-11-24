@@ -286,6 +286,69 @@
 
                             </LinearLayout>
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/intake"
+                                android:textColor="@color/new_txt_color" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/futuramediumbt"
+                                        android:text="A.F." />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/futuramediumbt"
+                                        android:text="B.F." />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/futuramediumbt"
+                                        android:text="N.." />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
 
                         <Button
                             android:layout_width="20dp"
