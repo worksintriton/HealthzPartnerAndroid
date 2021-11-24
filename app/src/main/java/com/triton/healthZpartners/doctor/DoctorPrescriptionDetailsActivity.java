@@ -149,9 +149,7 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
     @BindView(R.id.rv_prescriptiondetails)
     RecyclerView rv_prescriptiondetails;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_no_records)
-    TextView txt_no_records;
+
 
 
     @SuppressLint("NonConstantResourceId")
@@ -401,30 +399,32 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
                             }else{
                                 txt_owners_name.setText("");
                             }
-                            if(response.body().getData().getPet_name() != null && !response.body().getData().getPet_name().isEmpty()){
-                                txt_pet_name.setText(response.body().getData().getPet_name());
+                            if(response.body().getData().getName() != null && !response.body().getData().getName().isEmpty()){
+                                txt_pet_name.setText(response.body().getData().getName());
                             }else{
                                 txt_pet_name.setText("");
                             }
-                            if(response.body().getData().getPet_type() != null && !response.body().getData().getPet_type().isEmpty()){
-                                txt_pet_type.setText(response.body().getData().getPet_type());
+                            if(response.body().getData().getRelation_type() != null && !response.body().getData().getRelation_type().isEmpty()){
+                                txt_pet_type.setText(response.body().getData().getRelation_type());
                             }else{
                                 txt_pet_type.setText("");
-                            }if(response.body().getData().getPet_breed() != null && !response.body().getData().getPet_breed().isEmpty()){
+                            }
+                            /*if(response.body().getData().getPet_breed() != null && !response.body().getData().getPet_breed().isEmpty()){
                                 txt_breed.setText(response.body().getData().getPet_breed());
                             }else{
                                 txt_breed.setText("");
-                            }if(response.body().getData().getGender() != null && !response.body().getData().getGender().isEmpty()){
+                            }*/
+                            if(response.body().getData().getGender() != null && !response.body().getData().getGender().isEmpty()){
                                 txt_gender.setText(response.body().getData().getGender());
                             }else{
                                 txt_gender.setText("");
-                            }if(response.body().getData().getWeight() != 0 ){
+                            }if(response.body().getData().getWeight() != null){
                                 txt_weight.setText(response.body().getData().getWeight()+"");
                             }else{
                                 txt_weight.setText("");
                             }
-                            if(response.body().getData().getAge() != null && !response.body().getData().getAge().isEmpty()){
-                                txt_age.setText(response.body().getData().getAge());
+                            if(response.body().getData().getDateofbirth() != null && !response.body().getData().getDateofbirth().isEmpty()){
+                                txt_age.setText(response.body().getData().getDateofbirth());
                             }else{
                                 txt_age.setText("");
                             }
@@ -521,11 +521,9 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
 
                                         if(prescriptionDataList.size()>0){
                                             rv_prescriptiondetails.setVisibility(View.VISIBLE);
-                                            txt_no_records.setVisibility(View.GONE);
                                             setView();
                                         }else{
                                             rv_prescriptiondetails.setVisibility(View.GONE);
-                                            txt_no_records.setVisibility(View.VISIBLE);
 
                                         }
 

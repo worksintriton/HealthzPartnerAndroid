@@ -43,7 +43,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/futuramediumbt"
-                    android:text="Doctor Diagnosis "
+                    android:text="@string/doctor_diagnosis"
                     android:textColor="@color/green"
                     android:textSize="14sp" />
 
@@ -97,7 +97,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/futuramediumbt"
-                    android:text="Doctor Sub Diagnosis "
+                    android:text="@string/doctor_sub_diagnosis"
                     android:textColor="@color/green"
                     android:textSize="14sp" />
 
@@ -151,7 +151,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/futuramediumbt"
-                    android:text="Service Charge Amount"
+                    android:text="@string/service_charge_amount"
                     android:textColor="@color/green"
                     android:textSize="14sp" />
 
@@ -465,7 +465,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginBottom="20dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/prescriptionmsg1"
+                        android:textColor="@color/red_back"
+                        android:textSize="14sp" />
                     <LinearLayout
                         android:id="@+id/ll_headername"
                         android:layout_width="fill_parent"
@@ -617,9 +626,6 @@
 
 
                     </LinearLayout>
-
-
-
                     <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -627,47 +633,7 @@
                         android:visibility="visible"
                         />
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight=".9"
-                        android:text="@string/medicine"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight=".9"
-                        android:text="@string/no_of_days"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:text="@string/consumption_per_day"
-                        android:textColor="@color/black" />
-
-                    <Button
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginStart="10dp"
-                        android:background="@drawable/ic_baseline_add_circle_outline_24"
-                        android:visibility="invisible" />
-
-
-                </LinearLayout>
 
 
 

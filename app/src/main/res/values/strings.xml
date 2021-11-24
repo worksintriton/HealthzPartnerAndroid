@@ -189,7 +189,7 @@
     <string name="petlovers">Petlovers</string>
     <string name="prescriptiondetails">Prescription Details</string>
     <string name="prescriptionmsg">Note : Pls use the + button to submit the entered details.</string>
-    <string name="prescriptionmsg1">M - Morning, A - Afternoon ,N - Night. </string>
+    <string name="prescriptionmsg1">Note : M - Morning, A - Afternoon, N - Night. A.F - After Food, B.F - Before Food.  </string>
 
     <string name="cancelappointment">Are you sure you want to cancel this appoinment?</string>
     <string name="completeappointment">Are you sure you want to complete this appoinment?</string>
@@ -680,5 +680,8 @@
     <string name="medicine_name">Medicine Name</string>
     <string name="after_food">After Food</string>
     <string name="before_food">Before Food</string>
+    <string name="doctor_diagnosis">Doctor Diagnosis</string>
+    <string name="doctor_sub_diagnosis">Doctor Sub Diagnosis</string>
+    <string name="service_charge_amount">Service Charge Amount</string>
 </resources>
 

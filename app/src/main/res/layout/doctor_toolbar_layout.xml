@@ -64,7 +64,9 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/notification_white"
-                        tools:ignore="ContentDescription" />
+                        tools:ignore="ContentDescription"
+                        android:layout_marginEnd="20dp"
+                        />
 
                     <!--   <TextView
                         android:id="@+id/txt_notification_count_badge"
@@ -98,7 +100,8 @@
                         android:layout_marginStart="20dp"
                         android:src="@drawable/cart_white"
                         tools:ignore="ContentDescription"
-                        android:layout_marginEnd="20dp"/>
+                        android:layout_marginEnd="20dp"
+                        android:visibility="gone"/>
 
                     <!-- <TextView
                         android:id="@+id/txt_cart_count_badge"

@@ -9,33 +9,40 @@
         android:id="@+id/headerView"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        android:background="@color/new_header_bg"
-        android:gravity="center">
+        android:background="@color/new_gree_color"
+        android:gravity="center"
+        android:orientation="vertical">
+
         <RelativeLayout
             android:id="@+id/back_rela"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
 
+
             <ImageView
                 android:id="@+id/backarrow"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginStart="15dp"
-                android:background="@drawable/left_arrow"
+                android:src="@drawable/back_arrow"
                 tools:ignore="ContentDescription" />
+
+
             <TextView
+                android:id="@+id/txt_mycalendar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/backarrow"
-                android:fontFamily="@font/futuramediumbt"
-                android:text="@string/add_holiday"
                 android:layout_marginStart="10dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="@dimen/big_txt_size"  />
+                android:layout_toEndOf="@+id/backarrow"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/add_holiday"
+                android:textColor="@color/white"
+                android:textSize="@dimen/big_txt_size"
+                android:textStyle="bold" />
+
+
+
 
         </RelativeLayout>
 
@@ -45,7 +52,6 @@
         android:id="@+id/scrollablContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/footerView"
         android:layout_below="@+id/headerView" >
 
         <LinearLayout

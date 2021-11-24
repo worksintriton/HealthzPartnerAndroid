@@ -147,7 +147,7 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
 
     }
 
-    @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
+    @SuppressLint({"NonConstantResourceId", "SetTextI18n", "LogNotTimber"})
     private void initUI(View view) {
 
         //Initializing NavigationView
@@ -193,6 +193,9 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
             nav_header_ref_code.setVisibility(View.GONE);
             nav_header_ref_code.setText("");
         }
+
+        Log.w(TAG,"profileimage : "+profileimage);
+        Log.w(TAG,"profileimage url:"+APIClient.PROFILE_IMAGE_URL);
         if(profileimage != null && !profileimage.isEmpty()) {
             Glide.with(this).load(profileimage).circleCrop().into(nav_header_imageView);
         }else{

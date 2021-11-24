@@ -7,49 +7,52 @@ public class PrescriptionFetchResponse {
     /**
      * Status : Success
      * Message : Prescription detail
-     * Data : {"doctorname":"Maddy San","doctor_speci":[{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Microbiology"},{"specialization":"Pathology"},{"specialization":"Theriogenology"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Behavior"},{"specialization":"Surgery"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Laboratory Animal Medicine"},{"specialization":"Radiology"},{"specialization":"Emergency and Critical Care"},{"specialization":"Orthopaedics"}],"web_name":"www.petfolio.com","phone_number":"+91-9988776655","app_logo":"http://54.212.108.156:3000/api/uploads/logo.png","owner_name":"Dinesh","pet_type":"Teenu","pet_breed":"Dogs - (Indian & Foreign) ","pet_name":"Teenu","gender":"male","weight":0,"age":"5 years 1 months","diagnosis":"Urinary System","sub_diagnosis":" Kidney stone ","allergies":"no","Doctor_Comments":"no comments","digital_sign":"http://54.212.108.156:3000/api/uploads/1626176527437.jpg","Prescription_data":[{"Quantity":"2","Tablet_name":"dolo 650","consumption":"Morning - 1, Afternoon - 0, Night - 1"}],"_id":"60eea2de64de2123d1c15a49","doctor_id":"DR12345676","Appointment_ID":"60eea27c64de2123d1c15a46","Treatment_Done_by":"","user_id":"","Prescription_type":"PDF","PDF_format":"http://54.212.108.156:3000/api/public/4fdc3ee0-a9fc-4f7e-8854-bb5a8f38be02.pdf","Prescription_img":"","Date":"14/07/2021 02:09 PM","delete_status":false,"updatedAt":"2021-07-14T08:39:58.823Z","createdAt":"2021-07-14T08:39:58.823Z","health_issue_title":"General Checkup","__v":0,"clinic_no":"987987989902","clinic_loc":"Salem 133, Vmr Theatre Back Side Rd, Shevapet, Salem, Tamil Nadu 636002, India","clinic_name":"Maddy San Pet Clinic","Prescription_id":"PRE-1626251998821"}
+     * Data : {"doctorname":"Bille ","doctor_speci":[{"specialization":"Surgery"},{"specialization":"Nutrition"},{"specialization":"Laboratory Animal Medicine"},{"specialization":"Emergency and Critical Care"},{"specialization":"Equine Medicine"},{"specialization":"Behavior"},{"specialization":"Dentistry"}],"web_name":"www.petfolio.in","phone_number":"+91-9988776655","app_logo":"http://54.212.108.156:3000/api/uploads/logo.png","owner_name":"Sandy","user_id":"","name":"Dinesh","gender":"Male","relation_type":"Self","health_issue":"OCD","dateofbirth":"16-05-1992","anymedicalinfo":"I'm 29 years old boy","covide_vac":"Yes","weight":"75","diagnosis":"Cancer and Tumour","sub_diagnosis":"All Cancers / Tumours","allergies":"","Doctor_Comments":"High fever","digital_sign":"http://54.212.108.156:3000/api/uploads/60b4e899541a437c7b9c60fd3105191744","Prescription_data":[{"Quantity":"5","Tablet_name":"Dolo","consumption":"Morning - 1, Afternoon - 0, Night - 1","intakeBean":{"afterfood":false,"beforefood":true}}],"_id":"619e0adb2a9dd179ff1c1fb1","doctor_id":"dr123456789","Appointment_ID":"619e0aa52a9dd179ff1c1fb0","Treatment_Done_by":"","Prescription_type":"PDF","PDF_format":"https://petfolio.app/api/public/ic/1637747418697.pdf","Prescription_img":"","Date":"24/11/2021 03:20 PM","delete_status":false,"updatedAt":"2021-11-24T09:50:19.340Z","createdAt":"2021-11-24T09:50:19.340Z","health_issue_title":"General Checkup","__v":0,"clinic_no":"123456789","clinic_loc":"4/270, Azhagappa Nagar, Bharathiyar Nagar, Raj Nagar, Thoraipakkam, Tamil Nadu 600097, India","clinic_name":"Barking Fine Pet Speciality Hospital","Prescription_id":"PRE-1637747419338","share_msg":"Please find the Prescription for the appointment: https://petfolio.app/api/public/ic/1637747418697.pdf. You can download Petfolio Mobile App using this link below. http://petfolio.in"}
      * Code : 200
      */
 
     private String Status;
     private String Message;
     /**
-     * doctorname : Maddy San
-     * doctor_speci : [{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Microbiology"},{"specialization":"Pathology"},{"specialization":"Theriogenology"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Behavior"},{"specialization":"Surgery"},{"specialization":"Nutrition"},{"specialization":"Dentistry"},{"specialization":"Laboratory Animal Medicine"},{"specialization":"Radiology"},{"specialization":"Emergency and Critical Care"},{"specialization":"Orthopaedics"}]
-     * web_name : www.petfolio.com
+     * doctorname : Bille
+     * doctor_speci : [{"specialization":"Surgery"},{"specialization":"Nutrition"},{"specialization":"Laboratory Animal Medicine"},{"specialization":"Emergency and Critical Care"},{"specialization":"Equine Medicine"},{"specialization":"Behavior"},{"specialization":"Dentistry"}]
+     * web_name : www.petfolio.in
      * phone_number : +91-9988776655
      * app_logo : http://54.212.108.156:3000/api/uploads/logo.png
-     * owner_name : Dinesh
-     * pet_type : Teenu
-     * pet_breed : Dogs - (Indian & Foreign)
-     * pet_name : Teenu
-     * gender : male
-     * weight : 0
-     * age : 5 years 1 months
-     * diagnosis : Urinary System
-     * sub_diagnosis :  Kidney stone
-     * allergies : no
-     * Doctor_Comments : no comments
-     * digital_sign : http://54.212.108.156:3000/api/uploads/1626176527437.jpg
-     * Prescription_data : [{"Quantity":"2","Tablet_name":"dolo 650","consumption":"Morning - 1, Afternoon - 0, Night - 1"}]
-     * _id : 60eea2de64de2123d1c15a49
-     * doctor_id : DR12345676
-     * Appointment_ID : 60eea27c64de2123d1c15a46
-     * Treatment_Done_by :
+     * owner_name : Sandy
      * user_id :
+     * name : Dinesh
+     * gender : Male
+     * relation_type : Self
+     * health_issue : OCD
+     * dateofbirth : 16-05-1992
+     * anymedicalinfo : I'm 29 years old boy
+     * covide_vac : Yes
+     * weight : 75
+     * diagnosis : Cancer and Tumour
+     * sub_diagnosis : All Cancers / Tumours
+     * allergies :
+     * Doctor_Comments : High fever
+     * digital_sign : http://54.212.108.156:3000/api/uploads/60b4e899541a437c7b9c60fd3105191744
+     * Prescription_data : [{"Quantity":"5","Tablet_name":"Dolo","consumption":"Morning - 1, Afternoon - 0, Night - 1","intakeBean":{"afterfood":false,"beforefood":true}}]
+     * _id : 619e0adb2a9dd179ff1c1fb1
+     * doctor_id : dr123456789
+     * Appointment_ID : 619e0aa52a9dd179ff1c1fb0
+     * Treatment_Done_by :
      * Prescription_type : PDF
-     * PDF_format : http://54.212.108.156:3000/api/public/4fdc3ee0-a9fc-4f7e-8854-bb5a8f38be02.pdf
+     * PDF_format : https://petfolio.app/api/public/ic/1637747418697.pdf
      * Prescription_img :
-     * Date : 14/07/2021 02:09 PM
+     * Date : 24/11/2021 03:20 PM
      * delete_status : false
-     * updatedAt : 2021-07-14T08:39:58.823Z
-     * createdAt : 2021-07-14T08:39:58.823Z
+     * updatedAt : 2021-11-24T09:50:19.340Z
+     * createdAt : 2021-11-24T09:50:19.340Z
      * health_issue_title : General Checkup
      * __v : 0
-     * clinic_no : 987987989902
-     * clinic_loc : Salem 133, Vmr Theatre Back Side Rd, Shevapet, Salem, Tamil Nadu 636002, India
-     * clinic_name : Maddy San Pet Clinic
-     * Prescription_id : PRE-1626251998821
+     * clinic_no : 123456789
+     * clinic_loc : 4/270, Azhagappa Nagar, Bharathiyar Nagar, Raj Nagar, Thoraipakkam, Tamil Nadu 600097, India
+     * clinic_name : Barking Fine Pet Speciality Hospital
+     * Prescription_id : PRE-1637747419338
+     * share_msg : Please find the Prescription for the appointment: https://petfolio.app/api/public/ic/1637747418697.pdf. You can download Petfolio Mobile App using this link below. http://petfolio.in
      */
 
     private DataBean Data;
@@ -93,12 +96,15 @@ public class PrescriptionFetchResponse {
         private String phone_number;
         private String app_logo;
         private String owner_name;
-        private String pet_type;
-        private String pet_breed;
-        private String pet_name;
+        private String user_id;
+        private String name;
         private String gender;
-        private int weight;
-        private String age;
+        private String relation_type;
+        private String health_issue;
+        private String dateofbirth;
+        private String anymedicalinfo;
+        private String covide_vac;
+        private String weight;
         private String diagnosis;
         private String sub_diagnosis;
         private String allergies;
@@ -108,7 +114,6 @@ public class PrescriptionFetchResponse {
         private String doctor_id;
         private String Appointment_ID;
         private String Treatment_Done_by;
-        private String user_id;
         private String Prescription_type;
         private String PDF_format;
         private String Prescription_img;
@@ -123,24 +128,16 @@ public class PrescriptionFetchResponse {
         private String clinic_name;
         private String Prescription_id;
         private String share_msg;
-
-        public String getShare_msg() {
-            return share_msg;
-        }
-
-        public void setShare_msg(String share_msg) {
-            this.share_msg = share_msg;
-        }
-
         /**
-         * specialization : General Consultant
+         * specialization : Surgery
          */
 
         private List<DoctorSpeciBean> doctor_speci;
         /**
-         * Quantity : 2
-         * Tablet_name : dolo 650
+         * Quantity : 5
+         * Tablet_name : Dolo
          * consumption : Morning - 1, Afternoon - 0, Night - 1
+         * intakeBean : {"afterfood":false,"beforefood":true}
          */
 
         private List<PrescriptionDataBean> Prescription_data;
@@ -185,28 +182,20 @@ public class PrescriptionFetchResponse {
             this.owner_name = owner_name;
         }
 
-        public String getPet_type() {
-            return pet_type;
+        public String getUser_id() {
+            return user_id;
         }
 
-        public void setPet_type(String pet_type) {
-            this.pet_type = pet_type;
+        public void setUser_id(String user_id) {
+            this.user_id = user_id;
         }
 
-        public String getPet_breed() {
-            return pet_breed;
+        public String getName() {
+            return name;
         }
 
-        public void setPet_breed(String pet_breed) {
-            this.pet_breed = pet_breed;
-        }
-
-        public String getPet_name() {
-            return pet_name;
-        }
-
-        public void setPet_name(String pet_name) {
-            this.pet_name = pet_name;
+        public void setName(String name) {
+            this.name = name;
         }
 
         public String getGender() {
@@ -217,20 +206,52 @@ public class PrescriptionFetchResponse {
             this.gender = gender;
         }
 
-        public int getWeight() {
+        public String getRelation_type() {
+            return relation_type;
+        }
+
+        public void setRelation_type(String relation_type) {
+            this.relation_type = relation_type;
+        }
+
+        public String getHealth_issue() {
+            return health_issue;
+        }
+
+        public void setHealth_issue(String health_issue) {
+            this.health_issue = health_issue;
+        }
+
+        public String getDateofbirth() {
+            return dateofbirth;
+        }
+
+        public void setDateofbirth(String dateofbirth) {
+            this.dateofbirth = dateofbirth;
+        }
+
+        public String getAnymedicalinfo() {
+            return anymedicalinfo;
+        }
+
+        public void setAnymedicalinfo(String anymedicalinfo) {
+            this.anymedicalinfo = anymedicalinfo;
+        }
+
+        public String getCovide_vac() {
+            return covide_vac;
+        }
+
+        public void setCovide_vac(String covide_vac) {
+            this.covide_vac = covide_vac;
+        }
+
+        public String getWeight() {
             return weight;
         }
 
-        public void setWeight(int weight) {
+        public void setWeight(String weight) {
             this.weight = weight;
-        }
-
-        public String getAge() {
-            return age;
-        }
-
-        public void setAge(String age) {
-            this.age = age;
         }
 
         public String getDiagnosis() {
@@ -303,14 +324,6 @@ public class PrescriptionFetchResponse {
 
         public void setTreatment_Done_by(String Treatment_Done_by) {
             this.Treatment_Done_by = Treatment_Done_by;
-        }
-
-        public String getUser_id() {
-            return user_id;
-        }
-
-        public void setUser_id(String user_id) {
-            this.user_id = user_id;
         }
 
         public String getPrescription_type() {
@@ -417,6 +430,14 @@ public class PrescriptionFetchResponse {
             this.Prescription_id = Prescription_id;
         }
 
+        public String getShare_msg() {
+            return share_msg;
+        }
+
+        public void setShare_msg(String share_msg) {
+            this.share_msg = share_msg;
+        }
+
         public List<DoctorSpeciBean> getDoctor_speci() {
             return doctor_speci;
         }
@@ -449,6 +470,12 @@ public class PrescriptionFetchResponse {
             private String Quantity;
             private String Tablet_name;
             private String consumption;
+            /**
+             * afterfood : false
+             * beforefood : true
+             */
+
+            private IntakeBeanBean intakeBean;
 
             public String getQuantity() {
                 return Quantity;
@@ -472,6 +499,35 @@ public class PrescriptionFetchResponse {
 
             public void setConsumption(String consumption) {
                 this.consumption = consumption;
+            }
+
+            public IntakeBeanBean getIntakeBean() {
+                return intakeBean;
+            }
+
+            public void setIntakeBean(IntakeBeanBean intakeBean) {
+                this.intakeBean = intakeBean;
+            }
+
+            public static class IntakeBeanBean {
+                private boolean afterfood;
+                private boolean beforefood;
+
+                public boolean isAfterfood() {
+                    return afterfood;
+                }
+
+                public void setAfterfood(boolean afterfood) {
+                    this.afterfood = afterfood;
+                }
+
+                public boolean isBeforefood() {
+                    return beforefood;
+                }
+
+                public void setBeforefood(boolean beforefood) {
+                    this.beforefood = beforefood;
+                }
             }
         }
     }

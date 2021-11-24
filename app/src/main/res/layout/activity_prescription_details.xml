@@ -26,8 +26,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_below="@+id/headerView"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="40dp">
 
 
@@ -91,9 +89,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/futuramediumbt"
-                    android:text="Doctor diagnosis "
-                    android:textColor="@color/new_txt_color"
-                    android:textSize="14sp" />
+                    android:text="@string/doctor_diagnosis"
+                    android:textColor="@color/green"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
                 <TextView
                     android:id="@+id/txt_diagnosis"
                     android:layout_width="match_parent"
@@ -102,20 +102,24 @@
                     android:background="@drawable/rectangular_curved_corner"
                     android:fontFamily="@font/futuramediumbt"
                     android:padding="15dp"
-                    android:textColor="@color/new_light_green"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/dark_gray"
                     android:textSize="14sp"
-                    tools:ignore="Autofill,LabelFor" />
+                    tools:ignore="Autofill,LabelFor"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
 
                 <TextView
                     android:id="@+id/txt_lbl_sub_diagnosis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/futuramediumbt"
-                    android:text="Doctor sub diagnosis "
-                    android:textColor="@color/new_txt_color"
+                    android:text="@string/doctor_sub_diagnosis"
+                    android:textColor="@color/green"
                     android:textSize="14sp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
                 <TextView
                     android:id="@+id/txt_sub_diagnosis"
                     android:layout_width="match_parent"
@@ -124,10 +128,13 @@
                     android:background="@drawable/rectangular_curved_corner"
                     android:fontFamily="@font/futuramediumbt"
                     android:padding="15dp"
-                    android:textColor="@color/new_light_green"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/dark_gray"
                     android:textSize="14sp"
-                    tools:ignore="Autofill,LabelFor" />
+                    tools:ignore="Autofill,LabelFor"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    />
 
 
 
@@ -138,10 +145,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/futuramediumbt"
-                    android:text="@string/charge_amount"
-                    android:textColor="@color/new_txt_color"
+                    android:text="@string/service_charge_amount"
+                    android:textColor="@color/green"
                     android:textSize="14sp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
                 <TextView
                     android:id="@+id/txt_serviceamout"
                     android:layout_width="match_parent"
@@ -150,19 +159,23 @@
                     android:background="@drawable/rectangular_curved_corner"
                     android:fontFamily="@font/futuramediumbt"
                     android:padding="15dp"
-                    android:textColor="@color/new_light_green"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/dark_gray"
                     android:textSize="14sp"
-                    tools:ignore="Autofill,LabelFor" />
+                    tools:ignore="Autofill,LabelFor"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/futuramediumbt"
                     android:text="@string/doctor_comments"
-                    android:textColor="@color/new_txt_color"
+                    android:textColor="@color/green"
                     android:textSize="14sp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
 
                 <TextView
                     android:id="@+id/txt_doctor_comments"
@@ -172,220 +185,207 @@
                     android:background="@drawable/rectangular_curved_corner"
                     android:fontFamily="@font/futuramediumbt"
                     android:padding="15dp"
-                    android:textColor="@color/new_light_green"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/dark_gray"
                     android:textSize="14sp"
                     tools:ignore="Autofill,LabelFor"
                     android:maxLines="4"
-                    android:ellipsize="end"/>
+                    android:ellipsize="end"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
 
 
                 <LinearLayout
                     android:id="@+id/ll_manual_prescription"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:fontFamily="@font/futuramediumbt"
                         android:text="@string/prescription_medicines"
-                        android:textColor="@color/new_txt_color"
-                        android:textSize="14sp" />
+                        android:textColor="@color/green"
+                        android:textSize="14sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
 
                     <LinearLayout
-                        android:id="@+id/ll_headername"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:orientation="horizontal"
-                        tools:ignore="RtlHardcoded">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_weight="1"
-                            android:text="@string/medicine"
-                            android:textColor="@color/new_txt_color" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_weight="1"
-                            android:text="@string/no_of_days"
-                            android:textColor="@color/new_txt_color" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/consumption_per_day"
-                                android:textColor="@color/new_txt_color" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="30dp"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/futuramediumbt"
-                                        android:text="M.." />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="30dp"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/futuramediumbt"
-                                        android:text="A.." />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="30dp"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/futuramediumbt"
-                                        android:text="N.." />
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/intake"
-                                android:textColor="@color/new_txt_color" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="30dp"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/futuramediumbt"
-                                        android:text="A.F." />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="30dp"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/futuramediumbt"
-                                        android:text="B.F." />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="30dp"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/futuramediumbt"
-                                        android:text="N.." />
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <Button
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:background="@drawable/ic_baseline_add_circle_outline_24"
-                            android:visibility="invisible" />
-
-
-                    </LinearLayout>
-
-                    <RelativeLayout
+                        android:id="@+id/container"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:visibility="visible">
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv_prescriptiondetails"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="30dp"/>
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp">
 
                         <TextView
-                            android:id="@+id/txt_no_records"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="@string/norecordsfound"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:visibility="gone" />
-                    </RelativeLayout>
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/prescriptionmsg1"
+                            android:textColor="@color/red_back"
+                            android:textSize="14sp" />
+                        <LinearLayout
+                            android:id="@+id/ll_headername"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"                        android:orientation="horizontal"
+                            tools:ignore="RtlHardcoded">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight=".9"
+                                android:text="@string/medicine"
+                                android:textColor="@color/new_txt_color" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight=".7"
+                                android:text="@string/no_of_days"
+                                android:textColor="@color/new_txt_color" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1.4"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/consumption_per_day"
+                                    android:textColor="@color/new_txt_color" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="30dp"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/futuramediumbt"
+                                            android:text="M." />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="30dp"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/futuramediumbt"
+                                            android:text="A." />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="30dp"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/futuramediumbt"
+                                            android:text="N." />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight=".9"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/intake"
+                                    android:textColor="@color/new_txt_color" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="30dp"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/futuramediumbt"
+                                            android:text="A.F." />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="30dp"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/futuramediumbt"
+                                            android:text="B.F." />
+
+                                    </LinearLayout>
+
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/removeImg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/ic_baseline_remove_circle_outline_24"
+                                android:visibility="invisible"/>
+
+
+
+                        </LinearLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/rv_prescriptiondetails"
+                            android:visibility="visible"
+                            />
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -403,8 +403,10 @@
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/futuramediumbt"
                         android:text="@string/prescription_medicines"
-                        android:textColor="@color/new_txt_color"
-                        android:textSize="14sp" />
+                        android:textColor="@color/green"
+                        android:textSize="14sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
 
                     <ImageView
                         android:id="@+id/img_prescriptiondetails"
@@ -413,7 +415,10 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="60dp"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/app_logo" />
+                        app:srcCompat="@drawable/app_logo"
+                        android:visibility="gone"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
 
                 </LinearLayout>
 

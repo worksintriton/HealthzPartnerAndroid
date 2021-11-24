@@ -8,6 +8,8 @@
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.2703125" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/drawable/sync.xml" value="0.2703125" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_doctor_appointment_details.xml" value="0.14266304347826086" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_doctor_holiday.xml" value="0.25416666666666665" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_doctor_my_calendar.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_doctor_my_calendar_time.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_doctor_myappointments.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_doctor_prescription_details.xml" value="0.14266304347826086" />
@@ -19,8 +21,13 @@
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_completed_appointment.xml" value="0.14266304347826086" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_missed_appointment.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_mycalendar_available_cardview.xml" value="0.25416666666666665" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_prescriptions_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_prescriptions_details_list.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_prescription_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/doctor_toolbar_layout.xml" value="0.18115942028985507" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/fragment_doctor_completed_appointment.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/fragment_doctor_missed.xml" value="0.14266304347826086" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/fragment_doctor_new_appointment.xml" value="0.18115942028985507" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/navigation_drawer_layout_customer.xml" value="0.14266304347826086" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/navigation_drawer_layout_doctor.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/menu/bottom_navigation_doctor.xml" value="0.25416666666666665" />

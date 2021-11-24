@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -56,6 +57,14 @@ public class DoctorPrescriptionsDetailsAdapter extends  RecyclerView.Adapter<Rec
             holder.txt_noofdays.setText(prescriptionDataList.get(position).getQuantity());
             holder.txt_consumptionperday.setText(prescriptionDataList.get(position).getConsumption());
 
+        if(currentItem.getIntakeBean().isAfterfood()){
+            holder.chx_afterfood.setChecked(true);
+        }
+        if(currentItem.getIntakeBean().isBeforefood()){
+            holder.chx_beforefood.setChecked(true);
+        }
+
+
 
     }
     @Override
@@ -72,6 +81,7 @@ public class DoctorPrescriptionsDetailsAdapter extends  RecyclerView.Adapter<Rec
     static class ViewHolderOne extends RecyclerView.ViewHolder {
 
         public TextView txt_medicine,txt_noofdays,txt_consumptionperday;
+        CheckBox chx_afterfood,chx_beforefood;
 
 
 
@@ -80,6 +90,12 @@ public class DoctorPrescriptionsDetailsAdapter extends  RecyclerView.Adapter<Rec
             txt_medicine = itemView.findViewById(R.id.txt_medicine);
             txt_noofdays = itemView.findViewById(R.id.txt_noofdays);
             txt_consumptionperday = itemView.findViewById(R.id.txt_consumptionperday);
+
+            chx_afterfood = itemView.findViewById(R.id.chx_afterfood);
+            chx_beforefood = itemView.findViewById(R.id.chx_beforefood);
+
+            chx_afterfood.setClickable(false);
+            chx_beforefood.setClickable(false);
 
 
 

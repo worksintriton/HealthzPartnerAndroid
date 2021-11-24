@@ -72,7 +72,6 @@ public class PrescriptionDetailsActivity extends AppCompatActivity {
     private String appoinmentid,doctor_id,DiagnosisType,SubDiagnosisType;
 
     RecyclerView rv_prescriptiondetails;
-    TextView  txt_no_records;
     WebView webView;
 
     List<PrescriptionCreateRequest.PrescriptionDataBean> prescriptionDataList ;
@@ -151,7 +150,6 @@ public class PrescriptionDetailsActivity extends AppCompatActivity {
         avi_indicator = findViewById(R.id.avi_indicator);
         avi_indicator.setVisibility(View.GONE);
         rv_prescriptiondetails = findViewById(R.id.rv_prescriptiondetails);
-        txt_no_records = findViewById(R.id.txt_no_records);
 
         txt_lbl_diagnosis.setVisibility(View.GONE);
         txt_diagnosis.setVisibility(View.GONE);
@@ -213,9 +211,9 @@ public class PrescriptionDetailsActivity extends AppCompatActivity {
                 ll_manual_prescription.setVisibility(View.GONE);
 
                 ll_uploadImage_prescription.setVisibility(View.VISIBLE);
+                img_prescriptiondetails.setVisibility(View.VISIBLE);
 
                 if(image!=null&&!image.isEmpty()){
-
                     Glide.with(PrescriptionDetailsActivity.this)
                             .load(image)
                             .into(img_prescriptiondetails);

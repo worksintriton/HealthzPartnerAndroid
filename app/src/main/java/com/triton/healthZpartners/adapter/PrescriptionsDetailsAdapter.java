@@ -54,8 +54,8 @@ public class PrescriptionsDetailsAdapter extends  RecyclerView.Adapter<RecyclerV
             currentItem = prescriptionDataList.get(position);
 
             Log.w(TAG,"prescriptionDataList : "+new Gson().toJson(prescriptionDataList));
-            holder.txt_medicine.setText(prescriptionDataList.get(position).getTablet_name());
-            holder.txt_noofdays.setText(prescriptionDataList.get(position).getQuantity());
+            holder.tv_tabletname.setText(prescriptionDataList.get(position).getTablet_name());
+            holder.tv_quanity.setText(prescriptionDataList.get(position).getQuantity());
 
             if(currentItem.getConsumption().isMorning()){
                 holder.chx_m.setChecked(true);
@@ -66,8 +66,12 @@ public class PrescriptionsDetailsAdapter extends  RecyclerView.Adapter<RecyclerV
             if(currentItem.getConsumption().isNight()){
                 holder.chx_n.setChecked(true);
             }
-           // holder.txt_consumptionperday.setText(prescriptionDataList.get(position).getConsumption());
-
+        if(currentItem.getIntakeBean().isAfterfood()){
+            holder.chx_afterfood.setChecked(true);
+        }
+        if(currentItem.getIntakeBean().isBeforefood()){
+            holder.chx_beforefood.setChecked(true);
+        }
 
 
 
@@ -94,19 +98,25 @@ public class PrescriptionsDetailsAdapter extends  RecyclerView.Adapter<RecyclerV
 
     static class ViewHolderOne extends RecyclerView.ViewHolder {
 
-        public TextView txt_medicine,txt_noofdays,txt_consumptionperday;
-        CheckBox chx_m,chx_a,chx_n;
+        TextView tv_tabletname,tv_quanity;
+        CheckBox chx_m,chx_a,chx_n,chx_afterfood,chx_beforefood;
 
 
 
         public ViewHolderOne(View itemView) {
             super(itemView);
-            txt_medicine = itemView.findViewById(R.id.txt_medicine);
-            txt_noofdays = itemView.findViewById(R.id.txt_noofdays);
-            txt_consumptionperday = itemView.findViewById(R.id.txt_consumptionperday);
+            tv_tabletname = itemView.findViewById(R.id.tv_tabletname);
+            tv_quanity = itemView.findViewById(R.id.tv_quanity);
             chx_m = itemView.findViewById(R.id.chx_m);
             chx_a = itemView.findViewById(R.id.chx_a);
             chx_n = itemView.findViewById(R.id.chx_n);
+            chx_afterfood = itemView.findViewById(R.id.chx_afterfood);
+            chx_beforefood = itemView.findViewById(R.id.chx_beforefood);
+            chx_m.setClickable(false);
+            chx_a.setClickable(false);
+            chx_n.setClickable(false);
+            chx_afterfood.setClickable(false);
+            chx_beforefood.setClickable(false);
 
 
 

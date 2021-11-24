@@ -520,33 +520,30 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:orientation="horizontal"
+                    android:layout_marginEnd="10dp"                        android:orientation="horizontal"
                     tools:ignore="RtlHardcoded">
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:text="@string/medicine"
-                        android:textColor="@color/new_txt_color" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".9"
+                        android:text="@string/medicine"
+                        android:textColor="@color/new_txt_color" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".7"
                         android:text="@string/no_of_days"
                         android:textColor="@color/new_txt_color" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1.4"
                         android:orientation="vertical">
 
                         <TextView
@@ -559,8 +556,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:orientation="horizontal"
-                            android:visibility="gone">
+                            android:orientation="horizontal">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -572,7 +568,7 @@
                                     android:layout_width="30dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/futuramediumbt"
-                                    android:text="M.." />
+                                    android:text="M." />
 
                             </LinearLayout>
 
@@ -586,7 +582,7 @@
                                     android:layout_width="30dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/futuramediumbt"
-                                    android:text="A.." />
+                                    android:text="A." />
 
                             </LinearLayout>
 
@@ -600,47 +596,83 @@
                                     android:layout_width="30dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/futuramediumbt"
-                                    android:text="N.." />
+                                    android:text="N." />
 
                             </LinearLayout>
 
                         </LinearLayout>
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".9"
+                        android:orientation="vertical">
 
-                    <Button
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/intake"
+                            android:textColor="@color/new_txt_color" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="30dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/futuramediumbt"
+                                    android:text="A.F." />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="30dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/futuramediumbt"
+                                    android:text="B.F." />
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/removeImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/ic_baseline_add_circle_outline_24"
-                        android:visibility="invisible" />
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/ic_baseline_remove_circle_outline_24"
+                        android:visibility="invisible"/>
+
 
 
                 </LinearLayout>
 
-                <RelativeLayout
+                <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_prescriptiondetails"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp" />
-
-                    <TextView
-                        android:id="@+id/txt_no_records"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/norecordsfound"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:visibility="gone" />
-                </RelativeLayout>
+                    android:id="@+id/rv_prescriptiondetails"
+                    android:visibility="visible"
+                    />
 
             </LinearLayout>
 

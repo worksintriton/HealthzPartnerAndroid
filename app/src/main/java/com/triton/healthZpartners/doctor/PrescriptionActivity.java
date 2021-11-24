@@ -311,6 +311,7 @@ public class PrescriptionActivity extends AppCompatActivity implements Diagnosis
 
         avi_indicator.setVisibility(View.GONE);
         ll_headername.setVisibility(View.GONE);
+        container.setVisibility(View.GONE);
 
 
         ImageView img_back = include_petlover_header.findViewById(R.id.img_back);
@@ -1553,6 +1554,7 @@ public class PrescriptionActivity extends AppCompatActivity implements Diagnosis
     @SuppressLint("LogNotTimber")
     private void setView() {
         ll_headername.setVisibility(View.VISIBLE);
+        container.setVisibility(View.VISIBLE);
         Log.w(TAG,"prescriptionDataList setView : "+new Gson().toJson(prescriptionDataList));
         rv_prescriptiondetails.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rv_prescriptiondetails.setItemAnimator(new DefaultItemAnimator());
