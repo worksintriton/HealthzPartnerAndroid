@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
@@ -36,12 +37,13 @@ import com.triton.healthZpartners.doctor.DoctorEditProfileActivity;
 import com.triton.healthZpartners.doctor.DoctorMyCalendarNewUserActivity;
 import com.triton.healthZpartners.doctor.DoctorMyappointmentsActivity;
 import com.triton.healthZpartners.doctor.DoctorProfileScreenActivity;
-import com.triton.healthZpartners.doctor.DoctorProfileScreenActivity_ViewBinding;
 import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorCompletedAppointment;
 import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorMissedAppointment;
 import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorNewAppointment;
 import com.triton.healthZpartners.requestpojo.DoctorCheckStatusRequest;
+import com.triton.healthZpartners.requestpojo.DoctorDetailsByUserIdRequest;
 import com.triton.healthZpartners.responsepojo.DoctorCheckStatusResponse;
+import com.triton.healthZpartners.responsepojo.DoctorDetailsByUserIdResponse;
 import com.triton.healthZpartners.sessionmanager.SessionManager;
 import com.triton.healthZpartners.utils.ConnectionDetector;
 import com.triton.healthZpartners.utils.RestUtils;
@@ -82,12 +84,20 @@ public class FragmentDoctorDashboard extends Fragment  {
     TextView txt_myappointments;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_viewprofile)
-    Button btn_viewprofile;
+    @BindView(R.id.txt_view_profile)
+    TextView txt_view_profile;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_edit_profile)
     TextView txt_edit_profile;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_clinicname)
+    TextView txt_clinicname;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_clinic_imge)
+    ImageView img_clinic_imge;
 
     private SharedPreferences preferences;
     private Context mContext;
@@ -100,6 +110,7 @@ public class FragmentDoctorDashboard extends Fragment  {
     FragmentManager  childFragMang;
 
     private int someIndex = 0;
+    private List<DoctorDetailsByUserIdResponse.DataBean.ClinicPicBean> doctorclinicdetailsResponseList;
 
     public FragmentDoctorDashboard() {
         // Required empty public constructor
@@ -134,7 +145,7 @@ public class FragmentDoctorDashboard extends Fragment  {
 
 
         if(userid != null){
-            if (new ConnectionDetector(getActivity()).isNetworkAvailable(getActivity())) {
+            if (new ConnectionDetector(mContext).isNetworkAvailable(mContext)) {
                 doctorCheckStatusResponseCall();
             }
         }
@@ -146,16 +157,13 @@ public class FragmentDoctorDashboard extends Fragment  {
                 startActivity(new Intent(mContext, DoctorMyappointmentsActivity.class));
             }
         });
-
-
         txt_edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(mContext, DoctorEditProfileActivity.class));
             }
         });
-
-        btn_viewprofile.setOnClickListener(new View.OnClickListener() {
+        txt_view_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(mContext, DoctorProfileScreenActivity.class));
@@ -252,6 +260,10 @@ public class FragmentDoctorDashboard extends Fragment  {
                                 }else{
                                     isDoctorStatus = true;
                                     Log.w(TAG,"isDoctorStatus else : "+isDoctorStatus);
+
+                                    if (new ConnectionDetector(mContext).isNetworkAvailable(mContext)) {
+                                        doctorDetailsByUserIdResponseCall();
+                                    }
 
                                     if(isDoctorStatus){
                                        // setupViewPager(viewPager);
@@ -379,6 +391,85 @@ public class FragmentDoctorDashboard extends Fragment  {
 
 
 
+    }
+
+    @SuppressLint("LogNotTimber")
+    private void doctorDetailsByUserIdResponseCall() {
+        avi_indicator.setVisibility(View.VISIBLE);
+        avi_indicator.smoothToShow();
+        RestApiInterface ApiService = APIClient.getClient().create(RestApiInterface.class);
+        Call<DoctorDetailsByUserIdResponse> call = ApiService.doctorDetailsByUserIdResponseCall(RestUtils.getContentType(),doctorDetailsByUserIdRequest());
+        Log.w(TAG,"url  :%s"+ call.request().url().toString());
+
+        call.enqueue(new Callback<DoctorDetailsByUserIdResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<DoctorDetailsByUserIdResponse> call, @NonNull Response<DoctorDetailsByUserIdResponse> response) {
+                avi_indicator.smoothToHide();
+                Log.w(TAG,"DoctorDetailsByUserIdResponse"+ "--->" + new Gson().toJson(response.body()));
+
+
+                if (response.body() != null) {
+                    if(200 == response.body().getCode()){
+
+                        if(response.body().getData() != null) {
+                            if (response.body().getData().getClinic_name() != null) {
+                                txt_clinicname.setText(response.body().getData().getClinic_name());
+                            }else{
+                                txt_clinicname.setText("");
+                            }
+                            if (response.body().getData().getClinic_pic() != null) {
+                                doctorclinicdetailsResponseList = response.body().getData().getClinic_pic();
+                                Log.w(TAG, "Size" + doctorclinicdetailsResponseList.size());
+                                Log.w(TAG, "doctorclinicdetailsResponseList : " + new Gson().toJson(doctorclinicdetailsResponseList));
+                            }
+
+                            if (doctorclinicdetailsResponseList != null && doctorclinicdetailsResponseList.size() > 0) {
+
+                                for (int i = 0; i < doctorclinicdetailsResponseList.size(); i++) {
+                                    if (doctorclinicdetailsResponseList.get(i).getClinic_pic() != null && !doctorclinicdetailsResponseList.get(i).getClinic_pic().isEmpty()) {
+                                        Glide.with(mContext)
+                                                .load(doctorclinicdetailsResponseList.get(i).getClinic_pic())
+                                                .into(img_clinic_imge);
+
+                                    }
+                                    else{
+                                        Glide.with(mContext)
+                                                .load(APIClient.PROFILE_IMAGE_URL)
+                                                .into(img_clinic_imge);
+
+                                    }
+                                }
+
+
+
+
+
+
+                            }
+
+                        }
+
+                    }
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<DoctorDetailsByUserIdResponse> call, @NonNull Throwable t) {
+                avi_indicator.smoothToHide();
+
+                Log.w(TAG,"DoctorDetailsResponse flr"+"--->" + t.getMessage());
+            }
+        });
+
+    }
+    @SuppressLint("LogNotTimber")
+    private DoctorDetailsByUserIdRequest doctorDetailsByUserIdRequest() {
+        DoctorDetailsByUserIdRequest doctorDetailsByUserIdRequest = new DoctorDetailsByUserIdRequest();
+        doctorDetailsByUserIdRequest.setUser_id(userid);
+        Log.w(TAG,"doctorDetailsByUserIdRequest"+ "--->" + new Gson().toJson(doctorDetailsByUserIdRequest));
+        return doctorDetailsByUserIdRequest;
     }
 
 

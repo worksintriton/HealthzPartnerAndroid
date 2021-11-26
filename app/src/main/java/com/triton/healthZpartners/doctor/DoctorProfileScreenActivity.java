@@ -143,6 +143,10 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
     @BindView(R.id.txt_clinic_address)
     TextView txt_clinic_address;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_name)
+    TextView txt_name;
+
 /*   @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_notification)
     ImageView img_notification;*/
@@ -327,6 +331,9 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
         txt_mail.setText(emailid);
         txt_phn_num.setText(phoneNo);
 
+        txt_name.setText(name);
+        txt_dr_specialization.setText(emailid);
+        //txt_pets_handled.setText(concatenatedPetHandled);
 
         if(profileimage != null && !profileimage.isEmpty()){
             Glide.with(DoctorProfileScreenActivity.this)
@@ -615,7 +622,10 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
                                 viewpageData(doctorclinicdetailsResponseList);
 
                             }
-                            if (response.body().getData().getSpecialization() != null) {
+                            if (response.body().getData().getClinic_no() != null) {
+                                txt_pets_handled.setText(response.body().getData().getClinic_no());
+                            }
+                           /* if (response.body().getData().getSpecialization() != null) {
                                 for (int i = 0; i < response.body().getData().getSpecialization().size(); i++) {
                                     concatenatedSpcNames += response.body().getData().getSpecialization().get(i).getSpecialization();
                                     if (i < response.body().getData().getSpecialization().size() - 1)
@@ -623,8 +633,8 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
                                 }
                                 txt_dr_specialization.setText(concatenatedSpcNames);
 
-                            }
-                            if (response.body().getData().getPet_handled() != null) {
+                            }*/
+                           /* if (response.body().getData().getPet_handled() != null) {
                                 for (int i = 0; i < response.body().getData().getPet_handled().size(); i++) {
                                     concatenatedPetHandled += response.body().getData().getPet_handled().get(i).getPet_handled();
                                     if (i < response.body().getData().getPet_handled().size() - 1)
@@ -632,7 +642,7 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
                                 }
                                 txt_pets_handled.setText(concatenatedPetHandled);
 
-                            }
+                            }*/
                         }
 
                     }

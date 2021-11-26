@@ -4,17 +4,21 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.activity.NotificationActivity;
@@ -30,7 +34,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DoctorWalkinAppointmentsActivity extends AppCompatActivity implements View.OnClickListener {
+public class DoctorWalkinAppointmentsActivity extends AppCompatActivity implements  BottomNavigationView.OnNavigationItemSelectedListener {
     private String TAG = "DoctorWalkinAppointmentsActivity";
 
     @SuppressLint("NonConstantResourceId")
@@ -52,6 +56,10 @@ public class DoctorWalkinAppointmentsActivity extends AppCompatActivity implemen
     @BindView(R.id.include_doctor_header)
     View include_doctor_header;
 
+
+    BottomNavigationView bottom_navigation_view;
+
+    FloatingActionButton fab;
 
 
     String orders;
@@ -116,6 +124,19 @@ public class DoctorWalkinAppointmentsActivity extends AppCompatActivity implemen
         img_back.setOnClickListener(v -> onBackPressed());
 
 
+        fab = include_doctor_footer.findViewById(R.id.fab);
+        bottom_navigation_view = include_doctor_footer.findViewById(R.id.bottomNavigation);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callDirections("1");
+            }
+        });
+
+
 
 
 
@@ -143,31 +164,28 @@ public class DoctorWalkinAppointmentsActivity extends AppCompatActivity implemen
         finish();
     }
 
+
+
     @SuppressLint("NonConstantResourceId")
     @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-
-
-            case R.id.rl_homes:
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
                 callDirections("1");
                 break;
-
-            case R.id.rl_home:
-                callDirections("1");
-                break;
-
-            case R.id.rl_shop:
+            case R.id.shop:
                 callDirections("2");
                 break;
 
-            case R.id.rl_comn:
+            case R.id.community:
                 callDirections("3");
                 break;
 
-        }
 
+        }
+        return true;
     }
+
     static class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();

@@ -39,11 +39,10 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/include_doctor_footer"
+            android:id="@+id/include_sp_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            layout="@layout/toolbar_layout_doctor_footer" />
-
+            layout="@layout/toolbar_layout_sp_footer_new_shaped" />
 
     </LinearLayout>
 

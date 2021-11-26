@@ -68,8 +68,7 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
     View view, header;
     Toolbar toolbar;
 
-    // Make sure to be using android.support.v7.app.ActionBarDrawerToggle version.
-    // The android.support.v4.app.ActionBarDrawerToggle has been deprecated.
+
     private ActionBarDrawerToggle drawerToggle;
     ImageView drawerImg;
     CircleImageView nav_header_imageView;
@@ -190,7 +189,7 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
             nav_header_ref_code.setVisibility(View.VISIBLE);
 
         }else{
-            nav_header_ref_code.setVisibility(View.GONE);
+            nav_header_ref_code.setVisibility(View.VISIBLE);
             nav_header_ref_code.setText("");
         }
 

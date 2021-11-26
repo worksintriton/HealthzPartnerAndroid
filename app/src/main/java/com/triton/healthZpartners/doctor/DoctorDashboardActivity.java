@@ -190,7 +190,7 @@ public class DoctorDashboardActivity  extends DoctorNavigationDrawer implements 
         }
 
 
-       floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -203,6 +203,7 @@ public class DoctorDashboardActivity  extends DoctorNavigationDrawer implements 
         });
 
         bottomNavigation.getMenu().getItem(0).setCheckable(false);
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
 
         tag = getIntent().getStringExtra("tag");
         Log.w(TAG," tag : "+tag);
@@ -212,7 +213,6 @@ public class DoctorDashboardActivity  extends DoctorNavigationDrawer implements 
                 bottomNavigation.setSelectedItemId(R.id.home);
                 loadFragment(new FragmentDoctorDashboard());
             }else if(tag.equalsIgnoreCase("2")){
-                active = doctorShopFragment;
                 bottomNavigation.setSelectedItemId(R.id.shop);
                 startActivity(new Intent(getApplicationContext(), DoctorProfileScreenActivity.class));
             } else if(tag.equalsIgnoreCase("3")){
@@ -230,7 +230,7 @@ public class DoctorDashboardActivity  extends DoctorNavigationDrawer implements 
 
         avi_indicator.setVisibility(View.GONE);
 
-        bottomNavigation.setOnNavigationItemSelectedListener(this);
+
 
 
         SessionManager session = new SessionManager(getApplicationContext());
@@ -857,6 +857,7 @@ public class DoctorDashboardActivity  extends DoctorNavigationDrawer implements 
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {

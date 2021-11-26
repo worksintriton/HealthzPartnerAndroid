@@ -38,6 +38,8 @@ public class SessionManager {
     public static final String KEY_RZP_KEY = "rzpkey";
     public static final String KEY_RZP_PRODUCTION = "production";
 
+    public static final String KEY_CLINIC_NAME = "clinicname";
+
 
     @SuppressLint("CommitPrefEdits")
     public SessionManager(Context context) {
@@ -131,8 +133,18 @@ public class SessionManager {
         return user;
     }
 
+    public void createbusinessInfo(String clinicname) {
+        editor.putBoolean(IS_LOGIN, true);
+        editor.putString(KEY_CLINIC_NAME, clinicname);
+        editor.commit();
 
+    }
 
+    public HashMap<String, String> getbusinessInfo() {
+        HashMap<String, String> user = new HashMap<>();
+        user.put(KEY_CLINIC_NAME, pref.getString(KEY_CLINIC_NAME, ""));
+        return user;
+    }
 
 
 }

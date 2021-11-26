@@ -59,7 +59,7 @@
     <group
         android:id="@+id/group8">
         <item android:id="@+id/nav_item_eight"
-             android:icon="@drawable/ic_notification_new"
+             android:icon="@drawable/notification_white"
             android:title="@string/notification"
             android:visible="true"/>
     </group>

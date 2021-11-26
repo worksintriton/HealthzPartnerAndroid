@@ -61,8 +61,8 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_notification_new"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/notification_white"
                     tools:ignore="ContentDescription" />
 
 
@@ -669,7 +669,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/logout"
-                    android:textColor="@color/new_thick_red_bgm_color"
+                    android:textColor="#FF0000"
                     android:textSize="18sp" />
 
             </LinearLayout>

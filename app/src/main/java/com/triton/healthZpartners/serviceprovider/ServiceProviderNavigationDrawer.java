@@ -35,6 +35,7 @@ import com.triton.healthZpartners.activity.LoginActivity;
 
 import com.triton.healthZpartners.activity.NotificationActivity;
 
+import com.triton.healthZpartners.activity.location.ManageAddressActivity;
 import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
 import com.triton.healthZpartners.requestpojo.DefaultLocationRequest;
@@ -90,9 +91,14 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
     private Dialog dialog;
     private String refcode;
 
-    TextView txt_notification_count_badge;
-    TextView txt_cart_count_badge;
+   /* TextView txt_notification_count_badge;
+    TextView txt_cart_count_badge;*/
     private String userid;
+
+    TextView nav_header_logout;
+
+    public View toolbar_layout;
+    public TextView txt_location;
 
     @SuppressLint({"InflateParams", "LongLogTag"})
     @Override
@@ -155,6 +161,8 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
         nav_header_emailid = header.findViewById(R.id.nav_header_emailid);
         nav_header_profilename = header.findViewById(R.id.nav_header_profilename);
         nav_header_edit = header.findViewById(R.id.nav_header_edit);
+
+
         if(image_url != null && !image_url.isEmpty()){
             Glide.with(this).load(image_url).into(nav_header_imageView);
         }else{
@@ -170,9 +178,18 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
             nav_header_ref_code.setText("");
         }
 
+        nav_header_logout = view.findViewById(R.id.nav_header_logout);
+
+        nav_header_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLogOutAppAlert();
+            }
+        });
+
         nav_header_emailid.setText(emailid);
         nav_header_profilename.setText(name);
-        RelativeLayout llheader = header.findViewById(R.id.llheader);
+        FrameLayout llheader = header.findViewById(R.id.llheader);
         llheader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,13 +197,13 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
             }
         });
 
-        TextView nav_header_edit = header.findViewById(R.id.nav_header_edit);
+       /* TextView nav_header_edit = header.findViewById(R.id.nav_header_edit);
         nav_header_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), SPEditProfileActivity.class));
             }
-        });
+        });*/
 
 
 
@@ -197,38 +214,30 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
             switch (menuItem.getItemId()) {
 
 
-                //Replacing the main content with ContentFragment Which is our Inbox View;
                 case R.id.nav_item_one:
-                     gotoSPDashboard();
+                    gotoMyAppointments();
                     return true;
 
                 // For rest of the options we just show a toast on click
                 case R.id.nav_item_two:
-                    gotoMyCalendar();
+
                     return true;
 
                 case R.id.nav_item_three:
-                    gotoManageServices();
+                    gotoMyCalendar();
                     return true;
 
                 case R.id.nav_item_four:
-                    gotoMyOrders();
+                    gotoManageServices();
                     return true;
+
 
                 case R.id.nav_item_five:
-                    gotoFavourites();
+                    gotoNotifications();
                     return true;
 
-                case R.id.nav_item_six:
-                    gotoMyCoupons();
-                    return true;
-               case R.id.nav_item_seven:
-                   gotoNotifications();
-                   return true;
-                case R.id.nav_item_eight:
-                    //confirmLogoutDialog();
-                    showLogOutAppAlert();
-                    return true;
+
+
 
 
                 default:
@@ -245,8 +254,8 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
 
     }
 
-    private void gotoSPDashboard() {
-        Intent intent = new Intent(getApplicationContext(),ServiceProviderDashboardActivity.class);
+    private void gotoMyAppointments() {
+        Intent intent = new Intent(getApplicationContext(),SPMyappointmentsActivity.class);
         intent.putExtra("fromactivity",TAG);
         startActivity(intent);
     }
@@ -276,19 +285,32 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
     private void initToolBar(View view) {
         toolbar = view.findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        drawerImg = toolbar.findViewById(R.id.img_menu);
+        toolbar_layout = view.findViewById(R.id.include_customer_header);
+        txt_location = toolbar_layout.findViewById(R.id.txt_location);
+        drawerImg = toolbar_layout.findViewById(R.id.img_menu);
 
-        ImageView img_cart = toolbar.findViewById(R.id.img_cart);
-        ImageView img_notification = toolbar.findViewById(R.id.img_notification);
-        txt_notification_count_badge = toolbar.findViewById(R.id.txt_notification_count_badge);
+        RelativeLayout ll_location = toolbar_layout.findViewById(R.id.rl_mappin);
+        ll_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ManageAddressActivity.class);
+                intent.putExtra("fromactivity",TAG);
+                startActivity(intent);
+
+            }
+        });
+
+        ImageView img_cart = toolbar_layout.findViewById(R.id.img_cart);
+        ImageView img_notification = toolbar_layout.findViewById(R.id.img_notification);
+
+
+        /*txt_notification_count_badge = toolbar.findViewById(R.id.txt_notification_count_badge);
         txt_cart_count_badge = toolbar.findViewById(R.id.txt_cart_count_badge);
         txt_notification_count_badge.setVisibility(View.GONE);
-        txt_cart_count_badge.setVisibility(View.GONE);
+        txt_cart_count_badge.setVisibility(View.GONE);*/
 
 
-//        tvWelcomeName = toolbar.findViewById(R.id.toolbar_title);
-//
-//        tvWelcomeName.setText("Home");
+
 
 
         img_notification.setOnClickListener(new View.OnClickListener() {
@@ -346,7 +368,7 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
                         if(response.body().getData()!=null){
                             int Notification_count = response.body().getData().getNotification_count();
                             int Product_count = response.body().getData().getProduct_count();
-                            if(Notification_count != 0){
+                            /*if(Notification_count != 0){
                                 txt_notification_count_badge.setVisibility(View.VISIBLE);
                                 txt_notification_count_badge.setText(""+Notification_count);
                             }else{
@@ -357,7 +379,7 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
                                 txt_cart_count_badge.setText(""+Product_count);
                             }else{
                                 txt_cart_count_badge.setVisibility(View.GONE);
-                            }
+                            }*/
 
 
                         }

@@ -107,7 +107,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/ic_notification_new"
+                    android:src="@drawable/notification_white"
                     tools:ignore="ContentDescription"
                     android:layout_marginTop="10dp" />
                 <TextView
@@ -227,7 +227,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
-             android:src="@drawable/ic_notification_new"
+             android:src="@drawable/notification_white"
             tools:ignore="ContentDescription" />
         <ImageView
             android:id="@+id/img_cart1"

@@ -1,4 +1,4 @@
-package com.triton.healthZpartners.doctor;
+package com.triton.healthZpartners.serviceprovider;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -31,18 +31,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.tabs.TabLayout;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.activity.NotificationActivity;
-import com.triton.healthZpartners.customer.CustomerDashboardActivity;
-import com.triton.healthZpartners.customer.CustomerProfileScreenActivity;
-import com.triton.healthZpartners.fragmentcustomer.myappointments.FragmentPetCompletedAppointment;
-import com.triton.healthZpartners.fragmentcustomer.myappointments.FragmentPetMissedAppointment;
-import com.triton.healthZpartners.fragmentcustomer.myappointments.FragmentPetNewAppointment;
-import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorCompletedAppointment;
-import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorMissedAppointment;
-import com.triton.healthZpartners.fragmentdoctor.myappointments.FragmentDoctorNewAppointment;
+import com.triton.healthZpartners.fragmentserviceprovider.myappointments.FragmentSPCompletedAppointment;
+import com.triton.healthZpartners.fragmentserviceprovider.myappointments.FragmentSPMissedAppointment;
+import com.triton.healthZpartners.fragmentserviceprovider.myappointments.FragmentSPNewAppointment;
 import com.triton.healthZpartners.responsepojo.PetLoverDashboardResponse;
 
 import java.util.ArrayList;
@@ -51,13 +45,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DoctorMyappointmentsActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
+public class SPMyappointmentsActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private String TAG = "DoctorMyappointmentsActivity";
+    private String TAG = "SPMyappointmentsActivity";
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.include_doctor_footer)
-    View include_doctor_footer;
+    @BindView(R.id.include_sp_footer)
+    View include_sp_footer;
 
     BottomNavigationView bottom_navigation_view;
 
@@ -98,7 +92,7 @@ public class DoctorMyappointmentsActivity extends AppCompatActivity implements V
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_myappointments);
+        setContentView(R.layout.activity_sp_myappointments);
         ButterKnife.bind(this);
         Log.w(TAG,"onCreate");
 
@@ -140,8 +134,8 @@ public class DoctorMyappointmentsActivity extends AppCompatActivity implements V
         img_cart.setOnClickListener(this);
         img_profile.setOnClickListener(this);
 
-        fab = include_doctor_footer.findViewById(R.id.fab);
-        bottom_navigation_view = include_doctor_footer.findViewById(R.id.bottomNavigation);
+        fab = include_sp_footer.findViewById(R.id.fab);
+        bottom_navigation_view = include_sp_footer.findViewById(R.id.bottomNavigation);
         bottom_navigation_view.setOnNavigationItemSelectedListener(this);
         bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
@@ -160,23 +154,23 @@ public class DoctorMyappointmentsActivity extends AppCompatActivity implements V
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new FragmentDoctorNewAppointment(), "New");
-        adapter.addFragment(new FragmentDoctorCompletedAppointment(), "Completed");
-        adapter.addFragment(new FragmentDoctorMissedAppointment(), "Missed");
+        adapter.addFragment(new FragmentSPNewAppointment(), "New");
+        adapter.addFragment(new FragmentSPCompletedAppointment(), "Completed");
+        adapter.addFragment(new FragmentSPMissedAppointment(), "Missed");
         viewPager.setAdapter(adapter);
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i = new Intent(DoctorMyappointmentsActivity.this, DoctorDashboardActivity.class);
+        Intent i = new Intent(SPMyappointmentsActivity.this, ServiceProviderDashboardActivity.class);
         startActivity(i);
         finish();
     }
 
 
     public void callDirections(String tag){
-        Intent intent = new Intent(getApplicationContext(), DoctorDashboardActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ServiceProviderDashboardActivity.class);
         intent.putExtra("tag",tag);
         startActivity(intent);
         finish();
@@ -189,7 +183,7 @@ public class DoctorMyappointmentsActivity extends AppCompatActivity implements V
             case R.id.home:
                 callDirections("1");
                 break;
-            case R.id.shop:
+            case R.id.manageservice:
                 callDirections("2");
                 break;
 
@@ -235,7 +229,7 @@ public class DoctorMyappointmentsActivity extends AppCompatActivity implements V
 
         try {
 
-            dialog = new Dialog(DoctorMyappointmentsActivity.this);
+            dialog = new Dialog(SPMyappointmentsActivity.this);
             dialog.setContentView(R.layout.sos_popup_layout);
             RecyclerView rv_sosnumbers = (RecyclerView)dialog.findViewById(R.id.rv_sosnumbers);
             Button btn_call = (Button)dialog.findViewById(R.id.btn_call);
@@ -253,7 +247,7 @@ public class DoctorMyappointmentsActivity extends AppCompatActivity implements V
                 @Override
                 public void onClick(View v) {
                     if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(DoctorMyappointmentsActivity.this, new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
+                        ActivityCompat.requestPermissions(SPMyappointmentsActivity.this, new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
                     }
                     else
                     {
@@ -298,7 +292,7 @@ public class DoctorMyappointmentsActivity extends AppCompatActivity implements V
             case R.id.img_cart:
                 break;
             case R.id.img_profile:
-                Intent intent = new Intent(getApplicationContext(), CustomerProfileScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SPProfileScreenActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
                 break;

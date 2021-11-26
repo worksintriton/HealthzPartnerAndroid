@@ -54,17 +54,17 @@ public class SPCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycle
     @SuppressLint("SetTextI18n")
     private void initLayoutOne(ViewHolderOne holder, final int position) {
 
-        if(completedAppointmentResponseList.get(position).getPet_id().getPet_name() != null){
+       /* if(completedAppointmentResponseList.get(position).getPet_id().getPet_name() != null){
             holder.txt_petname.setText(completedAppointmentResponseList.get(position).getPet_id().getPet_name());
         }
         if(completedAppointmentResponseList.get(position).getPet_id().getPet_type() != null) {
             holder.txt_pettype.setText(completedAppointmentResponseList.get(position).getPet_id().getPet_type());
-        }
+        }*/
         if(completedAppointmentResponseList.get(position).getCompleted_at() != null) {
-            holder.txt_completed_date.setText("Completed on:" + " " + completedAppointmentResponseList.get(position).getCompleted_at());
+            holder.txt_bookedon.setText("Completed :" + " " + completedAppointmentResponseList.get(position).getCompleted_at());
         }
 
-        holder.txt_lbl_type.setText("Service Name");
+
         if(completedAppointmentResponseList.get(position).getService_name() != null){
             holder.txt_type.setText(completedAppointmentResponseList.get(position).getService_name());
         }
@@ -128,10 +128,10 @@ public class SPCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycle
     }
 
     static class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_petname,txt_pettype,txt_type,txt_service_cost,txt_completed_date,txt_lbl_type;
+        public TextView txt_petname,txt_pettype,txt_type,txt_service_cost,txt_bookedon,txt_lbl_type;
         public ImageView img_pet_imge,img_emergency_appointment;
         public Button btn_cancel,btn_complete,btn_prescriptiondetails;
-        public LinearLayout ll_new;
+        public LinearLayout ll_new,ll_btn;
 
         public ViewHolderOne(View itemView) {
             super(itemView);
@@ -141,15 +141,17 @@ public class SPCompletedAppointmentAdapter extends  RecyclerView.Adapter<Recycle
             txt_lbl_type = itemView.findViewById(R.id.txt_lbl_type);
             txt_type = itemView.findViewById(R.id.txt_type);
             txt_service_cost = itemView.findViewById(R.id.txt_service_cost);
-            txt_completed_date = itemView.findViewById(R.id.txt_completed_date);
+            txt_bookedon = itemView.findViewById(R.id.txt_bookedon);
             btn_cancel = itemView.findViewById(R.id.btn_cancel);
             btn_complete = itemView.findViewById(R.id.btn_complete);
             btn_prescriptiondetails = itemView.findViewById(R.id.btn_prescriptiondetails);
             btn_prescriptiondetails.setVisibility(View.GONE);
             ll_new = itemView.findViewById(R.id.ll_new);
+            ll_btn = itemView.findViewById(R.id.ll_btn);
 
             img_emergency_appointment = itemView.findViewById(R.id.img_emergency_appointment);
             img_emergency_appointment.setVisibility(View.GONE);
+            ll_btn.setVisibility(View.GONE);
 
 
 

@@ -1,70 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/nav_item_one"
+        android:icon="@drawable/ic_hzmenu_myappoint_png"
+        android:title="@string/my_appointments" />
 
-    <group
-        android:id="@+id/group1">
-        <item android:id="@+id/nav_item_one"
-            android:icon="@drawable/myappointments"
-            android:title="@string/my_appointments" />
-    </group>
+    <item android:id="@+id/nav_item_two"
+        android:icon="@drawable/ic_hzmenu_walkin_png"
+        android:title="@string/walking_appointments"
+        android:visible="false"/>
 
-    <group
-        android:id="@+id/group2">
-        <item android:id="@+id/nav_item_two"
-            android:icon="@drawable/calendermenu"
-            android:title="@string/my_calendar" />
-    </group>
+    <item android:id="@+id/nav_item_three"
+        android:icon="@drawable/calendar_new"
+        android:title="@string/my_calendar" />
 
 
 
-    <group
-        android:id="@+id/group3">
-        <item android:id="@+id/nav_item_three"
-        android:icon="@drawable/manageservices"
-        android:title="@string/manage_services"
-            android:visible="false"/>
-    </group>
 
-    <group
-        android:id="@+id/group4">
     <item android:id="@+id/nav_item_four"
-        android:icon="@drawable/myorders"
-        android:title="@string/my_orders" />
-    </group>
+        android:icon="@drawable/manageservices"
+        android:title="@string/manage_services" />
 
-
-        <group
-            android:id="@+id/group5">
-        <item android:id="@+id/nav_item_five"
-            android:icon="@drawable/like"
-            android:title="@string/favourites" />
-        </group>
-
-        <group
-            android:id="@+id/group6">
-        <item android:id="@+id/nav_item_six"
-            android:icon="@drawable/discount"
-            android:title="@string/my_coupons" />
-        </group>
-
-    <group
-        android:id="@+id/group7">
-        <item android:id="@+id/nav_item_seven"
-             android:icon="@drawable/ic_notification_new"
-            android:title="@string/notification"
-            android:visible="true"/>
-    </group>
-
-    <group
-        android:id="@+id/group8">
-    <item android:id="@+id/nav_item_eight"
-        android:icon="@drawable/logout"
-        android:title="@string/logout" />
-    </group>
-
-
-
+    <item android:id="@+id/nav_item_five"
+        android:icon="@drawable/ic_hzmenu_notification"
+        android:title="@string/notification"
+        android:visible="true"/>
 
 
 

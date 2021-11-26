@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/manageservice"
+        android:enabled="true"
+        android:icon="@drawable/manageservices"
+        android:title="@string/manage_services"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:title="Home"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:id="@+id/community"
+        android:icon="@drawable/ic_hzcommunity_png"
+        android:title="@string/community"
+        />
+
+
+
+</menu>

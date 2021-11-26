@@ -177,7 +177,7 @@ public class VerifyEmailOtpActivity extends AppCompatActivity implements View.On
 
     @SuppressLint("LogNotTimber")
     private void resendOtpResponseCall() {
-        txt_resend.setVisibility(View.GONE);
+  /*      txt_resend.setVisibility(View.GONE);*/
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);

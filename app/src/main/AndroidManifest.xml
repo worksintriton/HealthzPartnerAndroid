@@ -609,9 +609,16 @@
             android:name="com.triton.healthZpartners.doctor.ManageAddressDoctorActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" /> <!-- Service Provider -->
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- Service Provider -->
         <activity
             android:name="com.triton.healthZpartners.serviceprovider.ServiceProviderRegisterFormActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.triton.healthZpartners.serviceprovider.SPMyappointmentsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />

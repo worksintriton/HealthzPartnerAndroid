@@ -71,16 +71,14 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
     @SuppressLint({"SetTextI18n", "LogNotTimber"})
     private void initLayoutOne(ViewHolderOne holder, final int position) {
 
-        Log.w(TAG,"Pet name-->"+newAppointmentResponseList.get(position).getPet_id().getPet_name());
 
         currentItem = newAppointmentResponseList.get(position);
-        if(newAppointmentResponseList.get(position).getPet_id().getPet_name() != null) {
+       /* if(newAppointmentResponseList.get(position).getPet_id().getPet_name() != null) {
             holder.txt_petname.setText(newAppointmentResponseList.get(position).getPet_id().getPet_name());
         }
         if(newAppointmentResponseList.get(position).getPet_id().getPet_type() != null) {
             holder.txt_pettype.setText(newAppointmentResponseList.get(position).getPet_id().getPet_type());
-        }
-        holder.txt_lbl_type.setText("Service Name");
+        }*/
         if(newAppointmentResponseList.get(position).getService_name() != null){
             holder.txt_type.setText(newAppointmentResponseList.get(position).getService_name());
         }
@@ -89,11 +87,10 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
         }
 
         if(newAppointmentResponseList.get(position).getBooking_date_time() != null){
-            holder.txt_bookedon.setText("Booked for:"+" "+newAppointmentResponseList.get(position).getBooking_date_time());
+            holder.txt_bookedon.setText("Booked For:"+" "+newAppointmentResponseList.get(position).getBooking_date_time());
 
         }
 
-        Log.w(TAG,"Pet_img : "+newAppointmentResponseList.get(position).getPet_id().getPet_img());
 
    /*      try{
              if (newAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img() != null && !newAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img().isEmpty()) {
@@ -111,13 +108,13 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
              }
 
          }catch (Exception e){}*/
-        if(newAppointmentResponseList.get(position).getAppointment_types() != null && newAppointmentResponseList.get(position).getAppointment_types().equalsIgnoreCase("Emergency")){
+       /* if(newAppointmentResponseList.get(position).getAppointment_types() != null && newAppointmentResponseList.get(position).getAppointment_types().equalsIgnoreCase("Emergency")){
             holder.img_emergency_appointment.setVisibility(View.VISIBLE);
         }else{
             holder.img_emergency_appointment.setVisibility(View.GONE);
 
         }
-
+*/
 
         holder.btn_complete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,15 +131,15 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
         compareDatesandTime(currentDateandTime,bookingDateandTime);
 
         if(isVaildDate){
-            holder.btn_cancel.setVisibility(View.VISIBLE);
+            holder.txt_cancel.setVisibility(View.VISIBLE);
         }else{
-            holder.btn_cancel.setVisibility(View.GONE);
+            holder.txt_cancel.setVisibility(View.GONE);
         }
 
-        holder.btn_cancel.setOnClickListener(new View.OnClickListener() {
+        holder.txt_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onAppointmentCancel.onAppointmentCancel(newAppointmentResponseList.get(position).get_id(),newAppointmentResponseList.get(position).getAppointment_types(),newAppointmentResponseList.get(position).getUser_id().get_id(),newAppointmentResponseList.get(position).getSp_id(),newAppointmentResponseList.get(position).getAppointment_UID(),"",newAppointmentResponseList.get(position).getAmount(),newAppointmentResponseList.get(position).getPayment_method());
+                onAppointmentCancel.onAppointmentCancel(newAppointmentResponseList.get(position).get_id(),newAppointmentResponseList.get(position).getAppoinment_status(),newAppointmentResponseList.get(position).getUser_id().get_id(),newAppointmentResponseList.get(position).getSp_id(),newAppointmentResponseList.get(position).getAppointment_UID(),"",newAppointmentResponseList.get(position).getService_amount(),newAppointmentResponseList.get(position).getPayment_method());
 
             }
         });
@@ -178,9 +175,9 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
     }
 
     static class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_petname,txt_pettype,txt_type,txt_service_cost,txt_bookedon,txt_lbl_type;
+        public TextView txt_petname,txt_pettype,txt_type,txt_service_cost,txt_bookedon,txt_lbl_type,txt_cancel;
         public ImageView img_pet_imge,img_emergency_appointment,img_videocall;
-        public Button btn_cancel,btn_complete;
+        public Button btn_complete;
         public LinearLayout ll_new;
 
 
@@ -194,13 +191,15 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
             txt_type = itemView.findViewById(R.id.txt_type);
             txt_service_cost = itemView.findViewById(R.id.txt_service_cost);
             txt_bookedon = itemView.findViewById(R.id.txt_bookedon);
-            btn_cancel = itemView.findViewById(R.id.btn_cancel);
+            txt_cancel = itemView.findViewById(R.id.txt_cancel);
             btn_complete = itemView.findViewById(R.id.btn_complete);
             ll_new = itemView.findViewById(R.id.ll_new);
             img_emergency_appointment = itemView.findViewById(R.id.img_emergency_appointment);
             img_videocall = itemView.findViewById(R.id.img_videocall);
             img_emergency_appointment.setVisibility(View.GONE);
             img_videocall.setVisibility(View.GONE);
+
+            txt_cancel.setText("Reject");
 
 
 

@@ -358,12 +358,12 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
                                 txt_dr_specialization.setText(concatenatedSpcNames);
 
                             }
-                            if (response.body().getData().getWeb_name() != null && !response.body().getData().getWeb_name().isEmpty()) {
-                                txt_webname.setText(response.body().getData().getWeb_name());
-                            }
-                            else {
-                                txt_webname.setText("");
-                            }
+//                            if (response.body().getData().getWeb_name() != null && !response.body().getData().getWeb_name().isEmpty()) {
+//                                txt_webname.setText(response.body().getData().getWeb_name());
+//                            }
+//                            else {
+//                                txt_webname.setText("");
+//                            }
 
                             if (response.body().getData().getPhone_number() != null && !response.body().getData().getPhone_number().isEmpty()) {
                                 txt_phone.setText("Phone: " + response.body().getData().getPhone_number());

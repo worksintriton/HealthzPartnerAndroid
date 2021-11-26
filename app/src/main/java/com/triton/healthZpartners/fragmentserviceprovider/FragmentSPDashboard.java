@@ -24,6 +24,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
@@ -31,12 +32,20 @@ import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
 
 
+import com.triton.healthZpartners.doctor.DoctorEditProfileActivity;
+import com.triton.healthZpartners.doctor.DoctorMyappointmentsActivity;
+import com.triton.healthZpartners.doctor.DoctorProfileScreenActivity;
 import com.triton.healthZpartners.fragmentserviceprovider.myappointments.FragmentSPCompletedAppointment;
 import com.triton.healthZpartners.fragmentserviceprovider.myappointments.FragmentSPMissedAppointment;
 import com.triton.healthZpartners.fragmentserviceprovider.myappointments.FragmentSPNewAppointment;
 import com.triton.healthZpartners.requestpojo.SPCheckStatusRequest;
+import com.triton.healthZpartners.requestpojo.SPDetailsByUserIdRequest;
 import com.triton.healthZpartners.responsepojo.SPCheckStatusResponse;
+import com.triton.healthZpartners.responsepojo.ServiceProviderRegisterFormCreateResponse;
+import com.triton.healthZpartners.serviceprovider.SPEditProfileActivity;
 import com.triton.healthZpartners.serviceprovider.SPMyCalendarNewUserActivity;
+import com.triton.healthZpartners.serviceprovider.SPMyappointmentsActivity;
+import com.triton.healthZpartners.serviceprovider.SPProfileScreenActivity;
 import com.triton.healthZpartners.serviceprovider.ServiceProviderDashboardActivity;
 import com.triton.healthZpartners.serviceprovider.ServiceProviderRegisterFormActivity;
 import com.triton.healthZpartners.sessionmanager.SessionManager;
@@ -74,6 +83,27 @@ public class FragmentSPDashboard extends Fragment  {
     @BindView(R.id.viewPager)
     ViewPager viewPager;
 
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_myappointments)
+    TextView txt_myappointments;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_view_profile)
+    TextView txt_view_profile;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_edit_profile)
+    TextView txt_edit_profile;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_service_name)
+    TextView txt_service_name;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_service_imge)
+    ImageView img_service_imge;
+
     private SharedPreferences preferences;
     private Context mContext;
     private String userid;
@@ -82,6 +112,7 @@ public class FragmentSPDashboard extends Fragment  {
     private boolean isProfileUpdatedClose;
 
     private int someIndex = 0;
+    private List<ServiceProviderRegisterFormCreateResponse.DataBean.BusServiceGallBean> servieGalleryResponseList;
 
     public FragmentSPDashboard() {
         // Required empty public constructor
@@ -119,6 +150,24 @@ public class FragmentSPDashboard extends Fragment  {
             }
         }
 
+        txt_myappointments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, SPMyappointmentsActivity.class));
+            }
+        });
+        txt_edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, SPEditProfileActivity.class));
+            }
+        });
+        txt_view_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, SPProfileScreenActivity.class));
+            }
+        });
 
 
 
@@ -215,10 +264,12 @@ public class FragmentSPDashboard extends Fragment  {
                                     isDoctorStatus = true;
                                     Log.w(TAG, "isDoctorStatus else : " + isDoctorStatus);
 
+                                    spDetailsReponseByUserIdCall();
+
                                     Log.w(TAG,"appintments : "+ServiceProviderDashboardActivity.appintments);
 
                                     if (isDoctorStatus) {
-                                        setupViewPager(viewPager);
+                                        //setupViewPager(viewPager);
                                         if(ServiceProviderDashboardActivity.appintments != null && ServiceProviderDashboardActivity.appintments.equalsIgnoreCase("New")){
                                             someIndex = 0;
                                         }
@@ -342,6 +393,86 @@ public class FragmentSPDashboard extends Fragment  {
 
 
 
+    }
+
+    @SuppressLint("LogNotTimber")
+    private void spDetailsReponseByUserIdCall() {
+        avi_indicator.setVisibility(View.VISIBLE);
+        avi_indicator.smoothToShow();
+        RestApiInterface ApiService = APIClient.getClient().create(RestApiInterface.class);
+        Call<ServiceProviderRegisterFormCreateResponse> call = ApiService.spDetailsReponseByUserIdCall(RestUtils.getContentType(),spDetailsByUserIdRequest());
+        Log.w(TAG,"url  :%s"+ call.request().url().toString());
+
+        call.enqueue(new Callback<ServiceProviderRegisterFormCreateResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<ServiceProviderRegisterFormCreateResponse> call, @NonNull Response<ServiceProviderRegisterFormCreateResponse> response) {
+                avi_indicator.smoothToHide();
+                Log.w(TAG,"ServiceProviderRegisterFormCreateResponse"+ "--->" + new Gson().toJson(response.body()));
+
+
+                if (response.body() != null) {
+                    if(200 == response.body().getCode()){
+                        if(response.body().getData().getBus_service_gall() != null) {
+                            servieGalleryResponseList = response.body().getData().getBus_service_gall();
+                        }
+                        if(response.body().getData().getBussiness_name() != null) {
+                           String  servicename = response.body().getData().getBussiness_name();
+                            txt_service_name.setText(servicename);
+                        }
+
+
+
+
+
+                        if(servieGalleryResponseList != null && servieGalleryResponseList.size()>0){
+
+                            for (int i = 0; i < servieGalleryResponseList.size(); i++) {
+                                servieGalleryResponseList.get(i).getBus_service_gall();
+
+                                if (servieGalleryResponseList.get(i).getBus_service_gall() != null && !servieGalleryResponseList.get(i).getBus_service_gall().isEmpty()) {
+                                    Glide.with(mContext)
+                                            .load(servieGalleryResponseList.get(i).getBus_service_gall())
+                                            .into(img_service_imge);
+
+                                }
+                                else{
+                                    Glide.with(mContext)
+                                            .load(APIClient.PROFILE_IMAGE_URL)
+                                            .into(img_service_imge);
+
+                                }
+                            }
+
+
+
+
+                        }
+
+
+
+
+                    }
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ServiceProviderRegisterFormCreateResponse> call, @NonNull Throwable t) {
+                avi_indicator.smoothToHide();
+
+                Log.w(TAG,"ServiceProviderRegisterFormCreateResponse flr"+"--->" + t.getMessage());
+            }
+        });
+
+    }
+    @SuppressLint({"LongLogTag", "LogNotTimber"})
+    private SPDetailsByUserIdRequest spDetailsByUserIdRequest() {
+        /* user_id : 5fc61b82b750da703e48da78 */
+        SPDetailsByUserIdRequest spDetailsByUserIdRequest = new SPDetailsByUserIdRequest();
+        spDetailsByUserIdRequest.setUser_id(userid);
+        Log.w(TAG,"spDetailsByUserIdRequest"+ "--->" + new Gson().toJson(spDetailsByUserIdRequest));
+        return spDetailsByUserIdRequest;
     }
 
 

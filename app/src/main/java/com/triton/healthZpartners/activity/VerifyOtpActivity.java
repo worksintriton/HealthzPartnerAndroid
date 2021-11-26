@@ -256,7 +256,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void resendOtpResponseCall() {
-        txt_resend.setVisibility(View.GONE);
+   /*     txt_resend.setVisibility(View.GONE);*/
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
@@ -380,6 +380,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
                                 response.body().getPayment_gateway_detail().getRzpkey(),
                                String.valueOf(response.body().getPayment_gateway_detail().isIsproduction()));
                         Log.w(TAG,"ref_code : "+response.body().getData().getRef_code()+" fromactivity : "+fromactivity+" usertype : "+usertype);
+
 
                         if(fromactivity != null && fromactivity.equalsIgnoreCase("LoginActivity")){
                             if(usertype != 0){

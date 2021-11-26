@@ -370,7 +370,7 @@
 
     <string name="profile_name">profile name</string>
 
-    <string name="edit"><u>Edit</u></string>
+    <string name="edit">Edit</string>
 
     <string name="businessname">Business Name</string>
     <string name="businessemail">Business Email ID</string>
@@ -683,5 +683,8 @@
     <string name="doctor_diagnosis">Doctor Diagnosis</string>
     <string name="doctor_sub_diagnosis">Doctor Sub Diagnosis</string>
     <string name="service_charge_amount">Service Charge Amount</string>
+    <string name="healthz_in">Healthz.in</string>
+    <string name="view_profile">View Profile</string>
+    <string name="you_dont_have_any_appointments">You dont have any appointments</string>
 </resources>
 

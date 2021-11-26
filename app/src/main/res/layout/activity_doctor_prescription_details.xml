@@ -515,158 +515,6 @@
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
-                <LinearLayout
-                    android:id="@+id/ll_headername"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"                        android:orientation="horizontal"
-                    tools:ignore="RtlHardcoded">
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight=".9"
-                        android:text="@string/medicine"
-                        android:textColor="@color/new_txt_color" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight=".7"
-                        android:text="@string/no_of_days"
-                        android:textColor="@color/new_txt_color" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1.4"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/consumption_per_day"
-                            android:textColor="@color/new_txt_color" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="30dp"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/futuramediumbt"
-                                    android:text="M." />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="30dp"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/futuramediumbt"
-                                    android:text="A." />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="30dp"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/futuramediumbt"
-                                    android:text="N." />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight=".9"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/intake"
-                            android:textColor="@color/new_txt_color" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="30dp"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/futuramediumbt"
-                                    android:text="A.F." />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="30dp"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/futuramediumbt"
-                                    android:text="B.F." />
-
-                            </LinearLayout>
-
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/removeImg"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/ic_baseline_remove_circle_outline_24"
-                        android:visibility="invisible"/>
-
-
-
-                </LinearLayout>
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -758,7 +606,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/futuramediumbt"
-                android:text="@string/powered_by"
+                android:text="@string/healthz_in"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -824,13 +672,167 @@
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:orientation="vertical">
+
+         <LinearLayout
+             android:id="@+id/ll_headername"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:orientation="horizontal"
+             tools:ignore="RtlHardcoded">
+
+
+             <TextView
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="5dp"
+                 android:layout_weight=".9"
+                 android:text="@string/medicine"
+                 android:textColor="@color/new_txt_color" />
+
+             <TextView
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="5dp"
+                 android:layout_weight=".7"
+                 android:text="@string/no_of_days"
+                 android:textColor="@color/new_txt_color" />
+
+             <LinearLayout
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="5dp"
+                 android:layout_weight="1.4"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/consumption_per_day"
+                     android:textColor="@color/new_txt_color" />
+
+                 <LinearLayout
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:gravity="center"
+                     android:orientation="horizontal">
+
+                     <LinearLayout
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:gravity="center"
+                         android:orientation="vertical">
+
+                         <TextView
+                             android:layout_width="30dp"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/futuramediumbt"
+                             android:text="M." />
+
+                     </LinearLayout>
+
+                     <LinearLayout
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:gravity="center"
+                         android:orientation="vertical">
+
+                         <TextView
+                             android:layout_width="30dp"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/futuramediumbt"
+                             android:text="A." />
+
+                     </LinearLayout>
+
+                     <LinearLayout
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:gravity="center"
+                         android:orientation="vertical">
+
+                         <TextView
+                             android:layout_width="30dp"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/futuramediumbt"
+                             android:text="N." />
+
+                     </LinearLayout>
+
+                 </LinearLayout>
+             </LinearLayout>
+
+             <LinearLayout
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="5dp"
+                 android:layout_weight=".9"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/intake"
+                     android:textColor="@color/new_txt_color" />
+
+                 <LinearLayout
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:gravity="center"
+                     android:orientation="horizontal">
+
+                     <LinearLayout
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:gravity="center"
+                         android:orientation="vertical">
+
+                         <TextView
+                             android:layout_width="30dp"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/futuramediumbt"
+                             android:text="A.F." />
+
+                     </LinearLayout>
+
+                     <LinearLayout
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:gravity="center"
+                         android:orientation="vertical">
+
+                         <TextView
+                             android:layout_width="30dp"
+                             android:layout_height="wrap_content"
+                             android:fontFamily="@font/futuramediumbt"
+                             android:text="B.F." />
+
+                     </LinearLayout>
+
+
+                 </LinearLayout>
+             </LinearLayout>
+
+             <ImageView
+                 android:id="@+id/removeImg"
+                 android:layout_width="30dp"
+                 android:layout_height="30dp"
+                 android:layout_marginStart="10dp"
+                 android:layout_marginEnd="10dp"
+                 android:background="@drawable/ic_baseline_remove_circle_outline_24"
+                 android:visibility="invisible" />
+
+
+         </LinearLayout>
+
          <ImageView
              android:id="@+id/img_applogo"
              android:layout_width="30dp"
              android:layout_height="30dp"
              android:layout_marginStart="10dp"
              android:layout_marginBottom="20dp"
-             android:background="@drawable/app_logo_new"
+             android:background="@drawable/app_logo"
              android:scaleType="fitXY"
              tools:ignore="ContentDescription" />
      </LinearLayout>

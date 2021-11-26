@@ -10,10 +10,12 @@
         android:id="@+id/cdvw_newappointment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/light_green"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true">
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,9 +35,19 @@
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/emergency_call"
                     tools:ignore="ContentDescription" />
-
+                <ImageView
+                    android:id="@+id/img_videocall"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/video_camera_green"
+                    tools:ignore="ContentDescription"
+                    android:visibility="gone"/>
 
             </LinearLayout>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_pet"
@@ -59,8 +71,7 @@
                         android:layout_centerInParent="true"
                         android:contentDescription="@string/image"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/image_thumbnail"
-                        />
+                        app:srcCompat="@drawable/image_thumbnail" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -69,8 +80,8 @@
                 android:id="@+id/ly_petname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:layout_toEndOf="@id/cv_pet"
-                android:layout_toRightOf="@id/cv_pet"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -80,13 +91,13 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/txt_petnamelabel"
+                        android:id="@+id/txt_genderlabel"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
-                        android:text="@string/pet_name"
+                        android:text="@string/gender"
                         android:textColor="@color/new_txt_color"
                         android:textSize="14sp"
                         android:textStyle="normal" />
@@ -101,15 +112,14 @@
                         android:textStyle="normal" />
 
                     <TextView
-                        android:id="@+id/txt_petname"
+                        android:id="@+id/txt_gender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:layout_marginLeft="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
-                        android:text="@string/pet_name"
+                        android:text="@string/gender"
                         android:textColor="@color/new_txt_color"
                         android:textSize="14sp"
                         android:textStyle="normal" />
@@ -122,13 +132,13 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/txt_pettypelabel"
+                        android:id="@+id/txt_patient_name_lbl"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
-                        android:text="@string/pet_type"
+                        android:text="@string/patient_name"
                         android:textColor="@color/new_sec_txt_color"
                         android:textSize="12sp" />
 
@@ -141,15 +151,14 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/txt_pettype"
+                        android:id="@+id/txt_patient_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:layout_marginLeft="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
-                        android:text="@string/pet_type"
+                        android:text="@string/patient_name"
                         android:textColor="@color/new_sec_txt_color"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -167,7 +176,7 @@
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
-                        android:text="@string/type"
+                        android:text="Appointment"
                         android:textColor="@color/new_sec_txt_color"
                         android:textSize="12sp" />
 
@@ -186,7 +195,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:layout_marginLeft="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
@@ -226,7 +234,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:layout_marginLeft="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
@@ -240,22 +247,24 @@
 
             </LinearLayout>
 
-
             <TextView
-                android:id="@+id/txt_missed_date"
+                android:id="@+id/txt_bookedon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ly_petname"
-                android:layout_alignStart="@id/cv_pet"
-                android:layout_alignLeft="@id/cv_pet"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/futuramediumbt"
                 android:maxLines="1"
-                android:text="@string/missed_on_date"
+                android:text="@string/completed_on_date"
                 android:textColor="@color/missed_red_color"
                 android:textSize="12sp" />
+
+
+
+
 
         </RelativeLayout>
 
