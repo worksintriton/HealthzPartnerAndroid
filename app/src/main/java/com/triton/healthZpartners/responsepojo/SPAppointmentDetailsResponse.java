@@ -8,7 +8,7 @@ public class SPAppointmentDetailsResponse {
     /**
      * Status : Success
      * Message : New Appointment List
-     * Data : {"sp_attched":[],"sp_business_info":[{"bus_service_list":[{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}],"bus_spec_list":[{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}],"bus_service_gall":[{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}],"bus_certif":[{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}],"_id":"60b0b86d67f25056fe286c90","user_id":"60b0b7b267f25056fe286c8f","bus_user_name":"Sri","bus_user_email":"sriram@gmail.com","bussiness_name":"Sri Pet Spa and Groomers","bus_user_phone":"7417417411","bus_profile":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240","bus_proof":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255","date_and_time":"27-09-2021 04:13 PM","mobile_type":"IOS","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India","sp_lat":13.090018359673415,"sp_long":80.25077305734156,"delete_status":false,"calender_status":true,"updatedAt":"2021-09-27T10:43:54.697Z","createdAt":"2021-05-28T09:31:25.998Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625679966323.png","city_name":"Chennai","sp_info":"","comments":0,"rating":5}],"current_img":[],"_id":"6196a871c525c97e848f2b98","sp_id":{"_id":"60b0b7b267f25056fe286c8f","first_name":"Sri","last_name":"DineshSP","user_email":"sriram@gmail.com","user_phone":"7417417411","date_of_reg":"28-05-2021 02:58 PM","user_type":2,"ref_code":"","my_ref_code":"M60LFAR","user_status":"complete","otp":123456,"profile_img":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-10-05T05:24:33.281Z","createdAt":"2021-05-28T09:28:18.912Z","__v":0},"appointment_UID":"SP-1637263473931","booking_date":"19-11-2021","booking_time":"12:45 PM","booking_date_time":"19-11-2021 12:45 PM","user_id":{"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-18T17:46:06.242Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0},"family_id":{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1637263268119.jpg"}],"_id":"6196a7a7c525c97e848f2b96","user_id":"60b73c4638e95868d79be9c6","name":"Sample","gender":"Male","relation_type":"Others","health_issue":"OCD","dateofbirth":"19-11-2021","anymedicalinfo":"no comments","covide_vac":"Yes","weight":"66","delete_status":false,"createdAt":"2021-11-18T19:21:11.088Z","updatedAt":"2021-11-18T19:21:11.088Z","__v":0},"additional_info":"","appoinment_status":"Incomplete","start_appointment_status":"Not Started","end_appointment_status":"Not End","sp_feedback":"","sp_rate":null,"user_feedback":"","user_rate":"0","display_date":"2021-11-19 12:45:00","server_date_time":"","payment_id":"","payment_method":"Online","service_name":"Pet Grooming","service_amount":"250","service_time":"15 mins","completed_at":"","missed_at":"","mobile_type":"Android","delete_status":false,"date_and_time":"19-11-2021 12:54 AM","coupon_status":"Not Applied","coupon_code":"","original_price":0,"discount_price":0,"total_price":250,"updatedAt":"2021-11-18T19:24:33.939Z","createdAt":"2021-11-18T19:24:33.937Z","__v":0}
+     * Data : {"sp_attched":[],"sp_business_info":[{"bus_service_list":[{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}],"bus_spec_list":[{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}],"bus_service_gall":[{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}],"bus_certif":[{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}],"_id":"60b0b86d67f25056fe286c90","user_id":"60b0b7b267f25056fe286c8f","bus_user_name":"Sri","bus_user_email":"sriram@gmail.com","bussiness_name":"Sri Pet Spa and Groomers","bus_user_phone":"7417417411","bus_profile":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240","bus_proof":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255","date_and_time":"27-09-2021 04:13 PM","mobile_type":"IOS","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India","sp_lat":13.090018359673415,"sp_long":80.25077305734156,"delete_status":false,"calender_status":true,"updatedAt":"2021-09-27T10:43:54.697Z","createdAt":"2021-05-28T09:31:25.998Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625679966323.png","city_name":"Chennai","sp_info":"","comments":0,"rating":5}],"current_img":[],"_id":"61a0ab45d5dddb31c179b657","sp_id":{"_id":"60b0b7b267f25056fe286c8f","first_name":"Sri","last_name":"DineshSP","user_email":"sriram@gmail.com","user_phone":"7417417411","date_of_reg":"28-05-2021 02:58 PM","user_type":2,"ref_code":"","my_ref_code":"M60LFAR","user_status":"complete","otp":123456,"profile_img":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-11-26T08:48:25.274Z","createdAt":"2021-05-28T09:28:18.912Z","__v":0},"appointment_UID":"SP-1637919557463","booking_date":"27-11-2021","booking_time":"04:00 AM","booking_date_time":"27-11-2021 04:00 AM","user_id":{"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-26T08:08:38.219Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0},"family_id":{"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1637582408971.jpg"}],"_id":"619b864c1750ce141fea7ec6","user_id":"60b73c4638e95868d79be9c6","name":"Dinesh","gender":"Male","relation_type":"Self","health_issue":"OCD","dateofbirth":"16-05-1992","anymedicalinfo":"I'm 29 years old boy","covide_vac":"Yes","weight":"75","delete_status":false,"createdAt":"2021-11-22T12:00:12.780Z","updatedAt":"2021-11-22T12:00:12.780Z","__v":0},"additional_info":"","appoinment_status":"Incomplete","start_appointment_status":"Not Started","end_appointment_status":"Not End","sp_feedback":"","sp_rate":null,"user_feedback":"","user_rate":"0","display_date":"2021-11-27 04:00:00","server_date_time":"","payment_id":"pay_IQBUqsw6jIVs0D","payment_method":"Online","service_name":"Pet Grooming","service_amount":"250","service_time":"15 mins","completed_at":"","missed_at":"","mobile_type":"Android","delete_status":false,"date_and_time":"26-11-2021 03:09 PM","coupon_status":"Not Applied","coupon_code":"","original_price":0,"discount_price":0,"total_price":250,"updatedAt":"2021-11-26T09:39:17.476Z","createdAt":"2021-11-26T09:39:17.472Z","__v":0}
      * Code : 200
      */
 
@@ -18,14 +18,14 @@ public class SPAppointmentDetailsResponse {
      * sp_attched : []
      * sp_business_info : [{"bus_service_list":[{"amount":250,"time_slots":"15 mins","bus_service_list":"Pet Grooming"},{"amount":350,"time_slots":"15 mins","bus_service_list":" Pet Training"},{"amount":200,"time_slots":"15 mins","bus_service_list":"Pet daycare"}],"bus_spec_list":[{"bus_spec_list":"Kennel Cut"},{"bus_spec_list":"Teddy Bear Trim"},{"bus_spec_list":"Full Coat / Show Trims"}],"bus_service_gall":[{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687015621.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687032584.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687050185.png"},{"bus_service_gall":"http://54.212.108.156:3000/api/uploads/1625687064021.png"}],"bus_certif":[{"bus_certif":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161305"}],"_id":"60b0b86d67f25056fe286c90","user_id":"60b0b7b267f25056fe286c8f","bus_user_name":"Sri","bus_user_email":"sriram@gmail.com","bussiness_name":"Sri Pet Spa and Groomers","bus_user_phone":"7417417411","bus_profile":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161240","bus_proof":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161255","date_and_time":"27-09-2021 04:13 PM","mobile_type":"IOS","profile_status":true,"profile_verification_status":"Verified","sp_loc":"Thedir nagar, Otteri, Purasaiwakkam, Chennai, Tamil Nadu 600010, India","sp_lat":13.090018359673415,"sp_long":80.25077305734156,"delete_status":false,"calender_status":true,"updatedAt":"2021-09-27T10:43:54.697Z","createdAt":"2021-05-28T09:31:25.998Z","__v":0,"thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625679966323.png","city_name":"Chennai","sp_info":"","comments":0,"rating":5}]
      * current_img : []
-     * _id : 6196a871c525c97e848f2b98
-     * sp_id : {"_id":"60b0b7b267f25056fe286c8f","first_name":"Sri","last_name":"DineshSP","user_email":"sriram@gmail.com","user_phone":"7417417411","date_of_reg":"28-05-2021 02:58 PM","user_type":2,"ref_code":"","my_ref_code":"M60LFAR","user_status":"complete","otp":123456,"profile_img":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-10-05T05:24:33.281Z","createdAt":"2021-05-28T09:28:18.912Z","__v":0}
-     * appointment_UID : SP-1637263473931
-     * booking_date : 19-11-2021
-     * booking_time : 12:45 PM
-     * booking_date_time : 19-11-2021 12:45 PM
-     * user_id : {"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-18T17:46:06.242Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0}
-     * family_id : {"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1637263268119.jpg"}],"_id":"6196a7a7c525c97e848f2b96","user_id":"60b73c4638e95868d79be9c6","name":"Sample","gender":"Male","relation_type":"Others","health_issue":"OCD","dateofbirth":"19-11-2021","anymedicalinfo":"no comments","covide_vac":"Yes","weight":"66","delete_status":false,"createdAt":"2021-11-18T19:21:11.088Z","updatedAt":"2021-11-18T19:21:11.088Z","__v":0}
+     * _id : 61a0ab45d5dddb31c179b657
+     * sp_id : {"_id":"60b0b7b267f25056fe286c8f","first_name":"Sri","last_name":"DineshSP","user_email":"sriram@gmail.com","user_phone":"7417417411","date_of_reg":"28-05-2021 02:58 PM","user_type":2,"ref_code":"","my_ref_code":"M60LFAR","user_status":"complete","otp":123456,"profile_img":"http://54.212.108.156:3000/api/uploads/60b0b7b267f25056fe286c8f2709161441","user_email_verification":false,"fb_token":"","device_id":"","device_type":"","mobile_type":"IOS","delete_status":false,"updatedAt":"2021-11-26T08:48:25.274Z","createdAt":"2021-05-28T09:28:18.912Z","__v":0}
+     * appointment_UID : SP-1637919557463
+     * booking_date : 27-11-2021
+     * booking_time : 04:00 AM
+     * booking_date_time : 27-11-2021 04:00 AM
+     * user_id : {"_id":"60b73c4638e95868d79be9c6","first_name":"Sandy","last_name":"Kumar","user_email":"santhoshvsk94@gmail.com","user_phone":"9159207294","date_of_reg":"02/06/2021 01:37 PM","user_type":1,"ref_code":"","my_ref_code":"PS2Z0G5","user_status":"complete","otp":123456,"profile_img":"https://petfolio.app/api/uploads/1636446897807.jpg","user_email_verification":true,"fb_token":"","device_id":"","device_type":"","mobile_type":"Android","delete_status":false,"updatedAt":"2021-11-26T08:08:38.219Z","createdAt":"2021-06-02T08:07:34.088Z","__v":0}
+     * family_id : {"pic":[{"image":"http://35.164.43.170:3000/api/uploads/1637582408971.jpg"}],"_id":"619b864c1750ce141fea7ec6","user_id":"60b73c4638e95868d79be9c6","name":"Dinesh","gender":"Male","relation_type":"Self","health_issue":"OCD","dateofbirth":"16-05-1992","anymedicalinfo":"I'm 29 years old boy","covide_vac":"Yes","weight":"75","delete_status":false,"createdAt":"2021-11-22T12:00:12.780Z","updatedAt":"2021-11-22T12:00:12.780Z","__v":0}
      * additional_info :
      * appoinment_status : Incomplete
      * start_appointment_status : Not Started
@@ -34,9 +34,9 @@ public class SPAppointmentDetailsResponse {
      * sp_rate : null
      * user_feedback :
      * user_rate : 0
-     * display_date : 2021-11-19 12:45:00
+     * display_date : 2021-11-27 04:00:00
      * server_date_time :
-     * payment_id :
+     * payment_id : pay_IQBUqsw6jIVs0D
      * payment_method : Online
      * service_name : Pet Grooming
      * service_amount : 250
@@ -45,14 +45,14 @@ public class SPAppointmentDetailsResponse {
      * missed_at :
      * mobile_type : Android
      * delete_status : false
-     * date_and_time : 19-11-2021 12:54 AM
+     * date_and_time : 26-11-2021 03:09 PM
      * coupon_status : Not Applied
      * coupon_code :
      * original_price : 0
      * discount_price : 0
      * total_price : 250
-     * updatedAt : 2021-11-18T19:24:33.939Z
-     * createdAt : 2021-11-18T19:24:33.937Z
+     * updatedAt : 2021-11-26T09:39:17.476Z
+     * createdAt : 2021-11-26T09:39:17.472Z
      * __v : 0
      */
 
@@ -112,7 +112,7 @@ public class SPAppointmentDetailsResponse {
          * device_type :
          * mobile_type : IOS
          * delete_status : false
-         * updatedAt : 2021-10-05T05:24:33.281Z
+         * updatedAt : 2021-11-26T08:48:25.274Z
          * createdAt : 2021-05-28T09:28:18.912Z
          * __v : 0
          */
@@ -141,27 +141,27 @@ public class SPAppointmentDetailsResponse {
          * device_type :
          * mobile_type : Android
          * delete_status : false
-         * updatedAt : 2021-11-18T17:46:06.242Z
+         * updatedAt : 2021-11-26T08:08:38.219Z
          * createdAt : 2021-06-02T08:07:34.088Z
          * __v : 0
          */
 
         private UserIdBean user_id;
         /**
-         * pic : [{"image":"http://35.164.43.170:3000/api/uploads/1637263268119.jpg"}]
-         * _id : 6196a7a7c525c97e848f2b96
+         * pic : [{"image":"http://35.164.43.170:3000/api/uploads/1637582408971.jpg"}]
+         * _id : 619b864c1750ce141fea7ec6
          * user_id : 60b73c4638e95868d79be9c6
-         * name : Sample
+         * name : Dinesh
          * gender : Male
-         * relation_type : Others
+         * relation_type : Self
          * health_issue : OCD
-         * dateofbirth : 19-11-2021
-         * anymedicalinfo : no comments
+         * dateofbirth : 16-05-1992
+         * anymedicalinfo : I'm 29 years old boy
          * covide_vac : Yes
-         * weight : 66
+         * weight : 75
          * delete_status : false
-         * createdAt : 2021-11-18T19:21:11.088Z
-         * updatedAt : 2021-11-18T19:21:11.088Z
+         * createdAt : 2021-11-22T12:00:12.780Z
+         * updatedAt : 2021-11-22T12:00:12.780Z
          * __v : 0
          */
 
@@ -942,7 +942,7 @@ public class SPAppointmentDetailsResponse {
             private String updatedAt;
             private int __v;
             /**
-             * image : http://35.164.43.170:3000/api/uploads/1637263268119.jpg
+             * image : http://35.164.43.170:3000/api/uploads/1637582408971.jpg
              */
 
             private List<PicBean> pic;

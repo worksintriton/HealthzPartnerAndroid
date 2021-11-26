@@ -40,6 +40,7 @@ import com.triton.healthZpartners.responsepojo.AppoinmentCancelledResponse;
 import com.triton.healthZpartners.responsepojo.AppoinmentCompleteResponse;
 import com.triton.healthZpartners.responsepojo.NotificationSendResponse;
 import com.triton.healthZpartners.responsepojo.SPAppointmentResponse;
+import com.triton.healthZpartners.serviceprovider.SPMyappointmentsActivity;
 import com.triton.healthZpartners.serviceprovider.ServiceProviderDashboardActivity;
 import com.triton.healthZpartners.sessionmanager.SessionManager;
 import com.triton.healthZpartners.utils.ConnectionDetector;
@@ -427,7 +428,7 @@ public class FragmentSPNewAppointment extends Fragment implements OnAppointmentC
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
-                        startActivity(new Intent(mContext, ServiceProviderDashboardActivity.class));
+                        startActivity(new Intent(mContext, SPMyappointmentsActivity.class));
                     }
 
                 }
@@ -481,7 +482,7 @@ public class FragmentSPNewAppointment extends Fragment implements OnAppointmentC
 
                 if (response.body() != null) {
                     if(response.body().getCode() == 200){
-                        startActivity(new Intent(mContext, ServiceProviderDashboardActivity.class));
+                        startActivity(new Intent(mContext, SPMyappointmentsActivity.class));
 
                     }
 

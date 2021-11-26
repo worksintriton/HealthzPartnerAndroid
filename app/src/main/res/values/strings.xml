@@ -278,7 +278,7 @@
     <string name="location_services">location services</string>
     <string name="deny">Deny</string>
     <string name="allow">Allow</string>
-    <string name="colon1">.</string>
+    <string name="colon1">:</string>
     <string name="colon">:</string>
     <string name="sub_services">Sub Services</string>
     <string name="producttitle">producttitle</string>
@@ -424,6 +424,7 @@
     <string name="video">Video</string>
     <string name="selected_dates">Selected dates</string>
     <string name="add_holiday">Add Holiday</string>
+    <string name="add_holidays">Add holidays</string>
     <string name="my_calendar">My Calendar</string>
     <string name="available_days">Available days</string>
     <string name="available_times">Available Times</string>

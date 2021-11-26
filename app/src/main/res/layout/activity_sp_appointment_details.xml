@@ -8,15 +8,13 @@
         android:id="@+id/headerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true">
+
         <include
             android:id="@+id/include_petlover_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             layout="@layout/toolbar_layout_petlover_header" />
-
-
     </LinearLayout>
 
     <ScrollView
@@ -32,174 +30,29 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txt_no_records"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="@string/norecordsfound"
-                android:textColor="@color/color"
-                android:textSize="16sp"
-                android:visibility="gone" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/img_videocall"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/video_camera_gray"
-                    android:layout_alignParentEnd="true"
-                    tools:ignore="ContentDescription"
-                    android:visibility="gone"/>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_user"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    app:cardPreventCornerOverlap="false"
-                    app:cardUseCompatPadding="false">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/img_user"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:contentDescription="@string/image"
-                            android:scaleType="fitXY"
-                            app:srcCompat="@drawable/image_thumbnail" />
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:id="@+id/txt_usrname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@id/cv_user"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:maxLines="1"
-                    android:text="@string/user_name"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    />
-
-                <TextView
-                    android:id="@+id/txt_serv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_usrname"
-                    android:layout_alignStart="@id/txt_usrname"
-                    android:layout_marginTop="5dp"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:maxLines="1"
-                    android:text="@string/service_name"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txt_serv_cost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_serv_name"
-                    android:layout_alignStart="@id/txt_serv_name"
-                    android:layout_marginTop="5dp"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:maxLines="1"
-                    android:text="@string/service_cost"
-                    android:textSize="14sp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/cv_user"
-                    android:layout_centerHorizontal="false"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
-
-
-
-
-                    <Button
-                        android:id="@+id/btn_cancel"
-                        android:layout_width="110dp"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/orange_background_button"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="@string/cancel"
-                        android:textAllCaps="false"
-                        android:textColor="@color/black"
-                        tools:ignore="ButtonStyle" />
-                    <Button
-                        android:id="@+id/btn_complete"
-                        android:layout_width="110dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/new_rounded_corner_btn"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="@string/complete"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        tools:ignore="ButtonStyle" />
-
-                </LinearLayout>
-
-
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/txt_pet_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:ellipsize="end"
-                android:fontFamily="@font/futuramediumbt"
-                android:maxLines="1"
-                android:text="@string/pet_details"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <LinearLayout
                 android:id="@+id/linear1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/normal_margin_value8"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:background="@drawable/rounded_corner_button"
                     android:elevation="9dp"
-                    tools:ignore="UselessParent"
                     android:visibility="gone">
-
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cv_pet"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:visibility="gone"
                         app:cardPreventCornerOverlap="false"
                         app:cardUseCompatPadding="false">
 
@@ -239,35 +92,485 @@
 
             </LinearLayout>
 
-             <LinearLayout
+            <TextView
+                android:id="@+id/txt_no_records"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/norecordsfound"
+                android:textColor="@color/color"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true">
 
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pet_name_details"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txt_pet_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/img_emergency_appointment"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="20dp"
+                                android:src="@drawable/emergency_call"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageView
+                                android:id="@+id/img_videocall"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/video_camera_green"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_user"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardPreventCornerOverlap="false"
+                            app:cardUseCompatPadding="false">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/img_user"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="10dp"
+                                    android:contentDescription="@string/image"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/image_thumbnail" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:id="@+id/ll_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cv_user"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_centerHorizontal="false"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_toEndOf="@id/cv_pet"
+                                android:background="@drawable/orange_background_button"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txt_cancel"
+                                    android:layout_width="110dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center|center_horizontal|center_vertical"
+                                    android:layout_marginEnd="10dp"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:gravity="center"
+                                    android:text="Reject"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp"
+                                    android:layout_marginStart="10dp"/>
+
+
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/btn_complete"
+                                android:layout_width="110dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/new_rounded_corner_btn"
+                                android:fontFamily="@font/futuramediumbt"
+                                android:text="@string/complete"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                tools:ignore="ButtonStyle" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_usrname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toEndOf="@id/cv_user"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="1"
+                            android:text="@string/user_name"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_serv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_usrname"
+                            android:layout_alignStart="@id/txt_usrname"
+                            android:layout_marginTop="20dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat"
+                            android:maxLines="1"
+                            android:text="@string/service_name"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_cost"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/txt_usrname"
+                            android:layout_alignStart="@id/txt_usrname"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@id/cv_user"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_serv_cost2"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/montserrat"
+                                android:maxLines="1"
+                                android:text="@string/service_cost"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txt_serv_cost3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/futuramediumbt"
+                                android:maxLines="1"
+                                android:text=":"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txt_serv_cost"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/futuramediumbt"
+                                android:maxLines="1"
+                                android:text="@string/service_cost"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_appointment_date2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ll_cost"
+                            android:layout_alignStart="@id/txt_usrname"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@id/cv_user"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/appointmentdateandtime"
+                            android:textColor="@color/new_green_btn"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_appointment_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txt_appointment_date2"
+                            android:layout_alignStart="@id/txt_usrname"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@id/cv_user"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/appointmentdateandtime"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+
+
+
+
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_pet_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="1"
+                        android:text="Patient Details"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/pet_name_details"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_pet_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat"
+                            android:maxLines="1"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/gender"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_gender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat"
+                            android:maxLines="1"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/weight"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_weight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/age"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_vacinateddate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="Co Vaccinated"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_vaccinated"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_diagnosis"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/montserrat"
+                            android:text="Diabetes"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                        <TextView
+                            android:id="@+id/txt_diagnosis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat"
+                            android:maxLines="1"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_allergies"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/allergies"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_allergies"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/montserrat"
+                            android:text="Health Issue"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                        <TextView
+                            android:id="@+id/txt_health_issue_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="@dimen/width_appoitmentdetails"
@@ -286,12 +589,14 @@
                     android:textSize="14sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="@dimen/width_appoitmentdetails"
@@ -310,36 +615,15 @@
                     android:textSize="14sp" />
 
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/ll_color"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="wrap_content"
-                    android:text="@string/gender"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txt_gender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="@dimen/width_appoitmentdetails"
@@ -358,79 +642,15 @@
                     android:textSize="14sp" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="wrap_content"
-                    android:text="@string/weight"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txt_weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="wrap_content"
-                    android:text="@string/age"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txt_age"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="wrap_content"
-                    android:text="@string/vaccinated_details"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txt_vaccinated"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <LinearLayout
+                android:id="@+id/ll_petlastvacinateddate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:orientation="horizontal"
-                android:id="@+id/ll_petlastvacinateddate">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/txt_lbl_petlastvaccinated"
@@ -449,154 +669,343 @@
                     android:textSize="14sp" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sub_diagnosis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="@dimen/width_appoitmentdetails"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:text="Sub diagnosis "
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/txt_sub_diagnosis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:maxLines="1"
+                    android:textColor="@color/new_sec_txt_color"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_doctor_comment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="@dimen/width_appoitmentdetails"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:text="Doctor comments"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/txt_doctor_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:maxLines="3"
+                    android:textColor="@color/new_sec_txt_color"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txt_pets_handled_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/futuramediumbt"
+                android:maxLines="1"
+                android:text="@string/pets_handled"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/txt_dr_pets_handled"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/futuramediumbt"
+                android:text=""
+                android:textColor="@color/new_sec_txt_color"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/bookingdate"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_order_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/bookingid"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_order"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/payment_method"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_payment_method"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_original_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/consultation_fees"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_original_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_discount_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="Coupon Price"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_discount_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/consultation_fees"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_order_cost"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_visit_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="@dimen/width_appoitmentdetails"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/visittype"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_visit_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/new_sec_txt_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/vertical_dotted_line"
-                android:layerType="software" />
+                android:layerType="software"
+                android:visibility="gone" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
                 tools:ignore="UseCompoundDrawables">
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_baseline_access_time_24"
-                    tools:ignore="ContentDescription" />
+                    android:src="@drawable/ic_baseline_access_time_24" />
 
                 <TextView
-                    android:layout_marginStart="10dp"
                     android:id="@+id/txt_search_history"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:text="@string/appointmentdateandtime"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     tools:ignore="UseCompatTextViewDrawableXml" />
 
             </LinearLayout>
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="34dp"
-                android:id="@+id/txt_appointment_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/new_green_btn"
-                android:textSize="14sp"
-                android:text="@string/appointmentdateandtime"
-                />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/vertical_dotted_line"
-                android:layerType="software" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
+                android:layerType="software"
+                android:visibility="gone" />
 
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="wrap_content"
-                    android:text="@string/bookingdate"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/txt_order_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="match_parent"
-                    android:text="@string/bookingid"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txt_order"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="wrap_content"
-                    android:text="@string/payment_method"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txt_payment_method"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="@dimen/width_appoitmentdetails"
-                    android:layout_height="wrap_content"
-                    android:text="@string/consultation_fees"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txt_order_cost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/new_sec_txt_color"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/vertical_dotted_line"
-                android:layerType="software" />
             <TextView
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="@string/address"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/txt_address"
                 android:layout_width="wrap_content"
@@ -604,10 +1013,54 @@
                 android:layout_marginTop="5dp"
                 android:drawablePadding="10dp"
                 android:ellipsize="end"
+                android:fontFamily="@font/montserrat"
                 android:maxLines="2"
                 android:text="@string/desc_dummy"
                 android:textColor="@color/new_sec_txt_color"
                 android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_home_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/vertical_dotted_line"
+                    android:layerType="software"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/home_address"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_home_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat"
+                    android:maxLines="3"
+                    android:text="@string/desc_dummy"
+                    android:textColor="@color/new_sec_txt_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+
 
         </LinearLayout>
     </ScrollView>
@@ -617,18 +1070,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
         android:orientation="vertical">
-
         <include
-            android:id="@+id/include_doctor_footer"
+            android:id="@+id/include_sp_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            layout="@layout/toolbar_layout_doctor_footer" />
-
+            layout="@layout/toolbar_layout_sp_footer_new_shaped" />
 
     </LinearLayout>
-
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/avi_indicator"

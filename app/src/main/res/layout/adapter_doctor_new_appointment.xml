@@ -277,7 +277,8 @@
                     android:layout_marginEnd="5dp"
                     android:background="@drawable/orange_background_button"
                     android:layout_toEndOf="@id/cv_pet"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_cancel">
 
                     <TextView
                         android:id="@+id/txt_cancel"

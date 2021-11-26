@@ -57,20 +57,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="10dp">
 
         <Button
             android:id="@+id/btn_load_more"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
             android:background="@drawable/rounded_curve"
             android:fontFamily="@font/futuramediumbt"
             android:gravity="center"
             android:text="@string/load_more"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:layout_marginBottom="30dp"/>
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btn_filter"

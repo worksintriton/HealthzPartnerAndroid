@@ -15,7 +15,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.triton.healthZpartners.R;
+import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.interfaces.OnAppointmentCancel;
 import com.triton.healthZpartners.interfaces.OnAppointmentComplete;
 
@@ -73,12 +75,15 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
 
 
         currentItem = newAppointmentResponseList.get(position);
-       /* if(newAppointmentResponseList.get(position).getPet_id().getPet_name() != null) {
-            holder.txt_petname.setText(newAppointmentResponseList.get(position).getPet_id().getPet_name());
+        if(newAppointmentResponseList.get(position).getFamily_id() != null) {
+            if (newAppointmentResponseList.get(position).getFamily_id().getGender() != null) {
+                holder.txt_gender.setText(newAppointmentResponseList.get(position).getFamily_id().getGender());
+            }
+            if (newAppointmentResponseList.get(position).getFamily_id().getName() != null) {
+                holder.txt_patient_name.setText(newAppointmentResponseList.get(position).getFamily_id().getName());
+            }
         }
-        if(newAppointmentResponseList.get(position).getPet_id().getPet_type() != null) {
-            holder.txt_pettype.setText(newAppointmentResponseList.get(position).getPet_id().getPet_type());
-        }*/
+
         if(newAppointmentResponseList.get(position).getService_name() != null){
             holder.txt_type.setText(newAppointmentResponseList.get(position).getService_name());
         }
@@ -92,11 +97,10 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
         }
 
 
-   /*      try{
-             if (newAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img() != null && !newAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img().isEmpty()) {
-
+       try{
+             if (newAppointmentResponseList.get(position).getFamily_id().getPic().get(0).getImage() != null && !newAppointmentResponseList.get(position).getFamily_id().getPic().get(0).getImage().isEmpty()) {
                  Glide.with(context)
-                         .load(newAppointmentResponseList.get(position).getPet_id().getPet_img().get(0).getPet_img())
+                         .load(newAppointmentResponseList.get(position).getFamily_id().getPic().get(0).getImage())
                          .into(holder.img_pet_imge);
 
              }
@@ -107,14 +111,8 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
 
              }
 
-         }catch (Exception e){}*/
-       /* if(newAppointmentResponseList.get(position).getAppointment_types() != null && newAppointmentResponseList.get(position).getAppointment_types().equalsIgnoreCase("Emergency")){
-            holder.img_emergency_appointment.setVisibility(View.VISIBLE);
-        }else{
-            holder.img_emergency_appointment.setVisibility(View.GONE);
+         }catch (Exception e){}
 
-        }
-*/
 
         holder.btn_complete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,9 +129,9 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
         compareDatesandTime(currentDateandTime,bookingDateandTime);
 
         if(isVaildDate){
-            holder.txt_cancel.setVisibility(View.VISIBLE);
+            holder.ll_cancel.setVisibility(View.VISIBLE);
         }else{
-            holder.txt_cancel.setVisibility(View.GONE);
+            holder.ll_cancel.setVisibility(View.INVISIBLE);
         }
 
         holder.txt_cancel.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +148,7 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
                     Intent i = new Intent(context, SPAppointmentDetailsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     i.putExtra("appointment_id",newAppointmentResponseList.get(position).get_id());
                     i.putExtra("bookedat",newAppointmentResponseList.get(position).getBooking_date_time());
-                    i.putExtra("fromactivity",TAG);
+                    i.putExtra("from",TAG);
                     context.startActivity(i);
 
             }
@@ -175,18 +173,18 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
     }
 
     static class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_petname,txt_pettype,txt_type,txt_service_cost,txt_bookedon,txt_lbl_type,txt_cancel;
+        public TextView txt_patient_name,txt_gender,txt_type,txt_service_cost,txt_bookedon,txt_lbl_type,txt_cancel;
         public ImageView img_pet_imge,img_emergency_appointment,img_videocall;
         public Button btn_complete;
-        public LinearLayout ll_new;
+        public LinearLayout ll_new,ll_cancel;
 
 
 
         public ViewHolderOne(View itemView) {
             super(itemView);
             img_pet_imge = itemView.findViewById(R.id.img_pet_imge);
-            txt_petname = itemView.findViewById(R.id.txt_petname);
-            txt_pettype = itemView.findViewById(R.id.txt_pettype);
+            txt_patient_name = itemView.findViewById(R.id.txt_patient_name);
+            txt_gender = itemView.findViewById(R.id.txt_gender);
             txt_lbl_type = itemView.findViewById(R.id.txt_lbl_type);
             txt_type = itemView.findViewById(R.id.txt_type);
             txt_service_cost = itemView.findViewById(R.id.txt_service_cost);
@@ -194,12 +192,14 @@ public class SPNewAppointmentAdapter extends  RecyclerView.Adapter<RecyclerView.
             txt_cancel = itemView.findViewById(R.id.txt_cancel);
             btn_complete = itemView.findViewById(R.id.btn_complete);
             ll_new = itemView.findViewById(R.id.ll_new);
+            ll_cancel = itemView.findViewById(R.id.ll_cancel);
             img_emergency_appointment = itemView.findViewById(R.id.img_emergency_appointment);
             img_videocall = itemView.findViewById(R.id.img_videocall);
             img_emergency_appointment.setVisibility(View.GONE);
             img_videocall.setVisibility(View.GONE);
 
             txt_cancel.setText("Reject");
+            txt_lbl_type.setText("Service Name");
 
 
 
