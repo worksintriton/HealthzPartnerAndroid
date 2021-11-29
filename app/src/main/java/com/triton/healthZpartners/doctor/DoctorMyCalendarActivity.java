@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,12 +21,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
+import com.triton.healthZpartners.activity.NotificationActivity;
 import com.triton.healthZpartners.adapter.DoctorMyCalendarAvailableAdapter;
 import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
 import com.triton.healthZpartners.interfaces.OnItemClickSpecialization;
 import com.triton.healthZpartners.requestpojo.DoctorMyCalendarAvlDaysRequest;
 import com.triton.healthZpartners.responsepojo.DoctorMyCalendarAvlDaysResponse;
+import com.triton.healthZpartners.serviceprovider.SPProfileScreenActivity;
 import com.triton.healthZpartners.sessionmanager.SessionManager;
 import com.triton.healthZpartners.utils.ConnectionDetector;
 import com.triton.healthZpartners.utils.RestUtils;
@@ -36,6 +39,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,7 +49,8 @@ import retrofit2.Response;
 public class DoctorMyCalendarActivity extends AppCompatActivity implements OnItemClickSpecialization {
 
     private static final String TAG = "DoctorMyCalendarActivity" ;
-    RecyclerView rv_doctor_mycalendar_avldays;
+
+
     private SharedPreferences preferences;
 
     private List<DoctorMyCalendarAvlDaysResponse.DataBean> dataBeanList = null;
@@ -52,9 +58,30 @@ public class DoctorMyCalendarActivity extends AppCompatActivity implements OnIte
     private ArrayList<String> dateList = new ArrayList<>();
     private SessionManager session;
     String doctorname = "",doctoremailid = "";
-    Button btn_next;
+
     private String userid;
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rv_doctor_mycalendar_avldays)
+    RecyclerView rv_doctor_mycalendar_avldays;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.btn_next)
+    Button btn_next;
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_sp_header)
+    View include_sp_header;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txtAddHoliday)
+    TextView txtAddHoliday;
 
 
 
@@ -62,9 +89,10 @@ public class DoctorMyCalendarActivity extends AppCompatActivity implements OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_my_calendar);
+
+        ButterKnife.bind(this);
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        rv_doctor_mycalendar_avldays = findViewById(R.id.rv_doctor_mycalendar_avldays);
 
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getProfileDetails();
@@ -72,15 +100,15 @@ public class DoctorMyCalendarActivity extends AppCompatActivity implements OnIte
         doctoremailid = user.get(SessionManager.KEY_EMAIL_ID);
         userid = user.get(SessionManager.KEY_ID);
 
-        avi_indicator = findViewById(R.id.avi_indicator);
         avi_indicator.setVisibility(View.GONE);
+        btn_next.setVisibility(View.GONE);
 
 
         if (new ConnectionDetector(DoctorMyCalendarActivity.this).isNetworkAvailable(DoctorMyCalendarActivity.this)) {
             doctorMyCalendarAvlDaysResponseCall();
         }
-         btn_next = findViewById(R.id.btn_next);
-        btn_next.setVisibility(View.GONE);
+
+
         btn_next.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("LongLogTag")
             @Override
@@ -100,19 +128,39 @@ public class DoctorMyCalendarActivity extends AppCompatActivity implements OnIte
             }
         });
 
-        RelativeLayout back_rela = findViewById(R.id.back_rela);
-        back_rela.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
-        TextView txtAddHoliday = findViewById(R.id.txtAddHoliday);
         txtAddHoliday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DoctorMyCalendarActivity.this,Doctor_Holiday_Activity.class));
+            }
+        });
+
+        ImageView img_back = include_sp_header.findViewById(R.id.img_back);
+        ImageView img_notification = include_sp_header.findViewById(R.id.img_notification);
+        ImageView img_cart = include_sp_header.findViewById(R.id.img_cart);
+        ImageView img_profile = include_sp_header.findViewById(R.id.img_profile);
+        TextView toolbar_title = include_sp_header.findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getResources().getString(R.string.my_calendar));
+        img_cart.setVisibility(View.GONE);
+
+        img_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), NotificationActivity.class));
+            }
+        });
+        img_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(new Intent(getApplicationContext(), DoctorProfileScreenActivity.class));
+                intent.putExtra("fromactivity",TAG);
+                startActivity(intent);
+            }
+        });
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
         }

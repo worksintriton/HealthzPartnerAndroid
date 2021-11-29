@@ -34,7 +34,8 @@
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/futuramediumbt"
                     android:text="Delete"
-                    android:gravity="end"/>
+                    android:gravity="end"
+                    android:textColor="@color/red_back"/>
 
             </LinearLayout>
             <View

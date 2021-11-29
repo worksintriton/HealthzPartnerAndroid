@@ -33,7 +33,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@+id/backarrow"
                 android:fontFamily="@font/montserrat"
-                android:text="@string/my_calendar"
+                android:text="Edit Calendar"
                 android:textColor="@color/white"
                 android:textSize="@dimen/big_txt_size"
                 android:textStyle="bold" />
@@ -63,7 +63,8 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/available_times"
-                android:textColor="@color/new_txt_color"
+                android:textColor="@color/green"
+                android:padding="5dp"
                 android:textSize="@dimen/big_txt_size"  />
             <LinearLayout
                 android:layout_width="match_parent"

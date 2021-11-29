@@ -21,15 +21,18 @@
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_login.xml" value="0.1766304347826087" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_notificaton.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_pet_lover_edit_profile.xml" value="0.22780797101449277" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_petappointment_sp_date_time.xml" value="0.15715579710144928" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_prescription.xml" value="0.2919369786839666" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_prescription_details.xml" value="0.18115942028985507" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_service_provider_dashboard.xml" value="0.23777173913043478" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_set_location.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_sp_appointment_details.xml" value="0.22780797101449277" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_sp_holiday.xml" value="0.2223731884057971" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_sp_my_calendar.xml" value="0.41056533827618164" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_sp_myappointments.xml" value="0.2427536231884058" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_verify_otp.xml" value="0.1766304347826087" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_completed_appointment.xml" value="0.14266304347826086" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_holidaylist_cardview.xml" value="0.2223731884057971" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_missed_appointment.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_mycalendar_available_cardview.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_new_appointment.xml" value="0.23278985507246377" />

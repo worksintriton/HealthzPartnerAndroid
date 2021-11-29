@@ -48,7 +48,6 @@ import retrofit2.Response;
 public class SPMyCalendarActivity extends AppCompatActivity implements OnItemClickSpecialization {
 
     private static final String TAG = "SPMyCalendarActivity" ;
-    RecyclerView rv_doctor_mycalendar_avldays;
     private SharedPreferences preferences;
 
     private List<DoctorMyCalendarAvlDaysResponse.DataBean> dataBeanList = null;
@@ -56,13 +55,29 @@ public class SPMyCalendarActivity extends AppCompatActivity implements OnItemCli
     private ArrayList<String> dateList = new ArrayList<>();
     private SessionManager session;
     String username = "",doctoremailid = "";
-    Button btn_next;
     private String userid;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rv_doctor_mycalendar_avldays)
+    RecyclerView rv_doctor_mycalendar_avldays;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.btn_next)
+    Button btn_next;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_sp_header)
     View include_sp_header;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txtAddHoliday)
+    TextView txtAddHoliday;
+
 
 
 
@@ -73,7 +88,6 @@ public class SPMyCalendarActivity extends AppCompatActivity implements OnItemCli
         ButterKnife.bind(this);
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        rv_doctor_mycalendar_avldays = findViewById(R.id.rv_doctor_mycalendar_avldays);
 
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getProfileDetails();
@@ -83,13 +97,13 @@ public class SPMyCalendarActivity extends AppCompatActivity implements OnItemCli
 
         avi_indicator = findViewById(R.id.avi_indicator);
         avi_indicator.setVisibility(View.GONE);
+        btn_next.setVisibility(View.GONE);
 
 
         if (new ConnectionDetector(SPMyCalendarActivity.this).isNetworkAvailable(SPMyCalendarActivity.this)) {
             spMyCalendarAvlDaysResponseCall();
         }
-         btn_next = findViewById(R.id.btn_next);
-        btn_next.setVisibility(View.GONE);
+
         btn_next.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("LongLogTag")
             @Override
@@ -107,8 +121,6 @@ public class SPMyCalendarActivity extends AppCompatActivity implements OnItemCli
             }
         });
 
-
-        TextView txtAddHoliday = findViewById(R.id.txtAddHoliday);
         txtAddHoliday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,14 +135,12 @@ public class SPMyCalendarActivity extends AppCompatActivity implements OnItemCli
         TextView toolbar_title = include_sp_header.findViewById(R.id.toolbar_title);
         toolbar_title.setText(getResources().getString(R.string.my_calendar));
         img_cart.setVisibility(View.GONE);
-
         img_notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), NotificationActivity.class));
             }
         });
-
         img_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,6 +155,8 @@ public class SPMyCalendarActivity extends AppCompatActivity implements OnItemCli
                 onBackPressed();
             }
         });
+
+        
         }
 
     @SuppressLint("LongLogTag")

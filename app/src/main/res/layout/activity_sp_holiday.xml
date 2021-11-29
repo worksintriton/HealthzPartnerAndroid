@@ -8,10 +8,10 @@
     <LinearLayout
         android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:orientation="vertical"
-        android:background="@color/new_header_bg"
+        android:background="@color/green"
         android:gravity="center">
         <RelativeLayout
             android:id="@+id/back_rela"
@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             tools:ignore="UselessParent"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp">
 
             <ImageView
                 android:id="@+id/backarrow"
@@ -38,24 +39,24 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/futuramediumbt"
                 android:text="@string/add_holiday"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/big_txt_size"
                 android:textStyle="bold"/>
 
 
             <TextView
                 android:id="@+id/txt_turnoff"
-                android:gravity="end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/txt_lbl_addholiday"
                 android:fontFamily="@font/futuramediumbt"
+                android:gravity="end"
                 android:text="@string/turn_off"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/new_light_green"
-                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:textSize="@dimen/big_txt_size"
-                android:layout_marginEnd="20dp"/>
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -65,7 +66,7 @@
         android:id="@+id/scrollablContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/footerView"
+
         android:layout_below="@+id/headerView" >
 
         <LinearLayout
@@ -73,16 +74,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/futuramediumbt"
+                android:text="Add Date"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/green"
+                android:textSize="@dimen/big_txt_size"
+                android:padding="5dp"
+                />
 
             <RelativeLayout
                 android:id="@+id/rldob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rectangle_corner"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:padding="5dp">
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/tvdob"
@@ -91,26 +104,26 @@
                     android:background="@android:color/transparent"
                     android:textColor="@color/black"
                     android:padding="5dp"
-                    android:hint="Select date"
+                    android:hint="Select Date"
                     android:textSize="14sp"/>
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
-                    android:src="@drawable/calender" />
+                    android:src="@drawable/calendar_new" />
             </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/futuramediumbt"
-                android:text="@string/selected_dates"
+                android:text="Holidays"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="15dp"
-                android:textColor="@color/new_txt_color"
+                android:textColor="@color/green"
                 android:textSize="@dimen/big_txt_size"
                 />
 

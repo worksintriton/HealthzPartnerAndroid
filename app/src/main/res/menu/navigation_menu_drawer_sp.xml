@@ -11,7 +11,7 @@
         android:visible="false"/>
 
     <item android:id="@+id/nav_item_three"
-        android:icon="@drawable/calendar_new"
+        android:icon="@drawable/calendar_gray"
         android:title="@string/my_calendar" />
 
 
