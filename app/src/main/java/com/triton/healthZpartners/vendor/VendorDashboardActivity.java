@@ -13,8 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -27,9 +26,7 @@ import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
-import com.triton.healthZpartners.doctor.DoctorProfileScreenActivity;
-import com.triton.healthZpartners.fragmentdoctor.DoctorCommunityFragment;
-import com.triton.healthZpartners.fragmentdoctor.FragmentDoctorDashboard;
+
 import com.triton.healthZpartners.fragmentvendor.FragmentVendorDashboard;
 import com.triton.healthZpartners.fragmentvendor.VendorCommunityFragment;
 import com.triton.healthZpartners.requestpojo.ShippingAddressFetchByUserIDRequest;
@@ -163,9 +160,10 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
             if(tag.equalsIgnoreCase("1")){
                 active = fragmentVendorDashboard;
                 bottomNavigation.setSelectedItemId(R.id.home);
-                loadFragment(new FragmentDoctorDashboard());
+                loadFragment(new FragmentVendorDashboard());
             }else if(tag.equalsIgnoreCase("2")){
                 bottomNavigation.setSelectedItemId(R.id.shop);
+                startActivity(new Intent(getApplicationContext(),VendorMyOrdersActivity.class));
 
             } else if(tag.equalsIgnoreCase("3")){
                 active = fragmentVendorCommunity;
@@ -399,18 +397,18 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
             case R.id.home:
                 active_tag = "1";
                 item.setCheckable(true);
-                replaceFragment(new FragmentDoctorDashboard());
+                replaceFragment(new FragmentVendorDashboard());
                 break;
             case R.id.shop:
                 active_tag = "2";
                 item.setCheckable(true);
-                startActivity(new Intent(getApplicationContext(), DoctorProfileScreenActivity.class));
+                startActivity(new Intent(getApplicationContext(), VendorMyOrdersActivity.class));
                 break;
 
             case R.id.community:
                 active_tag = "3";
                 item.setCheckable(true);
-                replaceFragment(new DoctorCommunityFragment());
+                replaceFragment(new VendorCommunityFragment());
                 break;
 
             default:

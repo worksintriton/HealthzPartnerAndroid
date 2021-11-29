@@ -89,7 +89,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/ic_hz_lctnbgnd">
+            android:background="@drawable/ic_hz_lctnbgnd"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/map_pin"
