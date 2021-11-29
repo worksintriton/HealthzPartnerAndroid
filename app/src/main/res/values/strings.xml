@@ -515,7 +515,6 @@
     <string name="pedigree_adult_dry_chicken_treat_500gms">Pedigree Adult Dry Chicken Treat 500gms</string>
     <string name="sunshine_pet_food">Sunshine Pet Food</string>
     <string name="product_description">Product Description</string>
-    <string name="about_service_provider">About Service</string>
 
     <string name="view_vendor_details"><u>View Vendor Details</u></string>
     <string name="view_vendor_detail">View Vendor Details</string>
@@ -687,5 +686,10 @@
     <string name="healthz_in">Healthz.in</string>
     <string name="view_profile">View Profile</string>
     <string name="you_dont_have_any_appointments">You dont have any appointments</string>
+
+    <string name="about_service_provider">About Service Provider</string>
+    <string name="business_no">Business Number</string>
+    <string name="service_pics">Service Pics</string>
+
 </resources>
 

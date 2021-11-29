@@ -18,13 +18,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.0"
-        android:fontFamily="@font/futuramediumbt"
-        android:text="@string/serv_name"
         android:ellipsize="end"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center_vertical"
         android:maxLines="1"
+        android:text="@string/serv_name"
         android:textColor="@color/black"
-        android:textSize="14sp"
-        android:gravity="center_vertical"/>
+        android:textSize="12sp" />
 
     <!--Time slot type-->
     <RelativeLayout
@@ -38,7 +38,8 @@
             android:id="@+id/txt_timeslottype"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/montserrat" />
 
         <ImageView
             android:layout_marginStart="5dp"
@@ -56,18 +57,18 @@
         android:id="@+id/txt_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="@drawable/rectangle_corner"
-        android:fontFamily="@font/futuramediumbt"
+        android:fontFamily="@font/montserrat"
         android:hint="Amount"
+        android:imeOptions="actionDone"
         android:inputType="number"
         android:maxLength="6"
         android:padding="15dp"
         android:textColor="@color/new_light_green"
         android:textColorHint="@color/dark_gray"
         android:textSize="14sp"
-        tools:ignore="Autofill,LabelFor"
-        android:layout_weight="1"
-        android:imeOptions="actionDone"/>
+        tools:ignore="Autofill,LabelFor" />
 
 
 

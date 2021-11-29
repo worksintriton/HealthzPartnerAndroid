@@ -615,7 +615,7 @@
         <activity
             android:name="com.triton.healthZpartners.serviceprovider.ServiceProviderRegisterFormActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthZpartners.serviceprovider.SPMyappointmentsActivity"
@@ -635,7 +635,7 @@
         <activity
             android:name="com.triton.healthZpartners.serviceprovider.SPEditProfileActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthZpartners.serviceprovider.SPProfileScreenActivity"
@@ -1012,6 +1012,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name="com.triton.healthZpartners.customer.PetloverPetDetailsActivity"
             android:screenOrientation="portrait"

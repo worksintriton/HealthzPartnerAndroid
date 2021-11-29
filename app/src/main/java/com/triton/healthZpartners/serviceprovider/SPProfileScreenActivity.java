@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,6 +23,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
@@ -54,7 +57,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SPProfileScreenActivity extends AppCompatActivity implements View.OnClickListener {
+public class SPProfileScreenActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
     private  String TAG = "SPProfileScreenActivity";
 
 
@@ -70,6 +73,22 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_usrname)
     TextView txt_usrname;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_name)
+    TextView txt_name;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_business_number)
+    TextView txt_business_number;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_business_name)
+    TextView txt_business_name;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_business_email)
+    TextView txt_business_email;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_mail)
@@ -119,21 +138,21 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
     @BindView(R.id.txt_edit_doc_business_info)
     TextView txt_edit_doc_business_info;
 
-    @SuppressLint("NonConstantResourceId")
+ /*   @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_myservices)
     TextView txt_myservices;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_sp_specialization)
     TextView txt_sp_specialization;
-
+*/
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_petlover_header)
     View include_petlover_header;
 
-    @SuppressLint("NonConstantResourceId")
+    /*@SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_doctor_footer)
-    View include_doctor_footer;
+    View include_doctor_footer;*/
 
     private SessionManager session;
     String name,emailid,phoneNo,userid;
@@ -154,7 +173,10 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
     private String bookedat;
     private String from;
 
-    /* Bottom Navigation */
+/*
+    */
+/* Bottom Navigation *//*
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -196,6 +218,17 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
     @BindView(R.id.rl_homes)
     RelativeLayout rl_homes;
 
+*/
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
+
+    public static String active_tag = "1";
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -252,8 +285,8 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
 
         img_notification.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), NotificationActivity.class)));
 
-        //bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-        /*home*/
+     /*   //bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
+        *//*home*//*
 
         title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_shop.setImageResource(R.drawable.grey_shop);
@@ -264,11 +297,28 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
         rl_shop.setOnClickListener(this);
         rl_comn.setOnClickListener(this);
         rl_homes.setOnClickListener(this);
+*/
+        bottomNavigation.setSelectedItemId(R.id.shop);
+
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callDirections("1");
+            }
+        });
+
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
 
 
         txt_usrname.setText(name);
+        txt_name.setText(name);
         txt_mail.setText(emailid);
+        txt_business_email.setText(emailid);
         txt_phn_num.setText(phoneNo);
+        txt_business_number.setText(phoneNo);
 
 
         if(profileimage != null && !profileimage.isEmpty()){
@@ -530,7 +580,7 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
                         }
 
 
-                        if(response.body().getData().getBus_spec_list() != null){
+                    /*    if(response.body().getData().getBus_spec_list() != null){
                             for (int i = 0; i < response.body().getData().getBus_spec_list().size(); i++) {
                                 concatenatedSpcNames += response.body().getData().getBus_spec_list().get(i).getBus_spec_list();
                                 if (i < response.body().getData().getBus_spec_list().size() - 1) concatenatedSpcNames += ", ";
@@ -545,7 +595,7 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
                             }
                             txt_myservices.setText(concatenatedServiceNames);
 
-                        }
+                        }*/
 
                     }
 
@@ -601,5 +651,32 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
         intent.putExtra("tag",tag);
         startActivity(intent);
         finish();
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+            case R.id.services:
+                callDirections("3");
+                break;
+            case R.id.care:
+                callDirections("4");
+                break;
+            case R.id.community:
+                callDirections("5");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
     }
 }

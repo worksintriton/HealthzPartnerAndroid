@@ -71,8 +71,8 @@ public class SPEditProfileActivity extends AppCompatActivity implements View.OnC
     Button btn_verify_email;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_phone)
-    TextView txt_phone;
+    @BindView(R.id.edt_phone)
+    EditText txt_phone;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btn_save_changes)
