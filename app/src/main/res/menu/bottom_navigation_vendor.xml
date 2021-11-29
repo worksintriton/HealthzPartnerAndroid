@@ -5,7 +5,7 @@
     <item
         android:id="@+id/shop"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_person_outline_24"
+        android:icon="@drawable/myorders_new"
         android:title="@string/my_orders"
         app:showAsAction="ifRoom" />
 
