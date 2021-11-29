@@ -204,6 +204,8 @@
     <string name="subscribe">Subscribe</string>
     <string name="change_password">Change Password</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="edit_store">Edit Store</string>
+    <string name="view_store">View Store</string>
     <string name="manage_address">Manage Address</string>
     <string name="set_locations">Set Locations</string>
     <string name="my_addresses">My Addresses</string>
@@ -441,6 +443,7 @@
     <string name="your_cart_is_empty">Buy me something please</string>
     <string name="cancel_order">Cancel order</string>
     <string name="track_order">Track order</string>
+    <string name="track_orders">Track Orders</string>
     <string name="return_order">Return order</string>
     <string name="reason_for_cancellation">Reason for cancellation</string>
     <string name="are_you_sure">Are you sure ?</string>

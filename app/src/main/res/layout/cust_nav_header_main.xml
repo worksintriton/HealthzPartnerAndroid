@@ -42,9 +42,9 @@
                 android:id="@+id/nav_header_imageView"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/nav_header_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/nav_headerprofile" />
 
             <TextView

@@ -121,6 +121,7 @@ public class DoctorDetailsByUserIdResponse {
         private String doctor_id;
         private String updatedAt;
         private String createdAt;
+        private String business_email;
         private int __v;
         /**
          * education : BDS
@@ -161,9 +162,19 @@ public class DoctorDetailsByUserIdResponse {
          */
 
         private List<GovtIdPicBean> govt_id_pic;
+
+        public String getBusiness_email() {
+            return business_email;
+        }
+
+        public void setBusiness_email(String business_email) {
+            this.business_email = business_email;
+        }
+
         /**
          * photo_id_pic : http://54.212.108.156:3000/api/uploads/1626176508397.pdf
          */
+
 
         private List<PhotoIdPicBean> photo_id_pic;
 

@@ -2,11 +2,13 @@ package com.triton.healthZpartners.vendor;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -19,10 +21,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
+import com.triton.healthZpartners.doctor.DoctorProfileScreenActivity;
+import com.triton.healthZpartners.fragmentdoctor.DoctorCommunityFragment;
+import com.triton.healthZpartners.fragmentdoctor.FragmentDoctorDashboard;
 import com.triton.healthZpartners.fragmentvendor.FragmentVendorDashboard;
 import com.triton.healthZpartners.fragmentvendor.VendorCommunityFragment;
 import com.triton.healthZpartners.requestpojo.ShippingAddressFetchByUserIDRequest;
@@ -42,7 +49,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class VendorDashboardActivity  extends VendorNavigationDrawer implements Serializable{
+public class VendorDashboardActivity  extends VendorNavigationDrawer implements Serializable,BottomNavigationView.OnNavigationItemSelectedListener{
 
     private String TAG = "VendorDashboardActivity";
 
@@ -51,43 +58,9 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.include_vendor_footer)
-    View include_vendor_footer;
 
-    /* Bottom Navigation */
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
 
 
     final Fragment fragmentVendorDashboard = new FragmentVendorDashboard();
@@ -116,6 +89,16 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
 
     public static String orders;
 
+    /* Bottom Navigation */
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+
+
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -125,33 +108,35 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
         ButterKnife.bind(this);
         Log.w(TAG,"onCreate-->");
 
+        avi_indicator.setVisibility(View.GONE);
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             orders = bundle.getString("orders");
             Log.w(TAG,"orders : "+orders);
         }
 
-//        bottom_navigation_view = include_vendor_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
 
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_shop.setImageResource(R.drawable.grey_shop_selector);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                active = fragmentVendorDashboard;
+                bottomNavigation.setSelectedItemId(R.id.home);
+                loadFragment(new FragmentVendorDashboard());
+            }
+        });
 
-        avi_indicator.setVisibility(View.GONE);
-
-        rl_home.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
+        bottomNavigation.getMenu().getItem(0).setCheckable(false);
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
 
 
-        rl_homes.setOnClickListener(this);
+
+
+
+
+
 
 
         SessionManager session = new SessionManager(getApplicationContext());
@@ -177,45 +162,23 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
         if(tag != null){
             if(tag.equalsIgnoreCase("1")){
                 active = fragmentVendorDashboard;
-//                bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_shop.setImageResource(R.drawable.grey_shop_selector);
-                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_community.setImageResource(R.drawable.grey_community);
-                loadFragment(new FragmentVendorDashboard());
+                bottomNavigation.setSelectedItemId(R.id.home);
+                loadFragment(new FragmentDoctorDashboard());
             }else if(tag.equalsIgnoreCase("2")){
-               // active = doctorShopFragment;
-//                bottom_navigation_view.getMenu().findItem(R.id.feeds).setChecked(true);
-                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_community.setImageResource(R.drawable.grey_community);
-                title_shop.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-                img_shop.setImageResource(R.drawable.shop_blue);
-                gotoManageProducts();
-               // loadFragment(new DoctorShopFragment());
-            } else if(tag.equalsIgnoreCase("3")){
-//                showComingSoonAlert();
-                active = fragmentVendorCommunity;
-                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_shop.setImageResource(R.drawable.grey_shop_selector);
-                title_community.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-                img_community.setImageResource(R.drawable.green_comm);
-                loadFragment(new VendorCommunityFragment());
-//                bottom_navigation_view.getMenu().findItem(R.id.community).setChecked(true);
+                bottomNavigation.setSelectedItemId(R.id.shop);
 
+            } else if(tag.equalsIgnoreCase("3")){
+                active = fragmentVendorCommunity;
+                bottomNavigation.setSelectedItemId(R.id.community);
+                loadFragment(new VendorCommunityFragment());
             }
         }
         else{
-
-            //bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-            title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-            img_shop.setImageResource(R.drawable.grey_shop_selector);
-            title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-            img_community.setImageResource(R.drawable.grey_community);
+            bottomNavigation.setSelectedItemId(R.id.home);
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_schedule, active, active_tag);
             transaction.commitNowAllowingStateLoss();
         }
-
 
     }
 
@@ -295,75 +258,8 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
         transaction.commitNowAllowingStateLoss();
     }
 
-//    @SuppressLint("NonConstantResourceId")
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//        switch (item.getItemId()) {
-//            case R.id.home:
-//                active_tag = "1";
-//                replaceFragment(new FragmentVendorDashboard());
-//                break;
-//            case R.id.feeds:
-//                gotoManageProducts();
-//                active_tag = "2";
-//                break;
-//
-//            case R.id.community:
-//                showComingSoonAlert();
-//                active_tag = "3";
-//                break;
-//
-//            default:
-//                return  false;
-//        }
-//        return true;
-//    }
-
-    @Override
-    public void onClick(View v) {
 
 
-        switch (v.getId()) {
-
-            case R.id.rl_homes:
-                active_tag = "1";
-                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_shop.setImageResource(R.drawable.grey_shop_selector);
-                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_community.setImageResource(R.drawable.grey_community);
-                replaceFragment(new FragmentVendorDashboard());
-                break;
-
-            case R.id.rl_home:
-                active_tag = "1";
-                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_shop.setImageResource(R.drawable.grey_shop_selector);
-                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_community.setImageResource(R.drawable.grey_community);
-                replaceFragment(new FragmentVendorDashboard());
-                break;
-
-            case R.id.rl_shop:
-                active_tag = "2";
-                title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_community.setImageResource(R.drawable.grey_community);
-                title_shop.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-                img_shop.setImageResource(R.drawable.green_shop_selector);
-                gotoManageProducts();
-                break;
-
-            case R.id.rl_comn:
-                active_tag = "3";
-                title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-                img_shop.setImageResource(R.drawable.grey_shop);
-                title_community.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-                img_community.setImageResource(R.drawable.green_comm);
-                replaceFragment(new VendorCommunityFragment());
-                break;
-        }
-
-    }
 
 
 
@@ -496,6 +392,32 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
 
 
 
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                active_tag = "1";
+                item.setCheckable(true);
+                replaceFragment(new FragmentDoctorDashboard());
+                break;
+            case R.id.shop:
+                active_tag = "2";
+                item.setCheckable(true);
+                startActivity(new Intent(getApplicationContext(), DoctorProfileScreenActivity.class));
+                break;
+
+            case R.id.community:
+                active_tag = "3";
+                item.setCheckable(true);
+                replaceFragment(new DoctorCommunityFragment());
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
 
 
 

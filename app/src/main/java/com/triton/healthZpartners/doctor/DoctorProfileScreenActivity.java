@@ -201,6 +201,10 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
     @BindView(R.id.txt_clinicname)
     TextView txt_clinicname;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_email)
+    TextView txt_email;
+
    /* *//* Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
@@ -331,8 +335,10 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
         txt_mail.setText(emailid);
         txt_phn_num.setText(phoneNo);
 
+        txt_email.setText(emailid);
         txt_name.setText(name);
-        txt_dr_specialization.setText(emailid);
+
+
         //txt_pets_handled.setText(concatenatedPetHandled);
 
         if(profileimage != null && !profileimage.isEmpty()){
@@ -625,6 +631,17 @@ public class DoctorProfileScreenActivity extends AppCompatActivity implements Vi
                             if (response.body().getData().getClinic_no() != null) {
                                 txt_pets_handled.setText(response.body().getData().getClinic_no());
                             }
+
+                            if (response.body().getData().getBusiness_email() != null) {
+
+                                txt_dr_specialization.setText(response.body().getData().getBusiness_email());
+                            }
+                            else {
+
+                                txt_dr_specialization.setText("");
+                            }
+
+
                            /* if (response.body().getData().getSpecialization() != null) {
                                 for (int i = 0; i < response.body().getData().getSpecialization().size(); i++) {
                                     concatenatedSpcNames += response.body().getData().getSpecialization().get(i).getSpecialization();

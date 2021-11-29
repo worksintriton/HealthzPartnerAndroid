@@ -207,10 +207,7 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
         }
 
 
-//        bottom_navigation_view = include_vendor_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+
 
 
         /*home*/

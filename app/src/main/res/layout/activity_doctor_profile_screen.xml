@@ -191,7 +191,7 @@
                             android:drawableLeft="@drawable/ic_editt"
                             android:drawablePadding="5dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/futuramediumbt"
+                            android:fontFamily="@font/montserrat"
                             android:gravity="end"
                             android:maxLines="1"
                             android:text="@string/edit"
@@ -532,7 +532,7 @@
                             android:ellipsize="end"
                             android:fontFamily="@font/montserrat"
                             android:maxLines="1"
-                            android:text="@string/specialization"
+                            android:text="@string/dummy_gmail_com"
                             android:textColor="@color/neutral_black"
                             android:textSize="12sp" />
                     </LinearLayout>

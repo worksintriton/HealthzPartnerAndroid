@@ -65,7 +65,7 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
 
     ImageView drawerImg;
     CircleImageView nav_header_imageView;
-    TextView nav_header_profilename, nav_header_emailid,nav_header_ref_code;
+    TextView nav_header_profilename, nav_header_emailid,nav_header_ref_code,nav_header_logout;
 
     FrameLayout frameLayout;
 
@@ -94,7 +94,9 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
     private String refcode;
     private String userid;
 
-    TextView txt_notification_count_badge;
+    //TextView txt_notification_count_badge;
+
+    public View toolbar_layout;
 
 
     @SuppressLint("LogNotTimber")
@@ -177,10 +179,19 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
             nav_header_ref_code.setText("");
         }
 
+        nav_header_logout = view.findViewById(R.id.nav_header_logout);
+
+        nav_header_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLogOutAppAlert();
+            }
+        });
+
 
         nav_header_emailid.setText(emailid);
         nav_header_profilename.setText(name);
-        RelativeLayout llheader = header.findViewById(R.id.llheader);
+        FrameLayout llheader = header.findViewById(R.id.llheader);
         llheader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,13 +199,7 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
             }
         });
 
-        TextView nav_header_edit = header.findViewById(R.id.nav_header_edit);
-        nav_header_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), VendorEditProfileActivity.class));
-            }
-        });
+
 
 
 
@@ -271,12 +276,15 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
     private void initToolBar(View view) {
         toolbar = view.findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        drawerImg = toolbar.findViewById(R.id.img_menu);
+
+        toolbar_layout = view.findViewById(R.id.include_customer_header);
+
+        drawerImg = toolbar_layout.findViewById(R.id.img_menu);
        // header_title = (TextView) toolbar.findViewById(R.id.header_title);
 
-        ImageView img_notification = toolbar.findViewById(R.id.img_notification);
-        ImageView img_profile = toolbar.findViewById(R.id.img_profile);
-        txt_notification_count_badge = toolbar.findViewById(R.id.txt_notification_count_badge);
+        ImageView img_notification = toolbar_layout.findViewById(R.id.img_notification);
+        ImageView img_profile = toolbar_layout.findViewById(R.id.img_profile);
+        //txt_notification_count_badge = toolbar_layout.findViewById(R.id.txt_notification_count_badge);
 
         img_notification.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -536,12 +544,12 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
                         if(response.body().getData()!=null){
                             int Notification_count = response.body().getData().getNotification_count();
                             int Product_count = response.body().getData().getProduct_count();
-                            if(Notification_count != 0){
+                            /*if(Notification_count != 0){
                                 txt_notification_count_badge.setVisibility(View.VISIBLE);
                                 txt_notification_count_badge.setText(""+Notification_count);
                             }else{
                                 txt_notification_count_badge.setVisibility(View.GONE);
-                            }
+                            }*/
                             if(Product_count != 0){
 
                             }else{
