@@ -256,7 +256,7 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
     }
 
     private void gotoDashboard() {
-        Intent intent = new Intent(getApplicationContext(),VendorDashboardActivity.class);
+        Intent intent = new Intent(getApplicationContext(),VendorMyOrdersActivity.class);
         intent.putExtra("fromactivity",TAG);
         startActivity(intent);
     }

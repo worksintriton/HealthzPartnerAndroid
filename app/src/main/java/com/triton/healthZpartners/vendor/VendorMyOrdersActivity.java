@@ -109,7 +109,7 @@ public class VendorMyOrdersActivity extends AppCompatActivity implements View.On
         ImageView img_cart = include_petlover_header.findViewById(R.id.img_cart);
         ImageView img_profile = include_petlover_header.findViewById(R.id.img_profile);
         TextView toolbar_title = include_petlover_header.findViewById(R.id.toolbar_title);
-        toolbar_title.setText(getResources().getString(R.string.my_appointments));
+        toolbar_title.setText(getResources().getString(R.string.my_orders));
 
         setupViewPager(viewPager);
 

@@ -138,6 +138,10 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
     @BindView(R.id.txt_edit_doc_business_info)
     TextView txt_edit_doc_business_info;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_email)
+    TextView txt_email;
+
  /*   @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_myservices)
     TextView txt_myservices;
@@ -316,9 +320,10 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
         txt_usrname.setText(name);
         txt_name.setText(name);
         txt_mail.setText(emailid);
-        txt_business_email.setText(emailid);
+
+        txt_email.setText(emailid);
+
         txt_phn_num.setText(phoneNo);
-        txt_business_number.setText(phoneNo);
 
 
         if(profileimage != null && !profileimage.isEmpty()){
@@ -563,9 +568,17 @@ public class SPProfileScreenActivity extends AppCompatActivity implements View.O
                             clinicname = response.body().getData().getBussiness_name();
                             txt_business_name.setText(clinicname);
                         }
+                        if(response.body().getData().getBus_user_email() != null) {
 
+                            txt_business_email.setText(response.body().getData().getBus_user_email());
 
+                        }
 
+                        if(response.body().getData().getBus_user_phone() != null) {
+
+                            txt_business_number.setText(response.body().getData().getBus_user_phone());
+
+                        }
 
 
                         if(servieGalleryResponseList != null && servieGalleryResponseList.size()>0){

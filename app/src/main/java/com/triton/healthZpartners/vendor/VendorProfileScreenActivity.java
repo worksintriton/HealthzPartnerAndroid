@@ -77,9 +77,9 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
     @BindView(R.id.txt_edit_profile)
     TextView txt_edit_profile;
 
-    @SuppressLint("NonConstantResourceId")
+    /*@SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_manage_address)
-    TextView txt_manage_address;
+    TextView txt_manage_address;*/
 
 
     @SuppressLint("NonConstantResourceId")
@@ -113,26 +113,34 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
     TextView txt_business_name;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_business)
+    @BindView(R.id.txt_name)
     TextView txt_business;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_email)
+    TextView txt_email;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_business_number)
+    TextView txt_business_number;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_business_email)
     TextView txt_business_email;
 
-    @SuppressLint("NonConstantResourceId")
+/*    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_phone)
-    TextView txt_phone;
+    TextView txt_phone;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_manage_products)
     LinearLayout ll_manage_products;
 
-    @SuppressLint("NonConstantResourceId")
+ /*   @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_vendor_footer)
     View include_vendor_footer;
 
-    /* Bottom Navigation */
+    *//* Bottom Navigation *//*
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_home)
@@ -165,7 +173,7 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.rl_homes)
     RelativeLayout rl_homes;
-
+*/
 
 
     private SessionManager session;
@@ -212,7 +220,7 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
 
         /*home*/
 
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
+   /*     title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_shop.setImageResource(R.drawable.grey_shop_selector);
         title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
         img_community.setImageResource(R.drawable.grey_community);
@@ -225,7 +233,7 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
         rl_comn.setOnClickListener(this);
 
 
-        rl_homes.setOnClickListener(this);
+        rl_homes.setOnClickListener(this);*/
 
 
         session = new SessionManager(getApplicationContext());
@@ -249,6 +257,7 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
             }
         });
 
+        txt_email.setText(emailid);
         txt_usrname.setText(name);
         txt_mail.setText(emailid);
         txt_phn_num.setText(phoneNo);
@@ -276,7 +285,7 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
 
 
         img_back.setOnClickListener(this);
-        txt_manage_address.setOnClickListener(this);
+        //txt_manage_address.setOnClickListener(this);
         txt_change_password.setOnClickListener(this);
         txt_logout.setOnClickListener(this);
         txt_edit_profile.setOnClickListener(this);
@@ -327,9 +336,9 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
                 case R.id.txt_edit_doc_business_info:
                 startActivity(new Intent(getApplicationContext(), EditVendorRegisterFormActivity.class));
                 break;
-                case R.id.txt_manage_address:
+             //   case R.id.txt_manage_address:
                     //gotoManageAddress();
-                break;
+          /*      break;*/
                 case R.id.txt_change_password:
                 break;
                 case R.id.txt_logout:
@@ -484,9 +493,8 @@ public class VendorProfileScreenActivity extends AppCompatActivity implements Vi
                                     txt_business_email.setText(response.body().getData().getBussiness_email());
                                 }
                                 if(response.body().getData().getBussiness_phone() != null){
-                                    txt_phone.setText(response.body().getData().getBussiness_phone());
+                                    txt_business_number.setText(response.body().getData().getBussiness_phone());
                                 }
-
                             }
 
 

@@ -1,39 +1,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".vendor.VendorRegisterFormActivity">
-
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_alignParentTop="true"
-        android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables"
-        android:background="@color/new_header_bg"
-        android:gravity="center_vertical">
+        android:background="@color/green"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/img_back"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="15dp"
-            android:background="@drawable/left_arrow"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/back_rela"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/futuramediumbt"
-            android:text="@string/edit_business"
-            android:textColor="@color/black"
-            android:textSize="@dimen/big_txt_size"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"/>
+            tools:ignore="UselessParent">
 
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/back_arrow"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/img_back"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/edit_business"
+                android:textColor="@color/white"
+                android:textSize="@dimen/big_txt_size"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -42,400 +47,1091 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/footerView"
-        android:layout_below="@+id/headerView" >
+        android:layout_below="@+id/headerView">
 
         <LinearLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
+            <!--Clinic Details -->
 
-            <LinearLayout
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
-                android:orientation="vertical"
-                tools:ignore="UselessParent">
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
 
                 <EditText
                     android:id="@+id/edt_business_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/rectangle_corner"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:hint="@string/business_name"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/shop_name"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
                     android:padding="15dp"
-                    android:textColor="@color/new_light_green"
-                    android:textColorHint="@color/dark_gray"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
                     android:textCursorDrawable="@null"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-                <EditText
-                    android:id="@+id/edt_business_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/rectangle_corner"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:hint="@string/businessemail"
-                    android:inputType="textEmailAddress"
-                    android:maxLength="25"
-                    android:padding="15dp"
-                    android:textColor="@color/new_light_green"
-                    android:textColorHint="@color/dark_gray"
-                    android:textCursorDrawable="@null"
-                    android:textSize="14sp"
-                    tools:ignore="Autofill,LabelFor" />
-
-                <EditText
-                    android:id="@+id/edt_business"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/rectangle_corner"
-                    android:fontFamily="@font/futuramediumbt"
-                    android:hint="@string/business"
-                    android:inputType="text"
-                    android:padding="15dp"
-                    android:textColor="@color/new_light_green"
-                    android:textColorHint="@color/dark_gray"
-                    android:textCursorDrawable="@null"
-                    android:textSize="14sp"
-                    tools:ignore="Autofill,LabelFor,TextFields"
-                    android:visibility="gone"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/rectangle_corner"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/edt_phone"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:hint="@string/phone"
-                        android:inputType="phone"
-                        android:maxLength="10"
-                        android:padding="15dp"
-                        android:textColor="@color/new_light_green"
-                        android:textColorHint="@color/dark_gray"
-                        android:textCursorDrawable="@null"
-                        android:textSize="14sp"
-                        tools:ignore="Autofill,LabelFor" />
-
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/txt_country_code"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/rounded_color_pr"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="@string/ind"
+                        android:id="@+id/txt_lbl_drname3"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_bussname"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_bussname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/shop_name"
+                        android:textAllCaps="true"
                         android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-                </LinearLayout>
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/businessemail"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_busnnemail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/businessemail"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_emaildot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_busnnemail"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/edtx_busn_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/business_no"
+                    android:inputType="phone"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_buss_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/business_no"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_clinicnodot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_buss_number"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+            <TextView
+                android:id="@+id/txt_no_records"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/norecordsfound"
+                android:textColor="@color/color"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <!--Communication type-->
+
+            <!--
+
+            <EditText
+                android:id="@+id/edtx_clinic_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_corner"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/clinic_name"
+                android:inputType="text"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:textColorHint="@color/dark_gray"
+                android:textSize="14sp"
+                tools:ignore="Autofill,LabelFor" />-->
+
+            <!--Education Details-->
+
+            <!--Experience Details-->
+
+            <!--Specialization Details-->
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
 
                 <EditText
                     android:id="@+id/edt_business_registration"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/rectangle_corner"
-                    android:fontFamily="@font/futuramediumbt"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:fontFamily="@font/montserrat"
                     android:hint="@string/businessregistrationdetails"
-                    android:inputType="text"
-                    android:maxLength="25"
+                    android:inputType="phone"
+                    android:maxLength="50"
                     android:maxLines="1"
                     android:padding="15dp"
-                    android:textColor="@color/new_light_green"
-                    android:textColorHint="@color/dark_gray"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
                     android:textCursorDrawable="@null"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="Autofill,LabelFor" />
 
-
-                  <!--Service gallery images-->
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/futuramediumbt"
-                android:padding="2dp"
-                android:text="@string/upload_gallery_images"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardview_service_pics"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/light_green"
-                app:cardCornerRadius="10dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
-
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:id="@+id/rl_upload_gallery_image">
-
-                    <TextView
-                        android:id="@+id/txt_service_pic_choose"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/rectangle_corner"
-                        android:focusable="false"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:hint="@string/choose"
-                        android:inputType="none"
-                        android:padding="15dp"
-                        android:textColorHint="@color/dark_gray"
-                        android:textSize="14sp"
-                        tools:ignore="Autofill,LabelFor" />
-
-                    <ImageView
-                        android:id="@+id/img_service_pic"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:contentDescription="@string/image"
-                        android:src="@drawable/add"  />
-
-
-                </RelativeLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcylr_choosen_gallery_img"
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_height="wrap_content" />
-
-            <!--Photo ID proof-->
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/futuramediumbt"
-                android:padding="2dp"
-                android:text="@string/photoid_proof"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdvw_photo_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/light_green"
-                app:cardCornerRadius="10dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
-
-                <RelativeLayout
-                    android:id="@+id/rl_photoid"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/txt_lbl_buss_regdetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/businessregistrationdetails"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_buss_regdetailsl"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_buss_regdetails"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                android:padding="2dp"
+                android:text="@string/addyourservices"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdvw_service"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/light_green_color"
+                app:cardCornerRadius="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcylr_sp_servicelist"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="10dp"
+                        android:scrollbars="vertical" />
+
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/rectangle_corner"
-                        android:focusable="false"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:hint="@string/choose"
-                        android:inputType="none"
-                        android:padding="15dp"
-                        android:textColorHint="@color/dark_gray"
-                        android:textSize="14sp"
-                        tools:ignore="Autofill,LabelFor" />
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/layout_bg"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edt_addmore_service"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:fontFamily="@font/montserrat"
+                            android:hint="@string/add_more"
+                            android:inputType="text"
+                            android:maxLength="60"
+                            android:maxLines="1"
+                            android:padding="15dp"
+                            android:textColorHint="@color/dark_gray"
+                            android:textSize="14sp"
+                            tools:ignore="Autofill,LabelFor" />
+
+                        <Button
+                            android:id="@+id/btn_add_service"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/rounded_curve"
+                            android:fontFamily="@font/futuralightbt"
+                            android:gravity="center"
+                            android:text="@string/add"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            tools:ignore="RelativeOverlap" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcylr_sp_servicestaticlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                android:padding="2dp"
+                android:text="@string/specialization"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdvw_specialization"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/light_green_color"
+                app:cardCornerRadius="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcylr_sp_specializationlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:id="@+id/txt_no_records_specialization"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="@string/norecordsfound"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/layout_bg"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edt_specialization_ifany"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:fontFamily="@font/montserrat"
+                            android:hint="@string/specialization_ifany"
+                            android:inputType="text"
+                            android:maxLength="60"
+                            android:maxLines="1"
+                            android:padding="15dp"
+                            android:textColorHint="@color/dark_gray"
+                            android:textSize="14sp"
+                            tools:ignore="Autofill,LabelFor" />
+
+                        <Button
+                            android:id="@+id/btn_add_specialization"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/rounded_curve"
+                            android:fontFamily="@font/futuralightbt"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="@string/add"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            tools:ignore="RelativeOverlap" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcylr_sp_specializationstaticlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/cdvw_clinic_address"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/txt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/clinic_address"
+                    android:inputType="none"
+                    android:maxLength="250"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_clinic_addr_lbl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/clinic_address"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_clinicaddrdot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_clinic_addr_lbl"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_buss_info">
+
+                    <TextView
+                        android:id="@+id/txt_location_change"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="Change"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/cdvw_photo_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/edtx_serv_photoid_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:focusable="false"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/choose"
+                    android:inputType="none"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_photoid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/photoid_proof"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_photoiddot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_photoid"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_photoid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_buss_info">
 
                     <ImageView
                         android:id="@+id/img_photoid"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="24dp"
+                        android:layout_centerInParent="false"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_vertical|end"
                         android:layout_marginTop="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:contentDescription="@string/image"
-                        android:src="@drawable/add" />
+                        android:src="@drawable/ic_baseline_add_24"
+                        tools:ignore="ContentDescription" />
 
+                    <TextView
+                        android:id="@+id/txt_lbl_photoidsize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_photoid"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/sizelimit"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
 
                 </RelativeLayout>
 
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-            </androidx.cardview.widget.CardView>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcylr_choosen_photoid_img"
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_height="wrap_content" />
-
-            <!--Govt ID proof-->
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/futuramediumbt"
-                android:padding="2dp"
-                android:text="@string/govt_proof"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdvw_govt_id"
+                android:visibility="visible">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <!--Pets Type Details-->
+
+
+            <!--Add Clinic Address details-->
+
+
+            <!--Clinic pictures-->
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/cardview_service_pics"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/light_green"
-                app:cardCornerRadius="10dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
+                android:visibility="visible">
 
-                <RelativeLayout
+                <EditText
+                    android:id="@+id/txt_service_pic_choose"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rl_govtid">
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:focusable="false"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/choose"
+                    android:inputType="none"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:id="@+id/txt_lbl_servicepics"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/rectangle_corner"
-                        android:focusable="false"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:hint="@string/choose"
-                        android:inputType="none"
-                        android:padding="15dp"
-                        android:textColorHint="@color/dark_gray"
-                        android:textSize="14sp"
-                        tools:ignore="Autofill,LabelFor" />
-
-                    <ImageView
-                        android:id="@+id/img_govtid"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
                         android:layout_marginStart="5dp"
-                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/service_pics"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_clinicdot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:contentDescription="@string/image"
-                        android:src="@drawable/add" />
+                        android:layout_toEndOf="@id/txt_lbl_servicepics"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
 
                 </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcylr_choosen_govtid_images"
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_height="wrap_content" />
-
-            <!--Certificate-->
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/futuramediumbt"
-                android:padding="2dp"
-                android:text="@string/certificates_if_any"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdvw_certificate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/light_green"
-                app:cardCornerRadius="10dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
-
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/rl_certificates">
+                    android:id="@+id/rl_service_gallery_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_buss_info">
+
+                    <ImageView
+                        android:id="@+id/img_service_pic"
+                        android:layout_width="30dp"
+                        android:layout_height="24dp"
+                        android:layout_centerInParent="false"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_baseline_add_24"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
-                        android:id="@+id/edtx_clinic_certif_choose"
-                        android:layout_width="match_parent"
+                        android:id="@+id/txt_lbl_servpicsize"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/rectangle_corner"
-                        android:focusable="false"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:hint="@string/choose"
-                        android:inputType="none"
-                        android:padding="15dp"
-                        android:textColorHint="@color/dark_gray"
-                        android:textSize="14sp"
-                        tools:ignore="Autofill,LabelFor" />
+                        android:layout_below="@id/img_service_pic"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/sizelimit"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcylr_choosen_service_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="visible" />
+
+            <!--Certificate-->
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/cdvw_certificate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/edtx_clinic_certif_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:focusable="false"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/choose"
+                    android:inputType="none"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_certificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/certificate"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_certdot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_certificate"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_certificates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_buss_info">
 
                     <ImageView
                         android:id="@+id/img_cert"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="24dp"
+                        android:layout_centerInParent="false"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_vertical|end"
                         android:layout_marginTop="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_baseline_add_24"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_certsize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_cert"
+                        android:layout_marginStart="5dp"
                         android:layout_marginBottom="5dp"
-                        android:contentDescription="@string/image"
-                        android:src="@drawable/add"  />
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/sizelimit"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
 
                 </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcylr_choosen_certificate_img"
+                android:id="@+id/recylerView_choosen_certificate_images"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_height="wrap_content" />
+                android:visibility="visible" />
+
+            <!--Govt ID proof-->
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/cdvw_govt_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/edtx_clinic_govtid_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edt_rectangle_corner_border"
+                    android:focusable="false"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/choose"
+                    android:inputType="none"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:textColor="@color/neutral_black"
+                    android:textColorHint="@color/neutral_black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_lbl_govtid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/govt_proof"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_govtiddot"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/txt_lbl_govtid"
+                        android:background="@drawable/red_circle_dot"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_govtid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_buss_info">
+
+                    <ImageView
+                        android:id="@+id/img_govtid"
+                        android:layout_width="30dp"
+                        android:layout_height="24dp"
+                        android:layout_centerInParent="false"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_baseline_add_24"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/txt_lbl_govtidsize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_govtid"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/button_blue_rounded_corner"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start"
+                        android:text="@string/sizelimit"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcylr_choosen_govtid_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="visible" />
+
+            <!--Photo ID proof-->
 
 
+            <!--digital signature-->
 
-
-
-
-            </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
     <LinearLayout
@@ -449,11 +1145,11 @@
         android:layout_marginBottom="20dp">
 
         <Button
-            android:id="@+id/btn_submit"
+            android:id="@+id/buttonsubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/new_rounded_corner_btn"
-            android:fontFamily="@font/futuramediumbt"
+            android:background="@drawable/green_bgm_border"
+            android:fontFamily="@font/montserrat"
             android:text="@string/submit"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -465,9 +1161,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:indicatorColor="@color/new_green_btn"
+        app:indicatorColor="@color/green"
         app:indicatorName="LineSpinFadeLoaderIndicator" />
-
 
 
 </RelativeLayout>
