@@ -206,6 +206,7 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="edit_store">Edit Store</string>
     <string name="view_store">View Store</string>
+    <string name="remove_store">Remove Store</string>
     <string name="manage_address">Manage Address</string>
     <string name="set_locations">Set Locations</string>
     <string name="my_addresses">My Addresses</string>

@@ -152,6 +152,8 @@ public class VendorCreateProductsActivity extends AppCompatActivity implements V
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_create_products);
 
+        Log.w(TAG,"onCreate : ");
+
         ButterKnife.bind(this);
 
         Bundle extras = getIntent().getExtras();

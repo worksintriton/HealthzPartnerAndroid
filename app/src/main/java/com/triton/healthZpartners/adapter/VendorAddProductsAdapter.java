@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.responsepojo.FetctProductByCatDetailsResponse;
@@ -58,13 +59,14 @@ public class VendorAddProductsAdapter extends  RecyclerView.Adapter<RecyclerView
     private void initLayoutOne(ViewHolderOne holder, final int position) {
 
         currentItem = fetctProductByCatDetailsList.get(position);
-        if(fetctProductByCatDetailsList.get(position).getProduct_title() != null) {
-            holder.txt_products_title.setText(fetctProductByCatDetailsList.get(position).getProduct_title());
+        if(fetctProductByCatDetailsList.get(position).getProduct_cate() != null) {
+            holder.txt_products_title.setText(fetctProductByCatDetailsList.get(position).getProduct_cate());
         }
 
-        if (fetctProductByCatDetailsList.get(position).getProduct_img() != null && !fetctProductByCatDetailsList.get(position).getProduct_img().isEmpty()) {
+        if (fetctProductByCatDetailsList.get(position).getImg_path() != null && !fetctProductByCatDetailsList.get(position).getImg_path().isEmpty()) {
             Glide.with(context)
-                    .load(fetctProductByCatDetailsList.get(position).getProduct_img())
+                    .load(fetctProductByCatDetailsList.get(position).getImg_path())
+                    .error(R.drawable.picempty)
                     .into(holder.img_products_image);
 
         }
@@ -75,20 +77,15 @@ public class VendorAddProductsAdapter extends  RecyclerView.Adapter<RecyclerView
 
         }
 
-        if(fetctProductByCatDetailsList.get(position).isStatus()){
-            holder.rl_add.setVisibility(View.GONE);
-        }else{
-            holder.rl_add.setVisibility(View.VISIBLE);
-        }
 
 
-        holder.rl_add.setOnClickListener(v -> {
 
+        holder.ll_root.setOnClickListener(v -> {
             Intent i = new Intent(context, VendorCreateProductsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.putExtra("productid",fetctProductByCatDetailsList.get(position).get_id());
-            i.putExtra("producttitle",fetctProductByCatDetailsList.get(position).getProduct_title());
-            i.putExtra("productdesc",fetctProductByCatDetailsList.get(position).getProduct_discription());
-            i.putExtra("productimage",fetctProductByCatDetailsList.get(position).getProduct_img());
+            i.putExtra("producttitle",fetctProductByCatDetailsList.get(position).getProduct_cate());
+            i.putExtra("productdesc",fetctProductByCatDetailsList.get(position).getProduct_cate());
+            i.putExtra("productimage",fetctProductByCatDetailsList.get(position).getImg_path());
             context.startActivity(i);
 
         });
@@ -124,6 +121,7 @@ public class VendorAddProductsAdapter extends  RecyclerView.Adapter<RecyclerView
             img_dislike = itemView.findViewById(R.id.img_dislike);
             rl_add = itemView.findViewById(R.id.rl_add);
             txt_review_count.setVisibility(View.GONE);
+            rl_add.setVisibility(View.GONE);
 
         }
 

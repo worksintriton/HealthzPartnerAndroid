@@ -33,11 +33,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.triton.healthZpartners.R;
-import com.triton.healthZpartners.activity.NotificationActivity;
+import com.triton.healthZpartners.activity.NotificationActivity;import com.triton.healthZpartners.fragmentvendor.myorders.FragementNewOrders;
+import com.triton.healthZpartners.fragmentvendor.myorders.FragmentCancelledOrders;
 
-import com.triton.healthZpartners.fragmentvendor.FragmentVendorCancelledOrders;
-import com.triton.healthZpartners.fragmentvendor.FragmentVendorCompletedOrders;
-import com.triton.healthZpartners.fragmentvendor.FragmentVendorNewOrders;
+import com.triton.healthZpartners.fragmentvendor.myorders.FragmentCompletedOrders;
 import com.triton.healthZpartners.responsepojo.PetLoverDashboardResponse;
 
 import java.util.ArrayList;
@@ -155,9 +154,9 @@ public class VendorMyOrdersActivity extends AppCompatActivity implements View.On
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new FragmentVendorNewOrders(), "New");
-        adapter.addFragment(new FragmentVendorCompletedOrders(), "Completed");
-        adapter.addFragment(new FragmentVendorCancelledOrders(), "Missed");
+        adapter.addFragment(new FragementNewOrders(), "New");
+        adapter.addFragment(new FragmentCompletedOrders(), "Completed");
+        adapter.addFragment(new FragmentCancelledOrders(), "Cancelled");
         viewPager.setAdapter(adapter);
     }
 

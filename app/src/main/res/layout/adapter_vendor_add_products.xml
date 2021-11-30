@@ -23,6 +23,21 @@
             android:contentDescription="@string/image"
             android:scaleType="fitXY"
             android:src="@drawable/app_logo" />
+        <TextView
+            android:id="@+id/txt_products_title"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/futuramediumbt"
+            android:maxLines="2"
+            android:text="ABCD"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:gravity="center"
+           />
 
         <ImageView
             android:id="@+id/img_like"
@@ -55,17 +70,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txt_products_title"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_margin="5dp"
-            android:ellipsize="end"
-            android:fontFamily="@font/futuramediumbt"
-            android:maxLines="2"
-            android:text="ABCD EFGH IJKL MNOP QRST "
-            android:textColor="@color/new_txt_color"
-            android:textSize="12sp" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"

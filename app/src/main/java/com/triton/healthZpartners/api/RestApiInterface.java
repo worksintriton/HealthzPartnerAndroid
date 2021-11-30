@@ -729,7 +729,7 @@ public interface RestApiInterface {
     Call<CatgoryGetListResponse> getlistCatResponseCall(@Header("Content-Type") String type);
 
     /*View the Product's by cat id see more*/
-    @POST("newproduct_detail/fetch_product_by_cat")
+    @POST("product_cate/mobile_getlist_id")
     Call<FetctProductByCatDetailsResponse> fetctProductByCatDetailsResponse(@Header("Content-Type") String type, @Body FetctProductByCatRequest fetctProductByCatRequest);
 
 

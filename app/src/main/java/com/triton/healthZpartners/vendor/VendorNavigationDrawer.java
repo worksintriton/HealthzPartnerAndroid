@@ -217,6 +217,7 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
 
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.nav_item_one:
+
                         return true;
 
                     // For rest of the options we just show a toast on click

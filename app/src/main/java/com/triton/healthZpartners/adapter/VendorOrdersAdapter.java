@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -59,19 +60,20 @@ public class VendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerView.View
         currentItem = orderResponseListAll.get(position);
 
         if(orderResponseListAll.get(position).getV_order_id()!=null&&!(orderResponseListAll.get(position).getV_order_id().isEmpty())){
-            holder.txt_orderid.setText(orderResponseListAll.get(position).getV_order_id());
+            holder.txt_orderid.setText("Order # : "+orderResponseListAll.get(position).getV_order_id());
         }
 
         if(orderResponseListAll.get(position).getV_order_text()!=null&&!(orderResponseListAll.get(position).getV_order_text().isEmpty())){
             holder.txt_producttitle.setText(orderResponseListAll.get(position).getV_order_text());
         }
-        if(orderResponseListAll.get(position).getV_order_status()!=null&&!(orderResponseListAll.get(position).getV_order_status().isEmpty())){
+       /* if(orderResponseListAll.get(position).getV_order_status()!=null&&!(orderResponseListAll.get(position).getV_order_status().isEmpty())){
             holder.btn_update_status.setText(orderResponseListAll.get(position).getV_order_status());
-        }
+        }*/
 
         if(orderResponseListAll.get(position).getV_order_image()!=null&&!(orderResponseListAll.get(position).getV_order_image().isEmpty())){
             Glide.with(context)
                     .load(orderResponseListAll.get(position).getV_order_image())
+                    .error(R.drawable.picempty)
                     .into(holder.img_pet_imge);
 
         } else{
@@ -82,17 +84,24 @@ public class VendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerView.View
         }
         if(orderResponseListAll.get(position).getV_order_price() != 0 && orderResponseListAll.get(position).getV_order_product_count() != 0) {
             if(orderResponseListAll.get(position).getV_order_product_count() == 1){
-                holder.txt_service_cost.setText("\u20B9 " + orderResponseListAll.get(position).getV_order_price() + " (" + orderResponseListAll.get(position).getV_order_product_count() + " product )");
+                holder.txt_service_cost.setText("\u20B9 " + orderResponseListAll.get(position).getV_order_price());
+                holder.txt_items.setText(orderResponseListAll.get(position).getV_order_product_count() + " Item purchased ");
+
             }else{
-                holder.txt_service_cost.setText("\u20B9 " + orderResponseListAll.get(position).getV_order_price() + " (" + orderResponseListAll.get(position).getV_order_product_count() + " products )");
+                holder.txt_service_cost.setText("\u20B9 " + orderResponseListAll.get(position).getV_order_price());
+                holder.txt_items.setText(orderResponseListAll.get(position).getV_order_product_count() + " Items purchased ");
+
 
             }
         }
         else{
             if(orderResponseListAll.get(position).getV_order_product_count() == 1){
-                holder.txt_service_cost.setText("\u20B9 " + 0 + " (" + orderResponseListAll.get(position).getV_order_product_count() + " item )");
+                holder.txt_service_cost.setText("\u20B9 " + 0);
+                holder.txt_items.setText(orderResponseListAll.get(position).getV_order_product_count() + " Item purchased ");
             }else{
-                holder.txt_service_cost.setText("\u20B9 " + 0 + " (" + orderResponseListAll.get(position).getV_order_product_count() + " items )");
+                holder.txt_service_cost.setText("\u20B9 " + 0);
+                holder.txt_items.setText(orderResponseListAll.get(position).getV_order_product_count() + " Items purchased ");
+
 
             }
 
@@ -102,25 +111,27 @@ public class VendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerView.View
 
         if(fromactivity != null && fromactivity.equalsIgnoreCase("FragementNewOrders")){
             if (orderResponseListAll.get(position).getV_order_booked_on() != null) {
-                holder.txt_bookedon.setText("Booked for:" + " " + orderResponseListAll.get(position).getV_order_booked_on());
+                holder.txt_bookedon.setText("Booked On :" + " " + orderResponseListAll.get(position).getV_order_booked_on());
+                holder.txt_bookedon.setTextColor(ContextCompat.getColor(context, R.color.green));
 
             }
         }
          if(fromactivity != null && fromactivity.equalsIgnoreCase("FragmentCompletedOrders")){
             if (orderResponseListAll.get(position).getV_completed_date() != null) {
-                holder.txt_bookedon.setText("Delivered on:" + " " + orderResponseListAll.get(position).getV_completed_date());
+                holder.txt_bookedon.setText("Delivered On:" + " " + orderResponseListAll.get(position).getV_completed_date());
+                holder.txt_bookedon.setTextColor(ContextCompat.getColor(context, R.color.green));
 
             }
 
         }
          if(fromactivity != null && fromactivity.equalsIgnoreCase("FragmentCancelledOrders")){
             if (orderResponseListAll.get(position).getV_cancelled_date() != null) {
-                holder.txt_bookedon.setText("Cancelled on:" + " " + orderResponseListAll.get(position).getV_cancelled_date());
+                holder.txt_bookedon.setText("Cancelled On :" + " " + orderResponseListAll.get(position).getV_cancelled_date());
 
             }
         }
 
-        holder.txt_order_details.setOnClickListener(v -> {
+        holder.btn_order_details.setOnClickListener(v -> {
                 Intent i = new Intent(context, VendorOrderDetailsNewActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 i.putExtra("_id",orderResponseListAll.get(position).getV_order_id());
                 i.putExtra("fromactivity",fromactivity);
@@ -133,13 +144,6 @@ public class VendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerView.View
                 i.putExtra("fromactivity",fromactivity);
                 context.startActivity(i);
 
-        });
-        holder.btn_update_status.setOnClickListener(v -> {
-             /*   Intent i = new Intent(context, VendorUpdateOrderStatusActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.putExtra("order_id",orderResponseListAll.get(position).get_id());
-                i.putExtra("fromactivity",TAG);
-                context.startActivity(i);
-*/
         });
 
 
@@ -163,10 +167,10 @@ public class VendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerView.View
     }
 
     static class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_orderid,txt_producttitle,txt_service_cost,txt_bookedon,txt_order_details;
+        public TextView txt_orderid,txt_producttitle,txt_service_cost,txt_bookedon,txt_items;
         public ImageView img_pet_imge;
         public LinearLayout ll_root;
-        public Button btn_update_status;
+        public Button btn_order_details;
 
         public ViewHolderOne(View itemView) {
             super(itemView);
@@ -175,9 +179,9 @@ public class VendorOrdersAdapter extends  RecyclerView.Adapter<RecyclerView.View
             txt_producttitle = itemView.findViewById(R.id.txt_producttitle);
             txt_service_cost = itemView.findViewById(R.id.txt_service_cost);
             txt_bookedon = itemView.findViewById(R.id.txt_bookedon);
+            txt_items = itemView.findViewById(R.id.txt_items);
             ll_root = itemView.findViewById(R.id.ll_root);
-            txt_order_details = itemView.findViewById(R.id.txt_order_details);
-            btn_update_status = itemView.findViewById(R.id.btn_update_status);
+            btn_order_details = itemView.findViewById(R.id.btn_order_details);
 
         }
 

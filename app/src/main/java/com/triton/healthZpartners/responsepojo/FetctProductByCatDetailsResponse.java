@@ -6,22 +6,25 @@ public class FetctProductByCatDetailsResponse {
 
     /**
      * Status : Success
-     * Message : product list
-     * Data : [{"_id":"60a5df0f785e571920ac46f0","product_img":"http://54.212.108.156:3000/api/uploads/1621483238826.png","product_title":"food 1","product_discription":"test1","status":false},{"_id":"60b0c54767f25056fe286ca4","product_img":"http://54.212.108.156:3000/api/uploads/1622197569345.jpeg","product_title":"Good Food Dog","product_discription":"this is good food for dog","status":false},{"_id":"60b5d9756105e73126624071","product_img":"http://54.212.108.156:3000/api/uploads/1622530397531.jpeg","product_title":"Orijen Original Dry Dog Food","product_discription":"Give your dog the goodness of quality ingredients and food that is nutritionally complete. Unlock the secret to healthy and happy dog with a range of Pedigree products. Buy now! Backed by Science. Pedigree Dog Food. ","status":false}]
-     * product_list_count : 3
+     * Message : product categories list Details
+     * Data : [{"_id":"6198b507518ad4520ab14790","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Skin & Body Care","img_index":0,"show_status":true,"date_and_time":"11/20/2021, 2:11:32 PM","delete_status":false,"updatedAt":"2021-11-20T08:42:47.494Z","createdAt":"2021-11-20T08:42:47.494Z","__v":0},{"_id":"6198b572518ad4520ab14791","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Women Care","img_index":0,"show_status":true,"date_and_time":"11/20/2021, 2:13:20 PM","delete_status":false,"updatedAt":"2021-11-20T08:44:34.670Z","createdAt":"2021-11-20T08:44:34.670Z","__v":0},{"_id":"6198b594518ad4520ab14792","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Organic Products","img_index":0,"show_status":true,"date_and_time":"11/20/2021, 2:13:53 PM","delete_status":false,"updatedAt":"2021-11-20T08:45:08.260Z","createdAt":"2021-11-20T08:45:08.260Z","__v":0},{"_id":"6198b5a2518ad4520ab14793","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Men Care","img_index":0,"show_status":true,"date_and_time":"11/20/2021, 2:14:08 PM","delete_status":false,"updatedAt":"2021-11-20T08:45:22.893Z","createdAt":"2021-11-20T08:45:22.893Z","__v":0},{"_id":"6198b5cc518ad4520ab14795","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Baby Products","img_index":0,"show_status":true,"date_and_time":"11/20/2021, 2:14:49 PM","delete_status":false,"updatedAt":"2021-11-20T08:46:04.099Z","createdAt":"2021-11-20T08:46:04.099Z","__v":0},{"_id":"6198b5e1518ad4520ab14796","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Health Care","img_index":0,"show_status":true,"date_and_time":"11/20/2021, 2:15:11 PM","delete_status":false,"updatedAt":"2021-11-20T08:46:25.853Z","createdAt":"2021-11-20T08:46:25.853Z","__v":0},{"_id":"5fec14a5ea832e2e73c1fc79","img_path":"http://52.25.163.13:3000/api/uploads/template%20(3).jpg","product_cate":"Pet Foods - Wet","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 01:55:56 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T09:39:49.690Z","createdAt":"2020-12-30T05:48:21.363Z","__v":0},{"_id":"5fec1573ea832e2e73c1fc7a","img_path":"http://52.25.163.13:3000/api/uploads/template%20(4).jpg","product_cate":"Bedding","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 01:57:45 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T09:39:55.461Z","createdAt":"2020-12-30T05:51:47.787Z","__v":0},{"_id":"5fec22eeea832e2e73c1fc7b","img_path":"http://52.25.163.13:3000/api/uploads/template%20(5).jpg","product_cate":"Pet Grooming","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 18:13:44 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T14:06:47.786Z","createdAt":"2020-12-30T06:49:18.019Z","__v":0},{"_id":"60e6ffbafe7500511a7b419d","img_path":"http://54.212.108.156:3000/api/uploads/1625751478722.png","product_cate":"Pet Accessories","img_index":0,"show_status":true,"date_and_time":"7/8/2021, 7:08:01 PM","delete_status":false,"updatedAt":"2021-07-08T13:38:02.721Z","createdAt":"2021-07-08T13:38:02.721Z","__v":0}]
      * Code : 200
      */
 
     private String Status;
     private String Message;
-    private int product_list_count;
     private int Code;
     /**
-     * _id : 60a5df0f785e571920ac46f0
-     * product_img : http://54.212.108.156:3000/api/uploads/1621483238826.png
-     * product_title : food 1
-     * product_discription : test1
-     * status : false
+     * _id : 6198b507518ad4520ab14790
+     * img_path : http://13.57.9.246:3000/api/uploads/1625751478722.png
+     * product_cate : Skin & Body Care
+     * img_index : 0
+     * show_status : true
+     * date_and_time : 11/20/2021, 2:11:32 PM
+     * delete_status : false
+     * updatedAt : 2021-11-20T08:42:47.494Z
+     * createdAt : 2021-11-20T08:42:47.494Z
+     * __v : 0
      */
 
     private List<DataBean> Data;
@@ -42,14 +45,6 @@ public class FetctProductByCatDetailsResponse {
         this.Message = Message;
     }
 
-    public int getProduct_list_count() {
-        return product_list_count;
-    }
-
-    public void setProduct_list_count(int product_list_count) {
-        this.product_list_count = product_list_count;
-    }
-
     public int getCode() {
         return Code;
     }
@@ -68,10 +63,15 @@ public class FetctProductByCatDetailsResponse {
 
     public static class DataBean {
         private String _id;
-        private String product_img;
-        private String product_title;
-        private String product_discription;
-        private boolean status;
+        private String img_path;
+        private String product_cate;
+        private int img_index;
+        private boolean show_status;
+        private String date_and_time;
+        private boolean delete_status;
+        private String updatedAt;
+        private String createdAt;
+        private int __v;
 
         public String get_id() {
             return _id;
@@ -81,36 +81,76 @@ public class FetctProductByCatDetailsResponse {
             this._id = _id;
         }
 
-        public String getProduct_img() {
-            return product_img;
+        public String getImg_path() {
+            return img_path;
         }
 
-        public void setProduct_img(String product_img) {
-            this.product_img = product_img;
+        public void setImg_path(String img_path) {
+            this.img_path = img_path;
         }
 
-        public String getProduct_title() {
-            return product_title;
+        public String getProduct_cate() {
+            return product_cate;
         }
 
-        public void setProduct_title(String product_title) {
-            this.product_title = product_title;
+        public void setProduct_cate(String product_cate) {
+            this.product_cate = product_cate;
         }
 
-        public String getProduct_discription() {
-            return product_discription;
+        public int getImg_index() {
+            return img_index;
         }
 
-        public void setProduct_discription(String product_discription) {
-            this.product_discription = product_discription;
+        public void setImg_index(int img_index) {
+            this.img_index = img_index;
         }
 
-        public boolean isStatus() {
-            return status;
+        public boolean isShow_status() {
+            return show_status;
         }
 
-        public void setStatus(boolean status) {
-            this.status = status;
+        public void setShow_status(boolean show_status) {
+            this.show_status = show_status;
+        }
+
+        public String getDate_and_time() {
+            return date_and_time;
+        }
+
+        public void setDate_and_time(String date_and_time) {
+            this.date_and_time = date_and_time;
+        }
+
+        public boolean isDelete_status() {
+            return delete_status;
+        }
+
+        public void setDelete_status(boolean delete_status) {
+            this.delete_status = delete_status;
+        }
+
+        public String getUpdatedAt() {
+            return updatedAt;
+        }
+
+        public void setUpdatedAt(String updatedAt) {
+            this.updatedAt = updatedAt;
+        }
+
+        public String getCreatedAt() {
+            return createdAt;
+        }
+
+        public void setCreatedAt(String createdAt) {
+            this.createdAt = createdAt;
+        }
+
+        public int get__v() {
+            return __v;
+        }
+
+        public void set__v(int __v) {
+            this.__v = __v;
         }
     }
 }

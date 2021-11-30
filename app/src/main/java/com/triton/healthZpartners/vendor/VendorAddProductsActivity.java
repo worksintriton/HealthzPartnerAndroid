@@ -1,12 +1,21 @@
 package com.triton.healthZpartners.vendor;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -21,13 +30,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.activity.NotificationActivity;
+import com.triton.healthZpartners.adapter.CategoryTypesListAdapter;
+import com.triton.healthZpartners.adapter.PetBreedTypesListAdapter;
 import com.triton.healthZpartners.adapter.VendorAddProductsAdapter;
 import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
+
+import com.triton.healthZpartners.customer.AddNewPetActivity;
+import com.triton.healthZpartners.interfaces.CategoryTypeSelectListener;
 import com.triton.healthZpartners.requestpojo.FetctProductByCatRequest;
+import com.triton.healthZpartners.responsepojo.BreedTypeResponse;
 import com.triton.healthZpartners.responsepojo.CatgoryGetListResponse;
 import com.triton.healthZpartners.responsepojo.FetctProductByCatDetailsResponse;
 import com.triton.healthZpartners.sessionmanager.SessionManager;
@@ -38,6 +54,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,9 +62,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VendorAddProductsActivity extends AppCompatActivity implements View.OnClickListener {
+public class VendorAddProductsActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, CategoryTypeSelectListener {
 
-    private  String TAG = "VendorAddProductsActivity";
+     String TAG = "VendorAddProductsActivity";
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
@@ -66,8 +83,8 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
     TextView txt_no_records;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.spr_category_type)
-    Spinner spr_category_type;
+    @BindView(R.id.txt_category_type)
+    TextView txt_category_type;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_notification)
@@ -81,56 +98,37 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
     @BindView(R.id.include_vendor_footer)
     View include_vendor_footer;
 
-    BottomNavigationView bottom_navigation_view;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rl_category)
+    RelativeLayout rl_category;
 
-    private String userid;
+
+    private String strCatTypeId;
+
+    /* Bottom Navigation */
+
     private List<CatgoryGetListResponse.DataBean> catgoryGetList;
 
     HashMap<String, String> hashMap_CatTypeid = new HashMap<>();
     private String strCatType;
-    private String strCatTypeId;
-    private List<FetctProductByCatDetailsResponse.DataBean> fetctProductByCatDetailsList;
-
-    /* Bottom Navigation */
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.bottomNavigation)
+    BottomNavigationView bottomNavigation;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
 
     public static final int PAGE_START = 1;
     private int CURRENT_PAGE = PAGE_START;
     private boolean isLoading = false;
     private List<FetctProductByCatDetailsResponse.DataBean> catListSeeMore;
-    private List<FetctProductByCatDetailsResponse.DataBean>  catListSeeMoreAll = new ArrayList<>();
-
+    private final List<FetctProductByCatDetailsResponse.DataBean>  catListSeeMoreAll = new ArrayList<>();
+    private Button btn_done;
+    private RecyclerView rv_categorytype;
+    private EditText edt_search_categorytype;
+    private TextView txt_category_norecords;
+    private CategoryTypesListAdapter categoryTypesListAdapter;
 
 
     @Override
@@ -142,55 +140,33 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
 
         SessionManager session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getProfileDetails();
-        userid = user.get(SessionManager.KEY_ID);
+        String userid = user.get(SessionManager.KEY_ID);
 
-//        bottom_navigation_view = include_vendor_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        floatingActionButton.setImageResource(R.drawable.ic_hzhome_png);
 
+        floatingActionButton.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),VendorDashboardActivity.class)));
 
-        /*home*/
+        bottomNavigation.getMenu().getItem(0).setCheckable(false);
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
 
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_shop.setImageResource(R.drawable.grey_shop_selector);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-
-
-
-
-        rl_home.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
-
-
-        rl_homes.setOnClickListener(this);
 
 
         img_back.setOnClickListener(v -> onBackPressed());
 
-        img_notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), NotificationActivity.class));
-                finish();
+        img_notification.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), NotificationActivity.class));
+            finish();
 
-            }
         });
-        img_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),VendorProfileScreenActivity.class);
-                intent.putExtra("fromactivity",TAG);
-                startActivity(intent);
+        img_profile.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(),VendorProfileScreenActivity.class);
+            intent.putExtra("fromactivity",TAG);
+            startActivity(intent);
 
 
-            }
         });
 
+/*
         spr_category_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @SuppressLint("LogNotTimber")
             @Override
@@ -219,6 +195,7 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
 
             }
         });
+*/
 
 
 
@@ -228,6 +205,13 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
         }
 
         initResultRecylerView();
+
+        rl_category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopupCategoryType();
+            }
+        });
 
 
 
@@ -266,9 +250,11 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
                         if(response.body().getData() != null) {
                             catgoryGetList = response.body().getData();
                         }
-                        if(catgoryGetList != null && catgoryGetList.size()>0){
-                            setCategoryType(catgoryGetList);
+                        if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
+                            fetctProductByCatDetailsResponse("");
                         }
+
+
                     }
 
 
@@ -284,6 +270,14 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
         });
 
     }
+
+    private void setCategoryTypeView(List<CatgoryGetListResponse.DataBean> catgoryGetList) {
+        rv_categorytype.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        rv_categorytype.setItemAnimator(new DefaultItemAnimator());
+         categoryTypesListAdapter = new CategoryTypesListAdapter(getApplicationContext(), catgoryGetList,this);
+        rv_categorytype.setAdapter(categoryTypesListAdapter);
+    }
+
     @SuppressLint("LogNotTimber")
     private void setCategoryType(List<CatgoryGetListResponse.DataBean> catgoryGetList) {
         ArrayList<String> cattypeArrayList = new ArrayList<>();
@@ -295,7 +289,7 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
             cattypeArrayList.add(catType);
             ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(VendorAddProductsActivity.this, R.layout.spinner_item, cattypeArrayList);
             spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item); // The drop down view
-            spr_category_type.setAdapter(spinnerArrayAdapter);
+            //spr_category_type.setAdapter(spinnerArrayAdapter);
 
         }
     }
@@ -351,10 +345,10 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
                                  */
                                 FetctProductByCatDetailsResponse.DataBean  dataBean = new FetctProductByCatDetailsResponse.DataBean();
                                 dataBean.set_id(catListSeeMore.get(i).get_id());
-                                dataBean.setProduct_img(catListSeeMore.get(i).getProduct_img());
-                                dataBean.setProduct_title(catListSeeMore.get(i).getProduct_title());
-                                dataBean.setProduct_discription(catListSeeMore.get(i).getProduct_discription());
-                                dataBean.setStatus(catListSeeMore.get(i).isStatus());
+                                dataBean.setImg_path(catListSeeMore.get(i).getImg_path());
+                                dataBean.setProduct_cate(catListSeeMore.get(i).getProduct_cate());
+                                //dataBean.setc(catListSeeMore.get(i).getProduct_discription());
+                                //dataBean.setStatus(catListSeeMore.get(i).isStatus());
                                 catListSeeMoreAll.add(dataBean);
 
 
@@ -364,10 +358,8 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
                             setViewProducts(catListSeeMoreAll);
 
                         }
-                        if(catListSeeMore != null && catListSeeMore.size()<0){
-                            rv_manage_productlist.setVisibility(View.GONE);
-                            txt_no_records.setVisibility(View.VISIBLE);
-                            txt_no_records.setText("No products found");
+                        if (catListSeeMore != null) {
+                            catListSeeMore.size();
                         }
 
 
@@ -393,7 +385,6 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
          */
 
         FetctProductByCatRequest fetctProductByCatRequest = new FetctProductByCatRequest();
-        fetctProductByCatRequest.setVendor_id(APIClient.VENDOR_ID);
         fetctProductByCatRequest.setCat_id(strCatTypeId);
         fetctProductByCatRequest.setSkip_count(CURRENT_PAGE);
         Log.w(TAG,"fetctProductByCatRequest"+ "--->" + new Gson().toJson(fetctProductByCatRequest));
@@ -415,6 +406,7 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
         return true;
     }
 
+    @SuppressLint("LogNotTimber")
     private void setViewProducts(List<FetctProductByCatDetailsResponse.DataBean> catListSeeMoreAll) {
         Log.w(TAG,"setViewProducts catListSeeMoreAll : "+new Gson().toJson(catListSeeMoreAll));
         Log.w(TAG,"setViewProducts catListSeeMoreAll size : "+catListSeeMoreAll.size());
@@ -425,57 +417,6 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
         isLoading = false;
     }
 
-    @SuppressLint({"NonConstantResourceId", "SetTextI18n", "LogNotTimber"})
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-
-            case R.id.rl_homes:
-
-                callDirections("1");
-                break;
-
-            case R.id.rl_home:
-
-                callDirections("1");
-                break;
-
-            case R.id.rl_shop:
-                callDirections("2");
-                break;
-
-
-            case R.id.rl_comn:
-
-                callDirections("3");
-                break;
-
-
-
-        }
-
-    }
-//    @SuppressLint("NonConstantResourceId")
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.home:
-//                callDirections("1");
-//                break;
-//            case R.id.feeds:
-//                callDirections("2");
-//                break;
-//
-//            case R.id.community:
-//                callDirections("3");
-//                break;
-//
-//            default:
-//                return  false;
-//        }
-//
-//        return false;
-//    }
     public void callDirections(String tag){
         Intent intent = new Intent(getApplicationContext(), VendorDashboardActivity.class);
         intent.putExtra("tag",tag);
@@ -490,6 +431,7 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
                 super.onScrollStateChanged(recyclerView, newState);
             }
 
+            @SuppressLint("LogNotTimber")
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
@@ -520,4 +462,143 @@ public class VendorAddProductsActivity extends AppCompatActivity implements View
         });
     }
 
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+
+            case R.id.community:
+                callDirections("3");
+                break;
+
+            default:
+                return  false;
+        }
+        return true;
+    }
+
+    private void showPopupCategoryType() {
+        try {
+
+            Dialog dialog = new Dialog(VendorAddProductsActivity.this);
+            dialog.setContentView(R.layout.alert_categorytype_layout);
+            dialog.setCanceledOnTouchOutside(false);
+
+            ImageView img_close = dialog.findViewById(R.id.img_close);
+            btn_done = dialog.findViewById(R.id.btn_done);
+            rv_categorytype = dialog.findViewById(R.id.rv_categorytype);
+            edt_search_categorytype = dialog.findViewById(R.id.edt_search_categorytype);
+            txt_category_norecords = dialog.findViewById(R.id.txt_category_norecords);
+
+            btn_done.setVisibility(View.GONE);
+            btn_done.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+
+
+
+
+
+            img_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+
+                }
+            });
+
+            if(catgoryGetList != null && catgoryGetList.size()>0){
+                setCategoryTypeView(catgoryGetList);
+                rv_categorytype.setVisibility(View.VISIBLE);
+                txt_category_norecords.setVisibility(View.GONE);
+            }
+            else{
+                rv_categorytype.setVisibility(View.GONE);
+                txt_category_norecords.setVisibility(View.VISIBLE);
+                txt_category_norecords.setText("No category type");
+            }
+
+
+            edt_search_categorytype.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @SuppressLint("LogNotTimber")
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    //after the change calling the method and passing the search input
+                    filter(editable.toString());
+                    Log.w(TAG,"afterTextChanged : "+editable.toString());
+                }
+            });
+
+
+
+            Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.show();
+
+        } catch (WindowManager.BadTokenException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+    }
+
+    private void filter(String text) {
+        //new array list that will hold the filtered data
+        List<CatgoryGetListResponse.DataBean> catgoryGetListFiltered = new ArrayList<>();
+
+
+        if(catgoryGetList !=null && catgoryGetList.size()>0){
+            //looping through existing elements
+            for (CatgoryGetListResponse.DataBean s : catgoryGetList) {
+                //if the existing elements contains the search input
+                if (s.getProduct_cate_name().toLowerCase().contains(text.toLowerCase())) {
+                    //adding the element to filtered list
+                    catgoryGetListFiltered.add(s);
+                }
+            }
+
+        }
+
+        //calling a method of the adapter class and passing the filtered list
+        categoryTypesListAdapter.filterList(catgoryGetListFiltered);
+    }
+
+
+    @SuppressLint("LogNotTimber")
+    @Override
+    public void categoryTypeSelectListener(String categorytitle, String categoryid) {
+        Log.w(TAG,"categoryTypeSelectListener : "+"categorytitle : "+categorytitle+" categoryid : "+categoryid);
+        btn_done.setVisibility(View.VISIBLE);
+        txt_category_type.setText(categorytitle);
+        strCatTypeId = categoryid;
+           if(strCatTypeId != null) {
+                      if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
+                          fetctProductByCatDetailsResponse(strCatTypeId);
+                      }
+                  }else{
+                      if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
+                          fetctProductByCatDetailsResponse("");
+                      }
+                  }
+    }
 }

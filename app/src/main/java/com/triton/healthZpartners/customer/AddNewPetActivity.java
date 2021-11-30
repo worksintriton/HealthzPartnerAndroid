@@ -928,7 +928,8 @@ public class AddNewPetActivity extends AppCompatActivity implements PetTypeSelec
                             setBreedTypeView(breedTypedataBeanList);
                             rv_breedtype.setVisibility(View.VISIBLE);
                             tv_breednorecords.setVisibility(View.GONE);
-                        }else{
+                        }
+                        else{
                             rv_breedtype.setVisibility(View.GONE);
                             tv_breednorecords.setVisibility(View.VISIBLE);
                             tv_breednorecords.setText("No breed type");

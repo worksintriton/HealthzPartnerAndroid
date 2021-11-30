@@ -10,12 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/green">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_header"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/new_header_bg"
+            android:background="@color/green"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
             app:popupTheme="@style/AppTheme.PopupOverlay"
@@ -38,7 +39,7 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/futuramediumbt"
                 android:text="@string/add_products"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
@@ -62,7 +63,7 @@
                     android:id="@+id/img_profile"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/new_user"
+                    android:src="@drawable/account"
                     tools:ignore="ContentDescription"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="10dp" />
@@ -70,6 +71,51 @@
 
 
         </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_rounded_corner_btn_white"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/rl_category">
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/image"
+                android:src="@drawable/search" />
+
+            <TextView
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/txt_category_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/category"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_dropdown"
+                tools:ignore="ContentDescription"
+                android:layout_marginEnd="10dp"/>
+
+        </RelativeLayout>
+
+
 
     </LinearLayout>
     <LinearLayout
@@ -82,38 +128,26 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="20dp">
-        <RelativeLayout
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rectangle_corner"
-            android:padding="10dp">
+            android:fontFamily="@font/futuramediumbt"
+            android:text="@string/category"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"/>
 
-            <Spinner
-                android:id="@+id/spr_category_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:src="@drawable/option"
-                tools:ignore="ContentDescription" />
-
-        </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp">
+
             <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_manage_productlist"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="visible" />
+                android:id="@+id/rv_manage_productlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
             <TextView
                 android:id="@+id/txt_no_records"
                 android:layout_width="wrap_content"
@@ -138,7 +172,7 @@
             android:id="@+id/include_vendor_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            layout="@layout/toolbar_layout_vendor_footer" />
+            layout="@layout/toolbar_layout_vendor_footer_new_shaped" />
     </LinearLayout>
 
     <com.wang.avi.AVLoadingIndicatorView

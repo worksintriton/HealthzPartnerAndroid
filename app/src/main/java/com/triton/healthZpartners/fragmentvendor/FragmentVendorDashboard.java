@@ -92,12 +92,16 @@ public class FragmentVendorDashboard extends Fragment  {
     TextView txt_edit_profile;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_clinicname)
-    TextView txt_clinicname;
+    @BindView(R.id.txt_remove_store)
+    TextView txt_remove_store;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_clinic_imge)
-    ImageView img_clinic_imge;
+    @BindView(R.id.txt_business_name)
+    TextView txt_business_name;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_service_pic)
+    ImageView img_service_pic;
 
     private SharedPreferences preferences;
     private Context mContext;
@@ -398,9 +402,9 @@ public class FragmentVendorDashboard extends Fragment  {
 
                         if(response.body().getData() != null) {
                                 if (response.body().getData().getBussiness_name() != null) {
-                                    txt_clinicname.setText(response.body().getData().getBussiness_name());
+                                    txt_business_name.setText(response.body().getData().getBussiness_name());
                                 }else{
-                                    txt_clinicname.setText("");
+                                    txt_business_name.setText("");
                                 }
                                 if (response.body().getData().getBussiness_gallery() != null) {
                                     businessgalerydetailsResponseList = response.body().getData().getBussiness_gallery();
@@ -414,13 +418,13 @@ public class FragmentVendorDashboard extends Fragment  {
                                         if (businessgalerydetailsResponseList.get(i).getBussiness_gallery() != null && !businessgalerydetailsResponseList.get(i).getBussiness_gallery().isEmpty()) {
                                             Glide.with(mContext)
                                                     .load(businessgalerydetailsResponseList.get(i).getBussiness_gallery())
-                                                    .into(img_clinic_imge);
+                                                    .into(img_service_pic);
 
                                         }
                                         else{
                                             Glide.with(mContext)
                                                     .load(APIClient.PROFILE_IMAGE_URL)
-                                                    .into(img_clinic_imge);
+                                                    .into(img_service_pic);
 
                                         }
                                     }
