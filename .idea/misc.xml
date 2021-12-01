@@ -42,7 +42,9 @@
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_vendor_create_products.xml" value="0.14945652173913043" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_vendor_dashboard.xml" value="0.2223731884057971" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_vendor_my_orders.xml" value="0.2115036231884058" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_vendor_order_details_new.xml" value="0.14673913043478262" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_vendor_register_form.xml" value="0.2056159420289855" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_vendor_track_order_status.xml" value="0.14673913043478262" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/activity_verify_otp.xml" value="0.1766304347826087" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_breedtype_cardview.xml" value="0.2056159420289855" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_categorytype_cardview.xml" value="0.2056159420289855" />
@@ -54,6 +56,7 @@
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_prescriptions_details.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_doctor_prescriptions_details_list.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_prescription_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_product_details_vendor.xml" value="0.19972826086956522" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_sp_missed_appointment.xml" value="0.23278985507246377" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_sp_new_appointment.xml" value="0.23278985507246377" />
         <entry key="..\:/TritonAppsGIt/HealthzPartnerAndroid/app/src/main/res/layout/adapter_vendor_add_products.xml" value="0.2056159420289855" />
@@ -310,7 +313,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>

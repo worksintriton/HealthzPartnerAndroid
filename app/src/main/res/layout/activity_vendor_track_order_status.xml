@@ -14,7 +14,7 @@
             android:id="@+id/toolbar_header"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/new_header_bg"
+            android:background="@color/green"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
             app:popupTheme="@style/AppTheme.PopupOverlay"
@@ -36,8 +36,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/futuramediumbt"
-                android:text="@string/track_order"
-                android:textColor="@color/black"
+                android:text="@string/track_order_details"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
@@ -75,7 +75,7 @@
                     android:id="@+id/img_profile"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/new_user"
+                    android:src="@drawable/account"
                     tools:ignore="ContentDescription"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="10dp" />
@@ -803,14 +803,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:layout_marginBottom="20dp">
+        android:orientation="vertical">
 
         <include
             android:id="@+id/include_vendor_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            layout="@layout/toolbar_layout_vendor_footer" />
+            layout="@layout/toolbar_layout_vendor_footer_new_shaped" />
     </LinearLayout>
 
 

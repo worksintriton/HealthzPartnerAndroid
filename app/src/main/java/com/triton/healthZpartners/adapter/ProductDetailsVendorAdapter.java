@@ -23,6 +23,7 @@ import com.triton.healthZpartners.interfaces.OnItemCheckConfirmStatus;
 import com.triton.healthZpartners.interfaces.OnItemCheckDispatchStatus;
 import com.triton.healthZpartners.interfaces.OnItemCheckRejectStatus;
 import com.triton.healthZpartners.customer.PetVendorCancelOrderActivity;
+import com.triton.healthZpartners.responsepojo.ListByVendorOrderDetailsResponse;
 import com.triton.healthZpartners.responsepojo.PetLoverVendorOrderDetailsResponse;
 import com.triton.healthZpartners.vendor.VendorTrackOrderActivity;
 
@@ -33,9 +34,9 @@ public class ProductDetailsVendorAdapter extends  RecyclerView.Adapter<RecyclerV
 
     private final String TAG = "ProductDetailsVendorAdapter";
 
-    List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details;
+    List<ListByVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details;
     private final Context context;
-    PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean currentItem;
+    ListByVendorOrderDetailsResponse.DataBean.ProductDetailsBean currentItem;
     String orderid;
 
     OnItemCheckConfirmStatus onItemCheckConfirmStatus;
@@ -47,7 +48,7 @@ public class ProductDetailsVendorAdapter extends  RecyclerView.Adapter<RecyclerV
     private String fromactivity;
 
 
-    public ProductDetailsVendorAdapter(Context context, List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details, String orderid, OnItemCheckConfirmStatus onItemCheckConfirmStatus,OnItemCheckRejectStatus onItemCheckRejectStatus, OnItemCheckDispatchStatus onItemCheckDispatchStatus, boolean status,String fromactivity) {
+    public ProductDetailsVendorAdapter(Context context, List<ListByVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details, String orderid, OnItemCheckConfirmStatus onItemCheckConfirmStatus, OnItemCheckRejectStatus onItemCheckRejectStatus, OnItemCheckDispatchStatus onItemCheckDispatchStatus, boolean status, String fromactivity) {
         this.context = context;
         this.product_details = product_details;
         this.orderid = orderid;
@@ -144,7 +145,7 @@ public class ProductDetailsVendorAdapter extends  RecyclerView.Adapter<RecyclerV
 
         }
         if (product_details.get(position).getProduct_booked() != null) {
-            holder.txt_bookedon.setText("Booked for:" + " " + product_details.get(position).getProduct_booked());
+            holder.txt_bookedon.setText("Booked For:" + " " + product_details.get(position).getProduct_booked());
 
         }
         if (product_details.get(position).getProduct_image() != null && !product_details.get(position).getProduct_image().isEmpty()) {

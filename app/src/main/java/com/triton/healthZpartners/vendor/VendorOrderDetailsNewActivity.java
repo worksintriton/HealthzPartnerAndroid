@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -26,6 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.adapter.ProductDetailsVendorAdapter;
@@ -38,6 +40,7 @@ import com.triton.healthZpartners.requestpojo.VendorOrderDetailsListRequest;
 import com.triton.healthZpartners.requestpojo.VendorOrderUpdateDispatchRequest;
 import com.triton.healthZpartners.requestpojo.VendorOrderUpdateRejectRequest;
 import com.triton.healthZpartners.requestpojo.VendorOrderUpdateRequest;
+import com.triton.healthZpartners.responsepojo.ListByVendorOrderDetailsResponse;
 import com.triton.healthZpartners.responsepojo.PetLoverVendorOrderDetailsResponse;
 import com.triton.healthZpartners.responsepojo.VendorOrderUpdateResponse;
 import com.triton.healthZpartners.utils.ConnectionDetector;
@@ -56,7 +59,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VendorOrderDetailsNewActivity extends AppCompatActivity implements View.OnClickListener, OnItemCheckConfirmStatus, OnItemCheckRejectStatus, OnItemCheckDispatchStatus {
+public class VendorOrderDetailsNewActivity extends AppCompatActivity implements View.OnClickListener, OnItemCheckConfirmStatus, OnItemCheckRejectStatus, OnItemCheckDispatchStatus, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "VendorOrderDetailsNewActivity" ;
 
@@ -108,29 +111,6 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     @BindView(R.id.txt_quantity)
     TextView txt_quantity;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_shipping_address_name)
-    TextView txt_shipping_address_name;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_shipping_address_street)
-    TextView txt_shipping_address_street;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_shipping_address_city)
-    TextView txt_shipping_address_city;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_shipping_address_state_pincode)
-    TextView txt_shipping_address_state_pincode;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_shipping_address_phone)
-    TextView txt_shipping_address_phone;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_shipping_address_landmark)
-    TextView txt_shipping_address_landmark;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_order_status)
@@ -176,6 +156,10 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     TextView txt_no_products;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_address)
+    TextView txt_address;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_confirmall)
     TextView txt_confirmall;
 
@@ -191,7 +175,6 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     @BindView(R.id.include_vendor_footer)
     View include_vendor_footer;
 
-    BottomNavigationView bottom_navigation_view;
 
 
 
@@ -207,7 +190,7 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     private List<Integer> product_id_confirmList = new ArrayList<>();
     private List<Integer> product_id_rejectList = new ArrayList<>();
     private List<Integer> product_id_dispatchList = new ArrayList<>();
-    private List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> productdetailslist;
+    private List<ListByVendorOrderDetailsResponse.DataBean.ProductDetailsBean> productdetailslist;
     private Dialog alertDialog;
 
     private boolean isConfirmaAll = false;
@@ -218,37 +201,10 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
 
     /* Bottom Navigation */
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
+    BottomNavigationView bottom_navigation_view;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
+    FloatingActionButton fab;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
 
     @SuppressLint({"LogNotTimber", "LongLogTag", "SetTextI18n"})
     @Override
@@ -269,26 +225,21 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
         }
      scrollablContent.setVisibility(View.GONE);
 
-//        bottom_navigation_view = include_vendor_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
 
-        /*home*/
+        fab = include_vendor_footer.findViewById(R.id.fab);
+        bottom_navigation_view = include_vendor_footer.findViewById(R.id.bottomNavigation);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.shop).setChecked(true);
 
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_shop.setImageResource(R.drawable.grey_shop_selector);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-
-        rl_home.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callDirections("1");
+            }
+        });
 
 
-        rl_homes.setOnClickListener(this);
+
 
 
         if (new ConnectionDetector(VendorOrderDetailsNewActivity.this).isNetworkAvailable(VendorOrderDetailsNewActivity.this)) {
@@ -437,29 +388,10 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
         switch (v.getId()){
 
             case R.id.img_back:
-
                 onBackPressed();
                 break;
 
-            case R.id.rl_homes:
 
-                callDirections("1");
-                break;
-
-            case R.id.rl_home:
-
-                callDirections("1");
-                break;
-
-            case R.id.rl_shop:
-                callDirections("2");
-                break;
-
-
-            case R.id.rl_comn:
-
-                callDirections("3");
-                break;
 
         }
 
@@ -470,13 +402,13 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
-        Call<PetLoverVendorOrderDetailsResponse> call = apiInterface.get_product_list_by_vendor_ResponseCall(RestUtils.getContentType(), vendorOrderDetailsListRequest(vendorId));
+        Call<ListByVendorOrderDetailsResponse> call = apiInterface.get_product_list_by_vendor_ResponseCall(RestUtils.getContentType(), vendorOrderDetailsListRequest(vendorId));
         Log.w(TAG,"vendorOrderDetailsResponseCall url  :%s"+" "+ call.request().url().toString());
 
-        call.enqueue(new Callback<PetLoverVendorOrderDetailsResponse>() {
+        call.enqueue(new Callback<ListByVendorOrderDetailsResponse>() {
             @SuppressLint({"LongLogTag", "LogNotTimber", "SetTextI18n"})
             @Override
-            public void onResponse(@NonNull Call<PetLoverVendorOrderDetailsResponse> call, @NonNull Response<PetLoverVendorOrderDetailsResponse> response) {
+            public void onResponse(@NonNull Call<ListByVendorOrderDetailsResponse> call, @NonNull Response<ListByVendorOrderDetailsResponse> response) {
 
                 Log.w(TAG,"vendorOrderDetailsResponseCall"+ "--->" + new Gson().toJson(response.body()));
 
@@ -507,7 +439,9 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
                             else { if (response.body().getData().getOrder_details().getOrder_product() == 1) {
                                 txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
                             } else {
-                                txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )"); } }
+                                txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
+                            }
+                            }
 
 
 
@@ -528,17 +462,16 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
                                 txt_quantity.setText(""+response.body().getData().getOrder_details().getOrder_product());
                             }
 
-                            if(response.body().getData().getShipping_address() !=null){
-                                txt_shipping_address_name.setText(response.body().getData().getShipping_address().getUser_name());
-                                txt_shipping_address_street.setText(response.body().getData().getShipping_address().getShipping_location());
-                                txt_shipping_address_city.setText(response.body().getData().getShipping_address().getLocation_title());
-                                txt_shipping_address_state_pincode.setVisibility(View.GONE);
-                                if(response.body().getData().getShipping_address().getUser_phone() != null && !response.body().getData().getShipping_address().getUser_phone().isEmpty()) {
-                                    txt_shipping_address_phone.setText("Phone : " + response.body().getData().getShipping_address().getUser_phone());
-                                }
-                                if(response.body().getData().getShipping_address().getLand_mark() != null && !response.body().getData().getShipping_address().getLand_mark().isEmpty()) {
-                                    txt_shipping_address_landmark.setText("Landmark : " + response.body().getData().getShipping_address().getLand_mark());
-                                }
+                            if(response.body().getData().getShipping_address() != null){
+                                String address = response.body().getData().getShipping_address().getUser_first_name()
+                                        +" "+response.body().getData().getShipping_address().getUser_last_name()
+                                        +" "+response.body().getData().getShipping_address().getUser_flat_no()
+                                        +" " +response.body().getData().getShipping_address().getUser_stree()
+                                        +" "+response.body().getData().getShipping_address().getUser_city()
+                                        +" "+response.body().getData().getShipping_address().getUser_landmark()
+                                        +" "+response.body().getData().getShipping_address().getUser_mobile();
+                                txt_address.setText(address);
+
 
                             }
 
@@ -627,10 +560,10 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
 
             @SuppressLint({"LongLogTag", "LogNotTimber"})
             @Override
-            public void onFailure(@NonNull Call<PetLoverVendorOrderDetailsResponse> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<ListByVendorOrderDetailsResponse> call, @NonNull Throwable t) {
 
                 avi_indicator.smoothToHide();
-                Log.w(TAG,"VendorOrderDetailsResponse flr"+"--->" + t.getMessage());
+                Log.w(TAG,"ListByVendorOrderDetailsRes flr"+"--->" + t.getMessage());
             }
         });
 
@@ -645,7 +578,7 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     }
 
 
-    private void setView(List<PetLoverVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details,boolean status) {
+    private void setView(List<ListByVendorOrderDetailsResponse.DataBean.ProductDetailsBean> product_details,boolean status) {
         rv_productdetails.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rv_productdetails.setItemAnimator(new DefaultItemAnimator());
         ProductDetailsVendorAdapter productDetailsVendorAdapter = new ProductDetailsVendorAdapter(getApplicationContext(),product_details,orderid,this,this,this,status,fromactivity);
@@ -1062,5 +995,25 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
         intent.putExtra("tag",tag);
         startActivity(intent);
         finish();
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+
+            case R.id.community:
+                callDirections("3");
+                break;
+
+
+        }
+        return true;
     }
 }

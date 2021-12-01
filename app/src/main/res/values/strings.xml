@@ -444,6 +444,7 @@
     <string name="your_cart_is_empty">Buy me something please</string>
     <string name="cancel_order">Cancel order</string>
     <string name="track_order">Track order</string>
+    <string name="track_order_details">Track Order Details</string>
     <string name="track_orders">Track Orders</string>
     <string name="return_order">Return order</string>
     <string name="reason_for_cancellation">Reason for cancellation</string>
@@ -694,6 +695,7 @@
     <string name="about_service_provider">About Service Provider</string>
     <string name="business_no">Business Number</string>
     <string name="service_pics">Service Pics</string>
+    <string name="no_of_products">No. of Products</string>
 
 </resources>
 

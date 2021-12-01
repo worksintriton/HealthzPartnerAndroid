@@ -158,8 +158,9 @@
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
                         android:text="@string/track_order"
-                        android:textColor="@color/new_orange_bgm_color"
-                        android:textSize="12sp" />
+                        android:textColor="@color/orange"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
