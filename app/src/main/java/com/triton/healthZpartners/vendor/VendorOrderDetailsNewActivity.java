@@ -61,7 +61,7 @@ import retrofit2.Response;
 
 public class VendorOrderDetailsNewActivity extends AppCompatActivity implements View.OnClickListener, OnItemCheckConfirmStatus, OnItemCheckRejectStatus, OnItemCheckDispatchStatus, BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG = "VendorOrderDetailsNewActivity" ;
+    String TAG = "VendorOrderDetailsNewActivity" ;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_no_records)
@@ -82,6 +82,8 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_products_price)
     TextView txt_products_price;
+
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_order_status)
@@ -175,7 +177,17 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     @BindView(R.id.include_vendor_footer)
     View include_vendor_footer;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_items)
+    TextView txt_items;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_items_price)
+    TextView txt_items_price;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_price)
+    TextView txt_shipping_price;
 
 
     private String _id;
@@ -200,9 +212,7 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     private boolean isRejectAndDispatch = false;
 
     /* Bottom Navigation */
-
     BottomNavigationView bottom_navigation_view;
-
     FloatingActionButton fab;
 
 
@@ -386,7 +396,6 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
     public void onClick(View v) {
 
         switch (v.getId()){
-
             case R.id.img_back:
                 onBackPressed();
                 break;
@@ -420,6 +429,17 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
 
                         if(response.body().getData()!=null){
 
+                            if (response.body().getData().getOrder_details().getOrder_product() == 1){
+                                txt_items.setText("Item ( "+response.body().getData().getOrder_details().getOrder_product()+" )");
+
+                            }else{
+                                txt_items.setText("Items ( "+response.body().getData().getOrder_details().getOrder_product()+" )");
+
+                            }
+                            if(response.body().getData().getOrder_details().getOrder_price() != 0){
+                                txt_items_price.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
+                            }
+
 
                             if(response.body().getData().getOrder_details().getOrder_text() !=null && !response.body().getData().getOrder_details().getOrder_text().isEmpty()){
                                 txt_product_title.setText(response.body().getData().getOrder_details().getOrder_text());
@@ -436,17 +456,14 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
 
                                 }
                             }
+
+
                             else { if (response.body().getData().getOrder_details().getOrder_product() == 1) {
                                 txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " product )");
                             } else {
                                 txt_products_price.setText("\u20B9 " + 0 + " (" + response.body().getData().getOrder_details().getOrder_product() + " products )");
                             }
                             }
-
-
-
-
-
 
                             if(response.body().getData().getOrder_details().getOrder_booked()!=null){
                                 txt_order_date.setText(response.body().getData().getOrder_details().getOrder_booked());
@@ -458,6 +475,7 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
                             if(response.body().getData().getOrder_details().getOrder_price() !=0){
                                 txt_total_order_cost.setText("\u20B9 "+response.body().getData().getOrder_details().getOrder_price());
                             }
+
                             if(response.body().getData().getOrder_details().getOrder_product() !=0){
                                 txt_quantity.setText(""+response.body().getData().getOrder_details().getOrder_product());
                             }
@@ -488,21 +506,21 @@ public class VendorOrderDetailsNewActivity extends AppCompatActivity implements 
                             }
 
                             if(fromactivity != null && fromactivity.equalsIgnoreCase("FragementNewOrders")){
-                                txt_order_status.setText("Booked for");
+                                txt_order_status.setText("Booked For");
                                 img_order_status.setImageResource(R.drawable.completed);
                                 if(response.body().getData().getOrder_details().getOrder_booked() != null){
                                     txt_delivered_date.setText(response.body().getData().getOrder_details().getOrder_booked());
                                 }
                             }
                             else if(fromactivity != null && fromactivity.equalsIgnoreCase("FragmentCompletedOrders")){
-                                txt_order_status.setText("Delivered on");
+                                txt_order_status.setText("Delivered On");
                                 img_order_status.setImageResource(R.drawable.completed);
                                 if(response.body().getData().getOrder_details().getOrder_completed() != null){
                                     txt_delivered_date.setText(response.body().getData().getOrder_details().getOrder_completed());
                                 }
                             }
                             else if(fromactivity != null && fromactivity.equalsIgnoreCase("FragmentCancelledOrders")) {
-                                txt_order_status.setText("Cancelled on");
+                                txt_order_status.setText("Cancelled On");
                                 img_order_status.setImageResource(R.drawable.ic_baseline_cancel_24);
                                 if (response.body().getData().getOrder_details().getOrder_cancelled() != null && !response.body().getData().getOrder_details().getOrder_cancelled().isEmpty()) {
                                     txt_delivered_date.setText(response.body().getData().getOrder_details().getOrder_cancelled());

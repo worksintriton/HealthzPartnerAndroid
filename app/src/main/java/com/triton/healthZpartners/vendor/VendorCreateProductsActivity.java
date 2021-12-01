@@ -398,7 +398,7 @@ public class VendorCreateProductsActivity extends AppCompatActivity implements V
         String currentDateandTime = sdf.format(new Date());
 
         ProductVendorCreateRequest productVendorCreateRequest = new ProductVendorCreateRequest();
-        productVendorCreateRequest.set_id(productid);
+        productVendorCreateRequest.setCat_id(productid);
         productVendorCreateRequest.setCost(Integer.parseInt(edt_product_price.getText().toString()));
         productVendorCreateRequest.setThreshould(edt_product_thresould.getText().toString());
         productVendorCreateRequest.setProduct_discription(edt_product_descriptions.getText().toString());

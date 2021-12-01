@@ -171,6 +171,18 @@ public class VendorTrackOrderActivity extends AppCompatActivity implements View.
     LinearLayout ll_order_reject;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_items)
+    TextView txt_items;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_items_price)
+    TextView txt_items_price;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_shipping_price)
+    TextView txt_shipping_price;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.include_vendor_footer)
     View include_vendor_footer;
 
@@ -282,6 +294,17 @@ public class VendorTrackOrderActivity extends AppCompatActivity implements View.
                             }
                             if(response.body().getData().getProduct_count() !=0){
                                 txt_quantity.setText(""+response.body().getData().getProduct_count());
+                            }
+
+                             if (response.body().getData().getProduct_count() == 1){
+                                txt_items.setText("Item ( "+response.body().getData().getProduct_count()+" )");
+
+                            }else{
+                                txt_items.setText("Items ( "+response.body().getData().getProduct_count()+" )");
+
+                            }
+                            if(response.body().getData().getProduct_price() != 0){
+                                txt_items_price.setText("\u20B9 "+response.body().getData().getProduct_price());
                             }
                            
                            /* if(response.body().getData().getVendor_complete_info() !=null) {

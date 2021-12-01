@@ -30,8 +30,11 @@ import com.triton.healthZpartners.api.RestApiInterface;
 import com.triton.healthZpartners.fragmentvendor.FragmentVendorDashboard;
 import com.triton.healthZpartners.fragmentvendor.VendorCommunityFragment;
 import com.triton.healthZpartners.requestpojo.ShippingAddressFetchByUserIDRequest;
+import com.triton.healthZpartners.requestpojo.VendorGetsOrderIdRequest;
 import com.triton.healthZpartners.responsepojo.ShippingAddressFetchByUserIDResponse;
+import com.triton.healthZpartners.responsepojo.VendorGetsOrderIDResponse;
 import com.triton.healthZpartners.sessionmanager.SessionManager;
+import com.triton.healthZpartners.utils.ConnectionDetector;
 import com.triton.healthZpartners.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -140,9 +143,9 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
         HashMap<String, String> user = session.getProfileDetails();
         userid = user.get(SessionManager.KEY_ID);
 
-      /*  if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
-            shippingAddressresponseCall();
-        }*/
+       if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
+           getVendorOrderIDResponseCall(userid);
+        }
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -415,6 +418,70 @@ public class VendorDashboardActivity  extends VendorNavigationDrawer implements 
                 return  false;
         }
         return true;
+    }
+
+    @SuppressLint({"LongLogTag", "LogNotTimber"})
+    private void getVendorOrderIDResponseCall(String userid) {
+       /* avi_indicator.setVisibility(View.VISIBLE);
+        avi_indicator.smoothToShow();*/
+
+        RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
+        Call<VendorGetsOrderIDResponse> call = apiInterface.vendor_gets_orderbyId_ResponseCall(RestUtils.getContentType(), vendorGetsOrderIdRequest(userid));
+        Log.w(TAG,"getVendorOrderIDResponseCall url  :%s"+" "+ call.request().url().toString());
+
+        call.enqueue(new Callback<VendorGetsOrderIDResponse>() {
+            @SuppressLint({"LongLogTag", "LogNotTimber"})
+            @Override
+            public void onResponse(@NonNull Call<VendorGetsOrderIDResponse> call, @NonNull Response<VendorGetsOrderIDResponse> response) {
+
+                Log.w(TAG,"getVendorOrderIDResponseCall"+ "--->" + new Gson().toJson(response.body()));
+
+                //avi_indicator.smoothToHide();
+
+                if (response.body() != null) {
+                    if(response.body().getCode() == 200){
+
+                        if(response.body().getData()!=null){
+
+                            if(response.body().getData().get_id()!=null&&!(response.body().getData().get_id().isEmpty())){
+                                APIClient.VENDOR_ID = response.body().getData().get_id();
+
+                            }
+
+
+                        }
+
+
+                    }
+
+                }
+
+
+            }
+
+            @SuppressLint({"LongLogTag", "LogNotTimber"})
+            @Override
+            public void onFailure(@NonNull Call<VendorGetsOrderIDResponse> call, @NonNull Throwable t) {
+
+                /*  avi_indicator.smoothToHide();*/
+
+                Log.w(TAG,"getVendorOrderIDResponseCall flr"+"--->" + t.getMessage());
+            }
+        });
+
+    }
+
+    @SuppressLint("LogNotTimber")
+    private VendorGetsOrderIdRequest vendorGetsOrderIdRequest(String userid) {
+
+        VendorGetsOrderIdRequest vendorGetsOrderIdRequest = new VendorGetsOrderIdRequest();
+
+        vendorGetsOrderIdRequest.setUser_id(userid);
+
+        Log.w(TAG,"vendorGetsOrderIdRequest"+ "--->" + new Gson().toJson(vendorGetsOrderIdRequest));
+        //  Toasty.success(getApplicationContext(),"fbTokenUpdateRequest : "+new Gson().toJson(fbTokenUpdateRequest), Toast.LENGTH_SHORT, true).show();
+
+        return vendorGetsOrderIdRequest;
     }
 
 

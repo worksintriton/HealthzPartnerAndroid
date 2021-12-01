@@ -2,20 +2,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/headerView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:orientation="vertical"
-        android:background="@color/new_header_bg">
+        android:background="@color/green">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_header"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="@color/green"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
             app:popupTheme="@style/AppTheme.PopupOverlay"
@@ -27,27 +27,27 @@
                 android:layout_height="25dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/left_arrow"
-                tools:ignore="ContentDescription"
-                android:layout_marginStart="15dp"/>
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/txt_toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="@string/manage_products"
-                android:textColor="@color/black"
-                android:textSize="@dimen/big_txt_size"
                 android:fontFamily="@font/futuramediumbt"
+                android:text="@string/manage_products"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:gravity="end"
-                android:layout_marginEnd="10dp">
+                android:layout_marginStart="10dp">
+
 
 
                 <ImageView
@@ -55,59 +55,70 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="20dp"
-                     android:src="@drawable/notification_white"
+                    android:src="@drawable/notification_white"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/img_profile"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
+                    android:src="@drawable/account"
+                    tools:ignore="ContentDescription"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/new_user"
-                    tools:ignore="ContentDescription" />
+                    android:layout_marginEnd="10dp" />
             </LinearLayout>
 
 
         </androidx.appcompat.widget.Toolbar>
+
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_rounded_corner_btn_white"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/rl_category">
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/image"
+                android:src="@drawable/search" />
+
 
             <EditText
                 android:id="@+id/edt_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rectangle_corner_bgm"
-                android:fontFamily="@font/futuramediumbt"
+                android:layout_toEndOf="@id/img_search"
+                android:background="@null"
+                android:fontFamily="@font/montserrat"
                 android:hint="@string/search"
+                android:imeOptions="actionDone"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:inputType="textWebEmailAddress"
-                android:padding="15dp"
+                android:maxLines="1"
                 android:textColor="@color/green"
                 android:textColorHint="@color/dark_gray"
+                android:textCursorDrawable="@null"
                 android:textSize="16sp"
-                tools:ignore="Autofill,LabelFor,TextFields"
-                android:maxLines="1"
-                android:imeOptions="actionDone"/>
+                tools:ignore="Autofill,LabelFor,TextFields" />
 
-            <ImageView
-                android:id="@+id/img_search"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:contentDescription="@string/image"
-                android:padding="8dp"
-                android:src="@drawable/search" />
 
 
         </RelativeLayout>
+
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -353,7 +364,7 @@
 
         <include
             android:id="@+id/include_vendor_footer"
-            layout="@layout/toolbar_layout_vendor_footer"
+            layout="@layout/toolbar_layout_vendor_footer_new_shaped"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

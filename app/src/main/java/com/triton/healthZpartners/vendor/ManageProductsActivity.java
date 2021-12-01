@@ -10,25 +10,25 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.gson.Gson;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.activity.NotificationActivity;
 import com.triton.healthZpartners.adapter.ManageProductsListAdapter;
@@ -49,6 +49,8 @@ import com.triton.healthZpartners.responsepojo.VendorOrderUpdateResponse;
 import com.triton.healthZpartners.sessionmanager.SessionManager;
 import com.triton.healthZpartners.utils.ConnectionDetector;
 import com.triton.healthZpartners.utils.RestUtils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.text.SimpleDateFormat;
@@ -65,13 +67,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ManageProductsActivity extends AppCompatActivity implements View.OnClickListener, OnItemCheckProduct, ManageProductsDealsListener{
+public class ManageProductsActivity extends AppCompatActivity implements View.OnClickListener, OnItemCheckProduct, ManageProductsDealsListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     private final String TAG = "ManageProductsActivity";
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.img_back)
     ImageView img_back;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.edt_search)
+    EditText edt_search;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
@@ -136,37 +142,8 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
 
     /* Bottom Navigation */
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
+    BottomNavigationView bottom_navigation_view;
+    FloatingActionButton fab;
 
 
 
@@ -191,7 +168,7 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
     TextView txt_deal_start_date,txt_deal_expriy_date;
     private int discountamount =0;
     private boolean discountstatus = false;
-    private final String searchString = "";
+    private  String searchString = "";
     private String getfromdate = "";
     private String gettodate = "";
 
@@ -200,6 +177,7 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
 
     List<String> _id = new ArrayList<>();
     private boolean isValidProductPrice = true;
+    private String userid;
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -211,7 +189,7 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
 
         SessionManager session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getProfileDetails();
-        String userid = user.get(SessionManager.KEY_ID);
+        userid = user.get(SessionManager.KEY_ID);
         ll_discard.setVisibility(View.INVISIBLE);
 
         ll_add_deal.setVisibility(View.GONE);
@@ -220,26 +198,20 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
         fab_add_deal.setVisibility(View.GONE);
         fab_discard_deal.setVisibility(View.GONE);
 
-//        bottom_navigation_view = include_vendor_footer.findViewById(R.id.bottom_navigation_view);
-//        bottom_navigation_view.setItemIconTintList(null);
-//        bottom_navigation_view.getMenu().findItem(R.id.feeds).setChecked(true);
-//        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        fab = include_vendor_footer.findViewById(R.id.fab);
+        bottom_navigation_view = include_vendor_footer.findViewById(R.id.bottomNavigation);
+        bottom_navigation_view.setOnNavigationItemSelectedListener(this);
+        bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
-        /*shop*/
-
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-        title_shop.setTextColor(getResources().getColor(R.color.new_gree_color,getTheme()));
-        img_shop.setImageResource(R.drawable.shop_blue);
-
-        rl_home.setOnClickListener(this);
-
-        rl_shop.setOnClickListener(this);
-
-        rl_comn.setOnClickListener(this);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callDirections("1");
+            }
+        });
 
 
-        rl_homes.setOnClickListener(this);
+
 
         ImageView img_notification = findViewById(R.id.img_notification);
         ImageView img_profile = findViewById(R.id.img_profile);
@@ -377,6 +349,44 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
                 });
 
 
+        edt_search.addTextChangedListener(new TextWatcher() {
+            @SuppressLint("LogNotTimber")
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Log.w(TAG,"beforeTextChanged-->"+s.toString());
+            }
+
+            @SuppressLint("LogNotTimber")
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Log.w(TAG,"onTextChanged-->"+s.toString());
+                searchString = s.toString();
+
+
+            }
+
+            @SuppressLint("LogNotTimber")
+            @Override
+            public void afterTextChanged(Editable s) {
+                Log.w(TAG,"afterTextChanged-->"+s.toString());
+                searchString = s.toString();
+                if(!searchString.isEmpty()){
+                    if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
+                        getlist_from_vendor_id_ResponseCall();
+                    }
+                }else{
+                    searchString ="";
+                    if (new ConnectionDetector(getApplicationContext()).isNetworkAvailable(getApplicationContext())) {
+                        getlist_from_vendor_id_ResponseCall();
+                    }
+
+                }
+
+            }
+        });
+
+
+
     }
     @SuppressLint("LogNotTimber")
     private void getlist_from_vendor_id_ResponseCall() {
@@ -445,7 +455,7 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
         return manageProductsListRequest;
     }
     private void setView() {
-        rv_manage_productlist.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        rv_manage_productlist.setLayoutManager(new GridLayoutManager(this, 2));
         rv_manage_productlist.setItemAnimator(new DefaultItemAnimator());
         ManageProductsListAdapter manageProductsListAdapter = new ManageProductsListAdapter(getApplicationContext(), manageProductsListResponseList,showCheckbox,this,this);
         rv_manage_productlist.setAdapter(manageProductsListAdapter);
@@ -493,27 +503,6 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
                     setView();
                 }
                 break;
-
-            case R.id.rl_homes:
-
-                callDirections("1");
-                break;
-
-            case R.id.rl_home:
-
-                callDirections("1");
-                break;
-
-            case R.id.rl_shop:
-                callDirections("2");
-                break;
-
-
-            case R.id.rl_comn:
-
-                callDirections("3");
-                break;
-
 
 
         }
@@ -885,9 +874,9 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
                             if(discountstatus){
                                 txt_discount_price.setText(response.body().getData().getDiscount()+" %");
                             }else{
-                                txt_discount_price.setText("\u20B9 "+response.body().getData().getDiscount_amount());
+                                txt_discount_price.setText("INR "+response.body().getData().getDiscount_amount());
                             }
-                            txt_cost.setText("\u20B9 " +response.body().getData().getCost());
+                            txt_cost.setText("INR " +response.body().getData().getCost());
 
                         }
 
@@ -1023,35 +1012,7 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
             isvaliddate = false;
         }
 
-     /*   @SuppressLint("SimpleDateFormat") SimpleDateFormat dfDate  = new SimpleDateFormat("yyyy-MM-dd");
 
-        Log.w(TAG,"start_date "+ d1);
-
-        Log.w(TAG,"end_date "+ d2);
-
-
-        try {
-            if(d1 != null && d2 != null){
-
-                Log.w(TAG,"start_date_parse "+ dfDate.parse(d1));
-
-                Log.w(TAG,"end_date_parse"+ dfDate.parse(d2));
-
-                if(Objects.requireNonNull(dfDate.parse(d1)).before(dfDate.parse(d2)))
-                {
-                    isvaliddate = true;//If start date is before end date
-                    Log.w(TAG,"before "+isvaliddate);
-                } else {
-                    isvaliddate = false; //If start date is after the end date
-                    Log.w(TAG,"else "+isvaliddate);
-                }
-
-            }
-
-        } catch (ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }*/
     }
     public void showErrorLoading(String errormesage){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -1168,27 +1129,7 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
     }
 
 
-//    @SuppressLint("NonConstantResourceId")
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.home:
-//                callDirections("1");
-//                break;
-//            case R.id.feeds:
-//                callDirections("2");
-//                break;
-//
-//            case R.id.community:
-//                callDirections("3");
-//                break;
-//
-//            default:
-//                return  false;
-//        }
-//
-//        return false;
-//    }
+
 
     public void callDirections(String tag){
         Intent intent = new Intent(getApplicationContext(), VendorDashboardActivity.class);
@@ -1196,4 +1137,25 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
         startActivity(intent);
         finish();
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                callDirections("1");
+                break;
+            case R.id.shop:
+                callDirections("2");
+                break;
+
+            case R.id.community:
+                callDirections("3");
+                break;
+
+
+        }
+        return true;
+    }
+
+
 }

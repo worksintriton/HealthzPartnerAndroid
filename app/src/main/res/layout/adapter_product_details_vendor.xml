@@ -147,20 +147,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    android:layout_marginEnd="20dp">
 
                     <TextView
+                        android:background="@drawable/rectangle_corner_green"
                         android:id="@+id/txt_track_order"
-                        android:layout_width="wrap_content"
+                        android:layout_width="130dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/futuramediumbt"
                         android:maxLines="1"
                         android:text="@string/track_order"
-                        android:textColor="@color/orange"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
