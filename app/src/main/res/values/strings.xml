@@ -408,7 +408,6 @@
 
 
     <string name="orderid">Order ID</string>
-    <string name="product_title">Product title</string>
     <string name="orderon">Order on</string>
     <string name="deliveredon">Delivered on</string>
     <string name="cancelledon">Cancelled on</string>
@@ -696,6 +695,20 @@
     <string name="business_no">Business Number</string>
     <string name="service_pics">Service Pics</string>
     <string name="no_of_products">No. of Products</string>
+
+
+
+
+
+    <string name="product_title">Product Name</string>
+    <string name="categ_product">Category Product</string>
+    <string name="product_threshold">Product threshold</string>
+    <string name="price_label">Price</string>
+    <string name="condition">Condition</string>
+    <string name="price_type">Price Type</string>
+    <string name="additional_details">Additional Details</string>
+    <string name="add_additional_details">Add Additional Details</string>
+    <string name="addd">Add</string>
 
 </resources>
 
