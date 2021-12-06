@@ -121,12 +121,16 @@ public class VendorCreateProductsActivity extends AppCompatActivity implements B
     RecyclerView rv_product_list;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rv_add_additional_details)
+    RecyclerView rv_add_additional_details;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_product_title)
     EditText edt_product_title;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.edt_product_categprod)
-    EditText edt_product_categprod;
+    @BindView(R.id.txt_product_categprod)
+    TextView txt_product_categprod;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_product_price)
@@ -224,11 +228,11 @@ public class VendorCreateProductsActivity extends AppCompatActivity implements B
 
 
             if(producttitle != null){
-                edt_product_categprod.setText(producttitle);
+                txt_product_categprod.setText(producttitle);
             }
-            if(productdesc != null){
+           /* if(productdesc != null){
                 edt_product_descriptions.setText(productdesc);
-            }
+            }*/
 
 
             btn_update.setOnClickListener(new View.OnClickListener() {
@@ -335,13 +339,13 @@ public class VendorCreateProductsActivity extends AppCompatActivity implements B
            additional_detail.add(service);
 
             if(additional_detail != null && additional_detail.size()>0){
-                rv_product_list.setVisibility(View.VISIBLE);
-                rv_product_list.setHasFixedSize(true);
-                rv_product_list.setNestedScrollingEnabled(false);
+                rv_add_additional_details.setVisibility(View.VISIBLE);
+                rv_add_additional_details.setHasFixedSize(true);
+                rv_add_additional_details.setNestedScrollingEnabled(false);
                 setViewDetails();
 
             }else{
-                rv_product_list.setVisibility(View.GONE);
+                rv_add_additional_details.setVisibility(View.GONE);
 
             }
         }
@@ -349,10 +353,10 @@ public class VendorCreateProductsActivity extends AppCompatActivity implements B
     }
 
     private void setViewDetails() {
-        rv_product_list.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        rv_product_list.setItemAnimator(new DefaultItemAnimator());
+        rv_add_additional_details.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        rv_add_additional_details.setItemAnimator(new DefaultItemAnimator());
         AddProdDetailsListAdapter addExpAdapter = new AddProdDetailsListAdapter(getApplicationContext(), additional_detail);
-        rv_product_list.setAdapter(addExpAdapter);
+        rv_add_additional_details.setAdapter(addExpAdapter);
     }
 
 
@@ -757,6 +761,7 @@ public class VendorCreateProductsActivity extends AppCompatActivity implements B
         productVendorCreateRequest.setCat_id(productid);
         productVendorCreateRequest.setProduct_img(imgList);
         productVendorCreateRequest.setThumbnail_image(thumbnail_image);
+        productVendorCreateRequest.setProduct_name(edt_product_title.getText().toString());
         productVendorCreateRequest.setCondition(edt_product_condition.getText().toString());
         productVendorCreateRequest.setAddition_detail(additional_detail);
         productVendorCreateRequest.setPrice_type(edt_product_pricetype.getText().toString());

@@ -1,5 +1,6 @@
 package com.triton.healthZpartners.vendor;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -9,26 +10,42 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.triton.healthZpartners.R;
 import com.triton.healthZpartners.api.APIClient;
 import com.triton.healthZpartners.api.RestApiInterface;
 import com.triton.healthZpartners.appUtils.NumericKeyBoardTransformationMethod;
 import com.triton.healthZpartners.requestpojo.ProductEditRequest;
+import com.triton.healthZpartners.requestpojo.ProductVendorCreateRequest;
+import com.triton.healthZpartners.requestpojo.ProductVendorEditRequest;
+import com.triton.healthZpartners.responsepojo.CatgoryGetListResponse;
+import com.triton.healthZpartners.responsepojo.FetctProductByCatDetailsResponse;
+import com.triton.healthZpartners.responsepojo.ManageProductsListResponse;
+import com.triton.healthZpartners.responsepojo.SuccessResponse;
 import com.triton.healthZpartners.responsepojo.VendorOrderUpdateResponse;
 import com.triton.healthZpartners.utils.ConnectionDetector;
 import com.triton.healthZpartners.utils.RestUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,12 +58,46 @@ public class EditManageProdcutsActivity extends AppCompatActivity {
     ImageView img_back;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_product_title)
+    TextView txt_product_title;
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.btn_update)
+    Button btn_update;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.avi_indicator)
     AVLoadingIndicatorView avi_indicator;
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_notification)
+    ImageView img_notification;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.img_profile)
+    ImageView img_profile;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_main_root)
+    LinearLayout ll_main_root;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rv_product_list)
+    RecyclerView rv_product_list;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.rv_add_additional_details)
+    RecyclerView rv_add_additional_details;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_product_title)
     EditText edt_product_title;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_product_categprod)
+    TextView txt_product_categprod;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_product_price)
@@ -61,15 +112,76 @@ public class EditManageProdcutsActivity extends AppCompatActivity {
     EditText edt_product_descriptions;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.btn_update)
-    Button btn_update;
+    @BindView(R.id.edt_product_condition)
+    EditText edt_product_condition;
 
-    private String productid,producttitle,productthreshold,productdesc;
-    private int productprice;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.edt_product_pricetype)
+    EditText edt_product_pricetype;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.edt_addmore_service)
+    EditText edt_addmore_service;
+
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.btn_add)
+    Button btn_add;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_vendor_footer)
+    View include_vendor_footer;
+
+    private String userid;
+    private List<CatgoryGetListResponse.DataBean> catgoryGetList;
+
+    HashMap<String, String> hashMap_CatTypeid = new HashMap<>();
+    private String strCatType;
+    private String strCatTypeId;
+    private List<FetctProductByCatDetailsResponse.DataBean> fetctProductByCatDetailsList;
+    private String productid;
+    private String producttitle;
+    private String productdesc;
+    private String productimage;
     private Dialog alertDialog;
 
 
-    @SuppressLint("SetTextI18n")
+    BottomNavigationView bottom_navigation_view;
+
+    FloatingActionButton fab;
+
+    int PERMISSION_CLINIC = 1;
+    int PERMISSION_CERT = 2;
+    int PERMISSION_GOVT = 3;
+    int PERMISSION_PHOTO = 4;
+
+    String[] PERMISSIONS = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA
+    };
+
+    List<String> additional_detail = new ArrayList();
+    private static final int REQUEST_CLINIC_CAMERA_PERMISSION_CODE = 785;
+    private static final int SELECT_CLINIC_CAMERA = 1000;
+    private static final int REQUEST_READ_CLINIC_PIC_PERMISSION = 786;
+    private static final int SELECT_CLINIC_PICTURE = 1001;
+
+    MultipartBody.Part filePart;
+
+    String uploadimagepath;
+
+    private String productthreshold;
+    private int productprice;
+
+    private ArrayList<ManageProductsListResponse.DataBean.ProductImgBean> productImageList;
+    private String productcategoryname;
+    private ArrayList<String> additionalDetailList;
+    private String condition;
+    private String pricetype;
+
+
+    @SuppressLint({"SetTextI18n", "LogNotTimber"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,10 +201,22 @@ public class EditManageProdcutsActivity extends AppCompatActivity {
             productprice = extras.getInt("productprice");
             productthreshold = extras.getString("productthreshold");
             productdesc = extras.getString("productdesc");
+            productImageList = (ArrayList<ManageProductsListResponse.DataBean.ProductImgBean>) getIntent().getSerializableExtra("productImageList");
+            additionalDetailList = (ArrayList<String>) getIntent().getSerializableExtra("additionalDetailList");
+            Log.w(TAG,"productImageList : "+new Gson().toJson(productImageList));
+            productcategoryname = extras.getString("productcategoryname");
+            condition = extras.getString("condition");
+            pricetype = extras.getString("pricetype");
+
+
 
             if(producttitle != null){
                 edt_product_title.setText(producttitle);
-            }if(productprice != 0){
+            }
+            if(productcategoryname != null){
+                txt_product_categprod.setText(productcategoryname);
+            }
+            if(productprice != 0){
                 edt_product_price.setText(productprice+"");
             }else{
                 edt_product_price.setText("0");
@@ -101,6 +225,10 @@ public class EditManageProdcutsActivity extends AppCompatActivity {
                 edt_product_thresould.setText(productthreshold);
             }if(productdesc != null){
                 edt_product_descriptions.setText(productdesc);
+            }if(condition != null){
+                edt_product_condition.setText(condition);
+            }if(pricetype != null){
+                edt_product_pricetype.setText(pricetype);
             }
 
             btn_update.setOnClickListener(new View.OnClickListener() {
@@ -174,12 +302,12 @@ public class EditManageProdcutsActivity extends AppCompatActivity {
         avi_indicator.setVisibility(View.VISIBLE);
         avi_indicator.smoothToShow();
         RestApiInterface apiInterface = APIClient.getClient().create(RestApiInterface.class);
-        Call<VendorOrderUpdateResponse> call = apiInterface.productEditResponseCall(RestUtils.getContentType(), productEditRequest());
+        Call<SuccessResponse> call = apiInterface.vendor_product_edit_ResponseCall(RestUtils.getContentType(), productVendorEditRequest());
         Log.w(TAG,"productEditResponseCall url  :%s"+" "+ call.request().url().toString());
 
-        call.enqueue(new Callback<VendorOrderUpdateResponse>() {
+        call.enqueue(new Callback<SuccessResponse>() {
             @Override
-            public void onResponse(@NonNull Call<VendorOrderUpdateResponse> call, @NonNull Response<VendorOrderUpdateResponse> response) {
+            public void onResponse(@NonNull Call<SuccessResponse> call, @NonNull Response<SuccessResponse> response) {
 
                 Log.w(TAG,"productEditResponseCall"+ "--->" + new Gson().toJson(response.body()));
 
@@ -201,7 +329,7 @@ public class EditManageProdcutsActivity extends AppCompatActivity {
 
             @SuppressLint("LongLogTag")
             @Override
-            public void onFailure(@NonNull Call<VendorOrderUpdateResponse> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<SuccessResponse> call, @NonNull Throwable t) {
 
                 avi_indicator.smoothToHide();
                 Log.w(TAG,"productEditResponseCall flr"+"--->" + t.getMessage());
@@ -210,7 +338,7 @@ public class EditManageProdcutsActivity extends AppCompatActivity {
 
     }
     @SuppressLint({"LogNotTimber", "LongLogTag"})
-    private ProductEditRequest productEditRequest() {
+    private ProductVendorEditRequest productVendorEditRequest() {
 
         /*
          * _id : 6034d66598fa826140f6a3a3
@@ -230,14 +358,27 @@ public class EditManageProdcutsActivity extends AppCompatActivity {
         }
 
 
-        ProductEditRequest productEditRequest = new ProductEditRequest();
-        productEditRequest.set_id(productid);
-        productEditRequest.setCost(myCost);
-        productEditRequest.setThreshould(edt_product_thresould.getText().toString());
-        productEditRequest.setProduct_name(edt_product_title.getText().toString());
-        productEditRequest.setProduct_discription(edt_product_descriptions.getText().toString());
-        Log.w(TAG,"productEditRequest"+ "--->" + new Gson().toJson(productEditRequest));
-        return productEditRequest;
+        ProductVendorEditRequest productVendorEditRequest = new ProductVendorEditRequest();
+        productVendorEditRequest.set_id(productid);
+        productVendorEditRequest.setCost(myCost);
+        productVendorEditRequest.setThreshould(edt_product_thresould.getText().toString());
+        productVendorEditRequest.setProduct_name(edt_product_title.getText().toString());
+        productVendorEditRequest.setProduct_discription(edt_product_descriptions.getText().toString());
+
+        productVendorEditRequest.setCat_id(productid);
+      //  productVendorEditRequest.setProduct_img(imgList);
+      //  productVendorEditRequest.setThumbnail_image(thumbnail_image);
+        productVendorEditRequest.setProduct_name(edt_product_title.getText().toString());
+        productVendorEditRequest.setCondition(edt_product_condition.getText().toString());
+        productVendorEditRequest.setAddition_detail(additional_detail);
+        productVendorEditRequest.setPrice_type(edt_product_pricetype.getText().toString());
+        productVendorEditRequest.setCost(Integer.parseInt(edt_product_price.getText().toString()));
+        productVendorEditRequest.setThreshould(edt_product_thresould.getText().toString());
+        productVendorEditRequest.setProduct_discription(edt_product_descriptions.getText().toString());
+       // productVendorEditRequest.setVendor_id(APIClient.VENDOR_ID);
+        //productVendorEditRequest.setDate_and_time(currentDateandTime);
+        productVendorEditRequest.setMobile_type("Android");
+        return productVendorEditRequest;
     }
 
     public void showErrorLoading(String errormesage){

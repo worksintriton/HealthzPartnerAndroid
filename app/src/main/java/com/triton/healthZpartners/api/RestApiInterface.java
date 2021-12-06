@@ -737,6 +737,10 @@ public interface RestApiInterface {
     @POST("newproduct_detail/vendor_product_create")
     Call<SuccessResponse> vendor_product_create_ResponseCall(@Header("Content-Type") String type, @Body ProductVendorCreateRequest productVendorCreateRequest);
 
+   /*Vendor product update*/
+    @POST("newproduct_detail/edit")
+    Call<SuccessResponse> vendor_product_edit_ResponseCall(@Header("Content-Type") String type, @Body ProductVendorEditRequest productVendorEditRequest);
+
 
 
     /*communitym text list*/
@@ -848,6 +852,7 @@ public interface RestApiInterface {
     /*session clear*/
     @POST("userdetails/logout")
     Call<SuccessResponse> logoutResponseCall(@Header("Content-Type") String type, @Body DefaultLocationRequest defaultLocationRequest);
+
 
 
 }

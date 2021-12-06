@@ -1,22 +1,57 @@
 package com.triton.healthZpartners.responsepojo;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ManageProductsListResponse {
 
-
     /**
      * Status : Success
-     * Message : product details screen  List
-     * Data : [{"product_id":"602e11404775fa0735d7bf40","products_image":["http://54.212.108.156:3000/api/uploads/resize-1613548631141238608collar.jpg","http://54.212.108.156:3000/api/uploads/resize-16135506762041500057collar2.jpg"],"product_name":"DOGISTA PET PRODUCTS Dog Rope Leash,Brass","product_price":180,"pet_type":[{"_id":"602d1bf4562e0916bc9b3215","pet_type_title":"Dog","date_and_time":"2/17/2021, 7:06:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:36:52.141Z","createdAt":"2021-02-17T13:36:52.141Z","__v":0}],"pet_breed":[{"_id":"602d1c0c562e0916bc9b3216","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Golden Retrieve","date_and_time":"2/17/2021, 7:07:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:16.917Z","createdAt":"2021-02-17T13:37:16.917Z","__v":0},{"_id":"602d1c17562e0916bc9b3217","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Beagle","date_and_time":"2/17/2021, 7:07:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:27.054Z","createdAt":"2021-02-17T13:37:27.054Z","__v":0},{"_id":"602d1c20562e0916bc9b3218","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Pug","date_and_time":"2/17/2021, 7:07:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:36.277Z","createdAt":"2021-02-17T13:37:36.277Z","__v":0},{"_id":"602d1c29562e0916bc9b3219","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Irish Setter","date_and_time":"2/17/2021, 7:07:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:45.189Z","createdAt":"2021-02-17T13:37:45.189Z","__v":0},{"_id":"602d1c3b562e0916bc9b321a","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Brussels Griffon","date_and_time":"2/17/2021, 7:08:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:03.311Z","createdAt":"2021-02-17T13:38:03.311Z","__v":0},{"_id":"602d1c45562e0916bc9b321b","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Newfoundland","date_and_time":"2/17/2021, 7:08:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:13.348Z","createdAt":"2021-02-17T13:38:13.348Z","__v":0},{"_id":"602d1c58562e0916bc9b321c","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"French Bulldog","date_and_time":"2/17/2021, 7:08:32 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:32.748Z","createdAt":"2021-02-17T13:38:32.748Z","__v":0},{"_id":"602d1c86562e0916bc9b321e","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Abyssinian Cat","date_and_time":"2/17/2021, 7:09:18 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:18.783Z","createdAt":"2021-02-17T13:39:18.783Z","__v":0},{"_id":"602d1c97562e0916bc9b321f","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Bobtail Cat Breed","date_and_time":"2/17/2021, 7:09:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:35.923Z","createdAt":"2021-02-17T13:39:35.923Z","__v":0},{"_id":"602d1cb5562e0916bc9b3220","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Shorthair Cat","date_and_time":"2/17/2021, 7:10:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:05.273Z","createdAt":"2021-02-17T13:40:05.273Z","__v":0},{"_id":"602d1cc2562e0916bc9b3221","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bengal Cat","date_and_time":"2/17/2021, 7:10:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:18.477Z","createdAt":"2021-02-17T13:40:18.477Z","__v":0},{"_id":"602d1cda562e0916bc9b3222","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Burmese Cat","date_and_time":"2/17/2021, 7:10:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:42.336Z","createdAt":"2021-02-17T13:40:42.336Z","__v":0},{"_id":"602d1ce5562e0916bc9b3223","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bombay Cat","date_and_time":"2/17/2021, 7:10:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:53.127Z","createdAt":"2021-02-17T13:40:53.127Z","__v":0},{"_id":"602d1d03562e0916bc9b3225","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Parakeets","date_and_time":"2/17/2021, 7:11:22 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:23.050Z","createdAt":"2021-02-17T13:41:23.050Z","__v":0},{"_id":"602d1d17562e0916bc9b3226","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"African Greys","date_and_time":"2/17/2021, 7:11:43 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:43.781Z","createdAt":"2021-02-17T13:41:43.781Z","__v":0},{"_id":"602d1d35562e0916bc9b3227","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Poicephalus","date_and_time":"2/17/2021, 7:12:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:13.292Z","createdAt":"2021-02-17T13:42:13.292Z","__v":0},{"_id":"602d1d55562e0916bc9b3228","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Amazon Parrots","date_and_time":"2/17/2021, 7:12:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:45.730Z","createdAt":"2021-02-17T13:42:45.730Z","__v":0},{"_id":"602d1d68562e0916bc9b3229","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Lovebirds ","date_and_time":"2/17/2021, 7:13:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:04.974Z","createdAt":"2021-02-17T13:43:04.974Z","__v":0},{"_id":"602d1d84562e0916bc9b322b","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Chester White","date_and_time":"2/17/2021, 7:13:32 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:32.834Z","createdAt":"2021-02-17T13:43:32.834Z","__v":0},{"_id":"602d1d8d562e0916bc9b322c","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Duroc","date_and_time":"2/17/2021, 7:13:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:41.835Z","createdAt":"2021-02-17T13:43:41.835Z","__v":0},{"_id":"602d1d99562e0916bc9b322d","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Hampshire","date_and_time":"2/17/2021, 7:13:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:53.109Z","createdAt":"2021-02-17T13:43:53.109Z","__v":0},{"_id":"602d1da3562e0916bc9b322e","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Landrace","date_and_time":"2/17/2021, 7:14:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:03.098Z","createdAt":"2021-02-17T13:44:03.098Z","__v":0},{"_id":"602d1dac562e0916bc9b322f","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Poland China","date_and_time":"2/17/2021, 7:14:11 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:12.250Z","createdAt":"2021-02-17T13:44:12.250Z","__v":0},{"_id":"602d1db8562e0916bc9b3230","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Spotted","date_and_time":"2/17/2021, 7:14:23 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:24.650Z","createdAt":"2021-02-17T13:44:24.650Z","__v":0},{"_id":"602d1dc7562e0916bc9b3231","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Yorkshire","date_and_time":"2/17/2021, 7:14:38 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:39.394Z","createdAt":"2021-02-17T13:44:39.394Z","__v":0},{"_id":"602d1e91562e0916bc9b3233","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Guppies","date_and_time":"2/17/2021, 7:18:00 PM","delete_status":false,"updatedAt":"2021-02-17T13:48:01.013Z","createdAt":"2021-02-17T13:48:01.013Z","__v":0},{"_id":"602d1ea0562e0916bc9b3234","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Mollies","date_and_time":"2/17/2021, 7:18:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:48:16.990Z","createdAt":"2021-02-17T13:48:16.990Z","__v":0},{"_id":"602d1efc562e0916bc9b3235","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Betta Fish","date_and_time":"2/17/2021, 7:19:47 PM","delete_status":false,"updatedAt":"2021-02-17T13:49:48.067Z","createdAt":"2021-02-17T13:49:48.067Z","__v":0},{"_id":"602d1f1a562e0916bc9b3239","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Goldfish","date_and_time":"2/17/2021, 7:20:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:18.445Z","createdAt":"2021-02-17T13:50:18.445Z","__v":0},{"_id":"602d1f25562e0916bc9b323a","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Angelfish","date_and_time":"2/17/2021, 7:20:28 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:29.195Z","createdAt":"2021-02-17T13:50:29.195Z","__v":0},{"_id":"602d1f35562e0916bc9b323b","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Golden Dwarf Barbs","date_and_time":"2/17/2021, 7:20:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:45.678Z","createdAt":"2021-02-17T13:50:45.678Z","__v":0},{"_id":"602d1f47562e0916bc9b323c","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Rainbowfish","date_and_time":"2/17/2021, 7:21:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:03.389Z","createdAt":"2021-02-17T13:51:03.389Z","__v":0},{"_id":"602d1f60562e0916bc9b323e","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Thoroughbred","date_and_time":"2/17/2021, 7:21:27 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:28.582Z","createdAt":"2021-02-17T13:51:28.582Z","__v":0},{"_id":"602d1f6e562e0916bc9b323f","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Warmblood","date_and_time":"2/17/2021, 7:21:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:42.308Z","createdAt":"2021-02-17T13:51:42.308Z","__v":0},{"_id":"602d1f78562e0916bc9b3240","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Morgan","date_and_time":"2/17/2021, 7:21:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:52.553Z","createdAt":"2021-02-17T13:51:52.553Z","__v":0},{"_id":"602d1f82562e0916bc9b3241","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Appaloosa","date_and_time":"2/17/2021, 7:22:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:02.995Z","createdAt":"2021-02-17T13:52:02.995Z","__v":0},{"_id":"602d1f8f562e0916bc9b3242","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Pony","date_and_time":"2/17/2021, 7:22:14 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:15.281Z","createdAt":"2021-02-17T13:52:15.281Z","__v":0},{"_id":"602d1f9a562e0916bc9b3243","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Tennessee Walker","date_and_time":"2/17/2021, 7:22:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:26.747Z","createdAt":"2021-02-17T13:52:26.747Z","__v":0}],"pet_age":[1,2,3,4,5],"pet_threshold":"150"},{"product_id":"602e467ff62e8d2089fba973","products_image":["http://54.212.108.156:3000/api/uploads/1615955637906.jpeg"],"product_name":"Cat Food","product_price":1000,"pet_type":[{"_id":"602d1bf4562e0916bc9b3215","pet_type_title":"Dog","date_and_time":"2/17/2021, 7:06:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:36:52.141Z","createdAt":"2021-02-17T13:36:52.141Z","__v":0},{"_id":"602d1c6b562e0916bc9b321d","pet_type_title":"Cat","date_and_time":"2/17/2021, 7:08:50 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:51.432Z","createdAt":"2021-02-17T13:38:51.432Z","__v":0},{"_id":"602d1cf4562e0916bc9b3224","pet_type_title":"Parrot","date_and_time":"2/17/2021, 7:11:08 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:08.956Z","createdAt":"2021-02-17T13:41:08.956Z","__v":0},{"_id":"602d1d73562e0916bc9b322a","pet_type_title":"Pigs","date_and_time":"2/17/2021, 7:13:15 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:15.527Z","createdAt":"2021-02-17T13:43:15.527Z","__v":0},{"_id":"602d1dd5562e0916bc9b3232","pet_type_title":"Fish","date_and_time":"2/17/2021, 7:14:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:53.219Z","createdAt":"2021-02-17T13:44:53.219Z","__v":0},{"_id":"602d1f52562e0916bc9b323d","pet_type_title":"Horse","date_and_time":"2/17/2021, 7:21:14 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:14.862Z","createdAt":"2021-02-17T13:51:14.862Z","__v":0}],"pet_breed":[{"_id":"602d1c0c562e0916bc9b3216","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Golden Retrieve","date_and_time":"2/17/2021, 7:07:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:16.917Z","createdAt":"2021-02-17T13:37:16.917Z","__v":0},{"_id":"602d1c17562e0916bc9b3217","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Beagle","date_and_time":"2/17/2021, 7:07:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:27.054Z","createdAt":"2021-02-17T13:37:27.054Z","__v":0},{"_id":"602d1c20562e0916bc9b3218","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Pug","date_and_time":"2/17/2021, 7:07:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:36.277Z","createdAt":"2021-02-17T13:37:36.277Z","__v":0},{"_id":"602d1c29562e0916bc9b3219","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Irish Setter","date_and_time":"2/17/2021, 7:07:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:45.189Z","createdAt":"2021-02-17T13:37:45.189Z","__v":0},{"_id":"602d1c3b562e0916bc9b321a","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Brussels Griffon","date_and_time":"2/17/2021, 7:08:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:03.311Z","createdAt":"2021-02-17T13:38:03.311Z","__v":0},{"_id":"602d1c45562e0916bc9b321b","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Newfoundland","date_and_time":"2/17/2021, 7:08:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:13.348Z","createdAt":"2021-02-17T13:38:13.348Z","__v":0},{"_id":"602d1c58562e0916bc9b321c","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"French Bulldog","date_and_time":"2/17/2021, 7:08:32 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:32.748Z","createdAt":"2021-02-17T13:38:32.748Z","__v":0},{"_id":"602d1c86562e0916bc9b321e","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Abyssinian Cat","date_and_time":"2/17/2021, 7:09:18 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:18.783Z","createdAt":"2021-02-17T13:39:18.783Z","__v":0},{"_id":"602d1c97562e0916bc9b321f","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Bobtail Cat Breed","date_and_time":"2/17/2021, 7:09:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:35.923Z","createdAt":"2021-02-17T13:39:35.923Z","__v":0},{"_id":"602d1cb5562e0916bc9b3220","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Shorthair Cat","date_and_time":"2/17/2021, 7:10:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:05.273Z","createdAt":"2021-02-17T13:40:05.273Z","__v":0},{"_id":"602d1cc2562e0916bc9b3221","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bengal Cat","date_and_time":"2/17/2021, 7:10:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:18.477Z","createdAt":"2021-02-17T13:40:18.477Z","__v":0},{"_id":"602d1cda562e0916bc9b3222","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Burmese Cat","date_and_time":"2/17/2021, 7:10:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:42.336Z","createdAt":"2021-02-17T13:40:42.336Z","__v":0},{"_id":"602d1ce5562e0916bc9b3223","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bombay Cat","date_and_time":"2/17/2021, 7:10:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:53.127Z","createdAt":"2021-02-17T13:40:53.127Z","__v":0},{"_id":"602d1d03562e0916bc9b3225","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Parakeets","date_and_time":"2/17/2021, 7:11:22 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:23.050Z","createdAt":"2021-02-17T13:41:23.050Z","__v":0},{"_id":"602d1d17562e0916bc9b3226","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"African Greys","date_and_time":"2/17/2021, 7:11:43 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:43.781Z","createdAt":"2021-02-17T13:41:43.781Z","__v":0},{"_id":"602d1d35562e0916bc9b3227","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Poicephalus","date_and_time":"2/17/2021, 7:12:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:13.292Z","createdAt":"2021-02-17T13:42:13.292Z","__v":0},{"_id":"602d1d55562e0916bc9b3228","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Amazon Parrots","date_and_time":"2/17/2021, 7:12:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:45.730Z","createdAt":"2021-02-17T13:42:45.730Z","__v":0},{"_id":"602d1d68562e0916bc9b3229","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Lovebirds ","date_and_time":"2/17/2021, 7:13:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:04.974Z","createdAt":"2021-02-17T13:43:04.974Z","__v":0},{"_id":"602d1d84562e0916bc9b322b","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Chester White","date_and_time":"2/17/2021, 7:13:32 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:32.834Z","createdAt":"2021-02-17T13:43:32.834Z","__v":0},{"_id":"602d1d8d562e0916bc9b322c","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Duroc","date_and_time":"2/17/2021, 7:13:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:41.835Z","createdAt":"2021-02-17T13:43:41.835Z","__v":0},{"_id":"602d1d99562e0916bc9b322d","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Hampshire","date_and_time":"2/17/2021, 7:13:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:53.109Z","createdAt":"2021-02-17T13:43:53.109Z","__v":0},{"_id":"602d1da3562e0916bc9b322e","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Landrace","date_and_time":"2/17/2021, 7:14:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:03.098Z","createdAt":"2021-02-17T13:44:03.098Z","__v":0},{"_id":"602d1dac562e0916bc9b322f","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Poland China","date_and_time":"2/17/2021, 7:14:11 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:12.250Z","createdAt":"2021-02-17T13:44:12.250Z","__v":0},{"_id":"602d1db8562e0916bc9b3230","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Spotted","date_and_time":"2/17/2021, 7:14:23 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:24.650Z","createdAt":"2021-02-17T13:44:24.650Z","__v":0},{"_id":"602d1dc7562e0916bc9b3231","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Yorkshire","date_and_time":"2/17/2021, 7:14:38 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:39.394Z","createdAt":"2021-02-17T13:44:39.394Z","__v":0},{"_id":"602d1e91562e0916bc9b3233","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Guppies","date_and_time":"2/17/2021, 7:18:00 PM","delete_status":false,"updatedAt":"2021-02-17T13:48:01.013Z","createdAt":"2021-02-17T13:48:01.013Z","__v":0},{"_id":"602d1ea0562e0916bc9b3234","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Mollies","date_and_time":"2/17/2021, 7:18:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:48:16.990Z","createdAt":"2021-02-17T13:48:16.990Z","__v":0},{"_id":"602d1efc562e0916bc9b3235","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Betta Fish","date_and_time":"2/17/2021, 7:19:47 PM","delete_status":false,"updatedAt":"2021-02-17T13:49:48.067Z","createdAt":"2021-02-17T13:49:48.067Z","__v":0},{"_id":"602d1f1a562e0916bc9b3239","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Goldfish","date_and_time":"2/17/2021, 7:20:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:18.445Z","createdAt":"2021-02-17T13:50:18.445Z","__v":0},{"_id":"602d1f25562e0916bc9b323a","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Angelfish","date_and_time":"2/17/2021, 7:20:28 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:29.195Z","createdAt":"2021-02-17T13:50:29.195Z","__v":0},{"_id":"602d1f35562e0916bc9b323b","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Golden Dwarf Barbs","date_and_time":"2/17/2021, 7:20:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:45.678Z","createdAt":"2021-02-17T13:50:45.678Z","__v":0},{"_id":"602d1f47562e0916bc9b323c","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Rainbowfish","date_and_time":"2/17/2021, 7:21:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:03.389Z","createdAt":"2021-02-17T13:51:03.389Z","__v":0},{"_id":"602d1f60562e0916bc9b323e","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Thoroughbred","date_and_time":"2/17/2021, 7:21:27 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:28.582Z","createdAt":"2021-02-17T13:51:28.582Z","__v":0},{"_id":"602d1f6e562e0916bc9b323f","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Warmblood","date_and_time":"2/17/2021, 7:21:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:42.308Z","createdAt":"2021-02-17T13:51:42.308Z","__v":0},{"_id":"602d1f78562e0916bc9b3240","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Morgan","date_and_time":"2/17/2021, 7:21:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:52.553Z","createdAt":"2021-02-17T13:51:52.553Z","__v":0},{"_id":"602d1f82562e0916bc9b3241","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Appaloosa","date_and_time":"2/17/2021, 7:22:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:02.995Z","createdAt":"2021-02-17T13:52:02.995Z","__v":0},{"_id":"602d1f8f562e0916bc9b3242","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Pony","date_and_time":"2/17/2021, 7:22:14 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:15.281Z","createdAt":"2021-02-17T13:52:15.281Z","__v":0},{"_id":"602d1f9a562e0916bc9b3243","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Tennessee Walker","date_and_time":"2/17/2021, 7:22:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:26.747Z","createdAt":"2021-02-17T13:52:26.747Z","__v":0}],"pet_age":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"pet_threshold":"100"},{"product_id":"602e4734f62e8d2089fba975","products_image":["http://54.212.108.156:3000/api/uploads/1615955852371.jpeg"],"product_name":"Bird Food","product_price":1000,"pet_type":[{"_id":"602d1bf4562e0916bc9b3215","pet_type_title":"Dog","date_and_time":"2/17/2021, 7:06:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:36:52.141Z","createdAt":"2021-02-17T13:36:52.141Z","__v":0},{"_id":"602d1c6b562e0916bc9b321d","pet_type_title":"Cat","date_and_time":"2/17/2021, 7:08:50 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:51.432Z","createdAt":"2021-02-17T13:38:51.432Z","__v":0},{"_id":"602d1cf4562e0916bc9b3224","pet_type_title":"Parrot","date_and_time":"2/17/2021, 7:11:08 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:08.956Z","createdAt":"2021-02-17T13:41:08.956Z","__v":0},{"_id":"602d1d73562e0916bc9b322a","pet_type_title":"Pigs","date_and_time":"2/17/2021, 7:13:15 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:15.527Z","createdAt":"2021-02-17T13:43:15.527Z","__v":0},{"_id":"602d1dd5562e0916bc9b3232","pet_type_title":"Fish","date_and_time":"2/17/2021, 7:14:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:53.219Z","createdAt":"2021-02-17T13:44:53.219Z","__v":0},{"_id":"602d1f52562e0916bc9b323d","pet_type_title":"Horse","date_and_time":"2/17/2021, 7:21:14 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:14.862Z","createdAt":"2021-02-17T13:51:14.862Z","__v":0}],"pet_breed":[{"_id":"602d1c0c562e0916bc9b3216","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Golden Retrieve","date_and_time":"2/17/2021, 7:07:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:16.917Z","createdAt":"2021-02-17T13:37:16.917Z","__v":0},{"_id":"602d1c17562e0916bc9b3217","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Beagle","date_and_time":"2/17/2021, 7:07:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:27.054Z","createdAt":"2021-02-17T13:37:27.054Z","__v":0},{"_id":"602d1c20562e0916bc9b3218","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Pug","date_and_time":"2/17/2021, 7:07:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:36.277Z","createdAt":"2021-02-17T13:37:36.277Z","__v":0},{"_id":"602d1c29562e0916bc9b3219","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Irish Setter","date_and_time":"2/17/2021, 7:07:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:45.189Z","createdAt":"2021-02-17T13:37:45.189Z","__v":0},{"_id":"602d1c3b562e0916bc9b321a","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Brussels Griffon","date_and_time":"2/17/2021, 7:08:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:03.311Z","createdAt":"2021-02-17T13:38:03.311Z","__v":0},{"_id":"602d1c45562e0916bc9b321b","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Newfoundland","date_and_time":"2/17/2021, 7:08:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:13.348Z","createdAt":"2021-02-17T13:38:13.348Z","__v":0},{"_id":"602d1c58562e0916bc9b321c","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"French Bulldog","date_and_time":"2/17/2021, 7:08:32 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:32.748Z","createdAt":"2021-02-17T13:38:32.748Z","__v":0},{"_id":"602d1c86562e0916bc9b321e","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Abyssinian Cat","date_and_time":"2/17/2021, 7:09:18 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:18.783Z","createdAt":"2021-02-17T13:39:18.783Z","__v":0},{"_id":"602d1c97562e0916bc9b321f","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Bobtail Cat Breed","date_and_time":"2/17/2021, 7:09:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:35.923Z","createdAt":"2021-02-17T13:39:35.923Z","__v":0},{"_id":"602d1cb5562e0916bc9b3220","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Shorthair Cat","date_and_time":"2/17/2021, 7:10:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:05.273Z","createdAt":"2021-02-17T13:40:05.273Z","__v":0},{"_id":"602d1cc2562e0916bc9b3221","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bengal Cat","date_and_time":"2/17/2021, 7:10:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:18.477Z","createdAt":"2021-02-17T13:40:18.477Z","__v":0},{"_id":"602d1cda562e0916bc9b3222","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Burmese Cat","date_and_time":"2/17/2021, 7:10:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:42.336Z","createdAt":"2021-02-17T13:40:42.336Z","__v":0},{"_id":"602d1ce5562e0916bc9b3223","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bombay Cat","date_and_time":"2/17/2021, 7:10:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:53.127Z","createdAt":"2021-02-17T13:40:53.127Z","__v":0},{"_id":"602d1d03562e0916bc9b3225","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Parakeets","date_and_time":"2/17/2021, 7:11:22 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:23.050Z","createdAt":"2021-02-17T13:41:23.050Z","__v":0},{"_id":"602d1d17562e0916bc9b3226","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"African Greys","date_and_time":"2/17/2021, 7:11:43 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:43.781Z","createdAt":"2021-02-17T13:41:43.781Z","__v":0},{"_id":"602d1d35562e0916bc9b3227","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Poicephalus","date_and_time":"2/17/2021, 7:12:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:13.292Z","createdAt":"2021-02-17T13:42:13.292Z","__v":0},{"_id":"602d1d55562e0916bc9b3228","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Amazon Parrots","date_and_time":"2/17/2021, 7:12:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:45.730Z","createdAt":"2021-02-17T13:42:45.730Z","__v":0},{"_id":"602d1d68562e0916bc9b3229","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Lovebirds ","date_and_time":"2/17/2021, 7:13:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:04.974Z","createdAt":"2021-02-17T13:43:04.974Z","__v":0},{"_id":"602d1d84562e0916bc9b322b","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Chester White","date_and_time":"2/17/2021, 7:13:32 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:32.834Z","createdAt":"2021-02-17T13:43:32.834Z","__v":0},{"_id":"602d1d8d562e0916bc9b322c","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Duroc","date_and_time":"2/17/2021, 7:13:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:41.835Z","createdAt":"2021-02-17T13:43:41.835Z","__v":0},{"_id":"602d1d99562e0916bc9b322d","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Hampshire","date_and_time":"2/17/2021, 7:13:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:53.109Z","createdAt":"2021-02-17T13:43:53.109Z","__v":0},{"_id":"602d1da3562e0916bc9b322e","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Landrace","date_and_time":"2/17/2021, 7:14:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:03.098Z","createdAt":"2021-02-17T13:44:03.098Z","__v":0},{"_id":"602d1dac562e0916bc9b322f","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Poland China","date_and_time":"2/17/2021, 7:14:11 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:12.250Z","createdAt":"2021-02-17T13:44:12.250Z","__v":0},{"_id":"602d1db8562e0916bc9b3230","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Spotted","date_and_time":"2/17/2021, 7:14:23 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:24.650Z","createdAt":"2021-02-17T13:44:24.650Z","__v":0},{"_id":"602d1dc7562e0916bc9b3231","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Yorkshire","date_and_time":"2/17/2021, 7:14:38 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:39.394Z","createdAt":"2021-02-17T13:44:39.394Z","__v":0},{"_id":"602d1e91562e0916bc9b3233","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Guppies","date_and_time":"2/17/2021, 7:18:00 PM","delete_status":false,"updatedAt":"2021-02-17T13:48:01.013Z","createdAt":"2021-02-17T13:48:01.013Z","__v":0},{"_id":"602d1ea0562e0916bc9b3234","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Mollies","date_and_time":"2/17/2021, 7:18:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:48:16.990Z","createdAt":"2021-02-17T13:48:16.990Z","__v":0},{"_id":"602d1efc562e0916bc9b3235","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Betta Fish","date_and_time":"2/17/2021, 7:19:47 PM","delete_status":false,"updatedAt":"2021-02-17T13:49:48.067Z","createdAt":"2021-02-17T13:49:48.067Z","__v":0},{"_id":"602d1f1a562e0916bc9b3239","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Goldfish","date_and_time":"2/17/2021, 7:20:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:18.445Z","createdAt":"2021-02-17T13:50:18.445Z","__v":0},{"_id":"602d1f25562e0916bc9b323a","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Angelfish","date_and_time":"2/17/2021, 7:20:28 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:29.195Z","createdAt":"2021-02-17T13:50:29.195Z","__v":0},{"_id":"602d1f35562e0916bc9b323b","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Golden Dwarf Barbs","date_and_time":"2/17/2021, 7:20:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:45.678Z","createdAt":"2021-02-17T13:50:45.678Z","__v":0},{"_id":"602d1f47562e0916bc9b323c","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Rainbowfish","date_and_time":"2/17/2021, 7:21:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:03.389Z","createdAt":"2021-02-17T13:51:03.389Z","__v":0},{"_id":"602d1f60562e0916bc9b323e","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Thoroughbred","date_and_time":"2/17/2021, 7:21:27 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:28.582Z","createdAt":"2021-02-17T13:51:28.582Z","__v":0},{"_id":"602d1f6e562e0916bc9b323f","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Warmblood","date_and_time":"2/17/2021, 7:21:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:42.308Z","createdAt":"2021-02-17T13:51:42.308Z","__v":0},{"_id":"602d1f78562e0916bc9b3240","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Morgan","date_and_time":"2/17/2021, 7:21:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:52.553Z","createdAt":"2021-02-17T13:51:52.553Z","__v":0},{"_id":"602d1f82562e0916bc9b3241","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Appaloosa","date_and_time":"2/17/2021, 7:22:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:02.995Z","createdAt":"2021-02-17T13:52:02.995Z","__v":0},{"_id":"602d1f8f562e0916bc9b3242","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Pony","date_and_time":"2/17/2021, 7:22:14 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:15.281Z","createdAt":"2021-02-17T13:52:15.281Z","__v":0},{"_id":"602d1f9a562e0916bc9b3243","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Tennessee Walker","date_and_time":"2/17/2021, 7:22:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:26.747Z","createdAt":"2021-02-17T13:52:26.747Z","__v":0}],"pet_age":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"pet_threshold":"1000"},{"product_id":"602e478af62e8d2089fba976","products_image":["http://54.212.108.156:3000/api/uploads/Product \u2013 2.png"],"product_name":"Bellotta | Cat Food","product_price":2580,"pet_type":[{"_id":"602d1c6b562e0916bc9b321d","pet_type_title":"Cat","date_and_time":"2/17/2021, 7:08:50 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:51.432Z","createdAt":"2021-02-17T13:38:51.432Z","__v":0}],"pet_breed":[{"_id":"602d1c86562e0916bc9b321e","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Abyssinian Cat","date_and_time":"2/17/2021, 7:09:18 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:18.783Z","createdAt":"2021-02-17T13:39:18.783Z","__v":0},{"_id":"602d1c97562e0916bc9b321f","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Bobtail Cat Breed","date_and_time":"2/17/2021, 7:09:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:35.923Z","createdAt":"2021-02-17T13:39:35.923Z","__v":0},{"_id":"602d1cb5562e0916bc9b3220","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Shorthair Cat","date_and_time":"2/17/2021, 7:10:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:05.273Z","createdAt":"2021-02-17T13:40:05.273Z","__v":0},{"_id":"602d1cc2562e0916bc9b3221","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bengal Cat","date_and_time":"2/17/2021, 7:10:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:18.477Z","createdAt":"2021-02-17T13:40:18.477Z","__v":0},{"_id":"602d1cda562e0916bc9b3222","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Burmese Cat","date_and_time":"2/17/2021, 7:10:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:42.336Z","createdAt":"2021-02-17T13:40:42.336Z","__v":0},{"_id":"602d1ce5562e0916bc9b3223","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bombay Cat","date_and_time":"2/17/2021, 7:10:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:53.127Z","createdAt":"2021-02-17T13:40:53.127Z","__v":0}],"pet_age":[1,6,5,4,3,2],"pet_threshold":"150"},{"product_id":"602e4940f62e8d2089fba978","products_image":["http://54.212.108.156:3000/api/uploads/Product \u2013 20.png","http://54.212.108.156:3000/api/uploads/Product \u2013 19.png"],"product_name":"ZUPREEM Fruit Blend Premium Food For Medium Bird ","product_price":1560,"pet_type":[{"_id":"602d1cf4562e0916bc9b3224","pet_type_title":"Parrot","date_and_time":"2/17/2021, 7:11:08 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:08.956Z","createdAt":"2021-02-17T13:41:08.956Z","__v":0}],"pet_breed":[{"_id":"602d1d03562e0916bc9b3225","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Parakeets","date_and_time":"2/17/2021, 7:11:22 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:23.050Z","createdAt":"2021-02-17T13:41:23.050Z","__v":0},{"_id":"602d1d17562e0916bc9b3226","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"African Greys","date_and_time":"2/17/2021, 7:11:43 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:43.781Z","createdAt":"2021-02-17T13:41:43.781Z","__v":0},{"_id":"602d1d35562e0916bc9b3227","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Poicephalus","date_and_time":"2/17/2021, 7:12:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:13.292Z","createdAt":"2021-02-17T13:42:13.292Z","__v":0},{"_id":"602d1d55562e0916bc9b3228","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Amazon Parrots","date_and_time":"2/17/2021, 7:12:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:45.730Z","createdAt":"2021-02-17T13:42:45.730Z","__v":0},{"_id":"602d1d68562e0916bc9b3229","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Lovebirds ","date_and_time":"2/17/2021, 7:13:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:04.974Z","createdAt":"2021-02-17T13:43:04.974Z","__v":0}],"pet_age":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"pet_threshold":"15"},{"product_id":"602f4e07348f622bff1c8b0c","products_image":["http://54.212.108.156:3000/api/uploads/Product2.png"],"product_name":"Cow Morning Food","product_price":1000,"pet_type":[{"_id":"602d1bf4562e0916bc9b3215","pet_type_title":"Dog","date_and_time":"2/17/2021, 7:06:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:36:52.141Z","createdAt":"2021-02-17T13:36:52.141Z","__v":0}],"pet_breed":[{"_id":"602d1d55562e0916bc9b3228","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Amazon Parrots","date_and_time":"2/17/2021, 7:12:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:45.730Z","createdAt":"2021-02-17T13:42:45.730Z","__v":0}],"pet_age":[3],"pet_threshold":"2"},{"product_id":"6034d193295b555a1379a632","products_image":["http://54.212.108.156:3000/api/uploads/1614074256386.jpg"],"product_name":"Cat Breakfast","product_price":20000,"pet_type":[{"_id":"602d1c6b562e0916bc9b321d","pet_type_title":"Cat","date_and_time":"2/17/2021, 7:08:50 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:51.432Z","createdAt":"2021-02-17T13:38:51.432Z","__v":0}],"pet_breed":[{"_id":"602d1c0c562e0916bc9b3216","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Golden Retrieve","date_and_time":"2/17/2021, 7:07:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:16.917Z","createdAt":"2021-02-17T13:37:16.917Z","__v":0}],"pet_age":[3],"pet_threshold":"100"},{"product_id":"6034d41f295b555a1379a634","products_image":["http://54.212.108.156:3000/api/uploads/1614074906327.jpg"],"product_name":"Cat Breakfast","product_price":10000,"pet_type":[{"_id":"602d1c6b562e0916bc9b321d","pet_type_title":"Cat","date_and_time":"2/17/2021, 7:08:50 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:51.432Z","createdAt":"2021-02-17T13:38:51.432Z","__v":0}],"pet_breed":[{"_id":"602d1c17562e0916bc9b3217","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Beagle","date_and_time":"2/17/2021, 7:07:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:27.054Z","createdAt":"2021-02-17T13:37:27.054Z","__v":0}],"pet_age":[4],"pet_threshold":"100"},{"product_id":"6034d473295b555a1379a635","products_image":["http://54.212.108.156:3000/api/uploads/1614074990879.jpg"],"product_name":"Cat Lunch","product_price":3000,"pet_type":[{"_id":"602d1c6b562e0916bc9b321d","pet_type_title":"Cat","date_and_time":"2/17/2021, 7:08:50 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:51.432Z","createdAt":"2021-02-17T13:38:51.432Z","__v":0}],"pet_breed":[{"_id":"602d1c20562e0916bc9b3218","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Pug","date_and_time":"2/17/2021, 7:07:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:36.277Z","createdAt":"2021-02-17T13:37:36.277Z","__v":0}],"pet_age":[4],"pet_threshold":"100"},{"product_id":"6034d66598fa826140f6a3a3","products_image":["http://54.212.108.156:3000/api/uploads/1614075490400.jpg"],"product_name":"CAT Lunch","product_price":40000,"pet_type":[{"_id":"602d1c6b562e0916bc9b321d","pet_type_title":"Cat","date_and_time":"2/17/2021, 7:08:50 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:51.432Z","createdAt":"2021-02-17T13:38:51.432Z","__v":0}],"pet_breed":[{"_id":"602d1c17562e0916bc9b3217","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Beagle","date_and_time":"2/17/2021, 7:07:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:27.054Z","createdAt":"2021-02-17T13:37:27.054Z","__v":0}],"pet_age":[3],"pet_threshold":"100"},{"product_id":"6034d6a5888af7628e7e17d4","products_image":["http://54.212.108.156:3000/api/uploads/1614075552394.jpg"],"product_name":"Cat Dinner","product_price":1000,"pet_type":[{"_id":"602d1c6b562e0916bc9b321d","pet_type_title":"Cat","date_and_time":"2/17/2021, 7:08:50 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:51.432Z","createdAt":"2021-02-17T13:38:51.432Z","__v":0}],"pet_breed":[{"_id":"602d1c20562e0916bc9b3218","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Pug","date_and_time":"2/17/2021, 7:07:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:36.277Z","createdAt":"2021-02-17T13:37:36.277Z","__v":0}],"pet_age":[3],"pet_threshold":"100"},{"product_id":"605079c758c70508da39b7c2","products_image":["http://54.212.108.156:3000/api/uploads/1615956168637.jpeg"],"product_name":"DOG TIFFEN","product_price":494,"pet_type":[{"_id":"602d1bf4562e0916bc9b3215","pet_type_title":"Dog","date_and_time":"2/17/2021, 7:06:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:36:52.141Z","createdAt":"2021-02-17T13:36:52.141Z","__v":0}],"pet_breed":[{"_id":"602d1c0c562e0916bc9b3216","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Golden Retrieve","date_and_time":"2/17/2021, 7:07:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:16.917Z","createdAt":"2021-02-17T13:37:16.917Z","__v":0},{"_id":"602d1c17562e0916bc9b3217","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Beagle","date_and_time":"2/17/2021, 7:07:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:27.054Z","createdAt":"2021-02-17T13:37:27.054Z","__v":0},{"_id":"602d1c29562e0916bc9b3219","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Irish Setter","date_and_time":"2/17/2021, 7:07:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:45.189Z","createdAt":"2021-02-17T13:37:45.189Z","__v":0},{"_id":"602d1c20562e0916bc9b3218","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Pug","date_and_time":"2/17/2021, 7:07:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:36.277Z","createdAt":"2021-02-17T13:37:36.277Z","__v":0}],"pet_age":[1,2],"pet_threshold":"100"}]
+     * Message : Product details list
+     * Data : [{"product_img":[{"product_img":"http://35.164.43.170:3000/api/uploads/1638435359547.jpg"}],"addition_detail":["yes"],"_id":"61a88aad02651d5e799071a5","user_id":"61a503503052a016fed7bb94","cat_id":{"_id":"60e6ffbafe7500511a7b419d","img_path":"http://54.212.108.156:3000/api/uploads/1625751478722.png","product_cate":"Pet Accessories","img_index":0,"show_status":true,"date_and_time":"7/8/2021, 7:08:01 PM","delete_status":false,"updatedAt":"2021-07-08T13:38:02.721Z","createdAt":"2021-07-08T13:38:02.721Z","__v":0},"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638435359547.jpg","product_name":"","cost":200,"product_discription":"Pet Accessories","condition":"organic","price_type":"basic","date_and_time":"02/12/2021 02:28 PM","threshould":"66","mobile_type":"Android","related":"","count":0,"status":"true","verification_status":"Not Verified","delete_status":false,"fav_status":false,"today_deal":false,"discount":0,"discount_amount":0,"discount_status":false,"discount_cal":0,"discount_start_date":"","discount_end_date":"","product_rating":5,"product_review":0,"updatedAt":"2021-12-02T08:58:21.274Z","createdAt":"2021-12-02T08:58:21.274Z","__v":0},{"product_img":[{"product_img":"http://35.164.43.170:3000/api/uploads/1638447394865.jpg"}],"addition_detail":["sample"],"_id":"61a8b97902651d5e799071a8","user_id":"61a503503052a016fed7bb94","cat_id":{"_id":"6198b572518ad4520ab14791","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Women Care","img_index":0,"show_status":true,"date_and_time":"11/20/2021, 2:13:20 PM","delete_status":false,"updatedAt":"2021-11-20T08:44:34.670Z","createdAt":"2021-11-20T08:44:34.670Z","__v":0},"thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638447394865.jpg","product_name":"Sample","cost":200,"product_discription":"Women Care","condition":"sample","price_type":"unit","date_and_time":"02/12/2021 05:47 PM","threshould":"66","mobile_type":"Android","related":"","count":0,"status":"true","verification_status":"Not Verified","delete_status":false,"fav_status":false,"today_deal":false,"discount":0,"discount_amount":0,"discount_status":false,"discount_cal":0,"discount_start_date":"","discount_end_date":"","product_rating":5,"product_review":0,"updatedAt":"2021-12-02T12:18:01.399Z","createdAt":"2021-12-02T12:18:01.399Z","__v":0}]
      * Code : 200
      */
 
     private String Status;
     private String Message;
     private int Code;
-    private List<DataBean> Data;
+    /**
+     * product_img : [{"product_img":"http://35.164.43.170:3000/api/uploads/1638435359547.jpg"}]
+     * addition_detail : ["yes"]
+     * _id : 61a88aad02651d5e799071a5
+     * user_id : 61a503503052a016fed7bb94
+     * cat_id : {"_id":"60e6ffbafe7500511a7b419d","img_path":"http://54.212.108.156:3000/api/uploads/1625751478722.png","product_cate":"Pet Accessories","img_index":0,"show_status":true,"date_and_time":"7/8/2021, 7:08:01 PM","delete_status":false,"updatedAt":"2021-07-08T13:38:02.721Z","createdAt":"2021-07-08T13:38:02.721Z","__v":0}
+     * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638435359547.jpg
+     * product_name :
+     * cost : 200
+     * product_discription : Pet Accessories
+     * condition : organic
+     * price_type : basic
+     * date_and_time : 02/12/2021 02:28 PM
+     * threshould : 66
+     * mobile_type : Android
+     * related :
+     * count : 0
+     * status : true
+     * verification_status : Not Verified
+     * delete_status : false
+     * fav_status : false
+     * today_deal : false
+     * discount : 0
+     * discount_amount : 0
+     * discount_status : false
+     * discount_cal : 0
+     * discount_start_date :
+     * discount_end_date :
+     * product_rating : 5
+     * product_review : 0
+     * updatedAt : 2021-12-02T08:58:21.274Z
+     * createdAt : 2021-12-02T08:58:21.274Z
+     * __v : 0
+     */
 
+    private List<DataBean> Data;
 
     public String getStatus() {
         return Status;
@@ -24,9 +59,7 @@ public class ManageProductsListResponse {
 
     public void setStatus(String Status) {
         this.Status = Status;
-
     }
-
 
     public String getMessage() {
         return Message;
@@ -34,9 +67,7 @@ public class ManageProductsListResponse {
 
     public void setMessage(String Message) {
         this.Message = Message;
-
     }
-
 
     public int getCode() {
         return Code;
@@ -44,7 +75,6 @@ public class ManageProductsListResponse {
 
     public void setCode(int Code) {
         this.Code = Code;
-
     }
 
     public List<DataBean> getData() {
@@ -53,42 +83,202 @@ public class ManageProductsListResponse {
 
     public void setData(List<DataBean> Data) {
         this.Data = Data;
-
     }
 
-    public static class DataBean  {
+    public static class DataBean implements Serializable {
+        private String _id;
+        private String user_id;
         /**
-         * product_id : 602e11404775fa0735d7bf40
-         * products_image : ["http://54.212.108.156:3000/api/uploads/resize-1613548631141238608collar.jpg","http://54.212.108.156:3000/api/uploads/resize-16135506762041500057collar2.jpg"]
-         * product_name : DOGISTA PET PRODUCTS Dog Rope Leash,Brass
-         * product_desc : dog food
-         * product_price : 180
-         * pet_type : [{"_id":"602d1bf4562e0916bc9b3215","pet_type_title":"Dog","date_and_time":"2/17/2021, 7:06:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:36:52.141Z","createdAt":"2021-02-17T13:36:52.141Z","__v":0}]
-         * pet_breed : [{"_id":"602d1c0c562e0916bc9b3216","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Golden Retrieve","date_and_time":"2/17/2021, 7:07:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:16.917Z","createdAt":"2021-02-17T13:37:16.917Z","__v":0},{"_id":"602d1c17562e0916bc9b3217","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Beagle","date_and_time":"2/17/2021, 7:07:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:27.054Z","createdAt":"2021-02-17T13:37:27.054Z","__v":0},{"_id":"602d1c20562e0916bc9b3218","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Pug","date_and_time":"2/17/2021, 7:07:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:36.277Z","createdAt":"2021-02-17T13:37:36.277Z","__v":0},{"_id":"602d1c29562e0916bc9b3219","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Irish Setter","date_and_time":"2/17/2021, 7:07:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:37:45.189Z","createdAt":"2021-02-17T13:37:45.189Z","__v":0},{"_id":"602d1c3b562e0916bc9b321a","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Brussels Griffon","date_and_time":"2/17/2021, 7:08:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:03.311Z","createdAt":"2021-02-17T13:38:03.311Z","__v":0},{"_id":"602d1c45562e0916bc9b321b","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"Newfoundland","date_and_time":"2/17/2021, 7:08:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:13.348Z","createdAt":"2021-02-17T13:38:13.348Z","__v":0},{"_id":"602d1c58562e0916bc9b321c","pet_type_id":"602d1bf4562e0916bc9b3215","pet_breed":"French Bulldog","date_and_time":"2/17/2021, 7:08:32 PM","delete_status":false,"updatedAt":"2021-02-17T13:38:32.748Z","createdAt":"2021-02-17T13:38:32.748Z","__v":0},{"_id":"602d1c86562e0916bc9b321e","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Abyssinian Cat","date_and_time":"2/17/2021, 7:09:18 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:18.783Z","createdAt":"2021-02-17T13:39:18.783Z","__v":0},{"_id":"602d1c97562e0916bc9b321f","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Bobtail Cat Breed","date_and_time":"2/17/2021, 7:09:35 PM","delete_status":false,"updatedAt":"2021-02-17T13:39:35.923Z","createdAt":"2021-02-17T13:39:35.923Z","__v":0},{"_id":"602d1cb5562e0916bc9b3220","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"American Shorthair Cat","date_and_time":"2/17/2021, 7:10:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:05.273Z","createdAt":"2021-02-17T13:40:05.273Z","__v":0},{"_id":"602d1cc2562e0916bc9b3221","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bengal Cat","date_and_time":"2/17/2021, 7:10:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:18.477Z","createdAt":"2021-02-17T13:40:18.477Z","__v":0},{"_id":"602d1cda562e0916bc9b3222","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Burmese Cat","date_and_time":"2/17/2021, 7:10:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:42.336Z","createdAt":"2021-02-17T13:40:42.336Z","__v":0},{"_id":"602d1ce5562e0916bc9b3223","pet_type_id":"602d1c6b562e0916bc9b321d","pet_breed":"Bombay Cat","date_and_time":"2/17/2021, 7:10:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:40:53.127Z","createdAt":"2021-02-17T13:40:53.127Z","__v":0},{"_id":"602d1d03562e0916bc9b3225","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Parakeets","date_and_time":"2/17/2021, 7:11:22 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:23.050Z","createdAt":"2021-02-17T13:41:23.050Z","__v":0},{"_id":"602d1d17562e0916bc9b3226","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"African Greys","date_and_time":"2/17/2021, 7:11:43 PM","delete_status":false,"updatedAt":"2021-02-17T13:41:43.781Z","createdAt":"2021-02-17T13:41:43.781Z","__v":0},{"_id":"602d1d35562e0916bc9b3227","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Poicephalus","date_and_time":"2/17/2021, 7:12:12 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:13.292Z","createdAt":"2021-02-17T13:42:13.292Z","__v":0},{"_id":"602d1d55562e0916bc9b3228","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Amazon Parrots","date_and_time":"2/17/2021, 7:12:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:42:45.730Z","createdAt":"2021-02-17T13:42:45.730Z","__v":0},{"_id":"602d1d68562e0916bc9b3229","pet_type_id":"602d1cf4562e0916bc9b3224","pet_breed":"Lovebirds ","date_and_time":"2/17/2021, 7:13:04 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:04.974Z","createdAt":"2021-02-17T13:43:04.974Z","__v":0},{"_id":"602d1d84562e0916bc9b322b","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Chester White","date_and_time":"2/17/2021, 7:13:32 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:32.834Z","createdAt":"2021-02-17T13:43:32.834Z","__v":0},{"_id":"602d1d8d562e0916bc9b322c","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Duroc","date_and_time":"2/17/2021, 7:13:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:41.835Z","createdAt":"2021-02-17T13:43:41.835Z","__v":0},{"_id":"602d1d99562e0916bc9b322d","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Hampshire","date_and_time":"2/17/2021, 7:13:52 PM","delete_status":false,"updatedAt":"2021-02-17T13:43:53.109Z","createdAt":"2021-02-17T13:43:53.109Z","__v":0},{"_id":"602d1da3562e0916bc9b322e","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Landrace","date_and_time":"2/17/2021, 7:14:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:03.098Z","createdAt":"2021-02-17T13:44:03.098Z","__v":0},{"_id":"602d1dac562e0916bc9b322f","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Poland China","date_and_time":"2/17/2021, 7:14:11 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:12.250Z","createdAt":"2021-02-17T13:44:12.250Z","__v":0},{"_id":"602d1db8562e0916bc9b3230","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Spotted","date_and_time":"2/17/2021, 7:14:23 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:24.650Z","createdAt":"2021-02-17T13:44:24.650Z","__v":0},{"_id":"602d1dc7562e0916bc9b3231","pet_type_id":"602d1d73562e0916bc9b322a","pet_breed":"Yorkshire","date_and_time":"2/17/2021, 7:14:38 PM","delete_status":false,"updatedAt":"2021-02-17T13:44:39.394Z","createdAt":"2021-02-17T13:44:39.394Z","__v":0},{"_id":"602d1e91562e0916bc9b3233","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Guppies","date_and_time":"2/17/2021, 7:18:00 PM","delete_status":false,"updatedAt":"2021-02-17T13:48:01.013Z","createdAt":"2021-02-17T13:48:01.013Z","__v":0},{"_id":"602d1ea0562e0916bc9b3234","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Mollies","date_and_time":"2/17/2021, 7:18:16 PM","delete_status":false,"updatedAt":"2021-02-17T13:48:16.990Z","createdAt":"2021-02-17T13:48:16.990Z","__v":0},{"_id":"602d1efc562e0916bc9b3235","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Betta Fish","date_and_time":"2/17/2021, 7:19:47 PM","delete_status":false,"updatedAt":"2021-02-17T13:49:48.067Z","createdAt":"2021-02-17T13:49:48.067Z","__v":0},{"_id":"602d1f1a562e0916bc9b3239","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Goldfish","date_and_time":"2/17/2021, 7:20:17 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:18.445Z","createdAt":"2021-02-17T13:50:18.445Z","__v":0},{"_id":"602d1f25562e0916bc9b323a","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Angelfish","date_and_time":"2/17/2021, 7:20:28 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:29.195Z","createdAt":"2021-02-17T13:50:29.195Z","__v":0},{"_id":"602d1f35562e0916bc9b323b","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Golden Dwarf Barbs","date_and_time":"2/17/2021, 7:20:44 PM","delete_status":false,"updatedAt":"2021-02-17T13:50:45.678Z","createdAt":"2021-02-17T13:50:45.678Z","__v":0},{"_id":"602d1f47562e0916bc9b323c","pet_type_id":"602d1dd5562e0916bc9b3232","pet_breed":"Rainbowfish","date_and_time":"2/17/2021, 7:21:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:03.389Z","createdAt":"2021-02-17T13:51:03.389Z","__v":0},{"_id":"602d1f60562e0916bc9b323e","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Thoroughbred","date_and_time":"2/17/2021, 7:21:27 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:28.582Z","createdAt":"2021-02-17T13:51:28.582Z","__v":0},{"_id":"602d1f6e562e0916bc9b323f","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Warmblood","date_and_time":"2/17/2021, 7:21:41 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:42.308Z","createdAt":"2021-02-17T13:51:42.308Z","__v":0},{"_id":"602d1f78562e0916bc9b3240","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Morgan","date_and_time":"2/17/2021, 7:21:51 PM","delete_status":false,"updatedAt":"2021-02-17T13:51:52.553Z","createdAt":"2021-02-17T13:51:52.553Z","__v":0},{"_id":"602d1f82562e0916bc9b3241","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Appaloosa","date_and_time":"2/17/2021, 7:22:02 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:02.995Z","createdAt":"2021-02-17T13:52:02.995Z","__v":0},{"_id":"602d1f8f562e0916bc9b3242","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Pony","date_and_time":"2/17/2021, 7:22:14 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:15.281Z","createdAt":"2021-02-17T13:52:15.281Z","__v":0},{"_id":"602d1f9a562e0916bc9b3243","pet_type_id":"602d1f52562e0916bc9b323d","pet_breed":"Tennessee Walker","date_and_time":"2/17/2021, 7:22:26 PM","delete_status":false,"updatedAt":"2021-02-17T13:52:26.747Z","createdAt":"2021-02-17T13:52:26.747Z","__v":0}]
-         * pet_age : [1,2,3,4,5]
-         * pet_threshold : 150
-         * today_deal: false
+         * _id : 60e6ffbafe7500511a7b419d
+         * img_path : http://54.212.108.156:3000/api/uploads/1625751478722.png
+         * product_cate : Pet Accessories
+         * img_index : 0
+         * show_status : true
+         * date_and_time : 7/8/2021, 7:08:01 PM
+         * delete_status : false
+         * updatedAt : 2021-07-08T13:38:02.721Z
+         * createdAt : 2021-07-08T13:38:02.721Z
+         * __v : 0
          */
 
-        private String product_id;
+        private CatIdBean cat_id;
+        private String thumbnail_image;
         private String product_name;
-        private String product_desc;
-        private int product_price;
-        private String pet_threshold;
-        private List<String> products_image;
-        private List<PetTypeBean> pet_type;
-        private List<PetBreedBean> pet_breed;
-        private List<Integer> pet_age;
+        private int cost;
+        private String product_discription;
+        private String condition;
+        private String price_type;
+        private String date_and_time;
+        private String threshould;
+        private String mobile_type;
+        private String related;
+        private int count;
+        private String status;
+        private String verification_status;
+        private boolean delete_status;
+        private boolean fav_status;
         private boolean today_deal;
+        private int discount;
+        private int discount_amount;
+        private boolean discount_status;
+        private int discount_cal;
+        private String discount_start_date;
+        private String discount_end_date;
+        private int product_rating;
+        private int product_review;
+        private String updatedAt;
+        private String createdAt;
+        private int __v;
+        /**
+         * product_img : http://35.164.43.170:3000/api/uploads/1638435359547.jpg
+         */
 
-        public String getProduct_desc() {
-            return product_desc;
+        private ArrayList<ProductImgBean> product_img;
+        private ArrayList<String> addition_detail;
+
+        public String get_id() {
+            return _id;
         }
 
-        public void setProduct_desc(String product_desc) {
-            this.product_desc = product_desc;
+        public void set_id(String _id) {
+            this._id = _id;
         }
 
+        public String getUser_id() {
+            return user_id;
+        }
+
+        public void setUser_id(String user_id) {
+            this.user_id = user_id;
+        }
+
+        public CatIdBean getCat_id() {
+            return cat_id;
+        }
+
+        public void setCat_id(CatIdBean cat_id) {
+            this.cat_id = cat_id;
+        }
+
+        public String getThumbnail_image() {
+            return thumbnail_image;
+        }
+
+        public void setThumbnail_image(String thumbnail_image) {
+            this.thumbnail_image = thumbnail_image;
+        }
+
+        public String getProduct_name() {
+            return product_name;
+        }
+
+        public void setProduct_name(String product_name) {
+            this.product_name = product_name;
+        }
+
+        public int getCost() {
+            return cost;
+        }
+
+        public void setCost(int cost) {
+            this.cost = cost;
+        }
+
+        public String getProduct_discription() {
+            return product_discription;
+        }
+
+        public void setProduct_discription(String product_discription) {
+            this.product_discription = product_discription;
+        }
+
+        public String getCondition() {
+            return condition;
+        }
+
+        public void setCondition(String condition) {
+            this.condition = condition;
+        }
+
+        public String getPrice_type() {
+            return price_type;
+        }
+
+        public void setPrice_type(String price_type) {
+            this.price_type = price_type;
+        }
+
+        public String getDate_and_time() {
+            return date_and_time;
+        }
+
+        public void setDate_and_time(String date_and_time) {
+            this.date_and_time = date_and_time;
+        }
+
+        public String getThreshould() {
+            return threshould;
+        }
+
+        public void setThreshould(String threshould) {
+            this.threshould = threshould;
+        }
+
+        public String getMobile_type() {
+            return mobile_type;
+        }
+
+        public void setMobile_type(String mobile_type) {
+            this.mobile_type = mobile_type;
+        }
+
+        public String getRelated() {
+            return related;
+        }
+
+        public void setRelated(String related) {
+            this.related = related;
+        }
+
+        public int getCount() {
+            return count;
+        }
+
+        public void setCount(int count) {
+            this.count = count;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public String getVerification_status() {
+            return verification_status;
+        }
+
+        public void setVerification_status(String verification_status) {
+            this.verification_status = verification_status;
+        }
+
+        public boolean isDelete_status() {
+            return delete_status;
+        }
+
+        public void setDelete_status(boolean delete_status) {
+            this.delete_status = delete_status;
+        }
+
+        public boolean isFav_status() {
+            return fav_status;
+        }
+
+        public void setFav_status(boolean fav_status) {
+            this.fav_status = fav_status;
+        }
 
         public boolean isToday_deal() {
             return today_deal;
@@ -98,101 +288,121 @@ public class ManageProductsListResponse {
             this.today_deal = today_deal;
         }
 
-        public String getProduct_id() {
-            return product_id;
+        public int getDiscount() {
+            return discount;
         }
 
-        public void setProduct_id(String product_id) {
-            this.product_id = product_id;
-
+        public void setDiscount(int discount) {
+            this.discount = discount;
         }
 
-
-        public String getProduct_name() {
-            return product_name;
+        public int getDiscount_amount() {
+            return discount_amount;
         }
 
-        public void setProduct_name(String product_name) {
-            this.product_name = product_name;
-
+        public void setDiscount_amount(int discount_amount) {
+            this.discount_amount = discount_amount;
         }
 
-
-        public int getProduct_price() {
-            return product_price;
+        public boolean isDiscount_status() {
+            return discount_status;
         }
 
-        public void setProduct_price(int product_price) {
-            this.product_price = product_price;
-
+        public void setDiscount_status(boolean discount_status) {
+            this.discount_status = discount_status;
         }
 
-
-        public String getPet_threshold() {
-            return pet_threshold;
+        public int getDiscount_cal() {
+            return discount_cal;
         }
 
-        public void setPet_threshold(String pet_threshold) {
-            this.pet_threshold = pet_threshold;
-
+        public void setDiscount_cal(int discount_cal) {
+            this.discount_cal = discount_cal;
         }
 
-
-        public List<String> getProducts_image() {
-            return products_image;
+        public String getDiscount_start_date() {
+            return discount_start_date;
         }
 
-        public void setProducts_image(List<String> products_image) {
-            this.products_image = products_image;
-
+        public void setDiscount_start_date(String discount_start_date) {
+            this.discount_start_date = discount_start_date;
         }
 
-
-        public List<PetTypeBean> getPet_type() {
-            return pet_type;
+        public String getDiscount_end_date() {
+            return discount_end_date;
         }
 
-        public void setPet_type(List<PetTypeBean> pet_type) {
-            this.pet_type = pet_type;
-
+        public void setDiscount_end_date(String discount_end_date) {
+            this.discount_end_date = discount_end_date;
         }
 
-        public List<PetBreedBean> getPet_breed() {
-            return pet_breed;
+        public int getProduct_rating() {
+            return product_rating;
         }
 
-        public void setPet_breed(List<PetBreedBean> pet_breed) {
-            this.pet_breed = pet_breed;
-
+        public void setProduct_rating(int product_rating) {
+            this.product_rating = product_rating;
         }
 
-
-        public List<Integer> getPet_age() {
-            return pet_age;
+        public int getProduct_review() {
+            return product_review;
         }
 
-        public void setPet_age(List<Integer> pet_age) {
-            this.pet_age = pet_age;
-
+        public void setProduct_review(int product_review) {
+            this.product_review = product_review;
         }
 
-        public static class PetTypeBean  {
-            /**
-             * _id : 602d1bf4562e0916bc9b3215
-             * pet_type_title : Dog
-             * date_and_time : 2/17/2021, 7:06:51 PM
-             * delete_status : false
-             * updatedAt : 2021-02-17T13:36:52.141Z
-             * createdAt : 2021-02-17T13:36:52.141Z
-             * __v : 0
-             */
+        public String getUpdatedAt() {
+            return updatedAt;
+        }
 
+        public void setUpdatedAt(String updatedAt) {
+            this.updatedAt = updatedAt;
+        }
+
+        public String getCreatedAt() {
+            return createdAt;
+        }
+
+        public void setCreatedAt(String createdAt) {
+            this.createdAt = createdAt;
+        }
+
+        public int get__v() {
+            return __v;
+        }
+
+        public void set__v(int __v) {
+            this.__v = __v;
+        }
+
+        public ArrayList<ProductImgBean> getProduct_img() {
+            return product_img;
+        }
+
+        public void setProduct_img(ArrayList<ProductImgBean> product_img) {
+            this.product_img = product_img;
+        }
+
+        public ArrayList<String> getAddition_detail() {
+            return addition_detail;
+        }
+
+        public void setAddition_detail(ArrayList<String> addition_detail) {
+            this.addition_detail = addition_detail;
+        }
+
+        public static class CatIdBean {
             private String _id;
-            private String pet_type_title;
+            private String img_path;
+            private String product_cate;
+            private int img_index;
+            private boolean show_status;
             private String date_and_time;
-
-
-
+            private boolean delete_status;
+            private String updatedAt;
+            private String createdAt;
+            private int __v;
 
             public String get_id() {
                 return _id;
@@ -200,19 +410,39 @@ public class ManageProductsListResponse {
 
             public void set_id(String _id) {
                 this._id = _id;
-
             }
 
-
-            public String getPet_type_title() {
-                return pet_type_title;
+            public String getImg_path() {
+                return img_path;
             }
 
-            public void setPet_type_title(String pet_type_title) {
-                this.pet_type_title = pet_type_title;
-
+            public void setImg_path(String img_path) {
+                this.img_path = img_path;
             }
 
+            public String getProduct_cate() {
+                return product_cate;
+            }
+
+            public void setProduct_cate(String product_cate) {
+                this.product_cate = product_cate;
+            }
+
+            public int getImg_index() {
+                return img_index;
+            }
+
+            public void setImg_index(int img_index) {
+                this.img_index = img_index;
+            }
+
+            public boolean isShow_status() {
+                return show_status;
+            }
+
+            public void setShow_status(boolean show_status) {
+                this.show_status = show_status;
+            }
 
             public String getDate_and_time() {
                 return date_and_time;
@@ -220,69 +450,51 @@ public class ManageProductsListResponse {
 
             public void setDate_and_time(String date_and_time) {
                 this.date_and_time = date_and_time;
-
             }
 
+            public boolean isDelete_status() {
+                return delete_status;
+            }
 
+            public void setDelete_status(boolean delete_status) {
+                this.delete_status = delete_status;
+            }
+
+            public String getUpdatedAt() {
+                return updatedAt;
+            }
+
+            public void setUpdatedAt(String updatedAt) {
+                this.updatedAt = updatedAt;
+            }
+
+            public String getCreatedAt() {
+                return createdAt;
+            }
+
+            public void setCreatedAt(String createdAt) {
+                this.createdAt = createdAt;
+            }
+
+            public int get__v() {
+                return __v;
+            }
+
+            public void set__v(int __v) {
+                this.__v = __v;
+            }
         }
 
-        public static class PetBreedBean {
-            /**
-             * _id : 602d1c0c562e0916bc9b3216
-             * pet_type_id : 602d1bf4562e0916bc9b3215
-             * pet_breed : Golden Retrieve
-             * date_and_time : 2/17/2021, 7:07:16 PM
-             * delete_status : false
-             * updatedAt : 2021-02-17T13:37:16.917Z
-             * createdAt : 2021-02-17T13:37:16.917Z
-             * __v : 0
-             */
+        public static class ProductImgBean implements Serializable {
+            private String product_img;
 
-            private String _id;
-            private String pet_type_id;
-            private String pet_breed;
-            private String date_and_time;
-
-
-            public String get_id() {
-                return _id;
+            public String getProduct_img() {
+                return product_img;
             }
 
-            public void set_id(String _id) {
-                this._id = _id;
-
-            }
-
-            public String getPet_type_id() {
-                return pet_type_id;
-            }
-
-            public void setPet_type_id(String pet_type_id) {
-                this.pet_type_id = pet_type_id;
-
-            }
-
-
-            public String getPet_breed() {
-                return pet_breed;
-            }
-
-            public void setPet_breed(String pet_breed) {
-                this.pet_breed = pet_breed;
-
-            }
-
-
-            public String getDate_and_time() {
-                return date_and_time;
-            }
-
-            public void setDate_and_time(String date_and_time) {
-                this.date_and_time = date_and_time;
-
+            public void setProduct_img(String product_img) {
+                this.product_img = product_img;
             }
         }
     }
-
-
 }

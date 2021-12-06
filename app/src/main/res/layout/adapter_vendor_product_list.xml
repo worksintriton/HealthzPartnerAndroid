@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_marginBottom="10dp"
+    android:layout_marginEnd="10dp">
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="135dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="vertical"
+            android:background="@color/Lightgray">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|center_vertical"
+                android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_products_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_hzproduct"
+                tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/icn_circle_gray"
+                    android:orientation="vertical"
+                    android:id="@+id/ll_edit">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img_edit"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_gravity="center_horizontal|center"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/icn_edit_white"
+                            tools:ignore="ContentDescription" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/icn_circle_gray"
+                    android:orientation="vertical"
+                    android:id="@+id/ll_delete">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img_delete"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_gravity="center_horizontal|center"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/icn_delete_white"
+                            tools:ignore="ContentDescription" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl_shop"
+            android:layout_width="160dp"
+            android:layout_height="140dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <ImageView
+                    android:id="@+id/img_fav"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_fav"
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="20dp"
+                android:gravity="end"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_shop"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_shop_color"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_products_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat"
+                    android:maxLines="2"
+                    android:text="Lipton Ice Tea Karpuz Aromalı  Gazsız İçecek 6X330 Ml "
+                    android:textColor="@color/lato_black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_category_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/category"
+                    android:textColor="@color/new_secondtxt"
+                    android:textSize="10sp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_products_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat"
+                android:maxLines="1"
+                android:text="@string/product_quantity"
+                android:textColor="@color/green"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_deal_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:padding="2dp"
+                    android:text="@string/deal"
+                    android:textColor="@color/new_sec_txt_color"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/txt_products_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:padding="2dp"
+                    android:text="@string/inr_300_00"
+                    android:textColor="@color/new_green_btn"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_main_root"
+        android:layout_width="135dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/icn_rectangle_hz"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                app:srcCompat="@drawable/icn_hz_plus" />
+
+            <TextView
+                android:id="@+id/txt_product_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:alpha="0.4"
+                android:fontFamily="@font/montserrat"
+                android:hint="Add Product"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textCursorDrawable="@null"
+                android:textSize="12sp"
+                tools:ignore="Autofill,LabelFor"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

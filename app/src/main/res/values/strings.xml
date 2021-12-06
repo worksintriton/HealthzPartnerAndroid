@@ -273,6 +273,7 @@
     <string name="registeryourpet">Register your Pet</string>
 
     <string name="deletemsg">Are you sure you want to delete this address?</string>
+    <string name="deletemsgproduct">Are you sure you want to delete this product?</string>
     <string name="deletepetmsg">Are you sure you want to delete this member details?</string>
     <string name="removeproductfavmsg">Are you sure you want to remove this from your favorites?</string>
     <string name="locationstatuschange">Are you sure you want to change the location as default address?</string>
@@ -709,6 +710,10 @@
     <string name="additional_details">Additional Details</string>
     <string name="add_additional_details">Add Additional Details</string>
     <string name="addd">Add</string>
+    <string name="deal">OnDeal</string>
+    <string name="add_product">Add Product</string>
+    <string name="you_dont_have_product">You dont have product</string>
+    <string name="my_products">My Products</string>
 
 </resources>
 

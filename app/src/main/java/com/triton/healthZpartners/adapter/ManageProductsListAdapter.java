@@ -72,13 +72,13 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
         if(manageProductsListResponseList.get(position).getProduct_name() != null) {
             holder.txt_prod_name.setText(manageProductsListResponseList.get(position).getProduct_name());
         }
-        if(manageProductsListResponseList.get(position).getProduct_price() != 0) {
-            holder.txt_prod_price.setText("\u20B9 " + manageProductsListResponseList.get(position).getProduct_price());
+        if(manageProductsListResponseList.get(position).getCost() != 0) {
+            holder.txt_prod_price.setText("\u20B9 " + manageProductsListResponseList.get(position).getCost());
         }
-        if(manageProductsListResponseList.get(position).getProducts_image() != null && manageProductsListResponseList.get(position).getProducts_image().size()>0) {
-            if (manageProductsListResponseList.get(position).getProducts_image().get(0) != null && !manageProductsListResponseList.get(position).getProducts_image().get(0).isEmpty()) {
+        if(manageProductsListResponseList.get(position).getThumbnail_image() != null && !manageProductsListResponseList.get(position).getThumbnail_image().isEmpty()) {
+            if (manageProductsListResponseList.get(position).getThumbnail_image() != null && !manageProductsListResponseList.get(position).getThumbnail_image().isEmpty()) {
                 Glide.with(context)
-                        .load(manageProductsListResponseList.get(position).getProducts_image().get(0))
+                        .load(manageProductsListResponseList.get(position).getThumbnail_image())
                         .into(holder.img_products_image);
             }
         }
@@ -104,13 +104,12 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
             holder.img_expand_arrow.setImageResource(R.drawable.ic_down);
         }
 
-        if(manageProductsListResponseList.get(position).getPet_type() != null && manageProductsListResponseList.get(position).getPet_type().size()>0){
+      /*  if(manageProductsListResponseList.get(position).getPet_type() != null && manageProductsListResponseList.get(position).getPet_type().size()>0){
             if(manageProductsListResponseList.get(position).getPet_type().get(0).getPet_type_title() != null){
                 holder.txt_pet_type.setText(" : "+manageProductsListResponseList.get(position).getPet_type().get(0).getPet_type_title());
 
             }
         }
-
         if(manageProductsListResponseList.get(position).getPet_breed() != null && manageProductsListResponseList.get(position).getPet_breed().size()>0) {
             if (manageProductsListResponseList.get(position).getPet_breed().get(0).getPet_breed() != null) {
                 holder.txt_pet_breed.setText(" : " + manageProductsListResponseList.get(position).getPet_breed().get(0).getPet_breed());
@@ -123,8 +122,9 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
 
             }
         }
-        if(manageProductsListResponseList.get(position).getPet_threshold()!= null){
-            holder.txt_threshold.setText(" : "+manageProductsListResponseList.get(position).getPet_threshold());
+       */
+        if(manageProductsListResponseList.get(position).getThreshould()!= null){
+            holder.txt_threshold.setText(" : "+manageProductsListResponseList.get(position).getThreshould());
 
         }
 
@@ -141,13 +141,13 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
                 if (holder.checkBox.isChecked()) {
                     count++;
                     Log.w(TAG,"ischecked count : "+count);
-                    onItemCheckProduct.onItemCheckProduct(count,manageProductsListResponseList.get(position).getProduct_id(),manageProductsListResponseList.get(position).getProduct_name(),manageProductsListResponseList.get(position).getProduct_price());
+                    onItemCheckProduct.onItemCheckProduct(count,manageProductsListResponseList.get(position).get_id(),manageProductsListResponseList.get(position).getProduct_name(),manageProductsListResponseList.get(position).getCost());
                 }
 
             }else{
                 count--;
                 Log.w(TAG,"unchecked count : "+count);
-                onItemCheckProduct.onItemUnCheckProduct(count,manageProductsListResponseList.get(position).getProduct_id(),manageProductsListResponseList.get(position).getProduct_name(),manageProductsListResponseList.get(position).getProduct_price());
+                onItemCheckProduct.onItemUnCheckProduct(count,manageProductsListResponseList.get(position).get_id(),manageProductsListResponseList.get(position).getProduct_name(),manageProductsListResponseList.get(position).getCost());
 
             }
 
@@ -174,16 +174,16 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
                         String titleName = String.valueOf(item.getTitle());
                         if(titleName.equalsIgnoreCase("Edit")){
                             Intent i = new Intent(context, EditManageProdcutsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            i.putExtra("productid",manageProductsListResponseList.get(position).getProduct_id());
+                            i.putExtra("productid",manageProductsListResponseList.get(position).get_id());
                             i.putExtra("producttitle",manageProductsListResponseList.get(position).getProduct_name());
-                            i.putExtra("productprice",manageProductsListResponseList.get(position).getProduct_price());
-                            i.putExtra("productthreshold",manageProductsListResponseList.get(position).getPet_threshold());
-                            i.putExtra("productdesc",manageProductsListResponseList.get(position).getProduct_desc());
+                            i.putExtra("productprice",manageProductsListResponseList.get(position).getCost());
+                            i.putExtra("productthreshold",manageProductsListResponseList.get(position).getThreshould());
+                            i.putExtra("productdesc",manageProductsListResponseList.get(position).getProduct_discription());
                             context.startActivity(i);
 
                         } else if(titleName.equalsIgnoreCase("Clear Deals")){
                             if(manageProductsListResponseList.get(position).isToday_deal()){
-                                manageProductsDealsListener.manageProductsDealsListener(manageProductsListResponseList.get(position).isToday_deal(),manageProductsListResponseList.get(position).getProduct_id());
+                                manageProductsDealsListener.manageProductsDealsListener(manageProductsListResponseList.get(position).isToday_deal(),manageProductsListResponseList.get(position).get_id());
                             }
                             else{
                                 final Menu menu = popup.getMenu();

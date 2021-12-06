@@ -2,19 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
         <item android:id="@+id/nav_item_seven"
-            android:icon="@drawable/add"
+            android:icon="@drawable/icn_add_product"
             android:title="@string/add_products" />
 
 
 
         <item android:id="@+id/nav_item_one"
-            android:icon="@drawable/myorders"
+            android:icon="@drawable/icn_my_orders"
             android:title="@string/customer_orders"
             android:visible="false"/>
 
 
         <item android:id="@+id/nav_item_two"
-            android:icon="@drawable/ic_shopss"
             android:title="@string/manage_products" />
 
 
