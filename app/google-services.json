@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "492634506107",
+    "project_id": "healthz2021",
+    "storage_bucket": "healthz2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492634506107:android:a505fc1d6753fbd756f3de",
+        "android_client_info": {
+          "package_name": "com.triton.healthz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492634506107-q9h2m5ut43avt5a6v3pfnbm1imv37qd5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp92Y18vcixShyTKbliJEX8RsTg3iMgNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492634506107-q9h2m5ut43avt5a6v3pfnbm1imv37qd5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492634506107:android:6aaa1fe2b38ac20f56f3de",
+        "android_client_info": {
+          "package_name": "com.triton.healthzpartners"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492634506107-q9h2m5ut43avt5a6v3pfnbm1imv37qd5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp92Y18vcixShyTKbliJEX8RsTg3iMgNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492634506107-q9h2m5ut43avt5a6v3pfnbm1imv37qd5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
