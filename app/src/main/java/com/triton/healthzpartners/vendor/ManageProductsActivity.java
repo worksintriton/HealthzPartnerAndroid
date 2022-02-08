@@ -738,7 +738,7 @@ public class ManageProductsActivity extends AppCompatActivity implements View.On
                         txt_add_deal.setVisibility(View.GONE);
                         txt_discard_deal.setVisibility(View.GONE);
                         isAllFabsVisible = false;
-                        txt_applydeal.setText("Apply Deal");
+                        txt_applydeal.setText("On Deal");
                         add_deal_fab.setImageResource(R.drawable.ic_baseline_add_24);
                         getlist_from_vendor_id_ResponseCall();
 

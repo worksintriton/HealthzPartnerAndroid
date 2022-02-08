@@ -3,6 +3,7 @@ package com.triton.healthzpartners.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.triton.healthzpartners.responsepojo.ManageProductsListResponse;
 import com.triton.healthzpartners.vendor.EditManageProdcutsActivity;
 import com.triton.healthzpartners.vendor.VendorAddProductsActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -154,18 +156,28 @@ public class VendorProductListAdapter extends  RecyclerView.Adapter<RecyclerView
 
         holder.ll_edit.setOnClickListener(v -> {
            productImageList= productList.get(position).getProduct_img();
+            Log.w(TAG,"productImageList : "+new Gson().toJson(productImageList));
            additionalDetailList= productList.get(position).getAddition_detail();
+            Log.w(TAG,"additionalDetailList : "+new Gson().toJson(additionalDetailList));
             Intent i = new Intent(context, EditManageProdcutsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.putExtra("productid",productList.get(position).get_id());
             i.putExtra("producttitle",productList.get(position).getProduct_name());
             i.putExtra("productprice",productList.get(position).getCost());
             i.putExtra("productthreshold",productList.get(position).getThreshould());
             i.putExtra("productdesc",productList.get(position).getProduct_discription());
-            i.putExtra("productImageList",productImageList);
             i.putExtra("productcategoryname",productList.get(position).getCat_id().getProduct_cate());
+            i.putExtra("productcategoryid",productList.get(position).getCat_id().get_id());
             i.putExtra("condition",productList.get(position).getCondition());
             i.putExtra("pricetype",productList.get(position).getPrice_type());
-            i.putExtra("additionalDetailList",additionalDetailList);
+
+
+            Bundle args = new Bundle();
+            //int list = dataBeanList.get(position).getPet_img().size();
+            args.putSerializable("PRODUCTLIST", (Serializable)productImageList);
+
+            i.putExtra("productImageList",args);
+           i.putStringArrayListExtra("additionalDetailList",additionalDetailList);
+
             context.startActivity(i);
 
         });

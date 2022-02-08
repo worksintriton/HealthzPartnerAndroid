@@ -14,7 +14,7 @@
             android:id="@+id/toolbar_header"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/green"
+            android:background="@color/green_colour"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
             app:popupTheme="@style/AppTheme.PopupOverlay"
@@ -39,13 +39,13 @@
                 android:text="@string/track_order_details"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="end"
-                android:layout_marginStart="10dp">
+                android:layout_marginStart="10dp"
+                android:gravity="end">
 
                 <ImageView
                     android:id="@+id/img_sos"
@@ -53,32 +53,34 @@
                     android:layout_height="24dp"
                     android:layout_marginStart="20dp"
                     android:src="@drawable/ic_sos"
-                    tools:ignore="ContentDescription"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
 
                 <ImageView
                     android:id="@+id/img_notification"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="20dp"
-                     android:src="@drawable/notification_white"
+                    android:src="@drawable/notification_white"
                     tools:ignore="ContentDescription" />
+
                 <ImageView
                     android:id="@+id/img_cart"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_bag"
-                    tools:ignore="ContentDescription"
                     android:layout_marginStart="20dp"
-                    android:visibility="gone"/>
+                    android:src="@drawable/ic_bag"
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
+
                 <ImageView
                     android:id="@+id/img_profile"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/account"
-                    tools:ignore="ContentDescription"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp" />
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/account"
+                    tools:ignore="ContentDescription" />
             </LinearLayout>
 
 

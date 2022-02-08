@@ -104,6 +104,7 @@ public class DoctorMyCalendarTimeAvailableAdapter extends  RecyclerView.Adapter<
             }
         });
 
+
 /*
         holder.llsymptoms.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,7 +146,7 @@ public class DoctorMyCalendarTimeAvailableAdapter extends  RecyclerView.Adapter<
     }
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_days;
+        public TextView txt_days,txt_edit;
         public LinearLayout ll_days;
         public CheckBox ch_days;
         public ImageView img_edit;
@@ -159,7 +160,9 @@ public class DoctorMyCalendarTimeAvailableAdapter extends  RecyclerView.Adapter<
             txt_days = itemView.findViewById(R.id.txt_days);
             ll_days = itemView.findViewById(R.id.ll_days);
             img_edit = itemView.findViewById(R.id.img_edit);
+            txt_edit = itemView.findViewById(R.id.txt_edit);
             img_edit.setVisibility(View.GONE);
+            txt_edit.setVisibility(View.GONE);
 
 
 

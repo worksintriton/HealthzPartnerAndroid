@@ -13,17 +13,31 @@
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
-        <ImageView
-            android:id="@+id/img_clinic_imge"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/app_logo_with_border"
-            tools:ignore="ContentDescription" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_clinic_imge"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/app_logo_with_border"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:alpha="0.5"
+                android:background="@color/green_colour"
+                android:orientation="vertical"></LinearLayout>
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/txt_clinicname"
@@ -61,17 +75,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/new_rounded_corner_btn"
                 android:fontFamily="@font/futuramediumbt"
                 android:padding="10dp"
                 android:text="@string/view_profile"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="14sp"
-                android:layout_marginStart="20dp"/>
-
-
-
+                android:textSize="14sp" />
 
 
         </LinearLayout>

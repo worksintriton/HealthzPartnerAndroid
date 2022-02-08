@@ -396,6 +396,7 @@ public class SPEditProfileActivity extends AppCompatActivity implements View.OnC
                             intent.putExtra("otp", response.body().getData().getOtp());
                             intent.putExtra("firstname", edt_firstname.getText().toString());
                             intent.putExtra("lastname", edt_lastname.getText().toString());
+                            intent.putExtra("lastname", edt_lastname.getText().toString());
                             startActivity(intent);
                         }
 

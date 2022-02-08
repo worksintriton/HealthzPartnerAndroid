@@ -8,7 +8,7 @@ public class ShopDashboardResponse {
     /**
      * Status : Success
      * Message : product list
-     * Data : {"Banner_details":[{"banner_img":"http://54.212.108.156:3000/api/uploads/1625686845460.png","banner_title":"."},{"banner_img":"http://54.212.108.156:3000/api/uploads/1625686840134.png","banner_title":"."},{"banner_img":"http://54.212.108.156:3000/api/uploads/1625686831097.png","banner_title":"."}],"Today_Special":[{"_id":"6166ae922bce9c43e6b5a20a","product_img":"http://54.212.108.156:3000/api/uploads/1622641300034.jpg","product_title":"Dog Food","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":1,"product_discount":5,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"6166ae3f2bce9c43e6b5a209","product_img":"http://54.212.108.156:3000/api/uploads/1621483238826.png","product_title":"food 1","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":431,"product_discount":5,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"614debbb2cac2433f1e44946","product_img":"http://54.212.108.156:3000/api/uploads/1622643072891.jpg","product_title":"Shopiee Food","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":258,"product_discount":30,"product_discount_price":369,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"613c9fbbb0e0c64ef95e0f53","product_img":"http://54.212.108.156:3000/api/uploads/1622641300034.jpg","product_title":"Dog Food","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":78,"product_discount":20,"product_discount_price":98,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"613b248cb0e0c64ef95e0f19","product_img":"http://54.212.108.156:3000/api/uploads/1622197569345.jpeg","product_title":"Good Food Dog","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":25,"product_discount":50,"product_discount_price":50,"product_fav":false,"product_rating":5,"product_review":0}],"Product_details":[{"cat_id":"5fec22eeea832e2e73c1fc7b","cat_name":"Pet Grooming","product_list":[{"_id":"61545f94bc488d4a5cc76030","product_title":"comb","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":750,"product_discount":10,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"60e5aad15af36c5c3605bab5","product_img":"http://54.212.108.156:3000/api/uploads/1625747945821.png","product_title":"Organic Anti-Tick and Flea Spray for Dogs","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625747987678.png","product_price":500,"product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"60e5aabd5af36c5c3605bab4","product_img":"http://54.212.108.156:3000/api/uploads/1625748054901.png","product_title":"HUL Natural Shampoo for Puppy","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625748027413.png","product_price":162,"product_discount":10,"product_discount_price":180,"product_fav":false,"product_rating":5,"product_review":0}]},{"cat_id":"5fec1573ea832e2e73c1fc7a","cat_name":"Bedding","product_list":[{"_id":"60e70ba542603a5324f78da2","product_img":"http://54.212.108.156:3000/api/uploads/1625754554102.png","product_title":"Basics Round Mattress","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625754509022.png","product_price":250,"product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"60e5adc55af36c5c3605bab6","product_img":"http://54.212.108.156:3000/api/uploads/1625752345378.png","product_title":"Nap Now Lounger Dog Bed - Black","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625747535197.png","product_price":100,"product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}]},{"cat_id":"5fec14a5ea832e2e73c1fc79","cat_name":"Pet Foods - Wet","product_list":[{"_id":"60e70af242603a5324f78da1","product_img":"http://54.212.108.156:3000/api/uploads/1625754342692.png","product_title":"Schesir Canned Chicken","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625754350765.png","product_price":100,"product_discount":0,"product_discount_price":300,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"60e70a5942603a5324f78da0","product_img":"http://54.212.108.156:3000/api/uploads/1625754188480.png","product_title":"Jer High Chicken Wet Food","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625754161157.png","product_price":110,"product_discount":0,"product_discount_price":120,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"60b0c4ae67f25056fe286ca2","product_img":"http://54.212.108.156:3000/api/uploads/1625748318970.png","product_title":"Royal Canin Maxi Adult Dog Wet Food","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625752592166.png","product_price":200,"product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}]},{"cat_id":"5fec1424ea832e2e73c1fc78","cat_name":"Pet Foods - Dry","product_list":[{"_id":"616fb5a045260959816ed0ee","product_img":"http://54.212.108.156:3000/api/uploads/1625690111929.png","product_title":"Wild Earth Veg Protein","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":619191,"product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"6167e8872bce9c43e6b5a23b","product_img":"http://54.212.108.156:3000/api/uploads/1625690111929.png","product_title":"Wild Earth Veg Protein","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":50,"product_discount":0,"product_discount_price":100,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"6166ae922bce9c43e6b5a20a","product_img":"http://54.212.108.156:3000/api/uploads/1622641300034.jpg","product_title":"Dog Food","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":1,"product_discount":5,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"6166ae3f2bce9c43e6b5a209","product_img":"http://54.212.108.156:3000/api/uploads/1621483238826.png","product_title":"food 1","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":431,"product_discount":5,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"61667ca3e4ce022c24567930","product_img":"http://54.212.108.156:3000/api/uploads/1622197569345.jpeg","product_title":"Good Food Dog","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":25,"product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0}]}],"product_cate":[{"_id":"60e6ffbafe7500511a7b419d","img_path":"http://54.212.108.156:3000/api/uploads/1625751478722.png","product_cate":"Pet Accessories","img_index":0,"show_status":true,"date_and_time":"7/8/2021, 7:08:01 PM","delete_status":false,"updatedAt":"2021-07-08T13:38:02.721Z","createdAt":"2021-07-08T13:38:02.721Z","__v":0},{"_id":"5fec22eeea832e2e73c1fc7b","img_path":"http://52.25.163.13:3000/api/uploads/template%20(5).jpg","product_cate":"Pet Grooming","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 18:13:44 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T14:06:47.786Z","createdAt":"2020-12-30T06:49:18.019Z","__v":0},{"_id":"5fec1573ea832e2e73c1fc7a","img_path":"http://52.25.163.13:3000/api/uploads/template%20(4).jpg","product_cate":"Bedding","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 01:57:45 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T09:39:55.461Z","createdAt":"2020-12-30T05:51:47.787Z","__v":0},{"_id":"5fec14a5ea832e2e73c1fc79","img_path":"http://52.25.163.13:3000/api/uploads/template%20(3).jpg","product_cate":"Pet Foods - Wet","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 01:55:56 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T09:39:49.690Z","createdAt":"2020-12-30T05:48:21.363Z","__v":0},{"_id":"5fec1424ea832e2e73c1fc78","img_path":"http://52.25.163.13:3000/api/uploads/template%20(2).jpg","product_cate":"Pet Foods - Dry","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 01:55:35 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T09:39:43.827Z","createdAt":"2020-12-30T05:46:12.099Z","__v":0}]}
+     * Data : {"Banner_details":[{"banner_img":"http://35.164.43.170:3000/api/uploads/1638611849928.png","banner_title":"."},{"banner_img":"http://35.164.43.170:3000/api/uploads/1638611837867.png","banner_title":"."},{"banner_img":"http://35.164.43.170:3000/api/uploads/1638611775742.png","banner_title":"."}],"Today_Special":[{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_title":"Sample","thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_price":192,"product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0}],"Product_details":[{"cat_id":"6198b594518ad4520ab14792","cat_name":"Organic Products","product_list":[{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_title":"Sample","thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_price":192,"product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0}]}],"product_cate":[{"_id":"6198b5e1518ad4520ab14796","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Health Care","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:42:23 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:12:24.711Z","createdAt":"2021-11-20T08:46:25.853Z","__v":0},{"_id":"6198b5cc518ad4520ab14795","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Baby Products","img_index":0,"show_status":true,"date_and_time":"11/20/2021, 2:14:49 PM","delete_status":false,"updatedAt":"2021-11-20T08:46:04.099Z","createdAt":"2021-11-20T08:46:04.099Z","__v":0},{"_id":"6198b5b5518ad4520ab14794","img_path":"http://13.57.9.246:3000/api/uploads/1625751478722.png","product_cate":"Beauty Products","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:42:31 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:12:32.419Z","createdAt":"2021-11-20T08:45:41.571Z","__v":0},{"_id":"6198b5a2518ad4520ab14793","img_path":"http://35.164.43.170:3000/api/uploads/1638787069561.jpg","product_cate":"Men Care","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:41:46 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:11:46.820Z","createdAt":"2021-11-20T08:45:22.893Z","__v":0},{"_id":"6198b594518ad4520ab14792","img_path":"http://35.164.43.170:3000/api/uploads/1638787048263.jpg","product_cate":"Organic Products","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:41:39 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:11:40.266Z","createdAt":"2021-11-20T08:45:08.260Z","__v":0},{"_id":"6198b572518ad4520ab14791","img_path":"http://35.164.43.170:3000/api/uploads/1638787013129.jpg","product_cate":"Women Care","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:41:35 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:11:36.373Z","createdAt":"2021-11-20T08:44:34.670Z","__v":0},{"_id":"6198b507518ad4520ab14790","img_path":"http://35.164.43.170:3000/api/uploads/1638787001659.jpg","product_cate":"Skin & Body Care","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:41:31 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:11:32.174Z","createdAt":"2021-11-20T08:42:47.494Z","__v":0},{"_id":"60e6ffbafe7500511a7b419d","img_path":"http://54.212.108.156:3000/api/uploads/1625751478722.png","product_cate":"Pet Accessories","img_index":0,"show_status":true,"date_and_time":"7/8/2021, 7:08:01 PM","delete_status":false,"updatedAt":"2021-07-08T13:38:02.721Z","createdAt":"2021-07-08T13:38:02.721Z","__v":0},{"_id":"5fec22eeea832e2e73c1fc7b","img_path":"http://52.25.163.13:3000/api/uploads/template%20(5).jpg","product_cate":"Pet Grooming","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 18:13:44 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T14:06:47.786Z","createdAt":"2020-12-30T06:49:18.019Z","__v":0},{"_id":"5fec1573ea832e2e73c1fc7a","img_path":"http://35.164.43.170:3000/api/uploads/1638786952208.jpg","product_cate":"Bedding","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:41:21 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:11:21.631Z","createdAt":"2020-12-30T05:51:47.787Z","__v":0},{"_id":"5fec14a5ea832e2e73c1fc79","img_path":"http://52.25.163.13:3000/api/uploads/template%20(3).jpg","product_cate":"Pet Foods - Wet","img_index":0,"show_status":true,"date_and_time":"Thu Jul 08 2021 01:55:56 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-07-08T09:39:49.690Z","createdAt":"2020-12-30T05:48:21.363Z","__v":0},{"_id":"5fec1424ea832e2e73c1fc78","img_path":"http://35.164.43.170:3000/api/uploads/1638786852874.jpg","product_cate":"Hair","img_index":0,"show_status":true,"date_and_time":"Mon Dec 06 2021 16:41:28 GMT+0530 (India Standard Time)","delete_status":false,"updatedAt":"2021-12-06T11:11:28.393Z","createdAt":"2020-12-30T05:46:12.099Z","__v":0}]}
      * Code : 200
      */
 
@@ -51,19 +51,19 @@ public class ShopDashboardResponse {
 
     public static class DataBean {
         /**
-         * banner_img : http://54.212.108.156:3000/api/uploads/1625686845460.png
+         * banner_img : http://35.164.43.170:3000/api/uploads/1638611849928.png
          * banner_title : .
          */
 
         private List<BannerDetailsBean> Banner_details;
         /**
-         * _id : 6166ae922bce9c43e6b5a20a
-         * product_img : http://54.212.108.156:3000/api/uploads/1622641300034.jpg
-         * product_title : Dog Food
-         * thumbnail_image : http://54.212.108.156:3000/api/uploads/Pic_empty.jpg
-         * product_price : 1
-         * product_discount : 5
-         * product_discount_price : 0
+         * _id : 61af3d669e6f552291dbfa6e
+         * product_img : {"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}
+         * product_title : Sample
+         * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+         * product_price : 192
+         * product_discount : 1
+         * product_discount_price : 194
          * product_fav : false
          * product_rating : 5
          * product_review : 0
@@ -71,22 +71,22 @@ public class ShopDashboardResponse {
 
         private List<TodaySpecialBean> Today_Special;
         /**
-         * cat_id : 5fec22eeea832e2e73c1fc7b
-         * cat_name : Pet Grooming
-         * product_list : [{"_id":"61545f94bc488d4a5cc76030","product_title":"comb","thumbnail_image":"http://54.212.108.156:3000/api/uploads/Pic_empty.jpg","product_price":750,"product_discount":10,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"60e5aad15af36c5c3605bab5","product_img":"http://54.212.108.156:3000/api/uploads/1625747945821.png","product_title":"Organic Anti-Tick and Flea Spray for Dogs","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625747987678.png","product_price":500,"product_discount":0,"product_discount_price":0,"product_fav":false,"product_rating":5,"product_review":0},{"_id":"60e5aabd5af36c5c3605bab4","product_img":"http://54.212.108.156:3000/api/uploads/1625748054901.png","product_title":"HUL Natural Shampoo for Puppy","thumbnail_image":"http://54.212.108.156:3000/api/uploads/1625748027413.png","product_price":162,"product_discount":10,"product_discount_price":180,"product_fav":false,"product_rating":5,"product_review":0}]
+         * cat_id : 6198b594518ad4520ab14792
+         * cat_name : Organic Products
+         * product_list : [{"_id":"61af3d669e6f552291dbfa6e","product_img":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_title":"Sample","thumbnail_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","product_price":192,"product_discount":1,"product_discount_price":194,"product_fav":false,"product_rating":5,"product_review":0}]
          */
 
         private List<ProductDetailsBean> Product_details;
         /**
-         * _id : 60e6ffbafe7500511a7b419d
-         * img_path : http://54.212.108.156:3000/api/uploads/1625751478722.png
-         * product_cate : Pet Accessories
+         * _id : 6198b5e1518ad4520ab14796
+         * img_path : http://13.57.9.246:3000/api/uploads/1625751478722.png
+         * product_cate : Health Care
          * img_index : 0
          * show_status : true
-         * date_and_time : 7/8/2021, 7:08:01 PM
+         * date_and_time : Mon Dec 06 2021 16:42:23 GMT+0530 (India Standard Time)
          * delete_status : false
-         * updatedAt : 2021-07-08T13:38:02.721Z
-         * createdAt : 2021-07-08T13:38:02.721Z
+         * updatedAt : 2021-12-06T11:12:24.711Z
+         * createdAt : 2021-11-20T08:46:25.853Z
          * __v : 0
          */
 
@@ -147,7 +147,11 @@ public class ShopDashboardResponse {
 
         public static class TodaySpecialBean {
             private String _id;
-            private String product_img;
+            /**
+             * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+             */
+
+            private ProductImgBean product_img;
             private String product_title;
             private String thumbnail_image;
             private int product_price;
@@ -165,11 +169,11 @@ public class ShopDashboardResponse {
                 this._id = _id;
             }
 
-            public String getProduct_img() {
+            public ProductImgBean getProduct_img() {
                 return product_img;
             }
 
-            public void setProduct_img(String product_img) {
+            public void setProduct_img(ProductImgBean product_img) {
                 this.product_img = product_img;
             }
 
@@ -236,18 +240,31 @@ public class ShopDashboardResponse {
             public void setProduct_review(int product_review) {
                 this.product_review = product_review;
             }
+
+            public static class ProductImgBean {
+                private String product_img;
+
+                public String getProduct_img() {
+                    return product_img;
+                }
+
+                public void setProduct_img(String product_img) {
+                    this.product_img = product_img;
+                }
+            }
         }
 
         public static class ProductDetailsBean {
             private String cat_id;
             private String cat_name;
             /**
-             * _id : 61545f94bc488d4a5cc76030
-             * product_title : comb
-             * thumbnail_image : http://54.212.108.156:3000/api/uploads/Pic_empty.jpg
-             * product_price : 750
-             * product_discount : 10
-             * product_discount_price : 0
+             * _id : 61af3d669e6f552291dbfa6e
+             * product_img : {"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}
+             * product_title : Sample
+             * thumbnail_image : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+             * product_price : 192
+             * product_discount : 1
+             * product_discount_price : 194
              * product_fav : false
              * product_rating : 5
              * product_review : 0
@@ -281,6 +298,11 @@ public class ShopDashboardResponse {
 
             public static class ProductListBean {
                 private String _id;
+                /**
+                 * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+                 */
+
+                private ProductImgBean product_img;
                 private String product_title;
                 private String thumbnail_image;
                 private int product_price;
@@ -296,6 +318,14 @@ public class ShopDashboardResponse {
 
                 public void set_id(String _id) {
                     this._id = _id;
+                }
+
+                public ProductImgBean getProduct_img() {
+                    return product_img;
+                }
+
+                public void setProduct_img(ProductImgBean product_img) {
+                    this.product_img = product_img;
                 }
 
                 public String getProduct_title() {
@@ -360,6 +390,18 @@ public class ShopDashboardResponse {
 
                 public void setProduct_review(int product_review) {
                     this.product_review = product_review;
+                }
+
+                public static class ProductImgBean {
+                    private String product_img;
+
+                    public String getProduct_img() {
+                        return product_img;
+                    }
+
+                    public void setProduct_img(String product_img) {
+                        this.product_img = product_img;
+                    }
                 }
             }
         }

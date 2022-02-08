@@ -53,27 +53,28 @@
 
             </RelativeLayout>
 
+
             <RelativeLayout
                 android:id="@+id/rladdressdetails"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp">
 
                 <ImageView
+                    android:id="@+id/button1button"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:background="@drawable/map_pin"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_gravity="center"
                     android:layout_marginEnd="10dp"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/button1button"
-                    tools:ignore="ContentDescription"
                     android:layout_marginRight="10dp"
-                    android:layout_alignParentLeft="true" />
+                    android:background="@drawable/map_pin"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/txt_cityname_title"
@@ -116,27 +117,26 @@
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@+id/txt_cityname_title"
                     android:layout_toRightOf="@+id/txt_cityname_title"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <Button
                         android:id="@+id/btn_change"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="35dp"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:background="@drawable/new_rounded_corner_btn_orange"
-                        android:fontFamily="@font/futuramediumbt"
+                        android:fontFamily="@font/montserrat"
                         android:text="@string/change"
                         android:textAllCaps="false"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
                 </RelativeLayout>
 
 
             </RelativeLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"

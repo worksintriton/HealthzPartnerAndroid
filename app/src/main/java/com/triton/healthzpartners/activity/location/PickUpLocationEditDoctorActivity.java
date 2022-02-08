@@ -44,6 +44,7 @@ import com.triton.healthzpartners.R;
 import com.triton.healthzpartners.activity.NotificationActivity;
 import com.triton.healthzpartners.api.API;
 import com.triton.healthzpartners.doctor.DoctorProfileScreenActivity;
+import com.triton.healthzpartners.doctor.ManageAddressDoctorActivity;
 import com.triton.healthzpartners.responsepojo.GetAddressResultResponse;
 import com.triton.healthzpartners.service.GPSTracker;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -222,7 +223,7 @@ public class PickUpLocationEditDoctorActivity extends FragmentActivity implement
 
         btn_setpickuppoint.setOnClickListener(v -> {
             if(CityName != null){
-                   Intent intent = new Intent(PickUpLocationEditDoctorActivity.this,EditMyAddressActivity.class);
+                   Intent intent = new Intent(PickUpLocationEditDoctorActivity.this,EditMyAddressDoctorActivity.class);
                     intent.putExtra("latlng",strlatlng);
                     intent.putExtra("cityname",CityName);
                     intent.putExtra("address",AddressLine);
@@ -672,7 +673,7 @@ public class PickUpLocationEditDoctorActivity extends FragmentActivity implement
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(),ManageAddressActivity.class));
+        startActivity(new Intent(getApplicationContext(), ManageAddressDoctorActivity.class));
         finish();
 
     }

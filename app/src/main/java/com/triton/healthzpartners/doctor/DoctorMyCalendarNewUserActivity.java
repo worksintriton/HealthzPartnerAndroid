@@ -35,6 +35,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,11 +58,18 @@ public class DoctorMyCalendarNewUserActivity extends AppCompatActivity implement
     AVLoadingIndicatorView avi_indicator;
 
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_sp_header)
+    View include_sp_header;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_my_calendar);
+        ButterKnife.bind(this);
+
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         rv_doctor_mycalendar_avldays = findViewById(R.id.rv_doctor_mycalendar_avldays);
@@ -97,16 +106,26 @@ public class DoctorMyCalendarNewUserActivity extends AppCompatActivity implement
             }
         });
 
-        ImageView back_rela = findViewById(R.id.img_back);
-        back_rela.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+
 
         TextView txtAddHoliday = findViewById(R.id.txtAddHoliday);
         txtAddHoliday.setVisibility(View.GONE);
+        ImageView img_back = include_sp_header.findViewById(R.id.img_back);
+        ImageView img_notification = include_sp_header.findViewById(R.id.img_notification);
+        ImageView img_cart = include_sp_header.findViewById(R.id.img_cart);
+        ImageView img_profile = include_sp_header.findViewById(R.id.img_profile);
+        TextView toolbar_title = include_sp_header.findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getResources().getString(R.string.my_calendar));
+        img_cart.setVisibility(View.GONE);
+        img_notification.setVisibility(View.GONE);
+        img_profile.setVisibility(View.GONE);
+
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         txtAddHoliday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,7 +230,7 @@ public class DoctorMyCalendarNewUserActivity extends AppCompatActivity implement
 
     @Override
     public void onBackPressed() {
-        Toasty.warning(getApplicationContext(), "This action is disabled in this screen..", Toast.LENGTH_SHORT, true).show();
+        //Toasty.warning(getApplicationContext(), "This action is disabled in this screen..", Toast.LENGTH_SHORT, true).show();
 
        /* super.onBackPressed();
         startActivity(new Intent(getApplicationContext(), DoctorDashboardActivity.class));

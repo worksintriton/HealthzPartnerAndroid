@@ -565,46 +565,60 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         int namelength = edt_name.getText().toString().trim().length();
         int weightlength = edt_weight.getText().toString().trim().length();
 
-        if (edt_name.getText().toString() != null && edt_name.getText().toString().trim().equals("") && edt_weight.getText().toString()!= null && edt_weight.getText().toString().trim().equals("")
+        if (edt_name.getText().toString().isEmpty()  &&  edt_weight.getText().toString().trim().isEmpty()
         ) {
             Toasty.warning(getApplicationContext(), "Please enter the fields", Toast.LENGTH_SHORT, true).show();
             can_proceed = false;
         } else if (edt_name.getText().toString().trim().equals("")) {
-            edt_name.setError("Please enter name");
-            edt_name.requestFocus();
+            Toasty.warning(getApplicationContext(), "Please enter name", Toast.LENGTH_SHORT, true).show();
+            /*    edt_name.setError("Please enter name");
+            edt_name.requestFocus();*/
             can_proceed = false;
         }else if (namelength > 25) {
-            edt_name.setError("The maximum length for anname is 25 characters.");
-            edt_name.requestFocus();
+            Toasty.warning(getApplicationContext(), "The maximum length for anname is 25 characters.", Toast.LENGTH_SHORT, true).show();
+
+           /* edt_name.setError("The maximum length for anname is 25 characters.");
+            edt_name.requestFocus();*/
+            can_proceed = false;
+        }
+        else if (strrelationtype.trim().equals("")) {
+            Toasty.warning(getApplicationContext(), "Please select relation type", Toast.LENGTH_SHORT, true).show();
+
+           // showErrorLoading("Please select relation type");
             can_proceed = false;
         }
         else if (edt_weight.getText().toString().trim().equals("")) {
-            edt_weight.setError("Please enter weight");
-            edt_weight.requestFocus();
+            Toasty.warning(getApplicationContext(), "Please enter weight", Toast.LENGTH_SHORT, true).show();
+
+         /*   edt_weight.setError("Please enter weight");
+            edt_weight.requestFocus();*/
             can_proceed = false;
         }
         else if (weightlength > 5) {
-            edt_weight.setError("The maximum length for an weight is 5 characters.");
-            edt_weight.requestFocus();
+            Toasty.warning(getApplicationContext(), "The maximum length for an weight is 5 characters.", Toast.LENGTH_SHORT, true).show();
+            /* edt_weight.setError("The maximum length for an weight is 5 characters.");
+            edt_weight.requestFocus();*/
             can_proceed = false;
         }
         else if (edt_dob.getText().toString().trim().equals("")) {
-            edt_dob.setError("Please enter D.O.B");
-            edt_dob.requestFocus();
+            Toasty.warning(getApplicationContext(), "Please enter date of birth", Toast.LENGTH_SHORT, true).show();
+
+           /* edt_dob.setError("Please enter D.O.B");
+            edt_dob.requestFocus();*/
             can_proceed = false;
         }
 
         else if (edt_bio.getText().toString().trim().equals("")) {
-            edt_bio.setError("Please enter bio");
-            edt_bio.requestFocus();
+            Toasty.warning(getApplicationContext(), "Please enter bio", Toast.LENGTH_SHORT, true).show();
+
+            /*edt_bio.setError("Please enter bio");
+            edt_bio.requestFocus();*/
             can_proceed = false;
         }
-        else if (strrelationtype.trim().equals("")) {
-            showErrorLoading("Please select relation type");
-            can_proceed = false;
-        }
+
         else if (picBeanList.size()==0) {
-            showErrorLoading("Please upload one image of your family member");
+            Toasty.warning(getApplicationContext(), "Please upload one image of your family member", Toast.LENGTH_SHORT, true).show();
+            //  showErrorLoading("Please upload one image of your family member");
             can_proceed = false;
         }
 
@@ -617,6 +631,20 @@ public class AddYourFamilyMembersOldActivity extends AppCompatActivity implement
         }
 
     }
+    public boolean validdSelectGenderType() {
+        if(strrelationtype.equalsIgnoreCase("Select Gender")){
+            final AlertDialog alertDialog = new AlertDialog.Builder(AddYourFamilyMembersOldActivity.this).create();
+            alertDialog.setMessage(getString(R.string.err_msg_type_of_gendertype));
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                    (dialog, which) -> alertDialog.cancel());
+            alertDialog.show();
+
+            return false;
+        }
+
+        return true;
+    }
+
 
 
 

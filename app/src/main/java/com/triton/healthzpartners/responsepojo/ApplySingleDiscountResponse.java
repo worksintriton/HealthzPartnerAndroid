@@ -4,45 +4,47 @@ import java.util.List;
 
 public class ApplySingleDiscountResponse {
 
-
     /**
      * Status : Success
      * Message : product details screen  Updated
-     * Data : {"breed_type":["602d1cb5562e0916bc9b3220"],"pet_type":["602d1c6b562e0916bc9b321d"],"age":[2],"product_img":["http://54.212.108.156:3000/api/uploads/1616062517150.jpeg"],"_id":"605328895e35b95a5cf804e4","user_id":"6053188d167149502f84ec26","cat_id":"5fec14a5ea832e2e73c1fc79","threshould":"3","product_name":"Bush Betta Fish Food 20 gms","product_discription":"Cat Food Adult Tuna & Salmon\n\n","related":"","count":0,"status":"true","verification_status":"Not Verified","date_and_time":"Thu Mar 18 2021 15:46:42 GMT+0530 (India Standard Time)","mobile_type":"Admin","delete_status":true,"fav_status":false,"today_deal":true,"cost":498,"discount":0,"discount_amount":2,"discount_status":false,"discount_cal":500,"discount_start_date":"","discount_end_date":"","updatedAt":"2021-03-23T03:44:45.651Z","createdAt":"2021-03-18T10:16:42.004Z","__v":0}
+     * Data : {"product_img":[{"product_img":"http://35.165.75.97:3000/api/uploads/1639575337353.png"}],"addition_detail":["asdfasdf","asdfa","asdf"],"_id":"61b9ef2ed71f04589fb119b5","user_id":"61af3cea7a64122107fc8e49","cat_id":"6198b507518ad4520ab14790","thumbnail_image":"http://35.165.75.97:3000/api/uploads/1639575337892.png","product_name":"This is good","cost":903,"product_discription":"this is good","condition":"This is good","price_type":"Price Type","date_and_time":"Thu Dec 16 2021 15:57:32 GMT+0530 (India Standard Time)","threshould":"20","mobile_type":"Admin","related":"","count":0,"status":"true","verification_status":"Not Verified","delete_status":false,"fav_status":false,"today_deal":true,"discount":5,"discount_amount":950,"discount_status":true,"discount_cal":950,"discount_start_date":"20-12-2021","discount_end_date":"21-12-2021","product_rating":5,"product_review":0,"updatedAt":"2021-12-20T07:07:12.577Z","createdAt":"2021-12-15T13:35:42.935Z","__v":0}
      * Code : 200
      */
 
     private String Status;
     private String Message;
     /**
-     * breed_type : ["602d1cb5562e0916bc9b3220"]
-     * pet_type : ["602d1c6b562e0916bc9b321d"]
-     * age : [2]
-     * product_img : ["http://54.212.108.156:3000/api/uploads/1616062517150.jpeg"]
-     * _id : 605328895e35b95a5cf804e4
-     * user_id : 6053188d167149502f84ec26
-     * cat_id : 5fec14a5ea832e2e73c1fc79
-     * threshould : 3
-     * product_name : Bush Betta Fish Food 20 gms
-     * product_discription : Cat Food Adult Tuna & Salmon
+     * product_img : [{"product_img":"http://35.165.75.97:3000/api/uploads/1639575337353.png"}]
+     * addition_detail : ["asdfasdf","asdfa","asdf"]
+     * _id : 61b9ef2ed71f04589fb119b5
+     * user_id : 61af3cea7a64122107fc8e49
+     * cat_id : 6198b507518ad4520ab14790
+     * thumbnail_image : http://35.165.75.97:3000/api/uploads/1639575337892.png
+     * product_name : This is good
+     * cost : 903
+     * product_discription : this is good
+     * condition : This is good
+     * price_type : Price Type
+     * date_and_time : Thu Dec 16 2021 15:57:32 GMT+0530 (India Standard Time)
+     * threshould : 20
+     * mobile_type : Admin
      * related :
      * count : 0
      * status : true
      * verification_status : Not Verified
-     * date_and_time : Thu Mar 18 2021 15:46:42 GMT+0530 (India Standard Time)
-     * mobile_type : Admin
-     * delete_status : true
+     * delete_status : false
      * fav_status : false
      * today_deal : true
-     * cost : 498
-     * discount : 0
-     * discount_amount : 2
-     * discount_status : false
-     * discount_cal : 500
-     * discount_start_date :
-     * discount_end_date :
-     * updatedAt : 2021-03-23T03:44:45.651Z
-     * createdAt : 2021-03-18T10:16:42.004Z
+     * discount : 5
+     * discount_amount : 950
+     * discount_status : true
+     * discount_cal : 950
+     * discount_start_date : 20-12-2021
+     * discount_end_date : 21-12-2021
+     * product_rating : 5
+     * product_review : 0
+     * updatedAt : 2021-12-20T07:07:12.577Z
+     * createdAt : 2021-12-15T13:35:42.935Z
      * __v : 0
      */
 
@@ -85,32 +87,39 @@ public class ApplySingleDiscountResponse {
         private String _id;
         private String user_id;
         private String cat_id;
-        private String threshould;
+        private String thumbnail_image;
         private String product_name;
+        private int cost;
         private String product_discription;
+        private String condition;
+        private String price_type;
+        private String date_and_time;
+        private String threshould;
+        private String mobile_type;
         private String related;
         private int count;
         private String status;
         private String verification_status;
-        private String date_and_time;
-        private String mobile_type;
         private boolean delete_status;
         private boolean fav_status;
         private boolean today_deal;
-        private int cost;
         private int discount;
         private int discount_amount;
         private boolean discount_status;
         private int discount_cal;
         private String discount_start_date;
         private String discount_end_date;
+        private int product_rating;
+        private int product_review;
         private String updatedAt;
         private String createdAt;
         private int __v;
-        private List<String> breed_type;
-        private List<String> pet_type;
-        private List<Integer> age;
-        private List<String> product_img;
+        /**
+         * product_img : http://35.165.75.97:3000/api/uploads/1639575337353.png
+         */
+
+        private List<ProductImgBean> product_img;
+        private List<String> addition_detail;
 
         public String get_id() {
             return _id;
@@ -136,12 +145,12 @@ public class ApplySingleDiscountResponse {
             this.cat_id = cat_id;
         }
 
-        public String getThreshould() {
-            return threshould;
+        public String getThumbnail_image() {
+            return thumbnail_image;
         }
 
-        public void setThreshould(String threshould) {
-            this.threshould = threshould;
+        public void setThumbnail_image(String thumbnail_image) {
+            this.thumbnail_image = thumbnail_image;
         }
 
         public String getProduct_name() {
@@ -152,12 +161,60 @@ public class ApplySingleDiscountResponse {
             this.product_name = product_name;
         }
 
+        public int getCost() {
+            return cost;
+        }
+
+        public void setCost(int cost) {
+            this.cost = cost;
+        }
+
         public String getProduct_discription() {
             return product_discription;
         }
 
         public void setProduct_discription(String product_discription) {
             this.product_discription = product_discription;
+        }
+
+        public String getCondition() {
+            return condition;
+        }
+
+        public void setCondition(String condition) {
+            this.condition = condition;
+        }
+
+        public String getPrice_type() {
+            return price_type;
+        }
+
+        public void setPrice_type(String price_type) {
+            this.price_type = price_type;
+        }
+
+        public String getDate_and_time() {
+            return date_and_time;
+        }
+
+        public void setDate_and_time(String date_and_time) {
+            this.date_and_time = date_and_time;
+        }
+
+        public String getThreshould() {
+            return threshould;
+        }
+
+        public void setThreshould(String threshould) {
+            this.threshould = threshould;
+        }
+
+        public String getMobile_type() {
+            return mobile_type;
+        }
+
+        public void setMobile_type(String mobile_type) {
+            this.mobile_type = mobile_type;
         }
 
         public String getRelated() {
@@ -192,22 +249,6 @@ public class ApplySingleDiscountResponse {
             this.verification_status = verification_status;
         }
 
-        public String getDate_and_time() {
-            return date_and_time;
-        }
-
-        public void setDate_and_time(String date_and_time) {
-            this.date_and_time = date_and_time;
-        }
-
-        public String getMobile_type() {
-            return mobile_type;
-        }
-
-        public void setMobile_type(String mobile_type) {
-            this.mobile_type = mobile_type;
-        }
-
         public boolean isDelete_status() {
             return delete_status;
         }
@@ -230,14 +271,6 @@ public class ApplySingleDiscountResponse {
 
         public void setToday_deal(boolean today_deal) {
             this.today_deal = today_deal;
-        }
-
-        public int getCost() {
-            return cost;
-        }
-
-        public void setCost(int cost) {
-            this.cost = cost;
         }
 
         public int getDiscount() {
@@ -288,6 +321,22 @@ public class ApplySingleDiscountResponse {
             this.discount_end_date = discount_end_date;
         }
 
+        public int getProduct_rating() {
+            return product_rating;
+        }
+
+        public void setProduct_rating(int product_rating) {
+            this.product_rating = product_rating;
+        }
+
+        public int getProduct_review() {
+            return product_review;
+        }
+
+        public void setProduct_review(int product_review) {
+            this.product_review = product_review;
+        }
+
         public String getUpdatedAt() {
             return updatedAt;
         }
@@ -312,36 +361,32 @@ public class ApplySingleDiscountResponse {
             this.__v = __v;
         }
 
-        public List<String> getBreed_type() {
-            return breed_type;
-        }
-
-        public void setBreed_type(List<String> breed_type) {
-            this.breed_type = breed_type;
-        }
-
-        public List<String> getPet_type() {
-            return pet_type;
-        }
-
-        public void setPet_type(List<String> pet_type) {
-            this.pet_type = pet_type;
-        }
-
-        public List<Integer> getAge() {
-            return age;
-        }
-
-        public void setAge(List<Integer> age) {
-            this.age = age;
-        }
-
-        public List<String> getProduct_img() {
+        public List<ProductImgBean> getProduct_img() {
             return product_img;
         }
 
-        public void setProduct_img(List<String> product_img) {
+        public void setProduct_img(List<ProductImgBean> product_img) {
             this.product_img = product_img;
+        }
+
+        public List<String> getAddition_detail() {
+            return addition_detail;
+        }
+
+        public void setAddition_detail(List<String> addition_detail) {
+            this.addition_detail = addition_detail;
+        }
+
+        public static class ProductImgBean {
+            private String product_img;
+
+            public String getProduct_img() {
+                return product_img;
+            }
+
+            public void setProduct_img(String product_img) {
+                this.product_img = product_img;
+            }
         }
     }
 }

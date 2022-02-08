@@ -161,6 +161,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
 
         Log.w(TAG,"firstname : "+firstname+" lastname : "+lastname+" useremail : "+useremail+" user_email_verification : "+user_email_verification);
+
+        Log.w(TAG,"UserType : "+UserType+" UserTypeValue : "+UserTypeValue);
         if(firstname != null){
             edt_firstname.setText(firstname);
         }if(lastname != null){
@@ -359,7 +361,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                     if (200 == response.body().getCode()) {
 
-                        Toasty.success(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_SHORT, true).show();
+                       // Toasty.success(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_SHORT, true).show();
 
                         if(response.body().getData() != null) {
                             Intent intent = new Intent(SignUpActivity.this, VerifyOtpActivity.class);
@@ -388,7 +390,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             public void onFailure(@NonNull Call<UserStatusUpdateResponse> call,@NonNull Throwable t) {
                 avi_indicator.smoothToHide();
                 Log.e("OTP", "--->" + t.getMessage());
-                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -432,7 +434,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             intent.putExtra("otp", response.body().getData().getOtp());
                             intent.putExtra("firstname", edt_firstname.getText().toString());
                             intent.putExtra("lastname", edt_lastname.getText().toString());
-                            intent.putExtra("UserType", 1);
+                            intent.putExtra("UserTypeValue", UserTypeValue);
+                            intent.putExtra("UserType", UserType);
                             startActivity(intent);
                         }
 

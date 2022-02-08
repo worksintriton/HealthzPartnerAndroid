@@ -309,9 +309,9 @@ public class VendorTrackOrderActivity extends AppCompatActivity implements View.
                            /* if(response.body().getData().getVendor_complete_info() !=null) {
                                 txt_order_dispatch_packdetails.setText(response.body().getData().getVendor_complete_info());
                             }*/
-                            if (response.body().getData().getProduct_image() != null && !response.body().getData().getProduct_image().isEmpty()) {
+                            if (response.body().getData().getProduct_image().getProduct_img() != null && !response.body().getData().getProduct_image().getProduct_img().isEmpty()) {
                                 Glide.with(getApplicationContext())
-                                        .load(response.body().getData().getProduct_image())
+                                        .load(response.body().getData().getProduct_image().getProduct_img())
                                         .into(img_products_image);
                             }
                             else{

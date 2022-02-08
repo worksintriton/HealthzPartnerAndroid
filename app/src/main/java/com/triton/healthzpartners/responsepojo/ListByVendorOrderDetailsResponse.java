@@ -4,19 +4,20 @@ import java.util.List;
 
 public class ListByVendorOrderDetailsResponse {
 
+
     /**
      * Status : Success
      * Message : Vendor Product Grouped
-     * Data : {"order_details":{"order_id":"ORDER-1638335835786","order_product":1,"order_status":"New","order_text":"Food Products","order_payment_id":"pay_IS5mHeHKdkTjvn","order_price":109,"order_booked":"01-12-2021 10:47 AM","order_image":"http://54.212.108.156:3000/api/uploads/1625752843017.png","order_cancelled":"","order_completed":"","user_feedback":"","user_rate":""},"shipping_address":{"_id":"60797c16a20ca32d2668a30c","user_id":"603e27792c2b43125f8cb802","user_first_name":"DINESHKUMAR","user_last_name":"Deva","user_flat_no":"4/3","user_stree":"Marriyamman Kovil street","user_landmark":"","user_picocode":"621006","user_state":"TAMILNADU","user_city":"TRICHY","user_mobile":"9842670813","user_alter_mobile":"","user_address_stauts":"","user_address_type":"Home","user_display_date":"16-04-2021","updatedAt":"2021-05-04T04:59:18.010Z","createdAt":"2021-04-16T11:59:18.437Z","__v":0},"product_details":[{"product_id":0,"product_image":"http://54.212.108.156:3000/api/uploads/1625750185578.png","product_name":"Pedigree Vegetarian Adult","product_count":1,"product_price":109,"product_discount":0,"product_total_price":109,"product_total_discount":0,"product_stauts":"Order Booked","product_booked":"01-12-2021 10:47 AM"}]}
+     * Data : {"order_details":{"order_id":"ORDER-1639119288502","order_product":1,"order_status":"New","order_text":"Food Products","order_payment_id":"pay_IVgFPddSjlkUqp","order_price":576,"order_booked":"10-12-2021 12:25 pm","order_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","order_cancelled":"","order_completed":"","user_feedback":"","user_rate":""},"shipping_address":{"_id":"60797c16a20ca32d2668a30c","user_id":"603e27792c2b43125f8cb802","user_first_name":"DINESHKUMAR","user_last_name":"Deva","user_flat_no":"4/3","user_stree":"Marriyamman Kovil street","user_landmark":"","user_picocode":"621006","user_state":"TAMILNADU","user_city":"TRICHY","user_mobile":"9842670813","user_alter_mobile":"","user_address_stauts":"","user_address_type":"Home","user_display_date":"16-04-2021","updatedAt":"2021-05-04T04:59:18.010Z","createdAt":"2021-04-16T11:59:18.437Z","__v":0},"product_details":[{"product_id":0,"product_image":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_name":"Sample","product_count":3,"product_price":192,"product_discount":1,"product_total_price":576,"product_total_discount":3,"product_stauts":"Order Booked","product_booked":"10-12-2021 12:25 pm"}]}
      * Code : 200
      */
 
     private String Status;
     private String Message;
     /**
-     * order_details : {"order_id":"ORDER-1638335835786","order_product":1,"order_status":"New","order_text":"Food Products","order_payment_id":"pay_IS5mHeHKdkTjvn","order_price":109,"order_booked":"01-12-2021 10:47 AM","order_image":"http://54.212.108.156:3000/api/uploads/1625752843017.png","order_cancelled":"","order_completed":"","user_feedback":"","user_rate":""}
+     * order_details : {"order_id":"ORDER-1639119288502","order_product":1,"order_status":"New","order_text":"Food Products","order_payment_id":"pay_IVgFPddSjlkUqp","order_price":576,"order_booked":"10-12-2021 12:25 pm","order_image":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg","order_cancelled":"","order_completed":"","user_feedback":"","user_rate":""}
      * shipping_address : {"_id":"60797c16a20ca32d2668a30c","user_id":"603e27792c2b43125f8cb802","user_first_name":"DINESHKUMAR","user_last_name":"Deva","user_flat_no":"4/3","user_stree":"Marriyamman Kovil street","user_landmark":"","user_picocode":"621006","user_state":"TAMILNADU","user_city":"TRICHY","user_mobile":"9842670813","user_alter_mobile":"","user_address_stauts":"","user_address_type":"Home","user_display_date":"16-04-2021","updatedAt":"2021-05-04T04:59:18.010Z","createdAt":"2021-04-16T11:59:18.437Z","__v":0}
-     * product_details : [{"product_id":0,"product_image":"http://54.212.108.156:3000/api/uploads/1625750185578.png","product_name":"Pedigree Vegetarian Adult","product_count":1,"product_price":109,"product_discount":0,"product_total_price":109,"product_total_discount":0,"product_stauts":"Order Booked","product_booked":"01-12-2021 10:47 AM"}]
+     * product_details : [{"product_id":0,"product_image":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_name":"Sample","product_count":3,"product_price":192,"product_discount":1,"product_total_price":576,"product_total_discount":3,"product_stauts":"Order Booked","product_booked":"10-12-2021 12:25 pm"}]
      */
 
     private DataBean Data;
@@ -56,14 +57,14 @@ public class ListByVendorOrderDetailsResponse {
 
     public static class DataBean {
         /**
-         * order_id : ORDER-1638335835786
+         * order_id : ORDER-1639119288502
          * order_product : 1
          * order_status : New
          * order_text : Food Products
-         * order_payment_id : pay_IS5mHeHKdkTjvn
-         * order_price : 109
-         * order_booked : 01-12-2021 10:47 AM
-         * order_image : http://54.212.108.156:3000/api/uploads/1625752843017.png
+         * order_payment_id : pay_IVgFPddSjlkUqp
+         * order_price : 576
+         * order_booked : 10-12-2021 12:25 pm
+         * order_image : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
          * order_cancelled :
          * order_completed :
          * user_feedback :
@@ -95,15 +96,15 @@ public class ListByVendorOrderDetailsResponse {
         private ShippingAddressBean shipping_address;
         /**
          * product_id : 0
-         * product_image : http://54.212.108.156:3000/api/uploads/1625750185578.png
-         * product_name : Pedigree Vegetarian Adult
-         * product_count : 1
-         * product_price : 109
-         * product_discount : 0
-         * product_total_price : 109
-         * product_total_discount : 0
+         * product_image : {"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}
+         * product_name : Sample
+         * product_count : 3
+         * product_price : 192
+         * product_discount : 1
+         * product_total_price : 576
+         * product_total_discount : 3
          * product_stauts : Order Booked
-         * product_booked : 01-12-2021 10:47 AM
+         * product_booked : 10-12-2021 12:25 pm
          */
 
         private List<ProductDetailsBean> product_details;
@@ -410,7 +411,11 @@ public class ListByVendorOrderDetailsResponse {
 
         public static class ProductDetailsBean {
             private int product_id;
-            private String product_image;
+            /**
+             * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+             */
+
+            private ProductImageBean product_image;
             private String product_name;
             private int product_count;
             private int product_price;
@@ -428,11 +433,11 @@ public class ListByVendorOrderDetailsResponse {
                 this.product_id = product_id;
             }
 
-            public String getProduct_image() {
+            public ProductImageBean getProduct_image() {
                 return product_image;
             }
 
-            public void setProduct_image(String product_image) {
+            public void setProduct_image(ProductImageBean product_image) {
                 this.product_image = product_image;
             }
 
@@ -498,6 +503,18 @@ public class ListByVendorOrderDetailsResponse {
 
             public void setProduct_booked(String product_booked) {
                 this.product_booked = product_booked;
+            }
+
+            public static class ProductImageBean {
+                private String product_img;
+
+                public String getProduct_img() {
+                    return product_img;
+                }
+
+                public void setProduct_img(String product_img) {
+                    this.product_img = product_img;
+                }
             }
         }
     }

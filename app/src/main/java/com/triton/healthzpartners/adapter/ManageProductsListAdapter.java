@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.triton.healthzpartners.R;
 import com.triton.healthzpartners.api.APIClient;
 import com.triton.healthzpartners.interfaces.ManageProductsDealsListener;
@@ -26,6 +28,8 @@ import com.triton.healthzpartners.interfaces.OnItemCheckProduct;
 import com.triton.healthzpartners.responsepojo.ManageProductsListResponse;
 import com.triton.healthzpartners.vendor.EditManageProdcutsActivity;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -38,12 +42,15 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
     public static String id = "";
     private int currentSelectedPosition = RecyclerView.NO_POSITION;
     boolean showCheckbox;
+    private ArrayList<String> additionalDetailList;
 
    private final OnItemCheckProduct onItemCheckProduct;
     int count = 0;
 
     ManageProductsDealsListener manageProductsDealsListener;
 
+    private List<ManageProductsListResponse.DataBean.ProductImgBean> picBeanList;
+    private ArrayList<ManageProductsListResponse.DataBean.ProductImgBean> productImageList;
     public ManageProductsListAdapter(Context context, List<ManageProductsListResponse.DataBean> manageProductsListResponseList, boolean showCheckbox,OnItemCheckProduct onItemCheckProduct,ManageProductsDealsListener manageProductsDealsListener) {
         this.context = context;
         this.manageProductsListResponseList = manageProductsListResponseList;
@@ -88,7 +95,7 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
                     .into(holder.img_products_image);
 
         }
-        holder.img_expand_arrow.setOnClickListener(v -> {
+     /*   holder.img_expand_arrow.setOnClickListener(v -> {
             currentSelectedPosition = position;
             notifyDataSetChanged();
 
@@ -102,7 +109,7 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
         else {
             holder.include_vendor_productlist_childview.setVisibility(View.GONE);
             holder.img_expand_arrow.setImageResource(R.drawable.ic_down);
-        }
+        }*/
 
       /*  if(manageProductsListResponseList.get(position).getPet_type() != null && manageProductsListResponseList.get(position).getPet_type().size()>0){
             if(manageProductsListResponseList.get(position).getPet_type().get(0).getPet_type_title() != null){
@@ -124,13 +131,18 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
         }
        */
         if(manageProductsListResponseList.get(position).getThreshould()!= null){
-            holder.txt_threshold.setText(" : "+manageProductsListResponseList.get(position).getThreshould());
+            holder.txt_products_quantity.setText(" Quantity : "+manageProductsListResponseList.get(position).getThreshould());
+
+        }
+        else {
+
+            holder.txt_products_quantity.setText(" Quantity : "+0);
 
         }
 
         if(manageProductsListResponseList.get(position).isToday_deal()){
             holder.txt_deal_status.setVisibility(View.VISIBLE);
-            holder.txt_deal_status.setText("Today Deal");
+            holder.txt_deal_status.setText("On Deal");
         }else{
             holder.txt_deal_status.setVisibility(View.GONE);
         }
@@ -173,12 +185,29 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
                     public boolean onMenuItemClick(MenuItem item) {
                         String titleName = String.valueOf(item.getTitle());
                         if(titleName.equalsIgnoreCase("Edit")){
+                            productImageList= manageProductsListResponseList.get(position).getProduct_img();
+                            Log.w(TAG,"productImageList : "+new Gson().toJson(productImageList));
+                            additionalDetailList= manageProductsListResponseList.get(position).getAddition_detail();
+                            Log.w(TAG,"additionalDetailList : "+new Gson().toJson(additionalDetailList));
                             Intent i = new Intent(context, EditManageProdcutsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             i.putExtra("productid",manageProductsListResponseList.get(position).get_id());
                             i.putExtra("producttitle",manageProductsListResponseList.get(position).getProduct_name());
                             i.putExtra("productprice",manageProductsListResponseList.get(position).getCost());
                             i.putExtra("productthreshold",manageProductsListResponseList.get(position).getThreshould());
                             i.putExtra("productdesc",manageProductsListResponseList.get(position).getProduct_discription());
+                            i.putExtra("productcategoryname",manageProductsListResponseList.get(position).getCat_id().getProduct_cate());
+                            i.putExtra("productcategoryid",manageProductsListResponseList.get(position).getCat_id().get_id());
+                            i.putExtra("condition",manageProductsListResponseList.get(position).getCondition());
+                            i.putExtra("pricetype",manageProductsListResponseList.get(position).getPrice_type());
+
+
+                            Bundle args = new Bundle();
+                            //int list = dataBeanList.get(position).getPet_img().size();
+                            args.putSerializable("PRODUCTLIST", (Serializable)productImageList);
+
+                            i.putExtra("productImageList",args);
+                            i.putStringArrayListExtra("additionalDetailList",additionalDetailList);
+
                             context.startActivity(i);
 
                         } else if(titleName.equalsIgnoreCase("Clear Deals")){
@@ -227,7 +256,7 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
     }
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_prod_name,txt_prod_price,txt_pet_type,txt_age,txt_pet_breed,txt_threshold,txt_deal_status;
+        public TextView txt_prod_name,txt_prod_price,txt_products_quantity,txt_pet_type,txt_age,txt_pet_breed,txt_threshold,txt_deal_status;
         public ImageView img_products_image,img_prodsettings,img_expand_arrow;
         public View include_vendor_productlist_childview;
         public CheckBox checkBox;
@@ -237,16 +266,12 @@ public class ManageProductsListAdapter extends  RecyclerView.Adapter<RecyclerVie
             img_prodsettings = itemView.findViewById(R.id.img_prodsettings);
             txt_prod_name = itemView.findViewById(R.id.txt_prod_name);
             txt_prod_price = itemView.findViewById(R.id.txt_prod_price);
-            img_expand_arrow = itemView.findViewById(R.id.img_expand_arrow);
+
             txt_deal_status = itemView.findViewById(R.id.txt_deal_status);
+            txt_products_quantity = itemView.findViewById(R.id.txt_products_quantity);
 
-            include_vendor_productlist_childview = itemView.findViewById(R.id.include_vendor_productlist_childview);
-            include_vendor_productlist_childview.setVisibility(View.GONE);
+//            include_vendor_productlist_childview.setVisibility(View.GONE);
 
-            txt_pet_type = include_vendor_productlist_childview.findViewById(R.id.txt_pet_type);
-            txt_age = include_vendor_productlist_childview.findViewById(R.id.txt_age);
-            txt_pet_breed = include_vendor_productlist_childview.findViewById(R.id.txt_pet_breed);
-            txt_threshold = include_vendor_productlist_childview.findViewById(R.id.txt_threshold);
             txt_deal_status.setVisibility(View.GONE);
             checkBox = itemView.findViewById(R.id.checkBox);
 

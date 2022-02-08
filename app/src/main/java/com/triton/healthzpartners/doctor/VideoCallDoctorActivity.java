@@ -275,7 +275,7 @@ public class VideoCallDoctorActivity extends AppCompatActivity implements JitsiM
 
     private void confirmCloseConversationDialog(){
         android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(VideoCallDoctorActivity.this);
-        alertDialogBuilder.setMessage("Are you sure you want to close the conversation?.Please proceed to fill the prescription");
+        alertDialogBuilder.setMessage("Are you sure that you want to close the conversation. .If so please proceed to fill the prescription");
         alertDialogBuilder.setPositiveButton("yes",
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -308,7 +308,7 @@ public class VideoCallDoctorActivity extends AppCompatActivity implements JitsiM
     private void confirmPatientNoShowDialog(){
 
         android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(VideoCallDoctorActivity.this);
-        alertDialogBuilder.setMessage("Are you sure you want to close the conversation?");
+        alertDialogBuilder.setMessage("Are you sure that you want to close the conversation?");
         alertDialogBuilder.setPositiveButton("yes",
                 new DialogInterface.OnClickListener() {
                     @Override

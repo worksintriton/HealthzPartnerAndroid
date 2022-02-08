@@ -205,7 +205,18 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
         nav_header_profilename.setText(name);
 
         FrameLayout llheader = header.findViewById(R.id.llheader);
-        llheader.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), DoctorProfileScreenActivity.class)));
+
+        nav_header_imageView.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), DoctorProfileScreenActivity.class)));
+
+        ImageView img_arrow = header.findViewById(R.id.img_arrow);
+        img_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(),DoctorDashboardActivity.class));
+
+            }
+        });
 
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
@@ -220,7 +231,7 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
 
                 // For rest of the options we just show a toast on click
                 case R.id.nav_item_two:
-                    gotoMyWalkinAppointments();
+                    //gotoMyWalkinAppointments();
                     return true;
 
                 case R.id.nav_item_three:
@@ -314,7 +325,7 @@ public class DoctorNavigationDrawer extends AppCompatActivity implements View.On
         ll_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ManageAddressActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ManageAddressDoctorActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
 

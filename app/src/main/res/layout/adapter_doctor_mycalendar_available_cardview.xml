@@ -33,16 +33,17 @@
             android:src="@drawable/ic_baseline_edit_24" />
 
         <TextView
+            android:id="@+id/txt_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginEnd="10dp"
             android:layout_toEndOf="@+id/img_edit"
             android:fontFamily="@font/montserrat"
             android:gravity="center_horizontal"
             android:text="Edit"
             android:textColor="@color/green"
-            android:textSize="12sp"
-            android:layout_marginStart="5dp"/>
+            android:textSize="12sp" />
     </RelativeLayout>
 
 

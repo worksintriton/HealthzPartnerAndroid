@@ -40,7 +40,7 @@
                 android:fontFamily="@font/futuramediumbt"
                 android:padding="2dp"
                 android:text="@string/education1"
-                android:textColor="@color/black"
+                android:textColor="@color/green"
                 android:textSize="14sp" />
 
             <TextView

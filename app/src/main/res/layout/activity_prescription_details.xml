@@ -454,7 +454,7 @@
             android:id="@+id/btn_edit"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/new_rounded_corner_btn_blue"
+            android:background="@drawable/new_rounded_corner_btn"
             android:fontFamily="@font/futuramediumbt"
             android:text="Edit"
             android:textAllCaps="false"

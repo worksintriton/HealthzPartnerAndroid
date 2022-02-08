@@ -689,7 +689,7 @@ public class PickUpLocationEditSPActivity extends FragmentActivity implements On
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(), ManageAddressActivity.class));
+        startActivity(new Intent(getApplicationContext(), ManageAddressSPActivity.class));
         finish();
 
     }

@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             tools:ignore="DisableBselineAlignment,UselessParent"
-            android:background="@color/green">
+            android:background="@color/green_colour">
 
             <ImageView
                 android:id="@+id/img_menu"

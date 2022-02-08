@@ -20,9 +20,9 @@
             android:id="@+id/ll_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/green_colour"
             android:orientation="horizontal"
-            tools:ignore="DisableBselineAlignment,UselessParent"
-            android:background="@color/green">
+            tools:ignore="DisableBselineAlignment,UselessParent">
 
             <ImageView
                 android:id="@+id/img_menu"
@@ -50,34 +50,32 @@
                 android:id="@+id/ll3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center|end"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:gravity="center|end">
 
                     <ImageView
                         android:id="@+id/img_notification"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/notification_white"
-                        tools:ignore="ContentDescription"
                         android:layout_marginEnd="5dp"
-                        />
-
+                        android:src="@drawable/notification_white"
+                        tools:ignore="ContentDescription" />
 
 
                     <ImageView
                         android:id="@+id/img_profile"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/account"
-                        tools:ignore="ContentDescription"
                         android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"/>
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/account"
+                        tools:ignore="ContentDescription" />
 
                 </LinearLayout>
             </LinearLayout>

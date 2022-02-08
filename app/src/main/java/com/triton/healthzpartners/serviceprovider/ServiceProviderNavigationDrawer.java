@@ -38,6 +38,8 @@ import com.triton.healthzpartners.activity.NotificationActivity;
 import com.triton.healthzpartners.activity.location.ManageAddressActivity;
 import com.triton.healthzpartners.api.APIClient;
 import com.triton.healthzpartners.api.RestApiInterface;
+import com.triton.healthzpartners.doctor.DoctorDashboardActivity;
+import com.triton.healthzpartners.doctor.DoctorProfileScreenActivity;
 import com.triton.healthzpartners.requestpojo.DefaultLocationRequest;
 import com.triton.healthzpartners.requestpojo.NotificationCartCountRequest;
 import com.triton.healthzpartners.responsepojo.NotificationCartCountResponse;
@@ -190,7 +192,7 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
         nav_header_emailid.setText(emailid);
         nav_header_profilename.setText(name);
         FrameLayout llheader = header.findViewById(R.id.llheader);
-        llheader.setOnClickListener(new View.OnClickListener() {
+        nav_header_imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), SPProfileScreenActivity.class));
@@ -205,6 +207,15 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
             }
         });*/
 
+        ImageView img_arrow = header.findViewById(R.id.img_arrow);
+        img_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), ServiceProviderDashboardActivity.class));
+
+            }
+        });
 
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
@@ -293,7 +304,7 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
         ll_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ManageAddressActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ManageAddressSPActivity.class);
                 intent.putExtra("fromactivity",TAG);
                 startActivity(intent);
 
@@ -479,7 +490,8 @@ public class ServiceProviderNavigationDrawer extends AppCompatActivity implement
 
     private void gotoManageServices() {
 
-        Intent i = new Intent(ServiceProviderNavigationDrawer.this, SPProfileScreenActivity.class);
+        Intent i = new Intent(ServiceProviderNavigationDrawer.this, ServiceProviderEditFormActivity.class);
+        i.putExtra("fromactivity",TAG);
         startActivity(i);
     }
 

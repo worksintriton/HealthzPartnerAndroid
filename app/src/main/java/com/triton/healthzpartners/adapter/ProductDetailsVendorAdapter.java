@@ -147,9 +147,9 @@ public class ProductDetailsVendorAdapter extends  RecyclerView.Adapter<RecyclerV
             holder.txt_bookedon.setText("Booked For:" + " " + product_details.get(position).getProduct_booked());
 
         }
-        if (product_details.get(position).getProduct_image() != null && !product_details.get(position).getProduct_image().isEmpty()) {
+        if (product_details.get(position).getProduct_image().getProduct_img() != null && !product_details.get(position).getProduct_image().getProduct_img().isEmpty()) {
             Glide.with(context)
-                    .load(product_details.get(position).getProduct_image())
+                    .load(product_details.get(position).getProduct_image().getProduct_img())
                     .into(holder.img_products_image);
 
         }

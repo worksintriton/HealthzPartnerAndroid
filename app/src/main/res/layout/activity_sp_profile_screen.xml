@@ -183,6 +183,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/user_name"
                         android:textSize="12sp" />
@@ -196,7 +197,7 @@
                         android:layout_toEndOf="@id/txt_name"
                         android:scaleType="center"
                         android:src="@drawable/ic_right_arrow"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         tools:ignore="ContentDescription" />
 
 
@@ -243,6 +244,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/montserrat"
                         android:maxLines="1"
@@ -258,7 +260,7 @@
                         android:layout_toEndOf="@+id/txt_email"
                         android:scaleType="center"
                         android:src="@drawable/ic_right_arrow"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         tools:ignore="ContentDescription" />
 
 
@@ -306,6 +308,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/montserrat"
                         android:maxLines="1"
@@ -321,7 +324,7 @@
                         android:layout_toEndOf="@+id/txt_phn_num"
                         android:scaleType="center"
                         android:src="@drawable/ic_right_arrow"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         tools:ignore="ContentDescription" />
 
 
@@ -398,6 +401,11 @@
                         android:elevation="9dp"
                         tools:ignore="UnusedAttribute">
 
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/pager"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
                         <com.google.android.material.tabs.TabLayout
                             android:id="@+id/tabDots"
                             android:layout_width="match_parent"
@@ -407,26 +415,30 @@
                             app:tabGravity="center"
                             app:tabIndicatorHeight="0dp" />
 
-                        <androidx.viewpager.widget.ViewPager
-                            android:id="@+id/pager"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-
-                        <TextView
-                            android:id="@+id/txt_business_name"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/montserrat_bold"
-                            android:maxLines="1"
-                            android:text="@string/clinic_name"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:alpha="0.5"
+                            android:background="@color/black"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_business_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="clip_horizontal|center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:maxLines="1"
+                                android:text="@string/clinic_name"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
 
                     </RelativeLayout>
 

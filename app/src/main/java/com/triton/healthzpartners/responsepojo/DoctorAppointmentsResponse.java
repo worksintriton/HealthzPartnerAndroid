@@ -1112,7 +1112,7 @@ public class DoctorAppointmentsResponse {
             private String name;
             private String gender;
             private String relation_type;
-            private String health_issue;
+            //private String health_issue;
             private String dateofbirth;
             private String anymedicalinfo;
             private String covide_vac;
@@ -1167,13 +1167,13 @@ public class DoctorAppointmentsResponse {
                 this.relation_type = relation_type;
             }
 
-            public String getHealth_issue() {
+          /*  public String getHealth_issue() {
                 return health_issue;
             }
 
             public void setHealth_issue(String health_issue) {
                 this.health_issue = health_issue;
-            }
+            }*/
 
             public String getDateofbirth() {
                 return dateofbirth;
@@ -1282,7 +1282,7 @@ public class DoctorAppointmentsResponse {
             private int consultancy_fees;
             private boolean calender_status;
             private int comments;
-            private int rating;
+            private String rating;
             private int doctor_exp;
             private String updatedAt;
             private String createdAt;
@@ -1505,11 +1505,11 @@ public class DoctorAppointmentsResponse {
                 this.comments = comments;
             }
 
-            public int getRating() {
+            public String getRating() {
                 return rating;
             }
 
-            public void setRating(int rating) {
+            public void setRating(String rating) {
                 this.rating = rating;
             }
 

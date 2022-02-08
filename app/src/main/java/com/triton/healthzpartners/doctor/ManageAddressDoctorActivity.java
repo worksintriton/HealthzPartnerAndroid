@@ -102,41 +102,6 @@ public class ManageAddressDoctorActivity extends AppCompatActivity implements Vi
 
     /* Bottom Navigation */
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_home)
-    RelativeLayout rl_home;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_service)
-    RelativeLayout rl_service;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_shop)
-    RelativeLayout rl_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_shop)
-    TextView title_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_shop)
-    ImageView img_shop;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_comn)
-    RelativeLayout rl_comn;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.title_community)
-    TextView title_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.img_community)
-    ImageView img_community;
-
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.rl_homes)
-    RelativeLayout rl_homes;
 
     @SuppressLint("LongLogTag")
     @Override
@@ -168,18 +133,6 @@ public class ManageAddressDoctorActivity extends AppCompatActivity implements Vi
         ll_add_newaddress.setOnClickListener(this);
 
         //bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
-
-        /*home*/
-        title_shop.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_shop.setImageResource(R.drawable.grey_shop);
-        title_community.setTextColor(getResources().getColor(R.color.darker_grey_new,getTheme()));
-        img_community.setImageResource(R.drawable.grey_community);
-
-        rl_home.setOnClickListener(this);
-        rl_shop.setOnClickListener(this);
-        rl_comn.setOnClickListener(this);
-        rl_homes.setOnClickListener(this);
-
         SessionManager  session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getProfileDetails();
         userid = user.get(SessionManager.KEY_ID);

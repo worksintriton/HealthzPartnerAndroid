@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,8 @@ import com.triton.healthzpartners.R;
 import com.triton.healthzpartners.requestpojo.DocBusInfoUploadRequest;
 
 import java.util.List;
+
+import es.dmoral.toasty.Toasty;
 
 public class AddEducAdapter extends RecyclerView.Adapter<AddEducAdapter.AddEduViewHolder> {
     Context context;
@@ -48,6 +51,8 @@ public class AddEducAdapter extends RecyclerView.Adapter<AddEducAdapter.AddEduVi
         holder.removeImg.setOnClickListener(view -> {
             educationDetailsBeans.remove(position);
             notifyDataSetChanged();
+            Toasty.warning(context,"Removed Successfully", Toast.LENGTH_SHORT).show();
+
         });
 
     }

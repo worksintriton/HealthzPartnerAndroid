@@ -76,7 +76,7 @@ public class SplashActivity extends AppCompatActivity {
                 /*Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();*/
-                Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
+                Intent i = new Intent(SplashActivity.this,SliderAfterSplashActivity.class);
                 startActivity(i);
                 finish();
             }else{
@@ -179,7 +179,7 @@ public class SplashActivity extends AppCompatActivity {
                     /*Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(i);
                     finish();*/
-                    Intent i = new Intent(SplashActivity.this, WelcomeScreenActivity.class);
+                    Intent i = new Intent(SplashActivity.this, SliderAfterSplashActivity.class);
                     startActivity(i);
                     finish();
                 }

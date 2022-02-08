@@ -59,6 +59,8 @@ public class DoctorMyCalendarTimeActivity extends AppCompatActivity implements O
     AVLoadingIndicatorView avi_indicator;
     private String fromactivity;
 
+    Button btn_sumbit;
+
 
     @SuppressLint("LongLogTag")
     @Override
@@ -105,8 +107,9 @@ public class DoctorMyCalendarTimeActivity extends AppCompatActivity implements O
             }
         });
 
-        Button btn_sumbit = findViewById(R.id.btn_submit);
-        btn_sumbit.setOnClickListener(new View.OnClickListener() {
+         btn_sumbit = findViewById(R.id.btn_submit);
+        btn_sumbit.setVisibility(View.INVISIBLE);
+         btn_sumbit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 doctorMyCalendarUpdateDocDateResponseCall();
@@ -148,6 +151,9 @@ public class DoctorMyCalendarTimeActivity extends AppCompatActivity implements O
 
                                 }
                             }
+
+                            Log.w(TAG,"timingBeanList size"+ "--->" + timingBeanList.size());
+
                         }
 
 
@@ -197,13 +203,11 @@ public class DoctorMyCalendarTimeActivity extends AppCompatActivity implements O
 
     }
 
-    @SuppressLint("LongLogTag")
+    @SuppressLint({"LongLogTag", "LogNotTimber"})
     @Override
     public void onItemCheckSpecialization(String item) {
 
         Log.w(TAG,"onItemCheckSpecialization : "+item);
-
-
 
         for(int i=0; i<timingBeanList.size();i++){
             if(item.equalsIgnoreCase(timingBeanList.get(i).getTime())){
@@ -211,12 +215,14 @@ public class DoctorMyCalendarTimeActivity extends AppCompatActivity implements O
                 break;
             }
         }
+        Log.w(TAG,"onItemCheckSpecialization timingBeanList size"+ "--->" + timingBeanList.size());
         Log.w(TAG,"List--->"+"dataBeanList Checked: "+new Gson().toJson(timingBeanList));
+        btn_sumbit.setVisibility(View.VISIBLE);
 
 
     }
 
-    @SuppressLint("LongLogTag")
+    @SuppressLint({"LongLogTag", "LogNotTimber"})
     @Override
     public void onItemUncheckSpecialization(String item) {
         Log.w(TAG,"onItemUncheckSpecialization : "+item);
@@ -228,6 +234,9 @@ public class DoctorMyCalendarTimeActivity extends AppCompatActivity implements O
             }
         }
         Log.w(TAG,"List--->"+"dataBeanList UnChecked: "+new Gson().toJson(timingBeanList));
+        Log.w(TAG,"onItemUncheckSpecialization timingBeanList size"+ "--->" + timingBeanList.size());
+        btn_sumbit.setVisibility(View.VISIBLE);
+
 
     }
 

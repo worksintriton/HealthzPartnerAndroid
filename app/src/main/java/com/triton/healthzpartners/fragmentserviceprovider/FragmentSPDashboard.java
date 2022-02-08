@@ -250,8 +250,16 @@ public class FragmentSPDashboard extends Fragment  {
                                 String profileVerificationStatus = response.body().getData().getProfile_verification_status();
                                 if (profileVerificationStatus != null && profileVerificationStatus.equalsIgnoreCase("Not verified")) {
                                     showProfileStatus(response.body().getMessage());
+                                    txt_edit_profile.setClickable(false);
+                                    txt_view_profile.setClickable(false);
+                                    txt_myappointments.setClickable(false);
 
-                                } else if (profileVerificationStatus != null && profileVerificationStatus.equalsIgnoreCase("profile updated")) {
+                                } else{
+                                    txt_edit_profile.setClickable(true);
+                                    txt_view_profile.setClickable(true);
+                                    txt_myappointments.setClickable(true);
+                                }
+                                if (profileVerificationStatus != null && profileVerificationStatus.equalsIgnoreCase("profile updated")) {
                                     if (!session.isProfileUpdate()) {
                                         showProfileUpdateStatus(response.body().getMessage());
 

@@ -11,11 +11,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:orientation="vertical">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_header"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/green"
+            android:background="@color/green_colour"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
             app:popupTheme="@style/AppTheme.PopupOverlay"
@@ -45,10 +46,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="end"
                 android:layout_marginStart="10dp"
+                android:gravity="end"
                 android:visibility="gone">
-
 
 
                 <ImageView
@@ -63,10 +63,10 @@
                     android:id="@+id/img_profile"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/account"
-                    tools:ignore="ContentDescription"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp" />
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/account"
+                    tools:ignore="ContentDescription" />
             </LinearLayout>
 
 
@@ -179,10 +179,10 @@
                     android:id="@+id/rv_product_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/ll_main_root"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_toEndOf="@id/ll_main_root" />
 
             </RelativeLayout>
 
@@ -438,7 +438,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/layout_bg"
+                android:background="@drawable/rectangular_curved_corner_with_bgnd"
                 android:orientation="horizontal">
 
                 <EditText

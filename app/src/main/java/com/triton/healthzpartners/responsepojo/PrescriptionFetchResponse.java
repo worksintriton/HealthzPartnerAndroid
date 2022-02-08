@@ -7,52 +7,52 @@ public class PrescriptionFetchResponse {
     /**
      * Status : Success
      * Message : Prescription detail
-     * Data : {"doctorname":"Bille ","doctor_speci":[{"specialization":"Surgery"},{"specialization":"Nutrition"},{"specialization":"Laboratory Animal Medicine"},{"specialization":"Emergency and Critical Care"},{"specialization":"Equine Medicine"},{"specialization":"Behavior"},{"specialization":"Dentistry"}],"web_name":"www.petfolio.in","phone_number":"+91-9988776655","app_logo":"http://54.212.108.156:3000/api/uploads/logo.png","owner_name":"Sandy","user_id":"","name":"Dinesh","gender":"Male","relation_type":"Self","health_issue":"OCD","dateofbirth":"16-05-1992","anymedicalinfo":"I'm 29 years old boy","covide_vac":"Yes","weight":"75","diagnosis":"Cancer and Tumour","sub_diagnosis":"All Cancers / Tumours","allergies":"","Doctor_Comments":"High fever","digital_sign":"http://54.212.108.156:3000/api/uploads/60b4e899541a437c7b9c60fd3105191744","Prescription_data":[{"Quantity":"5","Tablet_name":"Dolo","consumption":"Morning - 1, Afternoon - 0, Night - 1","intakeBean":{"afterfood":false,"beforefood":true}}],"_id":"619e0adb2a9dd179ff1c1fb1","doctor_id":"dr123456789","Appointment_ID":"619e0aa52a9dd179ff1c1fb0","Treatment_Done_by":"","Prescription_type":"PDF","PDF_format":"https://petfolio.app/api/public/ic/1637747418697.pdf","Prescription_img":"","Date":"24/11/2021 03:20 PM","delete_status":false,"updatedAt":"2021-11-24T09:50:19.340Z","createdAt":"2021-11-24T09:50:19.340Z","health_issue_title":"General Checkup","__v":0,"clinic_no":"123456789","clinic_loc":"4/270, Azhagappa Nagar, Bharathiyar Nagar, Raj Nagar, Thoraipakkam, Tamil Nadu 600097, India","clinic_name":"Barking Fine Pet Speciality Hospital","Prescription_id":"PRE-1637747419338","share_msg":"Please find the Prescription for the appointment: https://petfolio.app/api/public/ic/1637747418697.pdf. You can download Petfolio Mobile App using this link below. http://petfolio.in"}
+     * Data : {"doctorname":"Maddy Sam","doctor_speci":[{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Pathology"},{"specialization":"Microbiology"},{"specialization":"Theriogenology"},{"specialization":"Behavior"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Neurosurgery"},{"specialization":"IR & Endoscopy"},{"specialization":"Critical Care"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Clinical Pharmocology"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Avian Practice"},{"specialization":"Canine & Feline Practice"},{"specialization":"Equine Practice"},{"specialization":"Feline Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Toxicology"},{"specialization":"neurology"}],"web_name":"www.petfolio.in","phone_number":"+91-9988776655","app_logo":"http://54.212.108.156:3000/api/uploads/logo.png","owner_name":"Maddy","user_id":"","name":"sample","gender":"Male","relation_type":"Others","health_issue":"OCD","dateofbirth":"17-12-2021","anymedicalinfo":"no comments","covide_vac":"Yes","weight":"66","diagnosis":"Urinary System.","sub_diagnosis":" Kidney stone ","allergies":"","Doctor_Comments":"no comments","digital_sign":"http://35.164.43.170:3000/api/uploads/1638862767921.jpg","Prescription_data":[{"Quantity":"2","Tablet_name":"dolo 650","consumption":{"evening":false,"morning":true,"night":false},"intakeBean":{"afterfood":true,"beforefood":false}}],"_id":"61bc7bd3344c323cc83fcc70","doctor_id":"DR12345678","Appointment_ID":"61bc6fe6c1f1bd397f40d800","Treatment_Done_by":"","Prescription_type":"PDF","PDF_format":"","Prescription_img":"","Date":"17/12/2021 05:30 PM","delete_status":false,"updatedAt":"2021-12-17T12:00:19.771Z","createdAt":"2021-12-17T12:00:19.771Z","health_issue_title":"General Checkup","__v":0,"clinic_no":"9630852741","clinic_loc":"Salem 125J, Vmr Theatre Back Side Rd, Swaminathapuram, Salem, Tamil Nadu 636002, India","clinic_name":"Maddy Sam Clinic","Prescription_id":"PRE-1639742419765","share_msg":"Please find the Prescription for the appointment: . You can download Petfolio Mobile App using this link below. http://petfolio.in"}
      * Code : 200
      */
 
     private String Status;
     private String Message;
     /**
-     * doctorname : Bille
-     * doctor_speci : [{"specialization":"Surgery"},{"specialization":"Nutrition"},{"specialization":"Laboratory Animal Medicine"},{"specialization":"Emergency and Critical Care"},{"specialization":"Equine Medicine"},{"specialization":"Behavior"},{"specialization":"Dentistry"}]
+     * doctorname : Maddy Sam
+     * doctor_speci : [{"specialization":"General Consultant"},{"specialization":"Virology"},{"specialization":"Pathology"},{"specialization":"Microbiology"},{"specialization":"Theriogenology"},{"specialization":"Behavior"},{"specialization":"Equine Medicine"},{"specialization":"Radiation Oncology"},{"specialization":"Nephrology"},{"specialization":"Neurosurgery"},{"specialization":"IR & Endoscopy"},{"specialization":"Critical Care"},{"specialization":"Avian & Exotic pets"},{"specialization":"Animal Welfare"},{"specialization":"Clinical Pharmocology"},{"specialization":"Opthalmology"},{"specialization":"Preventive Medicine"},{"specialization":"Avian Practice"},{"specialization":"Canine & Feline Practice"},{"specialization":"Equine Practice"},{"specialization":"Feline Practice"},{"specialization":"Reptile & Amphibian practice"},{"specialization":"Swine Health Management"},{"specialization":"Toxicology"},{"specialization":"neurology"}]
      * web_name : www.petfolio.in
      * phone_number : +91-9988776655
      * app_logo : http://54.212.108.156:3000/api/uploads/logo.png
-     * owner_name : Sandy
+     * owner_name : Maddy
      * user_id :
-     * name : Dinesh
+     * name : sample
      * gender : Male
-     * relation_type : Self
+     * relation_type : Others
      * health_issue : OCD
-     * dateofbirth : 16-05-1992
-     * anymedicalinfo : I'm 29 years old boy
+     * dateofbirth : 17-12-2021
+     * anymedicalinfo : no comments
      * covide_vac : Yes
-     * weight : 75
-     * diagnosis : Cancer and Tumour
-     * sub_diagnosis : All Cancers / Tumours
+     * weight : 66
+     * diagnosis : Urinary System.
+     * sub_diagnosis :  Kidney stone
      * allergies :
-     * Doctor_Comments : High fever
-     * digital_sign : http://54.212.108.156:3000/api/uploads/60b4e899541a437c7b9c60fd3105191744
-     * Prescription_data : [{"Quantity":"5","Tablet_name":"Dolo","consumption":"Morning - 1, Afternoon - 0, Night - 1","intakeBean":{"afterfood":false,"beforefood":true}}]
-     * _id : 619e0adb2a9dd179ff1c1fb1
-     * doctor_id : dr123456789
-     * Appointment_ID : 619e0aa52a9dd179ff1c1fb0
+     * Doctor_Comments : no comments
+     * digital_sign : http://35.164.43.170:3000/api/uploads/1638862767921.jpg
+     * Prescription_data : [{"Quantity":"2","Tablet_name":"dolo 650","consumption":{"evening":false,"morning":true,"night":false},"intakeBean":{"afterfood":true,"beforefood":false}}]
+     * _id : 61bc7bd3344c323cc83fcc70
+     * doctor_id : DR12345678
+     * Appointment_ID : 61bc6fe6c1f1bd397f40d800
      * Treatment_Done_by :
      * Prescription_type : PDF
-     * PDF_format : https://petfolio.app/api/public/ic/1637747418697.pdf
+     * PDF_format :
      * Prescription_img :
-     * Date : 24/11/2021 03:20 PM
+     * Date : 17/12/2021 05:30 PM
      * delete_status : false
-     * updatedAt : 2021-11-24T09:50:19.340Z
-     * createdAt : 2021-11-24T09:50:19.340Z
+     * updatedAt : 2021-12-17T12:00:19.771Z
+     * createdAt : 2021-12-17T12:00:19.771Z
      * health_issue_title : General Checkup
      * __v : 0
-     * clinic_no : 123456789
-     * clinic_loc : 4/270, Azhagappa Nagar, Bharathiyar Nagar, Raj Nagar, Thoraipakkam, Tamil Nadu 600097, India
-     * clinic_name : Barking Fine Pet Speciality Hospital
-     * Prescription_id : PRE-1637747419338
-     * share_msg : Please find the Prescription for the appointment: https://petfolio.app/api/public/ic/1637747418697.pdf. You can download Petfolio Mobile App using this link below. http://petfolio.in
+     * clinic_no : 9630852741
+     * clinic_loc : Salem 125J, Vmr Theatre Back Side Rd, Swaminathapuram, Salem, Tamil Nadu 636002, India
+     * clinic_name : Maddy Sam Clinic
+     * Prescription_id : PRE-1639742419765
+     * share_msg : Please find the Prescription for the appointment: . You can download Petfolio Mobile App using this link below. http://petfolio.in
      */
 
     private DataBean Data;
@@ -129,15 +129,15 @@ public class PrescriptionFetchResponse {
         private String Prescription_id;
         private String share_msg;
         /**
-         * specialization : Surgery
+         * specialization : General Consultant
          */
 
         private List<DoctorSpeciBean> doctor_speci;
         /**
-         * Quantity : 5
-         * Tablet_name : Dolo
-         * consumption : Morning - 1, Afternoon - 0, Night - 1
-         * intakeBean : {"afterfood":false,"beforefood":true}
+         * Quantity : 2
+         * Tablet_name : dolo 650
+         * consumption : {"evening":false,"morning":true,"night":false}
+         * intakeBean : {"afterfood":true,"beforefood":false}
          */
 
         private List<PrescriptionDataBean> Prescription_data;
@@ -469,10 +469,16 @@ public class PrescriptionFetchResponse {
         public static class PrescriptionDataBean {
             private String Quantity;
             private String Tablet_name;
-            private String consumption;
             /**
-             * afterfood : false
-             * beforefood : true
+             * evening : false
+             * morning : true
+             * night : false
+             */
+
+            private ConsumptionBean consumption;
+            /**
+             * afterfood : true
+             * beforefood : false
              */
 
             private IntakeBeanBean intakeBean;
@@ -493,11 +499,11 @@ public class PrescriptionFetchResponse {
                 this.Tablet_name = Tablet_name;
             }
 
-            public String getConsumption() {
+            public ConsumptionBean getConsumption() {
                 return consumption;
             }
 
-            public void setConsumption(String consumption) {
+            public void setConsumption(ConsumptionBean consumption) {
                 this.consumption = consumption;
             }
 
@@ -507,6 +513,36 @@ public class PrescriptionFetchResponse {
 
             public void setIntakeBean(IntakeBeanBean intakeBean) {
                 this.intakeBean = intakeBean;
+            }
+
+            public static class ConsumptionBean {
+                private boolean evening;
+                private boolean morning;
+                private boolean night;
+
+                public boolean isEvening() {
+                    return evening;
+                }
+
+                public void setEvening(boolean evening) {
+                    this.evening = evening;
+                }
+
+                public boolean isMorning() {
+                    return morning;
+                }
+
+                public void setMorning(boolean morning) {
+                    this.morning = morning;
+                }
+
+                public boolean isNight() {
+                    return night;
+                }
+
+                public void setNight(boolean night) {
+                    this.night = night;
+                }
             }
 
             public static class IntakeBeanBean {

@@ -207,17 +207,17 @@
         <activity
             android:name="com.triton.healthzpartners.activity.VerifyOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/EntryAppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthzpartners.activity.SignUpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/EntryAppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthzpartners.activity.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/EntryAppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
 
         <activity
@@ -229,7 +229,7 @@
         <activity
             android:name="com.triton.healthzpartners.activity.VerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" /> <!-- Pet Lover -->
         <activity
             android:name="com.triton.healthzpartners.customer.AddYourPetActivity"
@@ -364,7 +364,7 @@
         <activity
             android:name="com.triton.healthzpartners.customer.PetVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthzpartners.customer.VideoCallPetLoverActivity"
@@ -511,6 +511,12 @@
             android:windowSoftInputMode="adjustPan" />
 
         <activity
+            android:name=".activity.SliderAfterSplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/EntryAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
             android:name="com.triton.healthzpartners.doctor.DoctorMyappointmentsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
@@ -543,7 +549,7 @@
         <activity
             android:name="com.triton.healthzpartners.doctor.DoctorVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthzpartners.doctor.PrescriptionActivity"
@@ -630,7 +636,7 @@
         <activity
             android:name="com.triton.healthzpartners.serviceprovider.SPVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthzpartners.serviceprovider.SPMyCalendarNewUserActivity"
@@ -835,7 +841,7 @@
         <activity
             android:name="com.triton.healthzpartners.vendor.VendorVerifyEmailOtpActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/BaseAppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.triton.healthzpartners.customer.PetVendorOrderDetailsActivity"
@@ -1015,7 +1021,7 @@
         <activity
             android:name="com.triton.healthzpartners.serviceprovider.ManageAddressSPActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
 
         <activity

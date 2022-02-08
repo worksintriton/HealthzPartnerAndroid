@@ -28,69 +28,74 @@
                 android:layout_height="fill_parent"
                 android:layout_width="wrap_content"
                 android:id="@+id/ll_root">
+
                 <ImageView
-                    android:layout_margin="10dp"
                     android:id="@+id/img_notify_imge"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="10dp"
                     android:contentDescription="@string/image"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/image_thumbnail"
-                    />
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icn_notification_tag" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/txt_notification_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="message "
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        android:maxLines="2"
                         android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="2"
+                        android:text="message "
+                        android:textColor="@color/green_colour"
+                        android:textSize="14sp"
 
                         />
+
                     <TextView
                         android:id="@+id/txt_message"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="message message message message messagemessage  message message message"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        android:maxLines="2"
                         android:ellipsize="end"
+                        android:fontFamily="@font/montserrat"
+                        android:maxLines="2"
+                        android:text="message message message message messagemessage  message message message"
+                        android:textColor="@color/neutralgray"
+                        android:textSize="12sp"
+
 
                         />
+
                     <TextView
                         android:id="@+id/txt_message_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/futuramediumbt"
-                        android:text="message message message message messagemessage  message message message"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        />
+                        android:fontFamily="@font/montserrat"
+                        android:text="message message message message messagemessage  message message message"
+                        android:textColor="@color/neutralgray"
+                        android:textSize="12sp" />
+
                     <TextView
                         android:id="@+id/txt_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/futuramediumbt"
+                        android:fontFamily="@font/montserrat"
+                        android:maxLines="1"
                         android:text="Date"
-                        android:textColor="@color/dark_gray"
-                        android:textSize="12sp"
-                        android:maxLines="1"/>
+                        android:textColor="@color/green_colour"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
 
@@ -108,7 +113,7 @@
                         android:layout_marginRight="20dp"
                         android:visibility="gone"/>
                 </RelativeLayout>
-                </LinearLayout>
+            </LinearLayout>
 
 
 

@@ -1,4 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="version">07.02.2022.v1</string>
     <string name="app_name">Healthz Partners</string>
     <string name="verify_otp">Verify OTP</string>
     <string name="emailorphonenumber">Phone Number</string>
@@ -56,6 +58,8 @@
     <string name="err_msg_type_of_petbreedtype">Select the pet breed type</string>
     <string name="err_msg_type_of_communicationtype">Select the communication type</string>
     <string name="err_msg_type_of_petgendertype">Select the pet gender type</string>
+    <string name="err_msg_type_of_gendertype">Select the gender type</string>
+    <string name="err_msg_type_of_time">Select the time type</string>
     <string name="err_msg_type_of_petcolortype">Select the pet color type</string>
     <string name="err_msg_type_of_cattype">Select the category type</string>
 
@@ -591,7 +595,7 @@
     <string name="shop_name">Shop Name</string>
     <string name="successfullycancelled">Successfully Cancelled</string>
     <string name="turn_off">Turn off</string>
-    <string name="version">Version V.1.0</string>
+
     <string name="tablet_name">Tablet Name</string>
     <string name="consumption">Consumption</string>
     <string name="seems_there_is_a_connectivity_issue_please_check_your_internet_connection_and_try_again">Seems there is a connectivity issue. Please check your internet connection and try again</string>
@@ -600,12 +604,12 @@
     <string name="btn_sign_up">Sign Up</string>
     <string name="phn_num_hint">Enter Phone Number</string>
     <string name="verify_your_phone_number">Verify your phone number</string>
-    <string name="we_have_sent_you_an_sms_with_a_code_to_enter_number">We have sent you an SMS with a code to enter number</string>
+    <string name="we_have_sent_you_an_sms_with_a_code_to_enter_number">An SMS will be sent to the number you enter below with a OTP</string>
     <string name="phone_verification">Phone Verification</string>
     <string name="enter_your_otp_code_here">Enter your OTP code here</string>
     <string name="verify">Verify</string>
     <string name="didn_t_you_received_any_code">Didn’t you received any code?</string>
-    <string name="resent_new_code">Resent new code</string>
+    <string name="resent_new_code">Resend New Code</string>
     <string name="create_your_account">Create your Account</string>
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
@@ -638,7 +642,7 @@
     <string name="select_family_members">Select Family Members</string>
     <string name="patient_details">Patient Details</string>
     <string name="relation">Relation</string>
-    <string name="patient_name">Patient Name</string>
+    <string name="patient_name">Member Name</string>
     <string name="image_upload">Image Upload</string>
     <string name="edit_your_family">Edit Family Members</string>
     <string name="pregrant">Pregrant</string>
@@ -690,7 +694,7 @@
     <string name="service_charge_amount">Service Charge Amount</string>
     <string name="healthz_in">Healthz.in</string>
     <string name="view_profile">View Profile</string>
-    <string name="you_dont_have_any_appointments">You dont have any appointments</string>
+    <string name="you_dont_have_any_appointments">You don\'t have any appointments</string>
 
     <string name="about_service_provider">About Service Provider</string>
     <string name="business_no">Business Number</string>
@@ -714,6 +718,7 @@
     <string name="add_product">Add Product</string>
     <string name="you_dont_have_product">You dont have product</string>
     <string name="my_products">My Products</string>
+    <string name="businessaddr">Business Address</string>
 
 </resources>
 

@@ -15,10 +15,10 @@ public class APIClient {
 
 
     /*live*/
-  public static String BASE_URL = "http://35.164.43.170:3000/api/";
-  public static String IMAGE_BASE_URL = "http://35.164.43.170:3000/";
+    public static String BASE_URL = "http://35.165.75.97:3000/api/";
+    public static String IMAGE_BASE_URL = "http://35.165.75.97:3000/";
 
-     /*dev*/
+    /*dev*/
    /* public static String BASE_URL = "http://54.212.108.156:3000/api/";
     public static String IMAGE_BASE_URL = "http://54.212.108.156:3000/";*/
 

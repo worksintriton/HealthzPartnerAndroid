@@ -34,6 +34,8 @@ import com.triton.healthzpartners.activity.LoginActivity;
 import com.triton.healthzpartners.activity.NotificationActivity;
 import com.triton.healthzpartners.api.APIClient;
 import com.triton.healthzpartners.api.RestApiInterface;
+import com.triton.healthzpartners.doctor.DoctorDashboardActivity;
+import com.triton.healthzpartners.doctor.DoctorProfileScreenActivity;
 import com.triton.healthzpartners.requestpojo.DefaultLocationRequest;
 import com.triton.healthzpartners.requestpojo.NotificationCartCountRequest;
 import com.triton.healthzpartners.responsepojo.NotificationCartCountResponse;
@@ -191,12 +193,19 @@ public class VendorNavigationDrawer extends AppCompatActivity implements View.On
         nav_header_emailid.setText(emailid);
         nav_header_profilename.setText(name);
         FrameLayout llheader = header.findViewById(R.id.llheader);
-        llheader.setOnClickListener(new View.OnClickListener() {
+        nav_header_imageView.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), VendorProfileScreenActivity.class)));
+
+
+        ImageView img_arrow = header.findViewById(R.id.img_arrow);
+        img_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), VendorProfileScreenActivity.class));
+
+                startActivity(new Intent(getApplicationContext(), VendorDashboardActivity.class));
+
             }
         });
+
 
 
 

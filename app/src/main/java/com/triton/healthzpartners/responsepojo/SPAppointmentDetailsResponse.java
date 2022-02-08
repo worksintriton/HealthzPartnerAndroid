@@ -932,7 +932,7 @@ public class SPAppointmentDetailsResponse {
             private String name;
             private String gender;
             private String relation_type;
-            private String health_issue;
+           // private String health_issue;
             private String dateofbirth;
             private String anymedicalinfo;
             private String covide_vac;
@@ -986,14 +986,14 @@ public class SPAppointmentDetailsResponse {
             public void setRelation_type(String relation_type) {
                 this.relation_type = relation_type;
             }
-
+/*
             public String getHealth_issue() {
                 return health_issue;
             }
 
             public void setHealth_issue(String health_issue) {
                 this.health_issue = health_issue;
-            }
+            }*/
 
             public String getDateofbirth() {
                 return dateofbirth;

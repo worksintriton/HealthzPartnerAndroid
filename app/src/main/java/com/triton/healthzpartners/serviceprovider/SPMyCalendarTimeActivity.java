@@ -57,6 +57,8 @@ public class SPMyCalendarTimeActivity extends AppCompatActivity implements OnIte
     String date;
     AVLoadingIndicatorView avi_indicator;
 
+    String fromactivity;
+
 
 
     @SuppressLint("LongLogTag")
@@ -82,6 +84,8 @@ public class SPMyCalendarTimeActivity extends AppCompatActivity implements OnIte
         if (extras != null) {
             dateList = (ArrayList<String>) getIntent().getSerializableExtra("dateList");
             Log.w(TAG,"dateList : "+new Gson().toJson(dateList));
+            fromactivity = extras.getString("fromactivity");
+            Log.w(TAG,"fromactivity : "+fromactivity);
 
         }
 
@@ -187,7 +191,7 @@ public class SPMyCalendarTimeActivity extends AppCompatActivity implements OnIte
         //rv_doctor_mycalendar_avldays.setLayoutManager(new GridLayoutManager(this, 3));
         rv_doctor_mycalendar_avldays.setLayoutManager(new LinearLayoutManager(this));
         rv_doctor_mycalendar_avldays.setItemAnimator(new DefaultItemAnimator());
-        SPMyCalendarTimeAvailableAdapter spMyCalendarTimeAvailableAdapter = new SPMyCalendarTimeAvailableAdapter(getApplicationContext(), dataBeanList, rv_doctor_mycalendar_avldays, this);
+        SPMyCalendarTimeAvailableAdapter spMyCalendarTimeAvailableAdapter = new SPMyCalendarTimeAvailableAdapter(getApplicationContext(), dataBeanList, rv_doctor_mycalendar_avldays, this,fromactivity);
         rv_doctor_mycalendar_avldays.setAdapter(spMyCalendarTimeAvailableAdapter);
 
     }

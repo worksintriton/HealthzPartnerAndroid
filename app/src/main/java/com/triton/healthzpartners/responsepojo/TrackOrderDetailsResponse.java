@@ -4,10 +4,11 @@ import java.util.List;
 
 public class TrackOrderDetailsResponse {
 
+
     /**
      * Status : Success
-     * Message : Petlover single product detail
-     * Data : {"product_id":0,"product_image":"http://54.212.108.156:3000/api/uploads/1617098535464.jpeg","product_name":"Pedigree","product_count":5,"product_price":100,"product_discount":0,"product_total_price":500,"product_total_discount":0,"product_stauts":"Order Booked","product_booked":"20-04-2021 05:23 PM","prodcut_track_details":[{"id":0,"title":"Order Booked","date":"20-04-2021 05:23 PM","text":"","Status":true},{"id":1,"title":"Order Accept","date":"","text":"","Status":false},{"id":2,"title":"Order Dispatch","date":"","text":"","Status":false},{"id":3,"title":"In Transit","date":"","text":"","Status":false},{"id":4,"title":"Order Cancelled","date":"","text":"","Status":false},{"id":5,"title":"Vendor cancelled","date":"","text":"","Status":false}]}
+     * Message : Vendor single product detail
+     * Data : {"product_id":0,"product_image":{"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"},"product_name":"Sample","product_count":1,"product_price":192,"product_discount":1,"product_total_price":192,"product_total_discount":1,"product_stauts":"Order Dispatch","product_booked":"10-12-2021 12:53 PM","prodcut_track_details":[{"id":0,"title":"Order Booked","date":"10-12-2021 12:53 PM","text":"","Status":true},{"id":1,"title":"Order Accept","date":"10-12-2021 12:54 PM","text":"Vendor Accept the order","Status":true},{"id":2,"title":"Order Dispatch","date":"10-12-2021 12:55 PM","text":"123456","Status":true},{"id":3,"title":"In Transit","date":"10-12-2021 12:55 PM","text":"Vendor Dispatch the order","Status":true},{"id":4,"title":"Order Cancelled","date":"","text":"","Status":false},{"id":5,"title":"Vendor cancelled","date":"","text":"","Status":false}]}
      * Code : 200
      */
 
@@ -15,16 +16,16 @@ public class TrackOrderDetailsResponse {
     private String Message;
     /**
      * product_id : 0
-     * product_image : http://54.212.108.156:3000/api/uploads/1617098535464.jpeg
-     * product_name : Pedigree
-     * product_count : 5
-     * product_price : 100
-     * product_discount : 0
-     * product_total_price : 500
-     * product_total_discount : 0
-     * product_stauts : Order Booked
-     * product_booked : 20-04-2021 05:23 PM
-     * prodcut_track_details : [{"id":0,"title":"Order Booked","date":"20-04-2021 05:23 PM","text":"","Status":true},{"id":1,"title":"Order Accept","date":"","text":"","Status":false},{"id":2,"title":"Order Dispatch","date":"","text":"","Status":false},{"id":3,"title":"In Transit","date":"","text":"","Status":false},{"id":4,"title":"Order Cancelled","date":"","text":"","Status":false},{"id":5,"title":"Vendor cancelled","date":"","text":"","Status":false}]
+     * product_image : {"product_img":"http://35.164.43.170:3000/api/uploads/1638874408182.jpg"}
+     * product_name : Sample
+     * product_count : 1
+     * product_price : 192
+     * product_discount : 1
+     * product_total_price : 192
+     * product_total_discount : 1
+     * product_stauts : Order Dispatch
+     * product_booked : 10-12-2021 12:53 PM
+     * prodcut_track_details : [{"id":0,"title":"Order Booked","date":"10-12-2021 12:53 PM","text":"","Status":true},{"id":1,"title":"Order Accept","date":"10-12-2021 12:54 PM","text":"Vendor Accept the order","Status":true},{"id":2,"title":"Order Dispatch","date":"10-12-2021 12:55 PM","text":"123456","Status":true},{"id":3,"title":"In Transit","date":"10-12-2021 12:55 PM","text":"Vendor Dispatch the order","Status":true},{"id":4,"title":"Order Cancelled","date":"","text":"","Status":false},{"id":5,"title":"Vendor cancelled","date":"","text":"","Status":false}]
      */
 
     private DataBean Data;
@@ -64,7 +65,11 @@ public class TrackOrderDetailsResponse {
 
     public static class DataBean {
         private int product_id;
-        private String product_image;
+        /**
+         * product_img : http://35.164.43.170:3000/api/uploads/1638874408182.jpg
+         */
+
+        private ProductImageBean product_image;
         private String product_name;
         private int product_count;
         private int product_price;
@@ -76,7 +81,7 @@ public class TrackOrderDetailsResponse {
         /**
          * id : 0
          * title : Order Booked
-         * date : 20-04-2021 05:23 PM
+         * date : 10-12-2021 12:53 PM
          * text :
          * Status : true
          */
@@ -91,11 +96,11 @@ public class TrackOrderDetailsResponse {
             this.product_id = product_id;
         }
 
-        public String getProduct_image() {
+        public ProductImageBean getProduct_image() {
             return product_image;
         }
 
-        public void setProduct_image(String product_image) {
+        public void setProduct_image(ProductImageBean product_image) {
             this.product_image = product_image;
         }
 
@@ -169,6 +174,18 @@ public class TrackOrderDetailsResponse {
 
         public void setProdcut_track_details(List<ProdcutTrackDetailsBean> prodcut_track_details) {
             this.prodcut_track_details = prodcut_track_details;
+        }
+
+        public static class ProductImageBean {
+            private String product_img;
+
+            public String getProduct_img() {
+                return product_img;
+            }
+
+            public void setProduct_img(String product_img) {
+                this.product_img = product_img;
+            }
         }
 
         public static class ProdcutTrackDetailsBean {

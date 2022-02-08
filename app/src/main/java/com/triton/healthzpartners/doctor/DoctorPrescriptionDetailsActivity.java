@@ -84,10 +84,10 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
     @BindView(R.id.img_applogo)
     ImageView img_applogo;
 
-    @SuppressLint("NonConstantResourceId")
+  /*  @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_owners_name)
     TextView txt_owners_name;
-
+*/
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_pet_name)
     TextView txt_pet_name;
@@ -394,11 +394,11 @@ public class DoctorPrescriptionDetailsActivity extends AppCompatActivity {
                                         .into(img_signature);
                             }
 
-                            if(response.body().getData().getOwner_name() != null && !response.body().getData().getOwner_name().isEmpty()){
+                           /* if(response.body().getData().getOwner_name() != null && !response.body().getData().getOwner_name().isEmpty()){
                                 txt_owners_name.setText(response.body().getData().getOwner_name());
                             }else{
                                 txt_owners_name.setText("");
-                            }
+                            }*/
                             if(response.body().getData().getName() != null && !response.body().getData().getName().isEmpty()){
                                 txt_pet_name.setText(response.body().getData().getName());
                             }else{

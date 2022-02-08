@@ -107,6 +107,10 @@ public class SPMyCalendarAvailableNewUserAdapter extends  RecyclerView.Adapter<R
                  ArrayList<String> dateList = new ArrayList<>();
                 dateList.add(dataBeanList.get(position).getTitle());
                 i.putExtra("dateList",dateList);
+                i.putExtra("fromactivity",TAG);
+
+
+
                 context.startActivity(i);
 
             }
@@ -138,7 +142,7 @@ public class SPMyCalendarAvailableNewUserAdapter extends  RecyclerView.Adapter<R
     }
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_days;
+        public TextView txt_days,txt_edit;
         public LinearLayout ll_days;
         public CheckBox ch_days;
         public ImageView img_edit;
@@ -152,7 +156,9 @@ public class SPMyCalendarAvailableNewUserAdapter extends  RecyclerView.Adapter<R
             txt_days = itemView.findViewById(R.id.txt_days);
             ll_days = itemView.findViewById(R.id.ll_days);
             img_edit = itemView.findViewById(R.id.img_edit);
+            txt_edit = itemView.findViewById(R.id.txt_edit);
             img_edit.setVisibility(View.GONE);
+            txt_edit.setVisibility(View.GONE);
 
 
 

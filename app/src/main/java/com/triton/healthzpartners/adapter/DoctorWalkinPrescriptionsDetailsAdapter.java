@@ -51,7 +51,7 @@ public class DoctorWalkinPrescriptionsDetailsAdapter extends  RecyclerView.Adapt
             currentItem = prescriptionDataList.get(position);
             holder.txt_medicine.setText(prescriptionDataList.get(position).getTablet_name());
             holder.txt_noofdays.setText(prescriptionDataList.get(position).getQuantity());
-            holder.txt_consumptionperday.setText(prescriptionDataList.get(position).getConsumption());
+//            holder.txt_consumptionperday.setText(prescriptionDataList.get(position).getConsumption());
 
 
     }

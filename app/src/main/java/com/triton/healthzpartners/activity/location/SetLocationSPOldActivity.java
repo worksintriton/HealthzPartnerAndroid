@@ -53,6 +53,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -123,6 +124,9 @@ public class SetLocationSPOldActivity extends FragmentActivity implements OnMapR
     private String fromactivity;
     private String placesearchactivity;
 
+    private ArrayList<com.triton.healthzpartners.requestpojo.ServiceProviderRegisterFormCreateRequest> serviceProviderRegisterFormCreateRequestArrayList;
+
+
 
     @SuppressLint("LogNotTimber")
     @Override
@@ -138,6 +142,8 @@ public class SetLocationSPOldActivity extends FragmentActivity implements OnMapR
             fromactivity = extras.getString("fromactivity");
             placesearchactivity = extras.getString("placesearchactivity");
             Log.w(TAG,"fromactivity if : "+fromactivity+"placesearchactivity : "+placesearchactivity);
+            serviceProviderRegisterFormCreateRequestArrayList = (ArrayList<com.triton.healthzpartners.requestpojo.ServiceProviderRegisterFormCreateRequest>) getIntent().getSerializableExtra("serviceProviderRegisterFormCreateRequestArrayList");
+            Log.w(TAG,"serviceProviderRegisterFormCreateRequestArrayList : "+new Gson().toJson(serviceProviderRegisterFormCreateRequestArrayList));
 
         }else{
             fromactivity  = TAG;
@@ -189,7 +195,9 @@ public class SetLocationSPOldActivity extends FragmentActivity implements OnMapR
                     intent.putExtra("address",AddressLine);
                     intent.putExtra("PostalCode",PostalCode);
                     intent.putExtra("fromactivity",fromactivity);
-                    startActivity(intent);
+                intent.putExtra("serviceProviderRegisterFormCreateRequestArrayList",serviceProviderRegisterFormCreateRequestArrayList);
+
+                startActivity(intent);
             }else{
                 Toasty.warning(SetLocationSPOldActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
             }

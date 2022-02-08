@@ -2,6 +2,7 @@ package com.triton.healthzpartners.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,13 +39,15 @@ public class SPMyCalendarTimeAvailableAdapter extends  RecyclerView.Adapter<Recy
     String formatedDate,formatedStartDate = "";
     Dialog dialog;
     private OnItemClickSpecialization mCallback;
+    String fromactivity;
 
 
 
-    public SPMyCalendarTimeAvailableAdapter(Context context, List<DoctorMyCalendarAvlTimesResponse.DataBean> dataBeanList, RecyclerView inbox_list, SPMyCalendarTimeActivity spMyCalendarTimeActivity) {
+    public SPMyCalendarTimeAvailableAdapter(Context context, List<DoctorMyCalendarAvlTimesResponse.DataBean> dataBeanList, RecyclerView inbox_list, SPMyCalendarTimeActivity spMyCalendarTimeActivity,String fromactivity) {
         this.dataBeanList = dataBeanList;
         this.context = context;
         this.mCallback = (OnItemClickSpecialization)spMyCalendarTimeActivity;
+        this.fromactivity = fromactivity;
 
     }
 
@@ -63,6 +66,14 @@ public class SPMyCalendarTimeAvailableAdapter extends  RecyclerView.Adapter<Recy
     }
 
     private void initLayoutOne(ViewHolderOne holder, final int position) {
+
+        Log.w(TAG,"fromactivity : "+fromactivity);
+
+        if(fromactivity != null && fromactivity.equalsIgnoreCase("SPMyCalendarNewUserActivity")){
+            holder.txt_edit.setVisibility(View.GONE);
+        }else {
+            holder.txt_edit.setVisibility(View.VISIBLE);
+        }
 
         currentItem = dataBeanList.get(position);
         if(dataBeanList != null && dataBeanList.size()>0) {
@@ -143,7 +154,7 @@ public class SPMyCalendarTimeAvailableAdapter extends  RecyclerView.Adapter<Recy
     }
 
     class ViewHolderOne extends RecyclerView.ViewHolder {
-        public TextView txt_days;
+        public TextView txt_days,txt_edit;
         public LinearLayout ll_days;
         public CheckBox ch_days;
         public ImageView img_edit;
@@ -157,6 +168,7 @@ public class SPMyCalendarTimeAvailableAdapter extends  RecyclerView.Adapter<Recy
             txt_days = itemView.findViewById(R.id.txt_days);
             ll_days = itemView.findViewById(R.id.ll_days);
             img_edit = itemView.findViewById(R.id.img_edit);
+            txt_edit = itemView.findViewById(R.id.txt_edit);
             img_edit.setVisibility(View.GONE);
 
 

@@ -9,6 +9,7 @@
     <color name="white">#ffffff</color>
     <color name="white_trans">#99FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="black_alpha">#59000000</color>
     <color name="forgot">#d1f4f9</color>
     <color name="red">#BA0D4C</color>
     <color name="red_back">#c40505</color>
@@ -118,6 +119,11 @@
     <color name="new_hz_coolgreyish">#949494</color>
 
     <color name="border_line_opaqe">#999999</color>
+    <color name="green_colour">#26A46C</color>
+    <color name="neutralgray">#9098B1</color>
+    <color name="hzred">#DE1F26</color>
+    <color name="custom_bgm">#E3F7EE</color>
+    <color name="new_gree_hzcolor">#e3f7ee</color>
 
 
 </resources>

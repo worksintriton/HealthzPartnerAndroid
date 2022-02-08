@@ -875,7 +875,9 @@ public class ServiceProviderDashboardActivity  extends ServiceProviderNavigation
             case R.id.manageservice:
                 active_tag = "2";
                 item.setCheckable(true);
-                startActivity(new Intent(getApplicationContext(), SPProfileScreenActivity.class));
+                Intent intent = new Intent(getApplicationContext(), ServiceProviderEditFormActivity.class);
+                intent.putExtra("fromactivity",TAG);
+                startActivity(intent);
                 break;
 
             case R.id.community:

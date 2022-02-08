@@ -137,10 +137,10 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
     @BindView(R.id.txt_allergies)
     TextView txt_allergies;
 
-    @SuppressLint("NonConstantResourceId")
+   /* @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_comments)
     TextView txt_comments;
-
+*/
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.txt_order_date)
     TextView txt_order_date;
@@ -203,9 +203,9 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
     @BindView(R.id.ll_allergies)
     LinearLayout ll_allergies;
 
-    @SuppressLint("NonConstantResourceId")
+  /*  @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_comments)
-    LinearLayout ll_comments;
+    LinearLayout ll_comments;*/
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.ll_diagnosis)
@@ -279,6 +279,11 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
 
     FloatingActionButton fab;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.ll_bgnd)
+    LinearLayout ll_bgnd;
+
+
 
     @SuppressLint({"LogNotTimber", "LongLogTag"})
     @Override
@@ -292,7 +297,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
         img_emergency_appointment.setVisibility(View.GONE);
 
         ll_allergies.setVisibility(View.GONE);
-        ll_comments.setVisibility(View.GONE);
+      //  ll_comments.setVisibility(View.GONE);
         ll_diagnosis.setVisibility(View.GONE);
         ll_doctor_comment.setVisibility(View.GONE);
         txt_diagnosis.setVisibility(View.GONE);
@@ -373,7 +378,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
         fab = include_petlover_footer.findViewById(R.id.fab);
 
         bottom_navigation_view = include_petlover_footer.findViewById(R.id.bottomNavigation);
-        bottom_navigation_view.setItemIconTintList(null);
+        //bottom_navigation_view.setItemIconTintList(null);
         bottom_navigation_view.setOnNavigationItemSelectedListener(this);
         bottom_navigation_view.getMenu().findItem(R.id.home).setChecked(true);
 
@@ -592,9 +597,9 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
                             txt_allergies.setText("");
                         }
 
-                        ll_comments.setVisibility(View.VISIBLE);
+                 //       ll_comments.setVisibility(View.VISIBLE);
 
-                        if(response.body().getData().getProblem_info() != null && !response.body().getData().getProblem_info().isEmpty() ){
+                 /*       if(response.body().getData().getProblem_info() != null && !response.body().getData().getProblem_info().isEmpty() ){
 
                             txt_comments.setText(response.body().getData().getProblem_info());
                         }
@@ -603,7 +608,7 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
                             txt_comments.setText("");
                         }
 
-
+*/
                         if(response.body().getData().getDiagnosis() != null && !response.body().getData().getDiagnosis().isEmpty()){
                             ll_diagnosis.setVisibility(View.VISIBLE);
                             txt_diagnosis.setVisibility(View.VISIBLE);
@@ -660,6 +665,8 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
                                 img_videocall.setVisibility(View.GONE);
                                 btn_complete.setVisibility(View.GONE);
                                 btn_prescriptiondetails.setVisibility(View.VISIBLE);
+                                ll_bgnd.setBackgroundResource(R.drawable.custom_bgm);
+
 
 
                             }
@@ -691,7 +698,6 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
         });
 
     }
-
 
     @SuppressLint({"LongLogTag", "LogNotTimber"})
     private PetNewAppointmentDetailsRequest petNewAppointmentDetailsRequest() {

@@ -74,7 +74,8 @@
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/business_name"
                     android:inputType="text"
-                    android:maxLength="25"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:maxLength="20"
                     android:maxLines="1"
                     android:padding="15dp"
                     android:textColor="@color/neutral_black"
@@ -178,6 +179,7 @@
                         tools:ignore="SmallSp" />
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/txt_lbl_about_doctordot"
                         android:layout_width="5dp"
                         android:layout_height="5dp"
@@ -276,8 +278,8 @@
                     android:background="@drawable/edt_rectangle_corner_border"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/business_no"
-                    android:inputType="phone"
-                    android:maxLength="50"
+                    android:inputType="numberPassword"
+                    android:maxLength="10"
                     android:maxLines="1"
                     android:padding="15dp"
                     android:textColor="@color/neutral_black"
@@ -365,17 +367,37 @@
             <!--Experience Details-->
 
             <!--Specialization Details-->
-            <TextView
-                android:id="@+id/textView25"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/montserrat"
-                android:padding="2dp"
-                android:text="@string/addyourservices"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:visibility="visible" />
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:padding="2dp"
+                    android:text="@string/addyourservices"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/red_circle_dot"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="start"
+                    android:textAllCaps="true"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="SmallSp"
+                    android:padding="2dp"/>
+            </LinearLayout>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cdvw_service"
@@ -416,10 +438,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:fontFamily="@font/montserrat"
                             android:hint="@string/add_more"
                             android:inputType="text"
-                            android:maxLength="60"
+                            android:maxLength="20"
                             android:maxLines="1"
                             android:padding="15dp"
                             android:textColorHint="@color/dark_gray"
@@ -463,17 +486,36 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/montserrat"
-                android:padding="2dp"
-                android:text="@string/specialization"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:visibility="visible" />
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:padding="2dp"
+                    android:text="@string/specialization"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/red_circle_dot"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="start"
+                    android:textAllCaps="true"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="SmallSp"
+                    android:padding="2dp"/>
+            </LinearLayout>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cdvw_specialization"
@@ -523,10 +565,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:fontFamily="@font/montserrat"
                             android:hint="@string/specialization_ifany"
                             android:inputType="text"
-                            android:maxLength="60"
+                            android:maxLength="20"
                             android:maxLines="1"
                             android:padding="15dp"
                             android:textColorHint="@color/dark_gray"
@@ -589,7 +632,7 @@
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/clinic_address"
                     android:inputType="none"
-                    android:maxLength="250"
+                    android:maxLength="200"
                     android:maxLines="1"
                     android:minLines="1"
                     android:padding="15dp"

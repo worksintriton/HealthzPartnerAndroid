@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -55,12 +58,19 @@ public class SPMyCalendarNewUserActivity extends AppCompatActivity implements On
     private String userid;
     AVLoadingIndicatorView avi_indicator;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.include_sp_header)
+    View include_sp_header;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_my_calendar);
+
+        ButterKnife.bind(this);
+
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         rv_doctor_mycalendar_avldays = findViewById(R.id.rv_doctor_mycalendar_avldays);
@@ -73,6 +83,11 @@ public class SPMyCalendarNewUserActivity extends AppCompatActivity implements On
 
         avi_indicator = findViewById(R.id.avi_indicator);
         avi_indicator.setVisibility(View.GONE);
+
+        LinearLayout ll_addholiday = findViewById(R.id.ll_addholiday);
+        TextView txtAddHoliday = findViewById(R.id.txtAddHoliday);
+        txtAddHoliday.setVisibility(View.GONE);
+        ll_addholiday.setVisibility(View.GONE);
 
 
         if (new ConnectionDetector(SPMyCalendarNewUserActivity.this).isNetworkAvailable(SPMyCalendarNewUserActivity.this)) {
@@ -88,6 +103,9 @@ public class SPMyCalendarNewUserActivity extends AppCompatActivity implements On
                 if(dateList != null && dateList.size()>0){
                     Intent intent = new Intent(SPMyCalendarNewUserActivity.this, SPMyCalendarTimeActivity.class);
                     intent.putExtra("dateList",dateList);
+                    intent.putExtra("fromactivity",TAG);
+
+
                     startActivity(intent);
                 }else{
                     Toasty.warning(getApplicationContext(), "Please select any one day", Toast.LENGTH_SHORT, true).show();
@@ -97,17 +115,25 @@ public class SPMyCalendarNewUserActivity extends AppCompatActivity implements On
             }
         });
 
-        ImageView back_rela = findViewById(R.id.img_back);
-        back_rela.setOnClickListener(new View.OnClickListener() {
+
+        ImageView img_back = include_sp_header.findViewById(R.id.img_back);
+        ImageView img_notification = include_sp_header.findViewById(R.id.img_notification);
+        ImageView img_cart = include_sp_header.findViewById(R.id.img_cart);
+        ImageView img_profile = include_sp_header.findViewById(R.id.img_profile);
+        TextView toolbar_title = include_sp_header.findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getResources().getString(R.string.my_calendar));
+        img_notification.setVisibility(View.GONE);
+        img_profile.setVisibility(View.GONE);
+        img_cart.setVisibility(View.GONE);
+        img_back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 onBackPressed();
             }
         });
 
 
-        TextView txtAddHoliday = findViewById(R.id.txtAddHoliday);
-        txtAddHoliday.setVisibility(View.GONE);
+
 
         }
 
@@ -203,7 +229,7 @@ public class SPMyCalendarNewUserActivity extends AppCompatActivity implements On
 
     @Override
     public void onBackPressed() {
-        Toasty.warning(getApplicationContext(), "This action is disabled in this screen..", Toast.LENGTH_SHORT, true).show();
+        //Toasty.warning(getApplicationContext(), "This action is disabled in this screen..", Toast.LENGTH_SHORT, true).show();
 
        /* super.onBackPressed();
         startActivity(new Intent(getApplicationContext(), DoctorDashboardActivity.class));

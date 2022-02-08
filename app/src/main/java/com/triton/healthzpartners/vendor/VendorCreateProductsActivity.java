@@ -327,6 +327,7 @@ public class VendorCreateProductsActivity extends AppCompatActivity implements B
 
         else {
             Toasty.success(getApplicationContext(),"Details added successfully",Toast.LENGTH_SHORT).show();
+            edt_addmore_service.setText("");
            additional_detail.add(service);
 
             if(additional_detail != null && additional_detail.size()>0){
