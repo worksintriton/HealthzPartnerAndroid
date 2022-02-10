@@ -70,7 +70,7 @@ public class SPMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerVi
         }
 
         if(missedAppointmentResponseList.get(position).getMissed_at() != null) {
-            holder.txt_bookedon.setText("Canceled :" + " " + missedAppointmentResponseList.get(position).getMissed_at());
+            holder.txt_bookedon.setText("Cancelled :" + " " + missedAppointmentResponseList.get(position).getMissed_at());
         }
 
         holder.txt_lbl_type.setText("Service Name");

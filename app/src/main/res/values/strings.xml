@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="version">07.02.2022.v1</string>
+    <string name="version">08.02.2022.v1</string>
     <string name="app_name">Healthz Partners</string>
     <string name="verify_otp">Verify OTP</string>
     <string name="emailorphonenumber">Phone Number</string>
@@ -195,8 +195,8 @@
     <string name="prescriptionmsg">Note : Pls use the + button to submit the entered details.</string>
     <string name="prescriptionmsg1">Note : M - Morning, A - Afternoon, N - Night. A.F - After Food, B.F - Before Food.  </string>
 
-    <string name="cancelappointment">Are you sure you want to cancel this appoinment?</string>
-    <string name="completeappointment">Are you sure you want to complete this appoinment?</string>
+    <string name="cancelappointment">Are you sure you want to cancel this appointment?</string>
+    <string name="completeappointment">Are you sure you want to complete this appointment?</string>
 
 
     <string name="profile">Profile</string>
