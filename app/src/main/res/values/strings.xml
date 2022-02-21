@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="version">08.02.2022.v1</string>
+    <string name="version">18.02.2022.v1</string>
     <string name="app_name">Healthz Partners</string>
     <string name="verify_otp">Verify OTP</string>
     <string name="emailorphonenumber">Phone Number</string>
