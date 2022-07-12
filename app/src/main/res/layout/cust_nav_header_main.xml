@@ -27,15 +27,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:drawablePadding="5dp"
                 android:ellipsize="end"
                 android:fontFamily="@font/lato_bold"
                 android:gravity="center"
                 android:maxLines="1"
-                android:drawablePadding="5dp"
-                android:text="@string/healthz"
+                android:text="@string/fesh_fish"
                 android:textColor="@color/lato_black"
                 android:textSize="14sp"
-                app:drawableStartCompat="@drawable/hz_mdszdlogo"
+                app:drawableStartCompat="@drawable/logpofiahh"
                 tools:ignore="RelativeOverlap" />
 
             <de.hdodenhof.circleimageview.CircleImageView

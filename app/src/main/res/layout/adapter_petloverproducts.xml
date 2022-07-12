@@ -22,7 +22,7 @@
             android:layout_height="100dp"
             android:contentDescription="@string/image"
             android:scaleType="fitXY"
-            android:src="@drawable/app_logo" />
+            android:src="@drawable/logpo" />
 
         <ImageView
             android:id="@+id/img_like"

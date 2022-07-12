@@ -13,7 +13,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:scaleType="centerInside"
-        android:src="@drawable/app_logo"
+        android:src="@drawable/logpo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -35,13 +35,13 @@
 
         <TextView
             android:id="@+id/txt_welcomemsg"
-            android:layout_width="180dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/montserrat"
             android:gravity="center"
             android:lineSpacingExtra="8sp"
-            android:text="@string/welcome_to_healthz_shopping"
+            android:text="Welcome to Fresh Fish Processing Centre"
             android:textColor="@color/text_colors"
             android:textSize="20sp" />
 

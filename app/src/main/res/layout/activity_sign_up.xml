@@ -21,7 +21,7 @@
             android:scaleType="fitCenter"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/app_logo_with_border"
+            android:src="@drawable/logpo"
             tools:ignore="ContentDescription" />
 
 
@@ -70,6 +70,7 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/new_rounded_corner_btn_green"
                         android:gravity="end"
+                        android:visibility="gone"
                         android:layout_alignParentEnd="true"
                         android:orientation="horizontal">
 

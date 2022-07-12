@@ -138,7 +138,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             userphone = extras.getString("userphone");
             referralcode = extras.getString("referralcode");
         }else{
-            UserType = "Doctor";
+            UserType = "Vendor";
             UserTypeValue = 4;
         }
 
