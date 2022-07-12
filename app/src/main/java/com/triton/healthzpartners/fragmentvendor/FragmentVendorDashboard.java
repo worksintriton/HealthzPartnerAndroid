@@ -262,9 +262,7 @@ public class FragmentVendorDashboard extends Fragment implements ProductDeleteLi
                     if(response.body().getCode() == 200){
                         if(response.body().getData() != null){
                             if(!response.body().getData().isProfile_status()){
-                                Intent intent = new Intent(mContext, VendorRegisterFormActivity.class);
-                                intent.putExtra("fromactivity",TAG);
-                                startActivity(intent);
+                           getlist_from_vendor_id_ResponseCall();
                             }
                             else{
                                 String profileVerificationStatus = response.body().getData().getProfile_verification_status();

@@ -22,7 +22,7 @@
             android:layout_margin="5dp"
             android:contentDescription="@string/image"
             android:scaleType="fitXY"
-            android:src="@drawable/app_logo" />
+            android:src="@drawable/logpo" />
         <TextView
             android:id="@+id/txt_products_title"
             android:layout_width="140dp"

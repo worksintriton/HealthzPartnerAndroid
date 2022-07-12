@@ -48,7 +48,7 @@ public class WelcomeScreenActivity extends AppCompatActivity implements View.OnC
 
         String text = "<font color=#575757>Welcome to</font> ";
 
-        String text1 = "<font color=#1E0702> HealthZ </font><font color=#575757>shopping</font> ";
+        String text1 = "<font color=#1E0702> Fresh Fish  </font><font color=#575757>Processing Centre</font> ";
 
         String textf = text + "\n" + text1;
 

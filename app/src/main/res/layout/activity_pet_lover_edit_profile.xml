@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/footerView"
-        android:layout_below="@+id/headerView" >
+        android:layout_below="@+id/headerView">
 
         <LinearLayout
             android:id="@+id/content"
@@ -181,13 +181,13 @@
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-            <Button
-                android:id="@+id/btn_verify_email"
+            <TextView
+                android:id="@+id/txt_verify_email"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/new_rounded_corner_btn"
+                android:background="@drawable/green_bgm_border"
                 android:fontFamily="@font/montserrat"
                 android:padding="10dp"
                 android:text="@string/verify_email"
@@ -206,10 +206,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:focusable="false"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/phone"
                     android:inputType="none"
-                    android:focusable="false"
                     android:padding="15dp"
                     android:textColor="@color/lato_black"
                     android:textColorHint="@color/lato_black"
