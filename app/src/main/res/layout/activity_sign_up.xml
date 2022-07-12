@@ -70,7 +70,6 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/new_rounded_corner_btn_green"
                         android:gravity="end"
-                        android:visibility="gone"
                         android:layout_alignParentEnd="true"
                         android:orientation="horizontal">
 
