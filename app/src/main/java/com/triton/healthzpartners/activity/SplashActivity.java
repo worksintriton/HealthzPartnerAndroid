@@ -189,8 +189,8 @@ public class SplashActivity extends AppCompatActivity {
                     HashMap<String, String> user = session.getProfileDetails();
                     usertype = user.get(SessionManager.KEY_TYPE);
                     Log.w(TAG,"usertype-->"+usertype);
-                    startActivity(new Intent(SplashActivity.this, VendorDashboardActivity.class));
-                    /*if(usertype != null){
+
+                    if(usertype != null){
                         if(usertype.equalsIgnoreCase("1")){
                             startActivity(new Intent(SplashActivity.this, CustomerDashboardActivity.class));
                             finish();
@@ -209,7 +209,7 @@ public class SplashActivity extends AppCompatActivity {
 
                         }
 
-                    }*/
+                    }
 
 
 

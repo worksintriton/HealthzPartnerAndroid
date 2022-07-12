@@ -449,9 +449,8 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
                                String.valueOf(response.body().getPayment_gateway_detail().isIsproduction()));
                         Log.w(TAG,"ref_code : "+response.body().getData().getRef_code()+" fromactivity : "+fromactivity+" usertype : "+usertype);
 
-                        startActivity(new Intent(VerifyOtpActivity.this, VendorDashboardActivity.class));
 
-                      /*  if(fromactivity != null && fromactivity.equalsIgnoreCase("LoginActivity")){
+                        if(fromactivity != null && fromactivity.equalsIgnoreCase("LoginActivity")){
                             if(usertype != 0){
                                 if(usertype == 1){
                                     startActivity(new Intent(VerifyOtpActivity.this, CustomerDashboardActivity.class));
@@ -483,7 +482,7 @@ public class VerifyOtpActivity extends AppCompatActivity implements View.OnClick
 
                                 }
                             }
-                        }*/
+                        }
                     }
                     else{
 
