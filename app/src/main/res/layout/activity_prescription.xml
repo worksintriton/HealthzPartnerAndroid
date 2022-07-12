@@ -302,7 +302,7 @@
                         android:layout_marginStart="10dp"
                         android:text="@string/medicine"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_16sp"/>
+                        android:textSize="16sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -310,7 +310,7 @@
                         android:text="@string/no_of_days"
                         android:textColor="@color/black"
                         android:layout_marginEnd="10dp"
-                        android:textSize="@dimen/_16sp"/>
+                        android:textSize="16sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -371,7 +371,7 @@
                         android:text="@string/consumption"
                         android:textColor="@color/black"
                         android:layout_marginTop="10dp"
-                        android:textSize="@dimen/_16sp"/>
+                        android:textSize="16sp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -382,7 +382,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Morning"
-                            android:textSize="@dimen/_16sp"
+                            android:textSize="16sp"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/dark_gray"/>
 
@@ -419,7 +419,7 @@
                         android:text="@string/intake"
                         android:textColor="@color/black"
                         android:layout_marginTop="10dp"
-                        android:textSize="@dimen/_16sp"/>
+                        android:textSize="16sp"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -429,7 +429,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/after_food"
-                            android:textSize="@dimen/_16sp"
+                            android:textSize="16sp"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/dark_gray"/>
 
@@ -704,7 +704,7 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginBottom="5dp"
                             android:contentDescription="@string/image"
-                            android:src="@drawable/add" />
+                           />
 
                     </RelativeLayout>
 
