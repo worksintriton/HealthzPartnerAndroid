@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2AC17E</color>
-    <color name="colorPrimaryDark"> #2AC17E</color>
-    <color name="colorAccent">#2AC17E</color>
+    <color name="colorPrimary">#1434A4</color>
+    <color name="colorPrimaryDark">#1434A4</color>
+    <color name="colorAccent">#1434A4</color>
    <!-- <color name="color1">#56B9A4</color>-->
     <color name="color1"> #2896c2</color>
     <!-- <color name="color">#33a9ee</color>-->
@@ -14,11 +14,11 @@
     <color name="red">#BA0D4C</color>
     <color name="red_back">#c40505</color>
   <!--  <color name="green">#71D1BD</color>-->
-    <color name="green">#2AC17E</color>
+    <color name="green">#1434A4</color>
     <color name="light_red">#ccc5c7</color>
     <color name="hollo">#606060</color>
-    <color name="light_gray_green1">#2ab7ca</color>
-    <color name="light_gray_green2">#0e9aa7</color>
+    <color name="light_gray_green1">#1434A4</color>
+    <color name="light_gray_green2">#1434A4</color>
     <color name="gray">#e1e1e1</color>
     <color name="dark_gray">#aaaaaa</color>
     <color name="Lightgray">#efefef</color>
@@ -49,17 +49,17 @@
     <color name="whitelight">#F6F3F3</color>
 
 
-    <color name="light_green_color">#9fd7cb</color>
+    <color name="light_green_color">#1434A4</color>
     <color name="orange_color">#ffc900</color>
     <color name="orange">#ffc900</color>
     <color name="missed_red">#ef728a</color>
-    <color name="medium_green">#4caf50</color>
+    <color name="medium_green">#1434A4</color>
   <!--  <color name="new_light_green">#56B9A4</color>-->
     <color name="new_light_green">#2896c2</color>
     <color name="new_txt_color">#444444</color>
     <color name="new_sec_txt_color">#888888</color>
  <!--   <color name="new_green_btn">#56B9A4</color>-->
-    <color name="new_green_btn">#2AC17E</color>
+    <color name="new_green_btn">#1434A4</color>
     <color name="orange_bgm_color">#fbdd68</color>
     <color name="light_orange">#fff6d6</color>
     <color name="new_orange_bgm_color">#FCDD68</color>
@@ -83,7 +83,7 @@
    <!-- <color name="new_view_more">#009377</color>-->
     <color name="new_view_more">#2896c2</color>
 
-    <color name="selected_dots">#37BFAF</color>
+    <color name="selected_dots">#1434A4</color>
     <color name="unselected_dots">#B9F1EA</color>
 
 
@@ -100,26 +100,26 @@
 
 
     <color name="new_thick_red_bgm_color">#E8571E</color>
-    <color name="new_gree_color">#2AC17E</color>
+    <color name="new_gree_color">#1434A4</color>
     <color name="darker_grey_new">#515151</color>
 
     <color name="text_colors">#575757</color>
-    <color name="dark_green">#135a3b</color>
+    <color name="dark_green">#1434A4</color>
     <color name="border_line">#999999</color>
     <color name="lato_black">#1E0702</color>
     <color name="lato_grey">#999999</color>
     <color name="new_txt_popcolor">#474749</color>
-    <color name="greenish">#219C66</color>
+    <color name="greenish">#1434A4</color>
     <color name="neutral_black">#4F4F4F</color>
     <color name="new_hz_grey">#999999</color>
-    <color name="greenishh">#145B3C</color>
+    <color name="greenishh">#1434A4</color>
     <color name="solid_bgnd">#474749</color>
-    <color name="dark_greenish">#004829</color>
+    <color name="dark_greenish">#1434A4</color>
     <color name="new_hz_coolgrey">#3E3E3E</color>
     <color name="new_hz_coolgreyish">#949494</color>
 
     <color name="border_line_opaqe">#999999</color>
-    <color name="green_colour">#26A46C</color>
+    <color name="green_colour">#1434A4</color>
     <color name="neutralgray">#9098B1</color>
     <color name="hzred">#DE1F26</color>
     <color name="custom_bgm">#E3F7EE</color>
