@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.triton.healthzpartners"
+        applicationId "com.triton.freshfish"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 10

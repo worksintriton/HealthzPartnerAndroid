@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:492634506107:android:a505fc1d6753fbd756f3de",
         "android_client_info": {
-          "package_name": "com.triton.healthz"
+          "package_name": "com.triton.freshfish"
         }
       },
       "oauth_client": [
@@ -38,7 +38,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:492634506107:android:6aaa1fe2b38ac20f56f3de",
         "android_client_info": {
-          "package_name": "com.triton.healthzpartners"
+          "package_name": "com.triton.freshfish"
         }
       },
       "oauth_client": [
