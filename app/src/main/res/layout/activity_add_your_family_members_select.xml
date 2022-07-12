@@ -122,7 +122,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:entries="@array/array_gender"/>
+                    android:entries="@array/array_gender" />
 
                 <ImageView
                     android:layout_width="30dp"
@@ -163,8 +163,7 @@
                     android:text="@string/pregrant"
                     android:textColor="@color/new_txt_color"
                     android:textSize="12sp"
-                    tools:ignore="RtlSymmetry"
-                    />
+                    tools:ignore="RtlSymmetry" />
 
                 <CheckBox
                     android:id="@+id/cb_diabetes"
@@ -194,7 +193,6 @@
                     android:textColor="@color/new_txt_color"
                     android:textSize="12sp"
                     tools:ignore="RtlSymmetry" />
-
 
 
             </LinearLayout>
@@ -301,8 +299,8 @@
                 android:id="@+id/txt_uploadimage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/futuramediumbt"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/futuramediumbt"
                 android:text="@string/upload_image"
                 android:textColor="@color/new_txt_color"
                 android:textSize="18sp" />
@@ -346,8 +344,7 @@
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginBottom="5dp"
-                        android:contentDescription="@string/image"
-                        android:src="@drawable/add" />
+                        android:contentDescription="@string/image" />
 
                 </RelativeLayout>
 

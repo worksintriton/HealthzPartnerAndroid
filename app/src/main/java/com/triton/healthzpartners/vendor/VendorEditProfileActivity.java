@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -67,8 +66,8 @@ public class VendorEditProfileActivity extends AppCompatActivity implements View
     EditText edt_email;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.txt_verify_email)
-    TextView txt_verify_email;
+    @BindView(R.id.btn_verify_email)
+    Button btn_verify_email;
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.edt_phone)
@@ -130,14 +129,14 @@ public class VendorEditProfileActivity extends AppCompatActivity implements View
         }
 
         if(verifyemailstatus != null  && verifyemailstatus.equalsIgnoreCase("true") || verified != null && verified.equalsIgnoreCase("verified")){
-            txt_verify_email.setText("Verified email");
+            btn_verify_email.setText("Verified email");
             user_email_verification = true;
-            txt_verify_email.setEnabled(false);
+            btn_verify_email.setEnabled(false);
 
         }
         else{
             user_email_verification = false;
-            txt_verify_email.setEnabled(true);
+            btn_verify_email.setEnabled(true);
         }
         edt_email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -156,13 +155,13 @@ public class VendorEditProfileActivity extends AppCompatActivity implements View
                 Log.w(TAG,"afterTextChanged email : "+email+" useremail : "+useremail);
 
                 if(!email.equalsIgnoreCase(useremail)){
-                    txt_verify_email.setText("Verify email");
+                    btn_verify_email.setText("Verify email");
                     user_email_verification = false;
-                    txt_verify_email.setEnabled(true);
+                    btn_verify_email.setEnabled(true);
                 }else{
-                    txt_verify_email.setText("Verified email");
+                    btn_verify_email.setText("Verified email");
                     user_email_verification = true;
-                    txt_verify_email.setEnabled(false);
+                    btn_verify_email.setEnabled(false);
                 }
 
 
@@ -171,7 +170,7 @@ public class VendorEditProfileActivity extends AppCompatActivity implements View
 
         btn_save_changes.setOnClickListener(this);
         img_back.setOnClickListener(this);
-        txt_verify_email.setOnClickListener(this);
+        btn_verify_email.setOnClickListener(this);
 
 
 

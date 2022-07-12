@@ -599,7 +599,7 @@
     <string name="tablet_name">Tablet Name</string>
     <string name="consumption">Consumption</string>
     <string name="seems_there_is_a_connectivity_issue_please_check_your_internet_connection_and_try_again">Seems there is a connectivity issue. Please check your internet connection and try again</string>
-    <string name="welcome_to_fresh_fish_processing_centre">Welcome to Fresh Fish Processing Centre</string>
+    <string name="welcome_to_healthz_shopping">Welcome to HealthZ shopping</string>
     <string name="btn_log_in">Log In</string>
     <string name="btn_sign_up">Sign Up</string>
     <string name="phn_num_hint">Enter Phone Number</string>
@@ -618,8 +618,7 @@
     <string name="already_a_member">Already a member?</string>
     <string name="type_location">Type Location</string>
     <string name="dukauwa_du_gmail_com">dukauwa.du@gmail.com</string>
-    <string name="fesh_fish">Fresh Fish</string>
-    <string name="alfredo_press">Alfredo Press</string>
+     <string name="alfredo_press">Alfredo Press</string>
     <string name="my_health_record">My Health Record</string>
     <string name="service_by_category">Service by Category</string>
     <string name="seeall">See All (10)</string>

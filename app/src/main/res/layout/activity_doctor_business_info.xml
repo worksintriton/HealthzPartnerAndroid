@@ -279,9 +279,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/clinic_number"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                     android:inputType="textFilter"
                     android:maxLength="50"
                     android:maxLines="1"
@@ -347,9 +347,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/doctor_id"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                     android:inputType="textFilter"
                     android:maxLength="50"
                     android:maxLines="1"
@@ -415,10 +415,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                     android:fontFamily="@font/montserrat"
                     android:gravity="start"
                     android:hint="@string/about_doctor"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                     android:inputType="textFilter"
                     android:lines="3"
                     android:maxLength="150"
@@ -499,9 +499,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edt_rectangle_corner_border"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                     android:fontFamily="@font/montserrat"
                     android:hint="@string/clinic_name"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                     android:maxLength="25"
                     android:maxLines="1"
                     android:padding="15dp"
@@ -608,7 +608,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_buss_info">
+                    android:background="@drawable/shape_blue">
 
                     <ImageView
                         android:id="@+id/imageView6"
@@ -665,7 +665,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:visibility="visible"
-                app:cardBackgroundColor="@color/quantum_googgreen100"
+                app:cardBackgroundColor="@color/colorPrimary"
                 app:cardCornerRadius="10dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true">
@@ -752,7 +752,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:visibility="visible"
-                app:cardBackgroundColor="@color/quantum_googgreen100"
+                app:cardBackgroundColor="@color/colorPrimary"
                 app:cardCornerRadius="10dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true">
@@ -904,7 +904,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:visibility="visible"
-                app:cardBackgroundColor="@color/quantum_googgreen100"
+                app:cardBackgroundColor="@color/colorPrimary"
                 app:cardCornerRadius="10dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true">
@@ -945,7 +945,7 @@
                 android:fontFamily="@font/montserrat"
                 android:padding="2dp"
                 android:text="@string/pets_handled"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:visibility="gone" />
 
@@ -1064,7 +1064,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_buss_info">
+                    android:background="@drawable/shape_blue">
 
                     <TextView
                         android:id="@+id/txt_location_change"
@@ -1160,7 +1160,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_buss_info">
+                    android:background="@drawable/shape_blue">
 
                     <ImageView
                         android:id="@+id/img_clinic_pic"
@@ -1273,7 +1273,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_buss_info">
+                    android:background="@drawable/shape_blue">
 
                     <ImageView
                         android:id="@+id/img_cert"
@@ -1386,7 +1386,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_buss_info">
+                    android:background="@drawable/shape_blue">
 
                     <ImageView
                         android:id="@+id/img_govtid"
@@ -1499,7 +1499,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_buss_info">
+                    android:background="@drawable/shape_blue">
 
                     <ImageView
                         android:id="@+id/img_photoid"

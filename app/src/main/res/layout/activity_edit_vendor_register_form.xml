@@ -734,7 +734,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/green_bgm_border">
+                    android:background="@drawable/rectangle_buss_info">
 
                     <ImageView
                         android:id="@+id/img_photoid"
@@ -856,7 +856,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/green_bgm_border">
+                    android:background="@drawable/rectangle_buss_info">
 
                     <ImageView
                         android:id="@+id/img_service_pic"
@@ -970,7 +970,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/green_bgm_border">
+                    android:background="@drawable/rectangle_buss_info">
 
                     <ImageView
                         android:id="@+id/img_cert"
@@ -1084,7 +1084,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/green_bgm_border">
+                    android:background="@drawable/rectangle_buss_info">
 
                     <ImageView
                         android:id="@+id/img_govtid"
