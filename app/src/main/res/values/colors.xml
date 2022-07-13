@@ -17,8 +17,8 @@
     <color name="green">#1434A4</color>
     <color name="light_red">#ccc5c7</color>
     <color name="hollo">#606060</color>
-    <color name="light_gray_green1">#1434A4</color>
-    <color name="light_gray_green2">#1434A4</color>
+    <color name="light_gray_green1">#2ab7ca</color>
+    <color name="light_gray_green2">#0e9aa7</color>
     <color name="gray">#e1e1e1</color>
     <color name="dark_gray">#aaaaaa</color>
     <color name="Lightgray">#efefef</color>
@@ -76,7 +76,7 @@
 
    <!-- <color name="new_header_bg">#E8571E</color>-->
     <color name="new_header_bg">#FFFFFF</color>
-    <color name="new_shop_bg">#7AD1C0</color>
+    <color name="new_shop_bg">#1434A4</color>
     <color name="new_txt_header">#141414</color>
     <color name="new_secondtxt">#2E2E2E</color>
     <color name="new_footer_change_blue">#448ECA</color>
@@ -84,7 +84,7 @@
     <color name="new_view_more">#2896c2</color>
 
     <color name="selected_dots">#1434A4</color>
-    <color name="unselected_dots">#B9F1EA</color>
+    <color name="unselected_dots">#1434A4</color>
 
 
 
@@ -94,7 +94,7 @@
     <color name="solid_bg">#e3f9ff</color>
     <color name="new_thick_orange_bgm_color">#F8B232</color>
 
-    <color name="new_green_bgm_color">#7AD1C0</color>
+    <color name="new_green_bgm_color">#1434A4</color>
     <color name="new_greenish_bgm_color">#9BD152</color>
     <color name="new_red_bgm_color">#FF6B7F</color>
 
@@ -113,7 +113,7 @@
     <color name="neutral_black">#4F4F4F</color>
     <color name="new_hz_grey">#999999</color>
     <color name="greenishh">#1434A4</color>
-    <color name="solid_bgnd">#474749</color>
+    <color name="solid_bgnd">#1434A4</color>
     <color name="dark_greenish">#1434A4</color>
     <color name="new_hz_coolgrey">#3E3E3E</color>
     <color name="new_hz_coolgreyish">#949494</color>
